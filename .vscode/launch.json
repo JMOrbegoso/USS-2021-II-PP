@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "c++ build and debug active file",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}\\main.out",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"preLaunchTask": "Build in debug mode",
+			"miDebuggerPath": "gdb"
+		}
+	]
+}
