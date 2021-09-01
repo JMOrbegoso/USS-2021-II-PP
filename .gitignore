@@ -348,3 +348,19 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Ignore all files except files
+# With extensions .gitignore, .cpp, .hpp, .h and .ccls
+*
+!*/
+!.gitignore
+!*.cpp
+!*.h
+
+# Dev-C++
+!*.dev
+!*.layout
+!*.win
+
+#ccls compiler cache
+/.ccls-cache
