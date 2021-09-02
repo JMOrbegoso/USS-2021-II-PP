@@ -36,12 +36,12 @@ void grow(professionsList &professions, int growIn) {
   professions.max += growIn;
 }
 
-void insert(professionsList &professions, professionStruct profession) {
+void insert(professionsList &professions, professionStruct newProfession) {
   if (professions.quantity == professions.max) {
-    grow(professions, 3);
+    grow(professions, 10);
   }
 
-  *(professions.head + professions.quantity) = profession;
+  *(professions.head + professions.quantity) = newProfession;
   professions.quantity++;
 }
 
