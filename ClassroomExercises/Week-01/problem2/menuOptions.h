@@ -41,18 +41,13 @@ void listProfessions(professionsList professions) {
   clearScreen();
   showAppTitle();
 
-  gotoxy(20, 8);
+  gotoxy(20, 5);
   cout << "Lista de profesiones de la universidad:" << endl;
 
+  showProfessionsListHeader(7);
+
   for (int x = 0; x < professions.quantity; x++) {
-    gotoxy(20, 5 + x);
-    cout << "Codigo:" << (professions.head + x)->code;
-    gotoxy(40, 5 + x);
-    cout << "Nombre:" << (professions.head + x)->name;
-    gotoxy(60, 5 + x);
-    cout << "Director:" << (professions.head + x)->master;
-    gotoxy(80, 5 + x);
-    cout << "Nº Ciclos:" << (professions.head + x)->cyclesQuantity;
+    showProfession(*(professions.head + x), 9, x);
   }
 
   cout << endl << endl;
@@ -67,27 +62,24 @@ void findProfessions(professionsList professions) {
   clearScreen();
   showAppTitle();
 
-  gotoxy(20, 8);
+  gotoxy(20, 5);
   cout << "Lista de profesiones de la universidad con un nombre similar a "
        << textToFind << ":" << endl;
+
+  showProfessionsListHeader(7);
 
   for (int x = 0; x < professions.quantity; x++) {
     if (containsText((professions.head + x)->name, textToFind)) {
       foundProfession = true;
-
-      gotoxy(20, 5 + x);
-      cout << "Codigo:" << (professions.head + x)->code;
-      gotoxy(40, 5 + x);
-      cout << "Nombre:" << (professions.head + x)->name;
-      gotoxy(60, 5 + x);
-      cout << "Director:" << (professions.head + x)->master;
-      gotoxy(80, 5 + x);
-      cout << "Nº Ciclos:" << (professions.head + x)->cyclesQuantity;
+      showProfession(*(professions.head + x), 9, x);
     }
   }
 
-  if (!foundProfession)
-    cout << "No se encontró ninguna profesión con ese nombre";
+  if (!foundProfession) {
+    gotoxy(20, 10);
+    cout
+        << "No se encontró ninguna profesión con un nombre similar al buscado.";
+  }
 
   cout << endl << endl;
 }
