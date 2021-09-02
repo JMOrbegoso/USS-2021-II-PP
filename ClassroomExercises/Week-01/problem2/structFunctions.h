@@ -56,3 +56,25 @@ void dataInitialization(professionsList &professions) {
   insert(professions, profession2);
   insert(professions, profession3);
 }
+
+void showProfessionsListHeader(int y) {
+  gotoxy(0, y);
+  cout << "Codigo";
+  gotoxy(10, y);
+  cout << "Nombre";
+  gotoxy(30, y);
+  cout << "Director";
+  gotoxy(60, y);
+  cout << "Nº Ciclos";
+}
+
+void showProfession(professionStruct profession, int y, int itemNumber) {
+  gotoxy(0, y + itemNumber);
+  cout << profession.code;
+  gotoxy(10, y + itemNumber);
+  cout << profession.name;
+  gotoxy(30, y + itemNumber);
+  cout << profession.master;
+  gotoxy(60, y + itemNumber);
+  cout << profession.cyclesQuantity;
+}
