@@ -7,10 +7,10 @@ struct professionStruct {
   string name;
   string master;
   unsigned short cyclesQuantity;
-}
+};
 
 struct professionsList {
-  int max;
-  int quantity;
   professionStruct *head;
-}
+  int quantity;
+  int max;
+};
