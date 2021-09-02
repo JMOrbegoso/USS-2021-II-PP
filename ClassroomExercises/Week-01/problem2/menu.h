@@ -14,13 +14,14 @@ int requestMenuOption() {
 
   cout << "[1] Registrar nueva profesión" << endl;
   cout << "[2] Listar profesiones registradas" << endl;
+  cout << "[3] Buscar en las profesiones disponibles" << endl;
 
   cout << endl;
   cout << "[0] Cerrar" << endl;
 
   cout << endl << "Por favor ingrese una de las opciones:" << endl;
   cin >> selectedOption;
-  while (!(0 <= selectedOption && selectedOption <= 2)) {
+  while (!(0 <= selectedOption && selectedOption <= 3)) {
     cout << "La opcion seleccionada fue inválida, por favor seleccione una "
             "opcion válida:"
          << endl;
@@ -42,7 +43,11 @@ void mainMenu(professionsList &professions) {
           addDelay(1.5);
           break;
         case 2:
-          showProfessions(professions);
+          listProfessions(professions);
+          pauseProcess();
+          break;
+        case 3:
+          findProfessions(professions);
           pauseProcess();
           break;
       }
