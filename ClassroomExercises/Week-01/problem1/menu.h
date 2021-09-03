@@ -23,7 +23,7 @@ int requestMenuOption() {
 
     cout << endl << "Por favor ingrese una de las opciones:" << endl;
     cin >> selectedOption;
-    while (!(0 <= selectedOption && selectedOption <= 3)) {
+    while (!(0 <= selectedOption && selectedOption <= 5)) {
         cout << "La opcion seleccionada fue inválida, por favor seleccione una "
             "opcion válida:"
             << endl;
