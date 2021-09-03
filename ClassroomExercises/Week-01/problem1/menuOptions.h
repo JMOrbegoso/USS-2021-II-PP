@@ -12,7 +12,6 @@ void showAppTitle() {
 
 void registerNewTeam(sportStruct &sport) {
   string code, name, city, stadiumName, coachName;
-
   teamStruct newTeam;
 
   clearScreen();
@@ -24,8 +23,10 @@ void registerNewTeam(sportStruct &sport) {
   name = requestText("Ingrese el nombre del nuevo equipo", 2);
   code = requestText("Ingrese el codigo del nuevo equipo", 2);
   city = requestText("Ingrese la ciudad del nuevo equipo", 2);
-  stadiumName = requestText("Ingrese el nombre de la nueva provincia", 2);
-  coachName = requestText("Ingrese el nombre de la nueva provincia", 2);
+  stadiumName = requestText(
+      "Ingrese el nombre del estadio en donde juega el nuevo equipo", 2);
+  coachName =
+      requestText("Ingrese el nombre del entrenador del nuevo equipo", 2);
 
   newTeam = buildTeam(code, name, city, stadiumName, coachName);
 
@@ -41,16 +42,14 @@ void registerNewPlayer(sportStruct &sport) {
   float weigh;
   float heigh;
   string position;
-
   teamNode *teamNodePointer;
-
   playerStruct newPlayer;
 
   clearScreen();
   showAppTitle();
 
   gotoxy(40, 10);
-  cout << "Registrar nuevo distrito:" << endl;
+  cout << "Registrar nuevo jugador:" << endl;
 
   firstName = requestText("Ingrese el nombre del nuevo jugador", 2);
   lastName = requestText("Ingrese el apellido del nuevo jugador", 2);
@@ -66,39 +65,16 @@ void registerNewPlayer(sportStruct &sport) {
 
   newPlayer = buildPlayer(firstName, lastName, age, weigh, heigh, position);
 
-  teamNodePointer = requestProvinceWithSelector(
-      department.provinces,
-      "Ingrese la provincia a la que este distrito pertenece:");
+  teamNodePointer = requestTeam(
+      sport.teams, "Elija el equipo al que este jugador pertenece:");
 
-  addToCollection(teamNodePointer->province.districts, newPlayer);
+  insert(teamNodePointer->team.players, newPlayer);
 
-  cout << "El distrito fue añadido de forma exitosa" << endl;
+  cout << "El jugador fue añadido de forma exitosa" << endl;
 }
 
 void findTeam(sportStruct sport) {}
 
-void showTeams(sportStruct sport) {
-  provinceNode *provinceNodePointer;
-
-  clearScreen();
-  showAppTitle(department);
-
-  gotoxy(40, 10);
-  cout << "Todas las provincias del departamento de " << department.name
-       << endl;
-
-  provinceNodePointer = department.provinces.head;
-
-  showProvincesListHeaders(12);
-
-  int i = 1;
-  while (provinceNodePointer != NULL) {
-    showProvince(provinceNodePointer->province, i, i + 13);
-    provinceNodePointer = provinceNodePointer->next;
-    i++;
-  }
-
-  cout << endl << endl;
-}
+void showTeams(sportStruct sport) {}
 
 void showTeamDetail(sportStruct sport) {}
