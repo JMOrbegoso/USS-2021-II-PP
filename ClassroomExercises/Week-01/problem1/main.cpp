@@ -1,11 +1,11 @@
 /*
 Se pide registrar los datos de un grupo de equipos de futbol
-(c√≥digo, nombre, ciudad, nombre del estadio, entrenador).
+(cÛdigo, nombre, ciudad, nombre del estadio, entrenador).
 
-Asimismo, se deber√°n registrar los datos de sus jugadores
-(apellidos, nombres, posici√≥n, edad, peso y talla).
+Asimismo, se deber·n registrar los datos de sus jugadores
+(apellidos, nombres, posiciÛn, edad, peso y talla).
 
-Ud. Debe mostrar un men√∫ en que se elija las opciones siguientes:
+Ud. Debe mostrar un men˙ en que se elija las opciones siguientes:
 1. Registrar equipo de futbol
 2. Registrar jugador en equipo
 3. Buscar equipo de futbol (Se debe mostrar los datos del equipo)
@@ -19,12 +19,12 @@ Ud. Debe mostrar un men√∫ en que se elija las opciones siguientes:
 using namespace std;
 
 int main() {
-  sportStruct sport;
+	sportStruct sport;
 
-  collectionsInitialization(sport);
-  dataInitialization(sport);
+	collectionsInitialization(sport);
+	dataInitialization(sport);
 
-  mainMenu(sport);
+	mainMenu(sport);
 
-  return 0;
+	return 0;
 }

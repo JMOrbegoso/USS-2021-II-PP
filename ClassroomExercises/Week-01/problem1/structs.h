@@ -3,46 +3,46 @@
 using namespace std;
 
 struct playerStruct {
-  string firstName;
-  string lastName;
-  unsigned short age;
-  float weigh;
-  float heigh;
-  string position;
+	string firstName;
+	string lastName;
+	unsigned short age;
+	float weigh;
+	float heigh;
+	string position;
 };
 
 struct playerNode {
-  playerStruct player;
-  playerNode *next;
-  playerNode *previous;
+	playerStruct player;
+	playerNode* next;
+	playerNode* previous;
 };
 
 struct playersList {
-  playerNode *head;
-  int length;
+	playerNode* head;
+	int length;
 };
 
 struct teamStruct {
-  string code;
-  string name;
-  string city;
-  string stadiumName;
-  string coachName;
-  playersList players;
+	string code;
+	string name;
+	string city;
+	string stadiumName;
+	string coachName;
+	playersList players;
 };
 
 struct teamNode {
-  teamStruct team;
-  teamNode *next;
-  teamNode *previous;
+	teamStruct team;
+	teamNode* next;
+	teamNode* previous;
 };
 
 struct teamsList {
-  teamNode *head;
-  int length;
+	teamNode* head;
+	int length;
 };
 
 struct sportStruct {
-  string sportName;
-  teamsList teams;
+	string sportName;
+	teamsList teams;
 };
