@@ -125,4 +125,29 @@ void showTeams(sportStruct sport) {
   cout << endl << endl;
 }
 
-void showTeamDetail(sportStruct sport) {}
+void showTeamDetail(sportStruct sport) {
+  teamNode *teamNodePointer;
+  playerNode *playerNodePointer;
+
+  teamNodePointer = requestTeam(
+      sport.teams, "Seleccione el equipo del que quiere revisar en detalle");
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(40, 10);
+  cout << "Detalle del equipo " << teamNodePointer->team.name << endl;
+
+  showTeamsListHeader(12);
+  showTeam(teamNodePointer->team, 13, i);
+
+  playerNodePointer = teamNodePointer->team.players.head;
+
+  showPlayersListHeader(15);
+  for (int i = 1; playerNodePointer != NULL; i++) {
+    showPlayer(playerNodePointer->player, 16, i);
+    playerNodePointer = playerNodePointer->next;
+  }
+
+  cout << endl << endl;
+}
