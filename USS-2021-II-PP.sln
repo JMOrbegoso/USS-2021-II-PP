@@ -5,9 +5,14 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassroomExercises", "ClassroomExercises", "{72A7844A-494F-405B-8DD2-3AEACC5322ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week-01", "Week-01", "{64B0559C-497F-47C6-B5FA-473912904522}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64B0559C-497F-47C6-B5FA-473912904522} = {72A7844A-494F-405B-8DD2-3AEACC5322ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E33BCAD-4387-4A1F-98E7-278823DECA82}
