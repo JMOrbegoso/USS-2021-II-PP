@@ -88,7 +88,7 @@ void findTeam(sportStruct sport) {
 
   teamNodePointer = sport.teams.head;
 
-  showPlayersListHeader(12);
+  showTeamsListHeader(12);
 
   for (int i = 1; teamNodePointer != NULL; i++) {
     if (containsText(teamNodePointer->team.name, teamNameToFind)) {
@@ -104,6 +104,25 @@ void findTeam(sportStruct sport) {
   cout << endl << endl;
 }
 
-void showTeams(sportStruct sport) {}
+void showTeams(sportStruct sport) {
+  teamNode *teamNodePointer;
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(40, 10);
+  cout << "Lista de todos los equipos" << endl;
+
+  teamNodePointer = sport.teams.head;
+
+  showTeamsListHeader(12);
+
+  for (int i = 1; teamNodePointer != NULL; i++) {
+    showTeam(teamNodePointer->team, 13, i);
+    teamNodePointer = teamNodePointer->next;
+  }
+
+  cout << endl << endl;
+}
 
 void showTeamDetail(sportStruct sport) {}
