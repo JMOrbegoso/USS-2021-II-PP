@@ -117,7 +117,7 @@ teamNode *iterateTeamsList(teamsList teams, int index) {
     return NULL;
   }
 
-  teamNodePointer = teams.node;
+  teamNodePointer = teams.head;
 
   for (int i = 1; teamNodePointer != NULL; i++) {
     if (i == index) {
@@ -138,7 +138,7 @@ teamNode *requestTeam(teamsList teams, string message) {
        << "Escoja entre los " << teams.length << " equipos siguientes:" << endl
        << endl;
 
-  teamNodePointer = teams.node;
+  teamNodePointer = teams.head;
 
   for (int i = 1; teamNodePointer != NULL; i++) {
     cout << "[" << i << "]";
