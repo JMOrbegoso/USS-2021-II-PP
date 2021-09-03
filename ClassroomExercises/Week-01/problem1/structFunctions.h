@@ -106,6 +106,65 @@ void dataInitialization(sportStruct &sport) {
   insert(team2.players, player6);
 }
 
+teamNode *iterateTeamsList(teamsList teams, int index) {
+  teamNode *teamNodePointer;
+
+  if (0 >= index) {
+    return NULL;
+  }
+
+  if (index > teams.length) {
+    return NULL;
+  }
+
+  teamNodePointer = teams.node;
+
+  for (int i = 1; teamNodePointer != NULL; i++) {
+    if (i == index) {
+      return teamNodePointer;
+    }
+    teamNodePointer = teamNodePointer->next;
+  }
+
+  return NULL;
+}
+
+teamNode *requestTeam(teamsList teams, string message) {
+  int selectedOption;
+  teamNode *teamNodePointer;
+
+  cout << endl
+       << message << "." << endl
+       << "Escoja entre los " << teams.length << " equipos siguientes:" << endl
+       << endl;
+
+  teamNodePointer = teams.node;
+
+  for (int i = 1; teamNodePointer != NULL; i++) {
+    cout << "[" << i << "]";
+    cout << " - Equipo: ";
+    cout << teamNodePointer->team.name;
+    cout << " - Con ";
+    cout << teamNodePointer->team.players.length;
+    cout << " Jugadores.";
+    cout << endl;
+
+    teamNodePointer = teamNodePointer->next;
+  }
+
+  cout << endl << "Introduzca la opción deseada:" << endl;
+  cin >> selectedOption;
+
+  while (!(1 <= selectedOption && selectedOption <= teams.length)) {
+    cout << "Por favor, introduzca un valor entre 1 y " << teams.length << "."
+         << endl;
+    fflush(stdin);
+    cin >> selectedOption;
+  }
+
+  return iterateTeamsList(teams, selectedOption);
+}
+
 void showTeamsListHeader(int y) {
   gotoxy(0, y);
   cout << "Codigo";
