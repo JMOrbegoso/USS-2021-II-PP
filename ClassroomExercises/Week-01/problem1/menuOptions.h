@@ -17,7 +17,7 @@ void registerNewTeam(sportStruct& sport) {
     clearScreen();
     showAppTitle();
 
-    gotoxy(40, 10);
+    gotoxy(40, 5);
     cout << "Registrar nuevo equipo:" << endl;
 
     name = requestText("Ingrese el nombre del nuevo equipo", 2);
@@ -48,7 +48,7 @@ void registerNewPlayer(sportStruct& sport) {
     clearScreen();
     showAppTitle();
 
-    gotoxy(40, 10);
+    gotoxy(40, 5);
     cout << "Registrar nuevo jugador:" << endl;
 
     firstName = requestText("Ingrese el nombre del nuevo jugador", 2);
@@ -62,6 +62,7 @@ void registerNewPlayer(sportStruct& sport) {
     heigh =
         requestFloatNumber("Ingrese la altura del nuevo jugador (Cm)",
             "Por favor ingrese un numero igual o superior a 1", 1);
+    position = requestText("Ingrese la pocisión del nuevo jugador", 2);
 
     newPlayer = buildPlayer(firstName, lastName, age, weigh, heigh, position);
 
@@ -71,6 +72,27 @@ void registerNewPlayer(sportStruct& sport) {
     insert(teamNodePointer->team.players, newPlayer);
 
     cout << "El jugador fue añadido de forma exitosa" << endl;
+}
+
+void showTeams(sportStruct sport) {
+    teamNode* teamNodePointer;
+
+    clearScreen();
+    showAppTitle();
+
+    gotoxy(40, 5);
+    cout << "Lista de todos los equipos" << endl;
+
+    teamNodePointer = sport.teams.head;
+
+    showTeamsListHeader(7);
+
+    for (int i = 1; teamNodePointer != NULL; i++) {
+        showTeam(teamNodePointer->team, 8, i);
+        teamNodePointer = teamNodePointer->next;
+    }
+
+    cout << endl << endl;
 }
 
 void findTeam(sportStruct sport) {
@@ -83,44 +105,25 @@ void findTeam(sportStruct sport) {
     clearScreen();
     showAppTitle();
 
-    gotoxy(40, 10);
+    gotoxy(40, 5);
     cout << "Equipos con un nombre similar a " << teamNameToFind << ":" << endl;
 
     teamNodePointer = sport.teams.head;
 
-    showTeamsListHeader(12);
+    showTeamsListHeader(7);
 
-    for (int i = 1; teamNodePointer != NULL; i++) {
+    int i = 1;
+    while (teamNodePointer != NULL) {
         if (containsText(teamNodePointer->team.name, teamNameToFind)) {
             teamFound = true;
-            showTeam(teamNodePointer->team, 13, i);
+            showTeam(teamNodePointer->team, 8, i);
+            i++;
         }
         teamNodePointer = teamNodePointer->next;
     }
 
     if (!teamFound)
         cout << endl << endl << "No se encontró un equipo con ese nombre.";
-
-    cout << endl << endl;
-}
-
-void showTeams(sportStruct sport) {
-    teamNode* teamNodePointer;
-
-    clearScreen();
-    showAppTitle();
-
-    gotoxy(40, 10);
-    cout << "Lista de todos los equipos" << endl;
-
-    teamNodePointer = sport.teams.head;
-
-    showTeamsListHeader(12);
-
-    for (int i = 1; teamNodePointer != NULL; i++) {
-        showTeam(teamNodePointer->team, 13, i);
-        teamNodePointer = teamNodePointer->next;
-    }
 
     cout << endl << endl;
 }
@@ -135,17 +138,20 @@ void showTeamDetail(sportStruct sport) {
     clearScreen();
     showAppTitle();
 
-    gotoxy(40, 10);
+    gotoxy(40, 5);
     cout << "Detalle del equipo " << teamNodePointer->team.name << endl;
 
-    showTeamsListHeader(12);
-    showTeam(teamNodePointer->team, 13, 0);
+    showTeamsListHeader(7);
+    showTeam(teamNodePointer->team, 9, 0);
 
     playerNodePointer = teamNodePointer->team.players.head;
 
-    showPlayersListHeader(15);
+    gotoxy(40, 11);
+    cout << "Detalle de los jugadores del equipo " << teamNodePointer->team.name << endl;
+
+    showPlayersListHeader(13);
     for (int i = 1; playerNodePointer != NULL; i++) {
-        showPlayer(playerNodePointer->player, 16, i);
+        showPlayer(playerNodePointer->player, 14, i);
         playerNodePointer = playerNodePointer->next;
     }
 
