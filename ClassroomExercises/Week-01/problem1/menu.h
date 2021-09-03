@@ -14,8 +14,8 @@ int requestMenuOption() {
 
     cout << "[1] Registrar nuevo equipo de futbol" << endl;
     cout << "[2] Registrar nuevo jugador en equipo" << endl;
-    cout << "[3] Buscar equipo de futbol" << endl;
-    cout << "[4] Listar todos los equipos" << endl;
+    cout << "[3] Listar todos los equipos" << endl;
+    cout << "[4] Buscar equipo de futbol" << endl;
     cout << "[5] Ver detalle de equipo" << endl;
 
     cout << endl;
@@ -49,11 +49,11 @@ void mainMenu(sportStruct& sport) {
                 addDelay(1.5);
                 break;
             case 3:
-                findTeam(sport);
+                showTeams(sport);
                 pauseProcess();
                 break;
             case 4:
-                showTeams(sport);
+                findTeam(sport);
                 pauseProcess();
                 break;
             case 5:
