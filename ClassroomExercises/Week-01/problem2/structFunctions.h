@@ -85,7 +85,8 @@ void insert(subjectsList& subjects, subjectStruct newSubject) {
 }
 
 void dataInitialization(professionsList& professions) {
-  subjectStruct subject1, subject2, subject3, subject4, subject5, subject6;
+  subjectStruct subject1, subject2, subject3, subject4, subject5, subject6,
+      subject7, subject8, subject9;
   professionStruct profession1, profession2, profession3;
 
   subject1 = buildSubject("mat", "Geometria", 4);
@@ -94,6 +95,9 @@ void dataInitialization(professionsList& professions) {
   subject4 = buildSubject("qui", "Quimica", 2);
   subject5 = buildSubject("inv", "Investigación", 1);
   subject6 = buildSubject("alg", "Algebra", 4);
+  subject7 = buildSubject("dib", "Dibujo", 4);
+  subject8 = buildSubject("rel", "Religion", 2);
+  subject9 = buildSubject("fil", "Filosofía", 2);
 
   profession1 = buildProfession("sis", "Ing. Sistemas", "Jose Guerrero", 10);
   profession2 = buildProfession("ind", "Ing. Industrial", "Laura Rojas", 10);
@@ -107,9 +111,46 @@ void dataInitialization(professionsList& professions) {
   insert(profession2.subjects, subject5);
   insert(profession2.subjects, subject6);
 
+  insert(profession3.subjects, subject7);
+  insert(profession3.subjects, subject8);
+  insert(profession3.subjects, subject9);
+
   insert(professions, profession1);
   insert(professions, profession2);
   insert(professions, profession3);
+}
+
+professionStruct* requestProfession(professionsList professions,
+                                    string message) {
+  int selectedOption;
+
+  cout << endl
+       << message << "." << endl
+       << "Escoja entre las " << professions.length
+       << " carreras siguientes:" << endl
+       << endl;
+
+  for (int x = 0; x < professions.length; x++) {
+    cout << "[" << x + 1 << "]";
+    cout << " - Carrera: ";
+    cout << (*(professions.head + x)).name;
+    cout << " - Con ";
+    cout << (*(professions.head + x)).subjects.length;
+    cout << " Cursos registrados.";
+    cout << endl;
+  }
+
+  cout << endl << "Introduzca la opción deseada:" << endl;
+  cin >> selectedOption;
+
+  while (!(1 <= selectedOption && selectedOption <= professions.length)) {
+    cout << "Por favor, introduzca un valor entre 1 y " << professions.length
+         << "." << endl;
+    fflush(stdin);
+    cin >> selectedOption;
+  }
+
+  return (professions.head + selectedOption - 1);
 }
 
 void showProfessionsListHeader(int y) {
