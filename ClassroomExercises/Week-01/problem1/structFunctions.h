@@ -10,6 +10,22 @@ void collectionsInitialization(sportStruct& sport) {
     sport.teams.length = 0;
 }
 
+teamStruct buildTeam(string code, string name, string city, string stadiumName,
+    string coachName) {
+    teamStruct team;
+
+    team.code = code;
+    team.name = name;
+    team.city = city;
+    team.stadiumName = stadiumName;
+    team.coachName = coachName;
+
+    team.players.head = NULL;
+    team.players.length = 0;
+
+    return team;
+}
+
 playerStruct buildPlayer(string firstName, string lastName, unsigned short age,
     float weigh, float heigh, string position) {
     playerStruct player;
@@ -22,21 +38,6 @@ playerStruct buildPlayer(string firstName, string lastName, unsigned short age,
     player.position = position;
 
     return player;
-}
-
-teamStruct buildTeam(string code, string name, string city, string stadiumName,
-    string coachName) {
-    teamStruct team;
-
-    team.name = name;
-    team.city = city;
-    team.stadiumName = stadiumName;
-    team.coachName = coachName;
-
-    team.players.head = NULL;
-    team.players.length = 0;
-
-    return team;
 }
 
 void insert(playersList& players, playerStruct newPlayer) {
@@ -106,6 +107,9 @@ void dataInitialization(sportStruct& sport) {
     insert(team2.players, player4);
     insert(team2.players, player5);
     insert(team2.players, player6);
+
+    insert(sport.teams, team1);
+    insert(sport.teams, team2);
 }
 
 teamNode* iterateTeamsList(teamsList teams, int index) {
@@ -172,11 +176,11 @@ void showTeamsListHeader(int y) {
     cout << "Codigo";
     gotoxy(10, y);
     cout << "Nombre";
-    gotoxy(30, y);
+    gotoxy(40, y);
     cout << "Ciudad";
-    gotoxy(45, y);
+    gotoxy(55, y);
     cout << "Estadio";
-    gotoxy(60, y);
+    gotoxy(80, y);
     cout << "Entrenador";
 }
 
@@ -185,40 +189,40 @@ void showTeam(teamStruct team, int y, int itemNumber) {
     cout << team.code;
     gotoxy(10, y + itemNumber);
     cout << team.name;
-    gotoxy(30, y + itemNumber);
+    gotoxy(40, y + itemNumber);
     cout << team.city;
-    gotoxy(45, y + itemNumber);
+    gotoxy(55, y + itemNumber);
     cout << team.stadiumName;
-    gotoxy(60, y + itemNumber);
+    gotoxy(80, y + itemNumber);
     cout << team.coachName;
 }
 
 void showPlayersListHeader(int y) {
     gotoxy(0, y);
     cout << "Nombres";
-    gotoxy(15, y);
+    gotoxy(20, y);
     cout << "Apellidos";
-    gotoxy(30, y);
+    gotoxy(40, y);
     cout << "Edad";
-    gotoxy(35, y);
-    cout << "Peso";
-    gotoxy(45, y);
-    cout << "Altura";
-    gotoxy(50, y);
+    gotoxy(55, y);
+    cout << "Peso (Kg)";
+    gotoxy(70, y);
+    cout << "Altura (cm)";
+    gotoxy(85, y);
     cout << "Posición";
 }
 
 void showPlayer(playerStruct player, int y, int itemNumber) {
     gotoxy(0, y + itemNumber);
     cout << player.firstName;
-    gotoxy(15, y + itemNumber);
+    gotoxy(20, y + itemNumber);
     cout << player.lastName;
-    gotoxy(30, y + itemNumber);
-    cout << player.age;
-    gotoxy(35, y + itemNumber);
-    cout << player.weigh;
-    gotoxy(45, y + itemNumber);
-    cout << player.heigh;
-    gotoxy(50, y + itemNumber);
+    gotoxy(40, y + itemNumber);
+    cout << player.age << " años";
+    gotoxy(55, y + itemNumber);
+    cout << player.weigh << " kg";
+    gotoxy(70, y + itemNumber);
+    cout << player.heigh << " cm";
+    gotoxy(85, y + itemNumber);
     cout << player.position;
 }
