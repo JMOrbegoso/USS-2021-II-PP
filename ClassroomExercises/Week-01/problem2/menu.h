@@ -3,56 +3,56 @@
 using namespace std;
 
 int requestMenuOption() {
-  int selectedOption;
+    int selectedOption;
 
-  clearScreen();
-  showAppTitle();
+    clearScreen();
+    showAppTitle();
 
-  cout << endl
-       << "Esta aplicaciÃ³n tiene las siguientes opciones:" << endl
-       << endl;
+    cout << endl
+        << "Esta aplicación tiene las siguientes opciones:" << endl
+        << endl;
 
-  cout << "[1] Registrar nueva profesiÃ³n" << endl;
-  cout << "[2] Listar profesiones registradas" << endl;
-  cout << "[3] Buscar en las profesiones disponibles" << endl;
+    cout << "[1] Registrar nueva profesión" << endl;
+    cout << "[2] Listar profesiones registradas" << endl;
+    cout << "[3] Buscar en las profesiones disponibles" << endl;
 
-  cout << endl;
-  cout << "[0] Cerrar" << endl;
+    cout << endl;
+    cout << "[0] Cerrar" << endl;
 
-  cout << endl << "Por favor ingrese una de las opciones:" << endl;
-  cin >> selectedOption;
-  while (!(0 <= selectedOption && selectedOption <= 3)) {
-    cout << "La opcion seleccionada fue invÃ¡lida, por favor seleccione una "
-            "opcion vÃ¡lida:"
-         << endl;
+    cout << endl << "Por favor ingrese una de las opciones:" << endl;
     cin >> selectedOption;
-  }
-  return selectedOption;
+    while (!(0 <= selectedOption && selectedOption <= 3)) {
+        cout << "La opcion seleccionada fue inválida, por favor seleccione una "
+            "opcion válida:"
+            << endl;
+        cin >> selectedOption;
+    }
+    return selectedOption;
 }
 
-void mainMenu(professionsList &professions) {
-  int selectedOption;
+void mainMenu(professionsList& professions) {
+    int selectedOption;
 
-  do {
-    selectedOption = requestMenuOption();
+    do {
+        selectedOption = requestMenuOption();
 
-    if (selectedOption != 0) {
-      switch (selectedOption) {
-        case 1:
-          registerNewProfession(professions);
-          addDelay(1.5);
-          break;
-        case 2:
-          listProfessions(professions);
-          pauseProcess();
-          break;
-        case 3:
-          findProfessions(professions);
-          pauseProcess();
-          break;
-      }
-    }
-  } while (!(selectedOption == 0));
+        if (selectedOption != 0) {
+            switch (selectedOption) {
+            case 1:
+                registerNewProfession(professions);
+                addDelay(1.5);
+                break;
+            case 2:
+                listProfessions(professions);
+                pauseProcess();
+                break;
+            case 3:
+                findProfessions(professions);
+                pauseProcess();
+                break;
+            }
+        }
+    } while (!(selectedOption == 0));
 
-  cout << "Gracias por usar la app, tenga un buen dÃ­a!";
+    cout << "Gracias por usar la app, tenga un buen día!";
 }

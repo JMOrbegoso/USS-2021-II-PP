@@ -3,12 +3,12 @@
 using namespace std;
 
 int main() {
-  professionsList professions;
+	professionsList professions;
 
-  collectionsInitialization(professions);
-  dataInitialization(professions);
+	collectionsInitialization(professions);
+	dataInitialization(professions);
 
-  mainMenu(professions);
+	mainMenu(professions);
 
-  return 0;
+	return 0;
 }
