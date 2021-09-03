@@ -46,7 +46,7 @@ void listProfessions(professionsList professions) {
 
   showProfessionsListHeader(7);
 
-  for (int x = 0; x < professions.quantity; x++) {
+  for (int x = 0; x < professions.length; x++) {
     showProfession(*(professions.head + x), 9, x);
   }
 
@@ -69,7 +69,7 @@ void findProfessions(professionsList professions) {
   showProfessionsListHeader(7);
 
   int i = 1;
-  for (int x = 0; x < professions.quantity; x++) {
+  for (int x = 0; x < professions.length; x++) {
     if (containsText((professions.head + x)->name, textToFind)) {
       foundProfession = true;
       showProfession(*(professions.head + x), 8, i);

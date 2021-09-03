@@ -5,8 +5,8 @@ using namespace std;
 
 void collectionsInitialization(professionsList& professions) {
   professions.head = NULL;
-  professions.quantity = 0;
-  professions.max = 0;
+  professions.capacity = 0;
+  professions.length = 0;
 }
 
 professionStruct buildProfession(string code, string name, string master,
@@ -19,8 +19,8 @@ professionStruct buildProfession(string code, string name, string master,
   profession.cyclesQuantity = cyclesQuantity;
 
   profession.subjects.head = NULL;
-  profession.subjects.quantity = 0;
-  profession.subjects.max = 0;
+  profession.subjects.capacity = 0;
+  profession.subjects.length = 0;
 
   return profession;
 }
@@ -36,9 +36,9 @@ subjectStruct buildSubject(string code, string name, unsigned short credits) {
 }
 
 void grow(professionsList& professions, int growIn) {
-  professionStruct* aux = new professionStruct[professions.quantity + growIn];
+  professionStruct* aux = new professionStruct[professions.length + growIn];
 
-  for (int i = 0; i < professions.quantity; i++) {
+  for (int i = 0; i < professions.length; i++) {
     *(aux + i) = *(professions.head + i);
   }
 
@@ -52,36 +52,36 @@ void grow(professionsList& professions, int growIn) {
   */
 
   professions.head = aux;
-  professions.max += growIn;
+  professions.capacity += growIn;
 }
 
 void grow(subjectsList& subjects, int growIn) {
-  subjectStruct* aux = new subjectStruct[subjects.quantity + growIn];
+  subjectStruct* aux = new subjectStruct[subjects.length + growIn];
 
-  for (int i = 0; i < subjects.quantity; i++) {
+  for (int i = 0; i < subjects.length; i++) {
     *(aux + i) = *(subjects.head + i);
   }
 
   subjects.head = aux;
-  subjects.max += growIn;
+  subjects.capacity += growIn;
 }
 
 void insert(professionsList& professions, professionStruct newProfession) {
-  if (professions.quantity == professions.max) {
+  if (professions.length == professions.capacity) {
     grow(professions, 2);
   }
 
-  *(professions.head + professions.quantity) = newProfession;
-  professions.quantity++;
+  *(professions.head + professions.length) = newProfession;
+  professions.length++;
 }
 
 void insert(subjectsList& subjects, subjectStruct newSubject) {
-  if (subjects.quantity == subjects.max) {
+  if (subjects.length == subjects.capacity) {
     grow(subjects, 2);
   }
 
-  *(subjects.head + subjects.quantity) = newSubject;
-  subjects.quantity++;
+  *(subjects.head + subjects.length) = newSubject;
+  subjects.length++;
 }
 
 void dataInitialization(professionsList& professions) {

@@ -10,8 +10,8 @@ struct subjectStruct {
 
 struct subjectsList {
   subjectStruct* head;
-  int quantity;
-  int max;
+  int capacity;
+  int length;
 };
 
 struct professionStruct {
@@ -24,6 +24,6 @@ struct professionStruct {
 
 struct professionsList {
   professionStruct* head;
-  int quantity;
-  int max;
+  int capacity;
+  int length;
 };
