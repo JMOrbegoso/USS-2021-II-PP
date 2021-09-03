@@ -73,7 +73,36 @@ void registerNewPlayer(sportStruct &sport) {
   cout << "El jugador fue añadido de forma exitosa" << endl;
 }
 
-void findTeam(sportStruct sport) {}
+void findTeam(sportStruct sport) {
+  teamNode *teamNodePointer;
+  string teamNameToFind;
+  bool teamFound = false;
+
+  teamNameToFind = requestText("Ingrese nombre del equipo a buscar", 2);
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(40, 10);
+  cout << "Equipos con un nombre similar a " << teamNameToFind << ":" << endl;
+
+  teamNodePointer = sport.teams.head;
+
+  showPlayersListHeader(12);
+
+  for (int i = 1; teamNodePointer != NULL; i++) {
+    if (containsText(teamNodePointer->team.name, teamNameToFind)) {
+      teamFound = true;
+      showTeam(teamNodePointer->team, 13, i);
+    }
+    teamNodePointer = teamNodePointer->next;
+  }
+
+  if (!teamFound)
+    cout << endl << endl << "No se encontró un equipo con ese nombre.";
+
+  cout << endl << endl;
+}
 
 void showTeams(sportStruct sport) {}
 
