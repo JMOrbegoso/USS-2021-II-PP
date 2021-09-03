@@ -13,7 +13,7 @@ void showAppTitle() {
 void registerNewProfession(professionsList& professions) {
   professionStruct newProfession;
   string code, master, name;
-  int cyclesQuantity;
+  unsigned short cyclesQuantity;
 
   clearScreen();
   showAppTitle();
@@ -86,9 +86,68 @@ void findProfessions(professionsList professions) {
   cout << endl << endl;
 }
 
-void showProfessionDetails(professionsList professions) {}
+void showProfessionDetails(professionsList professions) {
+  professionStruct* aux;
 
-void registerNewSubject(professionsList& professions) {}
+  aux = requestProfession(
+      professions, "Seleccione la profession que quiere revisar en detalle");
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(20, 5);
+  cout << "Carrera profesional de " << aux->name << endl;
+
+  showProfessionsListHeader(7);
+  showProfession(*aux, 8, 1);
+
+  gotoxy(20, 11);
+  cout << "Cursos de la carrera profesional de " << aux->name << endl;
+
+  showSubjectsListHeader(13);
+  for (int x = 0; x < aux->subjects.length; x++) {
+    showSubject(*(aux->subjects.head + x), 14, x + 1);
+  }
+
+  cout << endl << endl;
+}
+
+void registerNewSubject(professionsList& professions) {
+  professionStruct* profession;
+  subjectStruct newSubject;
+  string code, name;
+  unsigned short credits;
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(20, 8);
+  cout << "Registrar nuevo curso en una profesión de la universidad:" << endl;
+
+  code = requestText("Ingrese el codigo del nuevo curso", 2);
+  name = requestText("Ingrese el nombre del nuevo curso", 2);
+  credits =
+      requestIntegerNumber("Ingrese el numero de creditos del curso",
+                           "Por favor ingrese un numero igual o mayor a 1", 1);
+  profession = requestProfession(
+      professions,
+      "Por favor ingrese la profesión a la que este curso pertenece");
+
+  if (profession == NULL) {
+    cout << "Introdujo una sucursal no valida";
+    cout << endl << endl;
+    return;
+  }
+
+  newSubject = buildSubject(code, name, credits);
+
+  insert(profession->subjects, newSubject);
+
+  cout << "El curso fue añadido correctamente a la carrera profesional de "
+       << profession->name;
+
+  cout << endl << endl;
+}
 
 void showAllSubjects(professionsList professions) {}
 
