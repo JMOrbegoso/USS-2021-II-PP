@@ -139,7 +139,7 @@ void showTeamDetail(sportStruct sport) {
   cout << "Detalle del equipo " << teamNodePointer->team.name << endl;
 
   showTeamsListHeader(12);
-  showTeam(teamNodePointer->team, 13, i);
+  showTeam(teamNodePointer->team, 13, 0);
 
   playerNodePointer = teamNodePointer->team.players.head;
 
