@@ -18,7 +18,7 @@ void registerNewProfession(professionsList& professions) {
   clearScreen();
   showAppTitle();
 
-  gotoxy(20, 8);
+  gotoxy(20, 5);
   cout << "Registrar nueva profesión de la universidad:" << endl;
 
   code = requestText("Ingrese el codigo del la nueva profesión", 2);
@@ -57,7 +57,7 @@ void findProfessions(professionsList professions) {
   string textToFind;
   bool foundProfession = false;
 
-  textToFind = requestText("Ingrese el texto a buscar", 3, 3);
+  textToFind = requestText("Ingrese el texto a buscar", 3);
 
   clearScreen();
   showAppTitle();
@@ -78,7 +78,7 @@ void findProfessions(professionsList professions) {
   }
 
   if (!foundProfession) {
-    gotoxy(20, 10);
+    gotoxy(20, 9);
     cout
         << "No se encontró ninguna profesión con un nombre similar al buscado.";
   }
@@ -121,7 +121,7 @@ void registerNewSubject(professionsList& professions) {
   clearScreen();
   showAppTitle();
 
-  gotoxy(20, 8);
+  gotoxy(20, 5);
   cout << "Registrar nuevo curso en una profesión de la universidad:" << endl;
 
   code = requestText("Ingrese el codigo del nuevo curso", 2);
@@ -149,6 +149,62 @@ void registerNewSubject(professionsList& professions) {
   cout << endl << endl;
 }
 
-void showAllSubjects(professionsList professions) {}
+void showAllSubjects(professionsList professions) {
+  professionStruct* aux;
 
-void findSubject(professionsList professions) {}
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(20, 5);
+  cout << "Listar todos los cursos dictados en la institución" << endl;
+
+  showSubjectsListHeader(7);
+
+  int i = 1;
+  for (int x = 0; x < professions.length; x++) {
+    aux = (professions.head + x);
+
+    for (int y = 0; y < aux->subjects.length; y++) {
+      showSubject(*(aux->subjects.head + y), 8, i);
+      i++;
+    }
+  }
+
+  cout << endl << endl;
+}
+
+void findSubject(professionsList professions) {
+  professionStruct* aux;
+  string textToFind;
+  bool foundSubject = false;
+
+  textToFind = requestText("Ingrese el texto a buscar", 3);
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(20, 5);
+  cout << "Buscar un curso dictado en la institución" << endl;
+
+  showSubjectsListHeader(7);
+
+  int i = 1;
+  for (int x = 0; x < professions.length; x++) {
+    aux = (professions.head + x);
+
+    for (int y = 0; y < aux->subjects.length; y++) {
+      if (containsText((aux->subjects.head + y)->name, textToFind)) {
+        foundSubject = true;
+        showSubject(*(aux->subjects.head + y), 8, i);
+        i++;
+      }
+    }
+  }
+
+  if (!foundSubject) {
+    gotoxy(20, 9);
+    cout << "No se encontró ningun curso con un nombre similar al buscado.";
+  }
+
+  cout << endl << endl;
+}
