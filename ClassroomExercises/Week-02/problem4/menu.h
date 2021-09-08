@@ -6,6 +6,7 @@ void showAppTitle(vehicleDepotStruct vehicleDepot) {
   cout << endl
        << "-----------------------------------------------------------" << endl;
   cout << "\t Sistema virtual del deposito de vehiculos";
+  cout << endl;
   cout << "\t\t" << vehicleDepot.businessName;
   cout << "-----------------------------------------------------------" << endl;
 }
@@ -22,10 +23,8 @@ int requestMenuOption(vehicleDepotStruct vehicleDepot) {
 
   cout << "[1] Registro de día" << endl;
   cout << "[2] Registro de automóvil" << endl;
-  cout << endl;
   cout << "[3] Buscar automóvil por placa" << endl;
   cout << "[4] Buscar automóvil por dueño" << endl;
-  cout << endl;
   cout << "[5] Listar días y sus automóviles registrados" << endl;
   cout << "[6] Listar TODOS los automóviles" << endl;
   cout << endl;
