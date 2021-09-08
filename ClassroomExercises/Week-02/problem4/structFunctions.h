@@ -13,6 +13,7 @@ dayStruct buildDay(string dayName) {
 
   day.dayName = dayName;
   day.vehicles.head = NULL;
+  day.vehicles.capacity = 0;
   day.vehicles.length = 0;
 
   return day;
