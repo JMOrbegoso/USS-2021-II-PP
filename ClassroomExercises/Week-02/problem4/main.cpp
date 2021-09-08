@@ -1,20 +1,28 @@
-// problem4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+Llevar un control de un depósito de automóviles.
+Se debe poder registrar por día que automóvil llega junto
+a los datos del automóvil incluyendo el propietario.
 
-#include <iostream>
+Las opciones deben tener:
+- Registro de día
+- Registro de automóvil y sus datos
+- Búsqueda de automóvil por placa
+- Búsqueda de automóvil por duelo
+- Lista de automóviles
+- Lista de días y los automóviles que ingresaron
+*/
 
-int main()
-{
-    std::cout << "Hello World!\n";
+#include "menu.h"
+
+using namespace std;
+
+int main() {
+  vehicleDepotStruct depot;
+
+  collectionsInitialization(depot);
+  dataInitialization(depot);
+
+  mainMenu(depot);
+
+  return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
