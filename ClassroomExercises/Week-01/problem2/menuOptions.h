@@ -10,16 +10,9 @@ void showAppTitle() {
   cout << endl;
 }
 
-void registerNewProfession(professionsList& professions) {
-  professionStruct newProfession;
+professionStruct requestCreateProfession() {
   string code, master, name;
   unsigned short cyclesQuantity;
-
-  clearScreen();
-  showAppTitle();
-
-  gotoxy(20, 5);
-  cout << "Registrar nueva profesión de la universidad:" << endl;
 
   code = requestText("Ingrese el codigo del la nueva profesión", 2);
   name = requestText("Ingrese el nombre de la profesión", 2);
@@ -28,7 +21,19 @@ void registerNewProfession(professionsList& professions) {
       requestIntegerNumber("Ingrese el numero de ciclos de la profesión",
                            "Por favor ingrese un numero igual o mayor a 1", 1);
 
-  newProfession = buildProfession(code, name, master, cyclesQuantity);
+  return buildProfession(code, name, master, cyclesQuantity);
+}
+
+void registerNewProfession(professionsList& professions) {
+  professionStruct newProfession;
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(20, 5);
+  cout << "Registrar nueva profesión de la universidad:" << endl;
+
+  newProfession = requestCreateProfession();
 
   insert(professions, newProfession);
 
@@ -112,11 +117,29 @@ void showProfessionDetails(professionsList professions) {
   cout << endl << endl;
 }
 
+subjectStruct requestCreateSubject() {
+  string code, name;
+  unsigned short credits;
+
+  code = requestText("Ingrese el codigo del nuevo curso", 2);
+  name = requestText("Ingrese el nombre del nuevo curso", 2);
+  credits =
+      requestIntegerNumber("Ingrese el numero de creditos del curso",
+                           "Por favor ingrese un numero igual o mayor a 1", 1);
+
+  return buildSubject(code, name, credits);
+}
+
 void registerNewSubject(professionsList& professions) {
   professionStruct* profession;
   subjectStruct newSubject;
-  string code, name;
-  unsigned short credits;
+
+  if (!(professions.length > 0)) {
+    cout << "No hay profesiones registradas, ";
+    cout << "Por favor primero ingrese al menos una";
+    cout << endl << endl;
+    return;
+  }
 
   clearScreen();
   showAppTitle();
@@ -124,22 +147,17 @@ void registerNewSubject(professionsList& professions) {
   gotoxy(20, 5);
   cout << "Registrar nuevo curso en una profesión de la universidad:" << endl;
 
-  code = requestText("Ingrese el codigo del nuevo curso", 2);
-  name = requestText("Ingrese el nombre del nuevo curso", 2);
-  credits =
-      requestIntegerNumber("Ingrese el numero de creditos del curso",
-                           "Por favor ingrese un numero igual o mayor a 1", 1);
   profession = requestProfession(
       professions,
       "Por favor ingrese la profesión a la que este curso pertenece");
 
   if (profession == NULL) {
-    cout << "Introdujo una sucursal no valida";
+    cout << "Introdujo una profesión no valida";
     cout << endl << endl;
     return;
   }
 
-  newSubject = buildSubject(code, name, credits);
+  newSubject = requestCreateSubject();
 
   insert(profession->subjects, newSubject);
 
