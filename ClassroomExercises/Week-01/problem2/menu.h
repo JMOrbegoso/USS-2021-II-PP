@@ -71,6 +71,10 @@ void mainMenu(professionsList& professions) {
           findSubject(professions);
           pauseProcess();
           break;
+        case 8:
+          deleteSubject(professions);
+          addDelay(1.5);
+          break;
       }
     }
   } while (!(selectedOption == 0));
