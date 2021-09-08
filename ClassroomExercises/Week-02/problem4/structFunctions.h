@@ -169,9 +169,9 @@ void showDaysListHeader(int y) {
   cout << "# de vehiculos";
 }
 
-void showDay(dayStruct day, int i, int y) {
+void showDay(dayStruct day, int y, int itemNumber) {
   gotoxy(0, y);
-  cout << i;
+  cout << itemNumber;
   gotoxy(5, y);
   cout << day.dayName;
   gotoxy(25, y);
@@ -182,14 +182,14 @@ void showVehiclesListHeader(int y) {
   gotoxy(0, y);
   cout << "#";
   gotoxy(5, y);
-  cout << "Place";
+  cout << "Placa";
   gotoxy(20, y);
   cout << "Nombre del dueño";
 }
 
-void showVehicle(vehicleStruct vehicle, int i, int y) {
+void showVehicle(vehicleStruct vehicle, int y, int itemNumber) {
   gotoxy(0, y);
-  cout << i;
+  cout << itemNumber;
   gotoxy(5, y);
   cout << vehicle.licensePlate;
   gotoxy(20, y);
