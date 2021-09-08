@@ -226,3 +226,36 @@ void findSubject(professionsList professions) {
 
   cout << endl << endl;
 }
+
+void deleteSubject(professionsList& professions) {
+  professionStruct* auxProfession;
+  subjectStruct* auxSubject;
+  string deletedSubjectName;
+
+  clearScreen();
+  showAppTitle();
+
+  gotoxy(20, 5);
+  cout << "Borrar curso de una profesión" << endl;
+
+  auxProfession = requestProfession(
+      professions, "Seleccione la profesión donde está el curso");
+  auxSubject = requestSubject(auxProfession->subjects,
+                              "Seleccione el curso que desea borrar");
+
+  deletedSubjectName = auxSubject->name;
+
+  for (subjectStruct* aux = auxSubject;
+       aux < (auxProfession->subjects.head + auxProfession->subjects.length);
+       aux++) {
+    *(aux) = *(aux + 1);
+  }
+
+  auxProfession->subjects.length--;
+
+  cout << "El curso " << deletedSubjectName
+       << " fue eliminado correctamente de la carrera profesional de "
+       << auxProfession->name;
+
+  cout << endl << endl;
+}
