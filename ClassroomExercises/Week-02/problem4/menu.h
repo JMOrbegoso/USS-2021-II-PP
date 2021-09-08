@@ -3,12 +3,14 @@
 using namespace std;
 
 void showAppTitle(vehicleDepotStruct vehicleDepot) {
-  cout << endl
-       << "-----------------------------------------------------------" << endl;
+  cout << endl;
+  cout << "-----------------------------------------------------------";
+  cout << endl;
   cout << "\t Sistema virtual del deposito de vehiculos";
   cout << endl;
   cout << "\t\t" << vehicleDepot.businessName;
-  cout << "-----------------------------------------------------------" << endl;
+  cout << "-----------------------------------------------------------";
+  cout << endl;
 }
 
 int requestMenuOption(vehicleDepotStruct vehicleDepot) {
