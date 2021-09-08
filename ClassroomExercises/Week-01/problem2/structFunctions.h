@@ -153,6 +153,39 @@ professionStruct* requestProfession(professionsList professions,
   return (professions.head + selectedOption - 1);
 }
 
+subjectStruct* requestSubject(subjectsList subjects,
+                                    string message) {
+  int selectedOption;
+
+  cout << endl
+       << message << "." << endl
+       << "Escoja entre los " << subjects.length
+       << " cursos siguientes:" << endl
+       << endl;
+
+  for (int x = 0; x < subjects.length; x++) {
+    cout << "[" << x + 1 << "]";
+    cout << " - ";
+    cout << (*(subjects.head + x)).name;
+    cout << " - Con ";
+    cout << (*(subjects.head + x)).credits;
+    cout << " Creditos.";
+    cout << endl;
+  }
+
+  cout << endl << "Introduzca la opción deseada:" << endl;
+  cin >> selectedOption;
+
+  while (!(1 <= selectedOption && selectedOption <= subjects.length)) {
+    cout << "Por favor, introduzca un valor entre 1 y " << subjects.length
+         << "." << endl;
+    fflush(stdin);
+    cin >> selectedOption;
+  }
+
+  return (subjects.head + selectedOption - 1);
+}
+
 void showProfessionsListHeader(int y) {
   gotoxy(0, y);
   cout << "#";
