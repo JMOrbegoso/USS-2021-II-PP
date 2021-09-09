@@ -19,8 +19,8 @@ using namespace std;
 int main() {
   vehicleDepotStruct depot;
 
-  collectionsInitialization(depot);
-  dataInitialization(depot);
+  initPrimaryStruct(depot);
+  dataSeed(depot);
 
   mainMenu(depot);
 
