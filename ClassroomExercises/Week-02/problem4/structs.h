@@ -2,10 +2,17 @@
 
 using namespace std;
 
-// Student
+// Vehicle Owner
+struct vehicleOwnerStruct {
+  string firstName;
+  string lastName;
+  string dni;
+};
+
+// Vehicle
 struct vehicleStruct {
-  string ownerFullName;
   string licensePlate;
+  vehicleOwnerStruct owner;
 };
 
 struct vehiclesList {
