@@ -172,7 +172,9 @@ void showVehiclesListHeader(int y) {
   gotoxy(20, y);
   cout << "DNI del dueño";
   gotoxy(40, y);
-  cout << "Nombre completo del dueño";
+  cout << "Nombres del dueño";
+  gotoxy(70, y);
+  cout << "Nombres del dueño";
 }
 
 void showVehicle(vehicleStruct vehicle, int y, int itemNumber) {
@@ -183,7 +185,9 @@ void showVehicle(vehicleStruct vehicle, int y, int itemNumber) {
   gotoxy(20, y);
   cout << vehicle.owner.dni;
   gotoxy(40, y);
-  cout << vehicle.owner.firstName << vehicle.owner.lastName;
+  cout << vehicle.owner.firstName;
+  gotoxy(70, y);
+  cout << vehicle.owner.lastName;
 }
 
 void dataSeed(vehicleDepotStruct &vehicleDepot) {
