@@ -3,29 +3,49 @@
 
 using namespace std;
 
-void collectionsInitialization(vehicleDepotStruct &vehicleDepot) {
-  vehicleDepot.days.head = NULL;
-  vehicleDepot.days.length = 0;
+void initDaysList(daysList &days) {
+  days.head = NULL;
+  days.length = 0;
+}
+
+void initVehiclesList(vehiclesList &vehicles) {
+  vehicles.head = NULL;
+  vehicles.capacity = 0;
+  vehicles.length = 0;
+}
+
+void initPrimaryStruct(vehicleDepotStruct& vehicleDepot) {
+    initDaysList(vehicleDepot.days);
+}
+
+vehicleOwnerStruct buildVehicleOwner(string dni, string firstName,
+                                     string lastName) {
+  vehicleOwnerStruct vehicleOwner;
+
+  vehicleOwner.firstName = firstName;
+  vehicleOwner.lastName = lastName;
+  vehicleOwner.dni = dni;
+
+  return vehicleOwner;
+}
+
+vehicleStruct buildVehicle(string licensePlate, vehicleOwnerStruct owner) {
+  vehicleStruct vehicle;
+
+  vehicle.licensePlate = licensePlate;
+  vehicle.owner = owner;
+
+  return vehicle;
 }
 
 dayStruct buildDay(string dayName) {
   dayStruct day;
 
   day.dayName = dayName;
-  day.vehicles.head = NULL;
-  day.vehicles.capacity = 0;
-  day.vehicles.length = 0;
+
+  initVehiclesList(day.vehicles);
 
   return day;
-}
-
-vehicleStruct buildVehicle(string licensePlate, string ownerFullName) {
-  vehicleStruct vehicle;
-
-  vehicle.licensePlate = licensePlate;
-  vehicle.ownerFullName = ownerFullName;
-
-  return vehicle;
 }
 
 void grow(vehiclesList &vehicles, int growIn) {
@@ -69,40 +89,6 @@ void insert(daysList &days, dayStruct newDay) {
   days.length++;
 }
 
-void dataInitialization(vehicleDepotStruct &vehicleDepot) {
-  dayStruct day_1, day_2, day_3;
-  vehicleStruct vehicle_1, vehicle_2, vehicle_3, vehicle_4, vehicle_5,
-      vehicle_6;
-
-  vehicleDepot.businessName = "El deposito Gonzales";
-
-  day_1 = buildDay("Independencia");
-  day_2 = buildDay("Halloween");
-  day_3 = buildDay("Navidad");
-
-  vehicle_1 = buildVehicle("2020A-55", "Flores Ricardo");
-  vehicle_2 = buildVehicle("2019A-34", "Diaz Susana");
-
-  vehicle_3 = buildVehicle("2021A-11", "Rioja Roberto");
-  vehicle_4 = buildVehicle("2020A-98", "Garcia Marcos");
-
-  vehicle_5 = buildVehicle("2010A-24", "Gonzales Maria");
-  vehicle_6 = buildVehicle("2017A-30", "Lopez Guillermo");
-
-  insert(day_1.vehicles, vehicle_1);
-  insert(day_1.vehicles, vehicle_2);
-
-  insert(day_2.vehicles, vehicle_3);
-  insert(day_2.vehicles, vehicle_4);
-
-  insert(day_3.vehicles, vehicle_5);
-  insert(day_3.vehicles, vehicle_6);
-
-  insert(vehicleDepot.days, day_1);
-  insert(vehicleDepot.days, day_2);
-  insert(vehicleDepot.days, day_3);
-}
-
 dayNode *iterateDaysList(daysList days, int index) {
   dayNode *dayNodePointer;
 
@@ -126,7 +112,7 @@ dayNode *iterateDaysList(daysList days, int index) {
   return NULL;
 }
 
-dayNode *requestDayWithSelector(daysList &days, string message) {
+dayNode *requestDay(daysList &days, string message) {
   int selectedOption;
   dayNode *dayNodePointer;
 
@@ -184,7 +170,9 @@ void showVehiclesListHeader(int y) {
   gotoxy(5, y);
   cout << "Placa";
   gotoxy(20, y);
-  cout << "Nombre del dueño";
+  cout << "DNI del dueño";
+  gotoxy(40, y);
+  cout << "Nombre completo del dueño";
 }
 
 void showVehicle(vehicleStruct vehicle, int y, int itemNumber) {
@@ -193,5 +181,50 @@ void showVehicle(vehicleStruct vehicle, int y, int itemNumber) {
   gotoxy(5, y);
   cout << vehicle.licensePlate;
   gotoxy(20, y);
-  cout << vehicle.ownerFullName;
+  cout << vehicle.owner.dni;
+  gotoxy(40, y);
+  cout << vehicle.owner.firstName << vehicle.owner.lastName;
+}
+
+void dataSeed(vehicleDepotStruct &vehicleDepot) {
+  vehicleOwnerStruct vehicleOwner_1, vehicleOwner_2, vehicleOwner_3,
+      vehicleOwner_4, vehicleOwner_5, vehicleOwner_6;
+  vehicleStruct vehicle_1, vehicle_2, vehicle_3, vehicle_4, vehicle_5,
+      vehicle_6;
+  dayStruct day_1, day_2, day_3;
+
+  vehicleDepot.businessName = "El deposito Gonzales";
+
+  day_1 = buildDay("Independencia 2021");
+  day_2 = buildDay("Halloween 2020");
+  day_3 = buildDay("Navidad 2020");
+
+  vehicleOwner_1 = buildVehicleOwner("10117618", "Ricardo", "Flores");
+  vehicleOwner_2 = buildVehicleOwner("80121607", "Susana", "Diaz");
+  vehicleOwner_3 = buildVehicleOwner("71188517", "Roberto", "Rioja");
+  vehicleOwner_4 = buildVehicleOwner("52421620", "Marcos", "Garcia");
+  vehicleOwner_5 = buildVehicleOwner("95101014", "Maria", "Gonzales");
+  vehicleOwner_6 = buildVehicleOwner("13729607", "Guillermo", "Lopez");
+
+  vehicle_1 = buildVehicle("2020A-55", vehicleOwner_1);
+  vehicle_2 = buildVehicle("2019A-34", vehicleOwner_2);
+
+  vehicle_3 = buildVehicle("2021A-11", vehicleOwner_3);
+  vehicle_4 = buildVehicle("2020A-98", vehicleOwner_4);
+
+  vehicle_5 = buildVehicle("2010A-24", vehicleOwner_5);
+  vehicle_6 = buildVehicle("2017A-30", vehicleOwner_6);
+
+  insert(day_1.vehicles, vehicle_1);
+  insert(day_1.vehicles, vehicle_2);
+
+  insert(day_2.vehicles, vehicle_3);
+  insert(day_2.vehicles, vehicle_4);
+
+  insert(day_3.vehicles, vehicle_5);
+  insert(day_3.vehicles, vehicle_6);
+
+  insert(vehicleDepot.days, day_1);
+  insert(vehicleDepot.days, day_2);
+  insert(vehicleDepot.days, day_3);
 }
