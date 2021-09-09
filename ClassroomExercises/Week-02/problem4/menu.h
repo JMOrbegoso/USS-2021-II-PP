@@ -2,17 +2,6 @@
 
 using namespace std;
 
-void showAppTitle(vehicleDepotStruct vehicleDepot) {
-  cout << endl;
-  cout << "-----------------------------------------------------------";
-  cout << endl;
-  cout << "\t Sistema virtual del deposito de vehiculos";
-  cout << endl;
-  cout << "\t\t" << vehicleDepot.businessName;
-  cout << "-----------------------------------------------------------";
-  cout << endl;
-}
-
 int requestMenuOption(vehicleDepotStruct vehicleDepot) {
   int selectedOption;
 
@@ -26,9 +15,9 @@ int requestMenuOption(vehicleDepotStruct vehicleDepot) {
   cout << "[1] Registro de día" << endl;
   cout << "[2] Registro de automóvil" << endl;
   cout << "[3] Buscar automóvil por placa" << endl;
-  cout << "[4] Buscar automóvil por dueño" << endl;
+  cout << "[4] Buscar automóvil por DNI del dueño" << endl;
   cout << "[5] Listar días y sus automóviles registrados" << endl;
-  cout << "[6] Listar TODOS los automóviles" << endl;
+  cout << "[6] Listar todos los automóviles" << endl;
   cout << endl;
   cout << "[0] Cerrar" << endl;
 
@@ -53,18 +42,18 @@ void mainMenu(vehicleDepotStruct &vehicleDepot) {
       switch (selectedOption) {
         case 1:
           registerNewDay(vehicleDepot);
-          pauseProcess();
+          addDelay(1.5);
           break;
         case 2:
           registerNewVehicle(vehicleDepot);
-          pauseProcess();
+          addDelay(1.5);
           break;
         case 3:
           findVehicleByLicensePlate(vehicleDepot);
           pauseProcess();
           break;
         case 4:
-          findVehicleByOwner(vehicleDepot);
+          findVehicleByOwnerDni(vehicleDepot);
           pauseProcess();
           break;
         case 5:
@@ -73,7 +62,7 @@ void mainMenu(vehicleDepotStruct &vehicleDepot) {
           break;
         case 6:
           showAllVehicles(vehicleDepot);
-          addDelay(2);
+          pauseProcess();
           break;
       }
     }
