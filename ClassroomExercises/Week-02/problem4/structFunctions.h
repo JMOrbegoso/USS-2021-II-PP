@@ -14,12 +14,12 @@ void initVehiclesList(vehiclesList &vehicles) {
   vehicles.length = 0;
 }
 
-void initPrimaryStruct(vehicleDepotStruct& vehicleDepot) {
-    initDaysList(vehicleDepot.days);
+void initPrimaryStruct(vehicleDepotStruct &vehicleDepot) {
+  initDaysList(vehicleDepot.days);
 }
 
-vehicleOwnerStruct buildVehicleOwner(string dni, string firstName,
-                                     string lastName) {
+vehicleOwnerStruct vehicleOwnerFactory(string dni, string firstName,
+                                       string lastName) {
   vehicleOwnerStruct vehicleOwner;
 
   vehicleOwner.firstName = firstName;
@@ -29,7 +29,7 @@ vehicleOwnerStruct buildVehicleOwner(string dni, string firstName,
   return vehicleOwner;
 }
 
-vehicleStruct buildVehicle(string licensePlate, vehicleOwnerStruct owner) {
+vehicleStruct vehicleFactory(string licensePlate, vehicleOwnerStruct owner) {
   vehicleStruct vehicle;
 
   vehicle.licensePlate = licensePlate;
@@ -38,7 +38,7 @@ vehicleStruct buildVehicle(string licensePlate, vehicleOwnerStruct owner) {
   return vehicle;
 }
 
-dayStruct buildDay(string dayName) {
+dayStruct dayFactory(string dayName) {
   dayStruct day;
 
   day.dayName = dayName;
@@ -199,25 +199,25 @@ void dataSeed(vehicleDepotStruct &vehicleDepot) {
 
   vehicleDepot.businessName = "El deposito Gonzales";
 
-  day_1 = buildDay("Independencia 2021");
-  day_2 = buildDay("Halloween 2020");
-  day_3 = buildDay("Navidad 2020");
+  day_1 = dayFactory("Independencia 2021");
+  day_2 = dayFactory("Halloween 2020");
+  day_3 = dayFactory("Navidad 2020");
 
-  vehicleOwner_1 = buildVehicleOwner("10117618", "Ricardo", "Flores");
-  vehicleOwner_2 = buildVehicleOwner("80121607", "Susana", "Diaz");
-  vehicleOwner_3 = buildVehicleOwner("71188517", "Roberto", "Rioja");
-  vehicleOwner_4 = buildVehicleOwner("52421620", "Marcos", "Garcia");
-  vehicleOwner_5 = buildVehicleOwner("95101014", "Maria", "Gonzales");
-  vehicleOwner_6 = buildVehicleOwner("13729607", "Guillermo", "Lopez");
+  vehicleOwner_1 = vehicleOwnerFactory("10117618", "Ricardo", "Flores");
+  vehicleOwner_2 = vehicleOwnerFactory("80121607", "Susana", "Diaz");
+  vehicleOwner_3 = vehicleOwnerFactory("71188517", "Roberto", "Rioja");
+  vehicleOwner_4 = vehicleOwnerFactory("52421620", "Marcos", "Garcia");
+  vehicleOwner_5 = vehicleOwnerFactory("95101014", "Maria", "Gonzales");
+  vehicleOwner_6 = vehicleOwnerFactory("13729607", "Guillermo", "Lopez");
 
-  vehicle_1 = buildVehicle("2020A-55", vehicleOwner_1);
-  vehicle_2 = buildVehicle("2019A-34", vehicleOwner_2);
+  vehicle_1 = vehicleFactory("2020A-55", vehicleOwner_1);
+  vehicle_2 = vehicleFactory("2019A-34", vehicleOwner_2);
 
-  vehicle_3 = buildVehicle("2021A-11", vehicleOwner_3);
-  vehicle_4 = buildVehicle("2020A-98", vehicleOwner_4);
+  vehicle_3 = vehicleFactory("2021A-11", vehicleOwner_3);
+  vehicle_4 = vehicleFactory("2020A-98", vehicleOwner_4);
 
-  vehicle_5 = buildVehicle("2010A-24", vehicleOwner_5);
-  vehicle_6 = buildVehicle("2017A-30", vehicleOwner_6);
+  vehicle_5 = vehicleFactory("2010A-24", vehicleOwner_5);
+  vehicle_6 = vehicleFactory("2017A-30", vehicleOwner_6);
 
   insert(day_1.vehicles, vehicle_1);
   insert(day_1.vehicles, vehicle_2);
