@@ -19,7 +19,7 @@ dayStruct requestCreateDay() {
 
   dayName = requestText("Ingrese el nombre del nuevo día", 2);
 
-  return buildDay(dayName);
+  return dayFactory(dayName);
 }
 
 void registerNewDay(vehicleDepotStruct &vehicleDepot) {
@@ -52,9 +52,9 @@ vehicleStruct requestCreateVehicle() {
   ownerLastName = requestText("Ingrese el apellido del dueño del vehiculo", 2);
   ownerDni = requestText("Ingrese el DNI del dueño del vehiculo", 2);
 
-  owner = buildVehicleOwner(ownerDni, ownerFirstName, ownerLastName);
+  owner = vehicleOwnerFactory(ownerDni, ownerFirstName, ownerLastName);
 
-  return buildVehicle(licensePlate, owner);
+  return vehicleFactory(licensePlate, owner);
 }
 
 void registerNewVehicle(vehicleDepotStruct &vehicleDepot) {
