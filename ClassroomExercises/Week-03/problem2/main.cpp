@@ -1,20 +1,70 @@
-// problem2.cpp : This file contains the 'main' function. Program execution
+// problem1.cpp : This file contains the 'main' function. Program execution
 // begins and ends there.
 //
 
 #include <iostream>
+#include <string>
 
-int main() { std::cout << "Hello World!\n"; }
+using namespace std;
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+class subject {
+ private:
+  string code;
+  string name;
+  unsigned short creditsQuantity;
+  bool status;
 
-// Tips for Getting Started:
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add
-//   Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project
-//   and select the .sln file
+  subject(string code, string name) {
+    this->code = code;
+    this->name = name;
+
+    this->creditsQuantity = 0;
+    this->status = true;
+  }
+
+ public:
+  string schoolName;
+
+  string getCode() { return this->code; }
+  void setCode(string code) { this->code = code; }
+
+  string getName() { return this->name; }
+  void setName(string name) { this->name = name; }
+
+  float getCreditsQuantity() { return this->creditsQuantity; }
+  void setCreditsQuantity(float creditsQuantity) {
+    this->creditsQuantity = creditsQuantity;
+  }
+
+  bool getStatus() { return this->status; }
+  void setStatus(bool status) { this->status = status; }
+
+  void disable() { this->status = false; }
+
+  static subject* build(string code, string name) {
+    return new subject(code, name);
+  }
+};
+
+int main() {
+  subject* math = subject::build("mt-1", "Math");
+  math->setCreditsQuantity(4);
+  math->schoolName = "USS";
+
+  cout << "Subject: " << math->getName();
+  cout << endl;
+  cout << "Code: " << math->getCode();
+  cout << endl;
+  cout << "SchoolName: " << math->schoolName;
+  cout << endl;
+  cout << "Credits: " << math->getCreditsQuantity();
+  cout << endl;
+  cout << "Status: ";
+  if (math->getStatus())
+    cout << "Activo";
+  else
+    cout << "No Activo";
+  cout << endl;
+
+  system("pause");
+}
