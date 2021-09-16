@@ -39,6 +39,8 @@ class subject {
   bool getStatus() { return this->status; }
   void setStatus(bool status) { this->status = status; }
 
+  string getStatusString() { return this->status ? "Active" : "Inactive"; }
+
   void disable() { this->status = false; }
 
   static subject* create(string code, string name) {
@@ -59,11 +61,15 @@ int main() {
   cout << endl;
   cout << "Credits: " << math->getCreditsQuantity();
   cout << endl;
-  cout << "Status: ";
-  if (math->getStatus())
-    cout << "Activo";
-  else
-    cout << "No Activo";
+  cout << "Status: " << math->getStatusString();
+  cout << endl;
+  cout << endl;
+
+  cout << "Disabling subject:";
+  cout << endl;
+  math->disable();
+  cout << "New Status: " << math->getStatusString();
+  cout << endl;
   cout << endl;
 
   system("pause");
