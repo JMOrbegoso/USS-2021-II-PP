@@ -41,13 +41,13 @@ class subject {
 
   void disable() { this->status = false; }
 
-  static subject* build(string code, string name) {
+  static subject* create(string code, string name) {
     return new subject(code, name);
   }
 };
 
 int main() {
-  subject* math = subject::build("mt-1", "Math");
+  subject* math = subject::create("mt-1", "Math");
   math->setCreditsQuantity(4);
   math->schoolName = "USS";
 
