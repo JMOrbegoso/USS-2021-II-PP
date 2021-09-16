@@ -53,14 +53,14 @@ class person {
 
   string getFullName() { return this->firstName + " " + this->lastName; }
 
-  static person* build(string code, string firstName, string lastName,
-                       string dni) {
+  static person* create(string code, string firstName, string lastName,
+                        string dni) {
     return new person(code, firstName, lastName, dni);
   }
 };
 
 int main() {
-  person* julio = person::build("jr-1", "Julio", "Rojas", "10101010");
+  person* julio = person::create("jr-1", "Julio", "Rojas", "10101010");
 
   julio->setEmail("julio@rojas.com");
   julio->setSalary(1000);
@@ -69,5 +69,6 @@ int main() {
   cout << endl;
   cout << "Salary: " << julio->getSalary();
   cout << endl;
+
   system("pause");
 }
