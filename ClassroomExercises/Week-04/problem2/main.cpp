@@ -1,6 +1,7 @@
 #include <windows.h>
 
 #include <iostream>
+#include <string>
 
 #define Max 3
 
@@ -25,6 +26,8 @@ class alumno {
   void setEdad(unsigned short value);
   bool getGenero() const;
   void setGenero(bool value);
+
+  void mostrarAlumno(int i);
 };
 
 string alumno::getApellidoAlumno() const { return apellidoAlumno; }
@@ -61,6 +64,8 @@ class listaAlumnos {
   alumno *getCabAlu() const;
   void setCabAlu(alumno *value);
   void gotoxy(int x, int y);
+  void crecer();
+  void insertar(alumno *nuevoAlumno);
 };
 
 int listaAlumnos::getNAlumnos() const { return nAlumnos; }
@@ -91,7 +96,7 @@ class aula {
   string codigoAula;
   unsigned short numAula;
   string profesorAcargo;
-  listaAlumnos lA;
+  listaAlumnos *lA;
 
  public:
   string getCodigoAula() const;
@@ -100,6 +105,8 @@ class aula {
   void setNumAula(unsigned short value);
   string getProfesorAcargo() const;
   void setProfesorAcargo(const string &value);
+
+  listaAlumnos *getListAlumnos() { return this->lA; }
 };
 
 unsigned short aula::getNumAula() const { return numAula; }
@@ -131,6 +138,13 @@ class listaAulas {
   void setCabA(aula *value);
   void gotoxy(int x, int y);
   int menuOpciones();
+  void buscarAlumno();
+  string requestText(string message, long unsigned int minLength);
+  aula *seleccionarAula(string mensaje);
+  void crecer();
+  void insertar(aula *nuevaAula);
+  void registrarNuevoAlumno();
+  bool containsText(string textBase, string textToFind);
 };
 
 int listaAulas::getNAulas() const { return nAulas; }
@@ -186,5 +200,105 @@ int listaAulas::menuOpciones() {
 }
 
 ///////////////////////////////
+
+aula *listaAulas::seleccionarAula(string mensaje) {
+  int selectedOption;
+
+  cout << endl
+       << mensaje << "." << endl
+       << "Escoja entre las " << this->getNAulas()
+       << " aulas siguientes:" << endl
+       << endl;
+
+  for (int x = 0; x < this->getNAulas(); x++) {
+    cout << "[" << x + 1 << "]";
+    cout << " - Aula: ";
+    cout << (*(this->getCabA() + x)).getCodigoAula();
+    cout << " - Con el prof. ";
+    cout << (*(this->getCabA() + x)).getProfesorAcargo();
+    cout << endl;
+  }
+
+  cout << endl << "Introduzca la opción deseada:" << endl;
+  cin >> selectedOption;
+
+  while (!(1 <= selectedOption && selectedOption <= this->getNAulas())) {
+    cout << "Por favor, introduzca un valor entre 1 y " << this->getNAulas()
+         << "." << endl;
+    fflush(stdin);
+    cin >> selectedOption;
+  }
+
+  return (this->getCabA() + selectedOption - 1);
+}
+
+void listaAulas::crecer() {}
+
+void listaAulas::insertar(aula *nuevaAula) {}
+
+void listaAulas::registrarNuevoAlumno() {
+  aula *aulaSeleccionada;
+  // Seleccionar el aula
+  aulaSeleccionada = this->seleccionarAula("Seleccione el aula");
+
+  aulaSeleccionada->getListAlumnos()->insertar
+}
+
+string listaAulas::requestText(string message, long unsigned int minLength) {
+  string text;
+
+  cout << message << " (Mínimo " << minLength << " caracteres)" << endl;
+
+  do {
+    fflush(stdin);
+    getline(cin, text);
+  } while (!(minLength <= text.length()));
+
+  return text;
+}
+
+bool listaAulas::containsText(string textBase, string textToFind) {
+  if (textBase.find(textToFind, 0) != string::npos) {
+    return true;
+  }
+  return false;
+}
+
+void alumno::mostrarAlumno(int i) {}
+
+void listaAulas::buscarAlumno() {
+  string apellidoPorBuscar;
+  bool alumnoEncontrado = false;
+  aula *aulaAux;
+
+  apellidoPorBuscar = this->requestText("Ingrese el texto a buscar", 3);
+
+  system("cls");
+
+  gotoxy(20, 5);
+  cout << "Buscar un curso dictado en la institución" << endl;
+
+  int i = 1;
+  for (int x = 0; x < this->getNAulas(); x++) {
+    aulaAux = (this->getCabA() + x);
+
+    for (int y = 0; y < aulaAux->getListAlumnos()->getNAlumnos(); y++) {
+      if (this->containsText(
+              (aulaAux->getListAlumnos()->getCabAlu() + y)->getApellidoAlumno(),
+              apellidoPorBuscar)) {
+        alumnoEncontrado = true;
+        (*(aulaAux->getListAlumnos()->getCabAlu() + y)).mostrarAlumno(i);
+        i++;
+      }
+    }
+  }
+
+  if (!alumnoEncontrado) {
+    gotoxy(20, 9);
+    cout << "No se encontró ningun alumno con un nombre similar al buscado.";
+  }
+
+  cout << endl << endl;
+}
 
 int main() { return 0; }
