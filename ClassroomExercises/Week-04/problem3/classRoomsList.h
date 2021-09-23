@@ -53,7 +53,6 @@ class classRoomsList {
     if (this->length == 0) {
       cout << "No hay ningún aula registrada" << endl;
       cout << "Primero registre al menos un aula" << endl;
-      cout << endl;
       return;
     }
 
@@ -76,7 +75,6 @@ class classRoomsList {
     if (this->length == 0) {
       cout << "No hay ningún aula registrada" << endl;
       cout << "Primero registre al menos un aula" << endl;
-      cout << endl;
       return;
     }
 

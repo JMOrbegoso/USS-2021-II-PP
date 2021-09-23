@@ -56,7 +56,6 @@ class studentsList {
     if (this->length == 0) {
       cout << "No hay ningún estudiante registrado" << endl;
       cout << "Primero registre al menos un estudiante" << endl;
-      cout << endl;
       return;
     }
 
