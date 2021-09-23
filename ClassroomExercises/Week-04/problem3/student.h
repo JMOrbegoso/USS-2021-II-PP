@@ -40,16 +40,22 @@ class student {
   void setAge(unsigned short value) { this->age = value; }
 
   bool getGenre() { return this->genre; }
+  string getGenreAsString() {
+    if (this->genre)
+      return "Masculino";
+    else
+      return "Femenino";
+  }
   void setGenre(bool value) { this->genre = value; }
 
   void showStudent(int itemNumber) {
     cout << "# de Orden: " << itemNumber << endl;
-    cout << "Codigo: " << this->code << endl;
-    cout << "Nombres: " << this->firstName << endl;
-    cout << "Apellidos: " << this->lastName << endl;
-    cout << "DNI: " << this->dni << endl;
-    cout << "Edad: " << this->age << endl;
-    cout << "Genero: " << this->genre << endl;
+    cout << "Codigo: " << this->getCode() << endl;
+    cout << "Nombres: " << this->getFirstName() << endl;
+    cout << "Apellidos: " << this->getLastName() << endl;
+    cout << "DNI: " << this->getDni() << endl;
+    cout << "Edad: " << this->getAge() << endl;
+    cout << "Genero: " << this->getGenreAsString() << endl;
     cout << endl;
   }
 };

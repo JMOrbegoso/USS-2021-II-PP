@@ -78,6 +78,12 @@ class menu {
     auxClassRoom = this->college->getClassRooms()->pickClassRoom(
         "Seleccione el aula que desea editar");
 
+    if (auxClassRoom == NULL) {
+      cout << "Eligió una aula de clase no valida o no hay aulas registradas";
+      cout << endl << endl;
+      return;
+    }
+
     auxClassRoom->setCode("");
     auxClassRoom->setTeacherFullName("");
 
@@ -110,8 +116,20 @@ class menu {
     auxClassRoom = this->college->getClassRooms()->pickClassRoom(
         "Seleccione el aula donde se encuentra el estudiante que desea editar");
 
+    if (auxClassRoom == NULL) {
+      cout << "Eligió una aula de clase no valida o no hay aulas registradas";
+      cout << endl << endl;
+      return;
+    }
+
     auxStudent = auxClassRoom->getStudents()->pickStudent(
         "Seleccione el estudiante que desea editar");
+
+    if (auxStudent == NULL) {
+      cout << "Eligió un estudiante no valido o no hay estudiantes registrados";
+      cout << endl << endl;
+      return;
+    }
 
     auxStudent->setCode("");
     auxStudent->setFirstName("");

@@ -90,6 +90,10 @@ class studentsList {
     student* aux;
     int selectedOption;
 
+    if (this->length == 0) {
+      return NULL;
+    }
+
     cout << endl
          << message << "." << endl
          << "Escoja entre los " << this->getLength()

@@ -108,6 +108,10 @@ class classRoomsList {
     classRoom* aux;
     int selectedOption;
 
+    if (this->length == 0) {
+      return NULL;
+    }
+
     cout << endl
          << message << "." << endl
          << "Escoja entre las " << this->getLength()
