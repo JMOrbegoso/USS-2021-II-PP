@@ -94,8 +94,11 @@ class classRoomsList {
   }
 
   void registerNewClassRoom() {
-    string code = "";
-    string teacherFullName = "";
+    string code = helpers::requestText(
+        "Por favor ingrese el codigo de la nueva aula", 3, 3);
+    string teacherFullName = helpers::requestText(
+        "Por favor ingrese el nombre del docente responsable de la nueva aula",
+        3);
 
     classRoom* newClassRoom = new classRoom(code, teacherFullName);
 

@@ -54,7 +54,10 @@ class menu {
   }
 
   void editSchoolName() {
-    this->college->setName("");
+    string name = helpers::requestText(
+        "Por favor ingrese el nuevo nombre de la escuela", 1);
+
+    this->college->setName(name);
 
     cout << "Datos del colegio editados correctamente" << endl;
     cout << endl;
@@ -84,8 +87,14 @@ class menu {
       return;
     }
 
-    auxClassRoom->setCode("");
-    auxClassRoom->setTeacherFullName("");
+    string code = helpers::requestText(
+        "Por favor ingrese el nuevo codigo del aula", 3, 3);
+    string teacherFullName = helpers::requestText(
+        "Por favor ingrese el nombre del nuevo profesor responsable del aula",
+        1);
+
+    auxClassRoom->setCode(code);
+    auxClassRoom->setTeacherFullName(teacherFullName);
 
     cout << "Datos del aula editados correctamente" << endl;
     cout << endl;
@@ -131,12 +140,26 @@ class menu {
       return;
     }
 
-    auxStudent->setCode("");
-    auxStudent->setFirstName("");
-    auxStudent->setLastName("");
-    auxStudent->setDni("");
-    auxStudent->setAge(0);
-    auxStudent->setGenre(true);
+    string code =
+        helpers::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
+    string firstName =
+        helpers::requestText("Ingrese los nuevo nombres del estudiante", 2);
+    string lastName =
+        helpers::requestText("Ingrese los nuevo apellidos del estudiante", 2);
+    string dni =
+        helpers::requestText("Ingrese el nuevo DNI del estudiante", 8, 8);
+    unsigned short age = helpers::requestIntegerNumber(
+        "Ingrese la nuevo edad del estudiante",
+        "Por favor ingrese una edad igual o mayor a 3", 3);
+    bool genre = helpers::requestGenre(
+        "Por favor ingrese el nuevo genero del estudiante");
+
+    auxStudent->setCode(code);
+    auxStudent->setFirstName(firstName);
+    auxStudent->setLastName(lastName);
+    auxStudent->setDni(dni);
+    auxStudent->setAge(age);
+    auxStudent->setGenre(genre);
 
     cout << "Datos del estudiante editados correctamente" << endl;
     cout << endl;

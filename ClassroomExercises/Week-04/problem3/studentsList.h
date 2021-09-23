@@ -71,12 +71,19 @@ class studentsList {
   }
 
   void registerNewStudent() {
-    string code = "";
-    string firstName = "";
-    string lastName = "";
-    string dni = "";
-    unsigned short age = 0;
-    bool genre = true;
+    string code =
+        helpers::requestText("Ingrese el codigo del nuevo estudiante", 3, 3);
+    string firstName =
+        helpers::requestText("Ingrese los nombres del nuevo estudiante", 2);
+    string lastName =
+        helpers::requestText("Ingrese los apellidos del nuevo estudiante", 2);
+    string dni =
+        helpers::requestText("Ingrese el DNI del nuevo estudiante", 8, 8);
+    unsigned short age = helpers::requestIntegerNumber(
+        "Ingrese la edad del nuevo estudiante",
+        "Por favor ingrese una edad igual o mayor a 3", 3);
+    bool genre = helpers::requestGenre(
+        "Porfavor ingrese el genero del nuevo estudiante");
 
     student* newStudent =
         new student(code, firstName, lastName, dni, age, genre);
