@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+#include "helpers.h";
 #include "school.h";
 
 using namespace std;
@@ -69,11 +70,20 @@ class menu {
   }
 
   void registerNewClassRoom() {
+    string code;
+    string teacherFullName;
+
     system("cls");
 
     cout << "Registrar nueva aula del colegio:" << endl << endl;
 
-    this->college->getClassRooms()->registerNewClassRoom();
+    code = helpers::requestText("Por favor ingrese el codigo de la nueva aula",
+                                3, 3);
+    teacherFullName = helpers::requestText(
+        "Por favor ingrese el nombre del docente responsable de la nueva aula",
+        3);
+
+    this->college->getClassRooms()->registerNewClassRoom(code, teacherFullName);
 
     cout << "Aula registrada correctamente" << endl;
     cout << endl;
@@ -91,6 +101,8 @@ class menu {
 
   void editClassRoom() {
     classRoom* auxClassRoom;
+    string code;
+    string teacherFullName;
 
     system("cls");
 
@@ -105,9 +117,9 @@ class menu {
       return;
     }
 
-    string code = helpers::requestText(
-        "Por favor ingrese el nuevo codigo del aula", 3, 3);
-    string teacherFullName = helpers::requestText(
+    code = helpers::requestText("Por favor ingrese el nuevo codigo del aula", 3,
+                                3);
+    teacherFullName = helpers::requestText(
         "Por favor ingrese el nombre del nuevo profesor responsable del aula",
         1);
 
@@ -120,6 +132,12 @@ class menu {
 
   void registerNewStudent() {
     classRoom* auxClassRoom;
+    string code;
+    string firstName;
+    string lastName;
+    string dni;
+    unsigned short age;
+    bool genre;
 
     system("cls");
 
@@ -134,7 +152,20 @@ class menu {
       return;
     }
 
-    auxClassRoom->getStudents()->registerNewStudent();
+    code = helpers::requestText("Ingrese el codigo del nuevo estudiante", 3, 3);
+    firstName =
+        helpers::requestText("Ingrese los nombres del nuevo estudiante", 2);
+    lastName =
+        helpers::requestText("Ingrese los apellidos del nuevo estudiante", 2);
+    dni = helpers::requestText("Ingrese el DNI del nuevo estudiante", 8, 8);
+    age = helpers::requestIntegerNumber(
+        "Ingrese la edad del nuevo estudiante",
+        "Por favor ingrese una edad igual o mayor a 3", 3);
+    genre = helpers::requestGenre(
+        "Porfavor ingrese el genero del nuevo estudiante");
+
+    auxClassRoom->getStudents()->registerNewStudent(code, firstName, lastName,
+                                                    dni, age, genre);
 
     cout << "Estudiante registrado correctamente" << endl;
     cout << endl;
@@ -153,6 +184,12 @@ class menu {
   void editStudent() {
     classRoom* auxClassRoom;
     student* auxStudent;
+    string code;
+    string firstName;
+    string lastName;
+    string dni;
+    unsigned short age;
+    bool genre;
 
     system("cls");
 
@@ -176,18 +213,16 @@ class menu {
       return;
     }
 
-    string code =
-        helpers::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
-    string firstName =
+    code = helpers::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
+    firstName =
         helpers::requestText("Ingrese los nuevo nombres del estudiante", 2);
-    string lastName =
+    lastName =
         helpers::requestText("Ingrese los nuevo apellidos del estudiante", 2);
-    string dni =
-        helpers::requestText("Ingrese el nuevo DNI del estudiante", 8, 8);
-    unsigned short age = helpers::requestIntegerNumber(
+    dni = helpers::requestText("Ingrese el nuevo DNI del estudiante", 8, 8);
+    age = helpers::requestIntegerNumber(
         "Ingrese la nuevo edad del estudiante",
         "Por favor ingrese una edad igual o mayor a 3", 3);
-    bool genre = helpers::requestGenre(
+    genre = helpers::requestGenre(
         "Por favor ingrese el nuevo genero del estudiante");
 
     auxStudent->setCode(code);
@@ -203,13 +238,13 @@ class menu {
 
   void findStudentByDni() {
     student* auxStudent;
+    string dni;
 
     system("cls");
 
     cout << "Buscar estudiante del colegio por su DNI:" << endl << endl;
 
-    string dni =
-        helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
+    dni = helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
 
     auxStudent = this->college->getClassRooms()->findStudentByDni(dni);
 

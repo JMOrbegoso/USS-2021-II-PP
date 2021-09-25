@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 
-#include "helpers.h"
-
 using namespace std;
 
 class student {
