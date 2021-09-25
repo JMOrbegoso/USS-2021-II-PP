@@ -51,23 +51,17 @@ class studentsList {
     student* auxStudent;
     int i = 1;
 
-    system("cls");
-
     if (this->length == 0) {
       cout << "No hay ningún estudiante registrado" << endl;
       cout << "Primero registre al menos un estudiante" << endl;
       return;
     }
 
-    cout << "Lista de estudiantes:" << endl << endl;
-
     for (int x = 0; x < this->length; x++) {
       auxStudent = this->head + x;
       auxStudent->showStudent(i);
       i++;
     }
-
-    cout << endl << endl;
   }
 
   void registerNewStudent() {
@@ -89,8 +83,6 @@ class studentsList {
         new student(code, firstName, lastName, dni, age, genre);
 
     this->insert(newStudent);
-
-    cout << "Estudiante registrado correctamente";
   }
 
   student* pickStudent(string message) {

@@ -48,21 +48,15 @@ class classRoomsList {
   void setHead(classRoom* value) { this->head = value; }
 
   void showClassRooms() {
-    system("cls");
-
     if (this->length == 0) {
       cout << "No hay ningún aula registrada" << endl;
       cout << "Primero registre al menos un aula" << endl;
       return;
     }
 
-    cout << "Lista de aulas:" << endl << endl;
-
     for (int x = 0; x < this->length; x++) {
       (*(this->head + x)).showClassRoom(x + 1);
     }
-
-    cout << endl << endl;
   }
 
   void showStudents() {
@@ -70,15 +64,11 @@ class classRoomsList {
     student* auxStudent;
     int i = 1;
 
-    system("cls");
-
     if (this->length == 0) {
       cout << "No hay ningún aula registrada" << endl;
       cout << "Primero registre al menos un aula" << endl;
       return;
     }
-
-    cout << "Lista de Estudiantes del colegio:" << endl << endl;
 
     for (int x = 0; x < this->length; x++) {
       auxClassRoom = this->head + x;
@@ -89,8 +79,6 @@ class classRoomsList {
         i++;
       }
     }
-
-    cout << endl << endl;
   }
 
   student* findStudentByDni(string dni) {
@@ -122,8 +110,6 @@ class classRoomsList {
     classRoom* newClassRoom = new classRoom(code, teacherFullName);
 
     this->insert(newClassRoom);
-
-    cout << "Sala de clase registrado correctamente";
   }
 
   classRoom* pickClassRoom(string message) {

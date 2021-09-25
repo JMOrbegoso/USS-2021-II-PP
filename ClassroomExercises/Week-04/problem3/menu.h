@@ -55,6 +55,10 @@ class menu {
   }
 
   void editSchoolName() {
+    system("cls");
+
+    cout << "Editar nombre de la escuela:" << endl << endl;
+
     string name = helpers::requestText(
         "Por favor ingrese el nuevo nombre de la escuela", 1);
 
@@ -65,6 +69,10 @@ class menu {
   }
 
   void registerNewClassRoom() {
+    system("cls");
+
+    cout << "Registrar nueva aula del colegio:" << endl << endl;
+
     this->college->getClassRooms()->registerNewClassRoom();
 
     cout << "Aula registrada correctamente" << endl;
@@ -72,12 +80,21 @@ class menu {
   }
 
   void showClassRooms() {
+    system("cls");
+
+    cout << "Lista de todas las aulas del colegio:" << endl << endl;
+
     this->college->getClassRooms()->showClassRooms();
+
     cout << endl << endl;
   }
 
   void editClassRoom() {
     classRoom* auxClassRoom;
+
+    system("cls");
+
+    cout << "Editar aula del colegio:" << endl << endl;
 
     auxClassRoom = this->college->getClassRooms()->pickClassRoom(
         "Seleccione el aula que desea editar");
@@ -97,12 +114,16 @@ class menu {
     auxClassRoom->setCode(code);
     auxClassRoom->setTeacherFullName(teacherFullName);
 
-    cout << "Datos del aula editados correctamente" << endl;
-    cout << endl;
+    cout << "Datos del aula editados correctamente";
+    cout << endl << endl;
   }
 
   void registerNewStudent() {
     classRoom* auxClassRoom;
+
+    system("cls");
+
+    cout << "Registrar nuevo estudiante del colegio:" << endl << endl;
 
     auxClassRoom = this->college->getClassRooms()->pickClassRoom(
         "Seleccione el aula donde desea añadir el estudiante");
@@ -120,6 +141,10 @@ class menu {
   }
 
   void showStudents() {
+    system("cls");
+
+    cout << "Lista de todos los estudiantes del colegio:" << endl << endl;
+
     this->college->getClassRooms()->showStudents();
 
     cout << endl << endl;
@@ -128,6 +153,10 @@ class menu {
   void editStudent() {
     classRoom* auxClassRoom;
     student* auxStudent;
+
+    system("cls");
+
+    cout << "Editar estudiante del colegio:" << endl << endl;
 
     auxClassRoom = this->college->getClassRooms()->pickClassRoom(
         "Seleccione el aula donde se encuentra el estudiante que desea editar");
@@ -168,12 +197,16 @@ class menu {
     auxStudent->setAge(age);
     auxStudent->setGenre(genre);
 
-    cout << "Datos del estudiante editados correctamente" << endl;
-    cout << endl;
+    cout << "Datos del estudiante editados correctamente";
+    cout << endl << endl;
   }
 
   void findStudentByDni() {
     student* auxStudent;
+
+    system("cls");
+
+    cout << "Buscar estudiante del colegio por su DNI:" << endl << endl;
 
     string dni =
         helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
