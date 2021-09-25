@@ -106,6 +106,12 @@ class menu {
     auxClassRoom = this->college->getClassRooms()->pickClassRoom(
         "Seleccione el aula donde desea añadir el estudiante");
 
+    if (auxClassRoom == NULL) {
+      cout << "Eligió una aula de clase no valida o no hay aulas registradas";
+      cout << endl << endl;
+      return;
+    }
+
     auxClassRoom->getStudents()->registerNewStudent();
 
     cout << "Estudiante registrado correctamente" << endl;
