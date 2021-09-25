@@ -38,13 +38,14 @@ class menu {
     cout << "[5] Registrar estudiante" << endl;
     cout << "[6] Mostrar estudiantes" << endl;
     cout << "[7] Editar estudiante" << endl;
+    cout << "[8] Buscar estudiante por DNI" << endl;
 
     cout << endl;
     cout << "[0] Cerrar" << endl;
 
     cout << endl << "Por favor ingrese una de las opciones:" << endl;
     cin >> selectedOption;
-    while (!(0 <= selectedOption && selectedOption <= 7)) {
+    while (!(0 <= selectedOption && selectedOption <= 8)) {
       cout << "La opcion seleccionada fue inválida, por favor seleccione una "
               "opcion válida:"
            << endl;
@@ -171,6 +172,27 @@ class menu {
     cout << endl;
   }
 
+  void findStudentByDni() {
+    student* auxStudent;
+
+    string dni =
+        helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
+
+    auxStudent = this->college->getClassRooms()->findStudentByDni(dni);
+
+    if (auxStudent == NULL) {
+      cout << "No se encontró un estudiante con el DNI ingresado";
+      cout << endl << endl;
+      return;
+    }
+
+    cout << "Estudiante con el DNI: " << dni << endl;
+
+    auxStudent->showStudent(1);
+
+    cout << endl << endl;
+  }
+
  public:
   menu(school* school) { this->college = school; }
 
@@ -209,6 +231,10 @@ class menu {
           case 7:
             this->editStudent();
             Sleep(1500);
+            break;
+          case 8:
+            this->findStudentByDni();
+            system("pause");
             break;
         }
       }

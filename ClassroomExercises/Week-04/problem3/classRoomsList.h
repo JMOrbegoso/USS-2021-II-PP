@@ -93,6 +93,25 @@ class classRoomsList {
     cout << endl << endl;
   }
 
+  student* findStudentByDni(string dni) {
+    classRoom* auxClassRoom;
+    student* auxStudent;
+
+    if (this->length == 0) {
+      return NULL;
+    }
+
+    for (int x = 0; x < this->length; x++) {
+      auxClassRoom = this->head + x;
+
+      for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
+        auxStudent = auxClassRoom->getStudents()->getHead() + y;
+
+        if (auxStudent->getDni() == dni) return auxStudent;
+      }
+    }
+  }
+
   void registerNewClassRoom() {
     string code = helpers::requestText(
         "Por favor ingrese el codigo de la nueva aula", 3, 3);
