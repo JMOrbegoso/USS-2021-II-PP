@@ -3,61 +3,75 @@
 #include <iostream>
 #include <string>
 
-#define Max 3
+#define incre 2
 
 using namespace std;
 
-/////////////////////////
-
-class alumno {
+class alumnoAl {
  private:
-  string nameAlumno;
-  string apellidoAlumno;
-  string dni;
+  string codigo;
+  string nombre;
+  string apellido;
   unsigned short edad;
-  bool genero;
 
  public:
-  alumno();
-  string getNameAlumno() const;
-  void setNameAlumno(const string &value);
-  string getApellidoAlumno() const;
-  void setApellidoAlumno(const string &value);
-  string getDni() const;
-  void setDni(const string &value);
+  alumnoAl();
+  alumnoAl(string cod, string nomb, string apelli, unsigned short eda);
+
+  string getCodigo() const;
+  void setCodigo(const string &value);
+  string getNombre() const;
+  void setNombre(const string &value);
+  string getApellido() const;
+  void setApellido(const string &value);
   unsigned short getEdad() const;
   void setEdad(unsigned short value);
-  bool getGenero() const;
-  void setGenero(bool value);
-  string leerTexto(string mensaje);
-  unsigned short leerEntero(string mensaje);
   void gotoxy(int x, int y);
-  void leerAlumno(int x);
+  unsigned short leerEdad(string mensaje);
+  string leerTexto(string mensaje);
+  void leerAl();
 };
 
-alumno::alumno() { this->edad = 0; }
+alumnoAl::alumnoAl() {}
 
-string alumno::getApellidoAlumno() const { return apellidoAlumno; }
+alumnoAl::alumnoAl(string cod, string nomb, string apelli, unsigned short eda) {
+  this->codigo = cod;
+  this->nombre = nomb;
+  this->apellido = apelli;
+  this->edad = eda;
+}
 
-void alumno::setApellidoAlumno(const string &value) { apellidoAlumno = value; }
+string alumnoAl::getCodigo() const { return codigo; }
+void alumnoAl::setCodigo(const string &value) { codigo = value; }
 
-string alumno::getDni() const { return dni; }
+string alumnoAl::getNombre() const { return nombre; }
+void alumnoAl::setNombre(const string &value) { nombre = value; }
 
-void alumno::setDni(const string &value) { dni = value; }
+string alumnoAl::getApellido() const { return apellido; }
+void alumnoAl::setApellido(const string &value) { apellido = value; }
 
-unsigned short alumno::getEdad() const { return edad; }
+unsigned short alumnoAl::getEdad() const { return edad; }
+void alumnoAl::setEdad(unsigned short value) { edad = value; }
 
-void alumno::setEdad(unsigned short value) { edad = value; }
+void alumnoAl::gotoxy(int x, int y) {
+  HANDLE hcon;
+  hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+  COORD dwPos;
+  dwPos.X = x;
+  dwPos.Y = y;
+  SetConsoleCursorPosition(hcon, dwPos);
+}
 
-bool alumno::getGenero() const { return genero; }
+unsigned short alumnoAl::leerEdad(string mensaje) {
+  unsigned short x;
+  do {
+    cout << mensaje;
+    cin >> x;
+  } while (!(x > 17));
+  return x;
+}
 
-void alumno::setGenero(bool value) { genero = value; }
-
-string alumno::getNameAlumno() const { return nameAlumno; }
-
-void alumno::setNameAlumno(const string &value) { nameAlumno = value; }
-
-string alumno::leerTexto(string mensaje) {
+string alumnoAl::leerTexto(string mensaje) {
   string texto;
   cout << mensaje;
   fflush(stdin);
@@ -65,193 +79,72 @@ string alumno::leerTexto(string mensaje) {
   return texto;
 }
 
-unsigned short alumno::leerEntero(string mensaje) {
-  unsigned short x;
-  do {
-    cout << mensaje;
-    cin >> x;
-  } while (!(x > 0));
-  return x;
+void alumnoAl::leerAl() {
+  system("cls");
+  gotoxy(35, 2);
+  cout << "********************";
+  gotoxy(35, 3);
+  cout << "*REGISTRAR ALUMNO*";
+  gotoxy(35, 4);
+  cout << "********************";
+  gotoxy(30, 5);
+  codigo = this->leerTexto("Ingrese el Codigo del Alumno: ");
+  gotoxy(30, 6);
+  nombre = this->leerTexto("Ingrese el Nombre del Alumno: ");
+  gotoxy(30, 7);
+  apellido = this->leerTexto("Ingrese el Apellido del Alumno: ");
+  gotoxy(30, 7);
+  edad = this->leerEdad("Ingrese el Edad del Alumno: ");
 }
 
-void alumno::gotoxy(int x, int y) {
-  HANDLE hcon;
-  hcon = GetStdHandle(STD_OUTPUT_HANDLE);
-  COORD dwPos;
-  dwPos.X = x;
-  dwPos.Y = y;
-  SetConsoleCursorPosition(hcon, dwPos);
-}
+// Separador :) //
 
-///////////////////////////////
-
-class listaAlumnos {
- private:
-  int maxAlu;
-  int nAlumnos;
-  alumno *cabAlu;
-
- public:
-  listaAlumnos();
-  int getMaxAlu() const;
-  void setMaxAlu(int value);
-  int getNAlumnos() const;
-  void setNAlumnos(int value);
-  alumno *getCabAlu() const;
-  void setCabAlu(alumno *value);
-  void gotoxy(int x, int y);
-  void crecerListaAlumno();
-  void insertarAlumno(alumno *alu);
-  void registrarEstudiante();
-};
-
-listaAlumnos::listaAlumnos() {
-  this->cabAlu = NULL;
-  this->maxAlu = 0;
-  this->nAlumnos = 0;
-}
-
-int listaAlumnos::getNAlumnos() const { return nAlumnos; }
-
-void listaAlumnos::setNAlumnos(int value) { nAlumnos = value; }
-
-alumno *listaAlumnos::getCabAlu() const { return cabAlu; }
-
-void listaAlumnos::setCabAlu(alumno *value) { cabAlu = value; }
-
-int listaAlumnos::getMaxAlu() const { return maxAlu; }
-
-void listaAlumnos::setMaxAlu(int value) { maxAlu = value; }
-
-void listaAlumnos::gotoxy(int x, int y) {
-  HANDLE hcon;
-  hcon = GetStdHandle(STD_OUTPUT_HANDLE);
-  COORD dwPos;
-  dwPos.X = x;
-  dwPos.Y = y;
-  SetConsoleCursorPosition(hcon, dwPos);
-}
-
-///////////////////////
-
-class aula {
- private:
-  string codigoAula;
-  unsigned short numAula;
-  string profesorAcargo;
-  listaAlumnos *lA;
-
- public:
-  aula();
-  string getCodigoAula() const;
-  void setCodigoAula(const string &value);
-  unsigned short getNumAula() const;
-  void setNumAula(unsigned short value);
-  string getProfesorAcargo() const;
-  void setProfesorAcargo(const string &value);
-  void gotoxy(int x, int y);
-  string leerTexto(string mensaje);
-  unsigned short leerEntero(string mensaje);
-  listaAlumnos *getLA() const;
-  void setLA(const listaAlumnos *value);
-  void leerAula(int x);
-};
-
-aula::aula() {
-  this->numAula = 0;
-  this->lA = new listaAlumnos();
-}
-
-unsigned short aula::getNumAula() const { return numAula; }
-
-void aula::setNumAula(unsigned short value) { numAula = value; }
-
-string aula::getProfesorAcargo() const { return profesorAcargo; }
-
-void aula::setProfesorAcargo(const string &value) { profesorAcargo = value; }
-
-listaAlumnos *aula::getLA() const { return lA; }
-
-string aula::getCodigoAula() const { return codigoAula; }
-
-void aula::setCodigoAula(const string &value) { codigoAula = value; }
-
-void aula::gotoxy(int x, int y) {
-  HANDLE hcon;
-  hcon = GetStdHandle(STD_OUTPUT_HANDLE);
-  COORD dwPos;
-  dwPos.X = x;
-  dwPos.Y = y;
-  SetConsoleCursorPosition(hcon, dwPos);
-}
-
-string aula::leerTexto(string mensaje) {
-  string texto;
-  cout << mensaje;
-  fflush(stdin);
-  getline(cin, texto);
-  return texto;
-}
-
-unsigned short aula::leerEntero(string mensaje) {
-  unsigned short x;
-  do {
-    cout << mensaje;
-    cin >> x;
-  } while (!(x > 0));
-  return x;
-}
-
-//////////////////////////////////
-
-class listaAulas {
+class listaAl {
  private:
   int max;
-  int nAulas;
-  aula *cabA;
+  int cantAl;
+  alumnoAl *cab;
 
  public:
-  listaAulas();
+  listaAl();
+
   int getMax() const;
   void setMax(int value);
-  int getNAulas() const;
-  void setNAulas(int value);
-  aula *getCabA() const;
-  void setCabA(aula *value);
-  void gotoxy(int x, int y);
+  int getCantAl() const;
+  void setCantAl(int value);
+  alumnoAl *getCab() const;
+  void setCab(alumnoAl *value);
   string leerTexto(string mensaje);
-  int menuOpciones();
-  void crecerListaAula();
-  void insertarAula(aula *aul);
-  void registrarAula();
+  void gotoxy(int x, int y);
   void registrarAlumno();
-  void mostrarAulas(aula &aul, int x);
-  void listarAulas();
-  void mostrarBusquedaAula(aula &aul);
-  void buscarAula();
-  aula *elegirAula();
-  void mostrarEstudiantesAulas();
+  void insertarAl(alumnoAl *aL);
+  void crecerAl();
 };
 
-listaAulas::listaAulas() {
+listaAl::listaAl() {
+  this->cab = NULL;
+  this->cantAl = 0;
   this->max = 0;
-  this->cabA = NULL;
-  this->nAulas = 0;
 }
 
-int listaAulas::getNAulas() const { return nAulas; }
+int listaAl::getMax() const { return max; }
+void listaAl::setMax(int value) { max = value; }
 
-void listaAulas::setNAulas(int value) { nAulas = value; }
+int listaAl::getCantAl() const { return cantAl; }
+void listaAl::setCantAl(int value) { cantAl = value; }
 
-aula *listaAulas::getCabA() const { return cabA; }
+alumnoAl *listaAl::getCab() const { return cab; }
+void listaAl::setCab(alumnoAl *value) { cab = value; }
 
-void listaAulas::setCabA(aula *value) { cabA = value; }
+string listaAl::leerTexto(string mensaje) {
+  string texto;
+  cout << mensaje;
+  fflush(stdin);
+  getline(cin, texto);
+  return texto;
+}
 
-int listaAulas::getMax() const { return max; }
-
-void listaAulas::setMax(int value) { max = value; }
-
-void listaAulas::gotoxy(int x, int y) {
+void listaAl::gotoxy(int x, int y) {
   HANDLE hcon;
   hcon = GetStdHandle(STD_OUTPUT_HANDLE);
   COORD dwPos;
@@ -260,7 +153,98 @@ void listaAulas::gotoxy(int x, int y) {
   SetConsoleCursorPosition(hcon, dwPos);
 }
 
-string listaAulas::leerTexto(string mensaje) {
+void listaAl::crecerAl() {
+  alumnoAl *aux = new alumnoAl[this->cantAl + incre];
+  for (int i = 0; i < this->cantAl; i++) {
+    *(aux + i) = *(this->cab + i);
+  }
+  if (this->cab != NULL) {
+    delete this->cab;
+  }
+  this->cab = aux;
+  this->max += incre;
+}
+
+void listaAl::insertarAl(alumnoAl *aL) {
+  if (this->cantAl == this->max) {
+    this->crecerAl();
+  }
+  *(this->cab + this->cantAl) = *aL;
+  this->cantAl++;
+}
+
+void listaAl::registrarAlumno() {
+  alumnoAl *aL = new alumnoAl();
+  aL->leerAl();
+  this->insertarAl(aL);
+}
+
+// Separador :) //
+
+class aulaAu {
+ private:
+  string codigo;
+  string nombre;
+  unsigned short numero;
+  listaAl lAlu;
+
+ public:
+  aulaAu();
+  aulaAu(string cod, string nomb, unsigned short nume);
+
+  string getCodigo() const;
+  void setCodigo(const string &value);
+  string getNombre() const;
+  void setNombre(const string &value);
+  unsigned short getNumero() const;
+  void setNumero(unsigned short value);
+  void gotoxy(int x, int y);
+  unsigned short leerEdad(string mensaje);
+  string leerTexto(string mensaje);
+  void leerAu();
+  listaAl getLAlu() const;
+  void setLAlu(const listaAl &value);
+};
+
+aulaAu::aulaAu() {}
+
+aulaAu::aulaAu(string cod, string nomb, unsigned short nume) {
+  this->codigo = cod;
+  this->nombre = nomb;
+  this->numero = nume;
+}
+
+string aulaAu::getCodigo() const { return codigo; }
+void aulaAu::setCodigo(const string &value) { codigo = value; }
+
+string aulaAu::getNombre() const { return nombre; }
+void aulaAu::setNombre(const string &value) { nombre = value; }
+
+unsigned short aulaAu::getNumero() const { return numero; }
+void aulaAu::setNumero(unsigned short value) { numero = value; }
+
+listaAl aulaAu::getLAlu() const { return lAlu; }
+void aulaAu::setLAlu(const listaAl &value) { lAlu = value; }
+
+void aulaAu::gotoxy(int x, int y) {
+  HANDLE hcon;
+  hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+  COORD dwPos;
+  dwPos.X = x;
+  dwPos.Y = y;
+  SetConsoleCursorPosition(hcon, dwPos);
+}
+
+unsigned short aulaAu::leerEdad(string mensaje) {
+  unsigned short x;
+  do {
+    cout << mensaje;
+    cin >> x;
+  } while (!(x > 0));
+  return x;
+}
+
+string aulaAu::leerTexto(string mensaje) {
   string texto;
   cout << mensaje;
   fflush(stdin);
@@ -268,256 +252,340 @@ string listaAulas::leerTexto(string mensaje) {
   return texto;
 }
 
-int listaAulas::menuOpciones() {
-  unsigned short op1;
+void aulaAu::leerAu() {
   system("cls");
-  gotoxy(34, 4);
-  cout << "====================";
-  gotoxy(34, 5);
-  cout << "| MENU DE OPCIONES |";
-  gotoxy(34, 6);
-  cout << "====================";
-  gotoxy(30, 8);
-  cout << "1. Registrar Aula";  // carlos
-  gotoxy(30, 9);
-  cout << "2. Mostrar Lista de Aulas";  // carlos
-  gotoxy(30, 10);
-  cout << "3. Buscar Aula";  // angel obed
-  gotoxy(30, 11);
-  cout << "4. Registrar Alumno en Aula";  // anegl torres
-  gotoxy(30, 12);
-  cout << "5. Mostar Alumnos con sus Aulas";  // dara
-  gotoxy(30, 13);
-  cout << "6. Buscar Alumno";  // manuel
-  gotoxy(30, 14);
-  cout << "7. Salir del Programa";  // manuel :)
+  gotoxy(35, 2);
+  cout << "*****************";
+  gotoxy(35, 3);
+  cout << "*REGISTRAR AULA*";
+  gotoxy(35, 4);
+  cout << "*****************";
+  gotoxy(30, 5);
+  codigo = this->leerTexto("Ingrese el Codigo del Aula: ");
+  gotoxy(30, 6);
+  nombre = this->leerTexto("Ingrese el Nombre del Aula: ");
+  gotoxy(30, 7);
+  numero = this->leerEdad("Ingrese el Numero del Aula: ");
+}
+
+// Separador :) //
+
+class listaAu {
+ private:
+  int max;
+  int cantAu;
+  aulaAu *cab;
+
+ public:
+  listaAu();
+
+  int getMax() const;
+  void setMax(int value);
+  int getCantAu() const;
+  void setCantAu(int value);
+  aulaAu *getCab() const;
+  void setCab(aulaAu *value);
+  int menu();
+  string leerTexto(string mensaje);
+  void gotoxy(int x, int y);
+  void registrarAu();
+  void insertarAu(aulaAu *aU);
+  void crecerAu();
+  void mostrarListaAulas();
+  void mostrarListaAu(aulaAu &aU, int x);
+  void encabezadoListaAu();
+  void buscarAu();
+  void encabezadoB();
+  void mostrarB(aulaAu &aU);
+  void registrarAl();
+  aulaAu *elegirAu();
+  void encabezadoTituloE();
+  void mostrarListaAl();
+  void mostrarAl(aulaAu &aU, int x);
+};
+
+listaAu::listaAu() {
+  this->cab = NULL;
+  this->cantAu = 0;
+  this->max = 0;
+}
+
+int listaAu::getMax() const { return max; }
+void listaAu::setMax(int value) { max = value; }
+
+int listaAu::getCantAu() const { return cantAu; }
+void listaAu::setCantAu(int value) { cantAu = value; }
+
+aulaAu *listaAu::getCab() const { return cab; }
+void listaAu::setCab(aulaAu *value) { cab = value; }
+
+void listaAu::encabezadoTituloE() {
+  gotoxy(35, 2);
+  cout << "*****************************";
+  gotoxy(35, 3);
+  cout << "*ELEGIR AULA PARA INSCRIBIRTE*";
+  gotoxy(35, 4);
+  cout << "*****************************";
+}
+
+aulaAu *listaAu::elegirAu() {
+  int opc;
+  int x;
+  for (x = 0; x < this->cantAu; x++) {
+    encabezadoTituloE();
+    gotoxy(30, 5 + x);
+    cout << x + 1 << ". " << (this->cab + x)->getCodigo() << " - "
+         << (this->cab + x)->getNombre();
+  }
   do {
-    gotoxy(32, 16);
-    cout << "Ingrese Opcion: ";
-    cin >> op1;
-  } while (!(op1 >= 1 && op1 <= 7));
-  return op1;
+    gotoxy(30, 6 + x);
+    cout << "Elegir Aula: ";
+    cin >> opc;
+  } while (!(opc > 0 && opc <= this->cantAu));
+  return (this->cab + opc - 1);
 }
 
-/////////////////////////////////
-
-void aula::leerAula(int x) {
+void listaAu::registrarAl() {
   system("cls");
-  gotoxy(35, 5);
-  cout << "=======================";
-  gotoxy(35, 6);
-  cout << "| REGISTRO AULA N - " << x + 1 << " |";
-  gotoxy(35, 7);
-  cout << "=======================";
-  gotoxy(28, 9);
-  this->codigoAula = this->leerTexto("Ingrese Codigo del Aula: ");
-  gotoxy(28, 10);
-  this->numAula = this->leerEntero("Ingrese Numero del Aula: ");
-  gotoxy(28, 11);
-  this->profesorAcargo = this->leerTexto("Ingrese Profesor Acargo del Aula: ");
-}
-
-void listaAulas::crecerListaAula() {
-  aula *aux = new aula[this->nAulas + Max];
-  for (int i = 0; i < this->nAulas; i++) {
-    *(aux + i) = *(this->cabA + i);
-  }
-  /*if (lE.cab != NULL){
-      delete lE.cab;
-  }*/
-  this->cabA = aux;
-  this->max += Max;
-}
-
-void listaAulas::insertarAula(aula *aul) {
-  if (this->nAulas == this->max) {
-    this->crecerListaAula();
-  }
-  *(this->cabA + this->nAulas) = *aul;
-  this->nAulas++;
-}
-
-void listaAulas::registrarAula() {
-  aula *aul = new aula();
-  aul->leerAula(this->nAulas);
-  this->insertarAula(aul);
-}
-
-void listaAulas::mostrarAulas(aula &aul, int x) {
-  gotoxy(20, 5);
-  cout << "==============================";
-  gotoxy(20, 6);
-  cout << "| LISTA DE AULAS REGISTRADAS |";
-  gotoxy(20, 7);
-  cout << "==============================";
-  gotoxy(10, 9 + x);
-  cout << "CODIGO: " << aul.getCodigoAula();
-  gotoxy(30, 9 + x);
-  cout << "NUMERO: " << aul.getNumAula();
-  gotoxy(50, 9 + x);
-  cout << "PROFESOR: " << aul.getProfesorAcargo() << endl << endl;
-}
-
-void listaAulas::listarAulas() {
-  system("cls");
-  if (this->nAulas > 0) {
-    for (int x = 0; x < this->nAulas; x++) {
-      mostrarAulas(*(this->cabA + x), x);
+  if (this->cantAu > 0) {
+    aulaAu *aU = new aulaAu();
+    aU = elegirAu();
+    if (aU != NULL) {
+      aU->getLAlu().registrarAlumno();
+      /*
+       * esto me dijo que haga el profesor
+       * alumno *aux = new alumno();
+       * aux->leerAl();
+       * this->insertarAu(aux);
+       */
     }
-    system("pause");
   } else {
-    gotoxy(28, 5);
-    cout << "*NO HAY REGISTROS DE AULAS*";
-    Sleep(1500);
-    return;
+    system("cls");
+    gotoxy(30, 5);
+    cout << "NO HAY REGISTRO DE AULAS - OPCION 1 " << endl << endl;
   }
+  system("pause");
 }
 
-void listaAulas::mostrarBusquedaAula(aula &aul) {
+void listaAu::mostrarB(aulaAu &aU) {
   system("cls");
-  gotoxy(20, 5);
-  cout << "===================";
-  gotoxy(20, 6);
-  cout << "| AULA ENCONTRADA |";
-  gotoxy(20, 7);
-  cout << "===================";
-  gotoxy(10, 9);
-  cout << "CODIGO: " << aul.getCodigoAula();
-  gotoxy(30, 9);
-  cout << "NUMERO: " << aul.getNumAula();
-  gotoxy(50, 9);
-  cout << "PROFESOR: " << aul.getProfesorAcargo() << endl << endl;
+  gotoxy(35, 3);
+  cout << "*****************************";
+  gotoxy(35, 4);
+  cout << "*RESULTADOS DE LA BUSQUEDA*";
+  gotoxy(35, 5);
+  cout << "*****************************";
+  gotoxy(30, 6);
+  cout << "CODIGO: " << aU.getCodigo();
+  gotoxy(30, 7);
+  cout << "NOMBRE: " << aU.getNombre();
+  gotoxy(30, 8);
+  cout << "NUMERO: " << aU.getNumero() << endl << endl;
+  system("pause");
 }
 
-void listaAulas::buscarAula() {
+void listaAu::encabezadoB() {
+  gotoxy(35, 2);
+  cout << "***************************";
+  gotoxy(35, 3);
+  cout << "*BUSCAR AULA REGISTRADAS*";
+  gotoxy(35, 4);
+  cout << "***************************";
+}
+
+void listaAu::buscarAu() {
   system("cls");
-  if (this->nAulas > 0) {
-    string codB;
-    gotoxy(28, 5);
-    codB = leerTexto("Ingrese Codigo del Aula a Buscar: ");
-    for (int x = 0; x < this->nAulas; x++) {
-      if (codB == (this->cabA + x)->getCodigoAula()) {
-        mostrarBusquedaAula(*(this->cabA + x));
+  if (this->cantAu > 0) {
+    string buscar;
+    encabezadoB();
+    gotoxy(30, 5);
+    buscar = this->leerTexto("Ingrese el Codigo del Aula: ");
+    for (int i = 0; i < this->cantAu; i++) {
+      if ((this->cab + i)->getCodigo() == buscar) {
+        mostrarB(*(this->cab + i));
         break;
+      } else {
+        system("cls");
+        gotoxy(30, 5);
+        cout << "NO SE ENCONTRO EL AULA..." << endl << endl;
+        system("pause");
       }
     }
-    system("pause");
   } else {
-    gotoxy(28, 5);
-    cout << "*NO HAY REGISTROS DE AULAS*";
-    Sleep(1500);
-    return;
+    system("cls");
+    gotoxy(30, 5);
+    cout << "NO HAY REGISTRO DE AULAS - OPCION 1 " << endl << endl;
+    system("pause");
   }
 }
 
-aula *listaAulas::elegirAula() {
+void listaAu::encabezadoListaAu() {
+  gotoxy(35, 3);
+  cout << "****************************";
+  gotoxy(35, 4);
+  cout << "*LISTA DE AULAS REGISTRADAS*";
+  gotoxy(35, 5);
+  cout << "****************************";
+  gotoxy(1, 6);
+  cout << "CODIGO";
+  gotoxy(20, 6);
+  cout << "NOMBRE";
+  gotoxy(39, 6);
+  cout << "NUMERO";
+}
+
+void listaAu::mostrarListaAu(aulaAu &aU, int x) {
+  encabezadoListaAu();
+  gotoxy(1, 7 + x);
+  cout << aU.getCodigo();
+  gotoxy(20, 7 + x);
+  cout << aU.getNombre();
+  gotoxy(39, 7 + x);
+  cout << aU.getNumero() << endl << endl;
+}
+
+void listaAu::mostrarListaAulas() {
   system("cls");
-  int opc, x;
-  gotoxy(17, 4);
-  cout << "==================";
-  gotoxy(17, 5);
-  cout << "| LISTA DE AULAS |";
-  gotoxy(17, 6);
-  cout << "==================";
-  for (x = 0; x < this->nAulas; x++) {
-    gotoxy(15, 8 + x);
-    cout << x + 1 << ".- CODIGO: " << (this->cabA + x)->getCodigoAula()
-         << "   --   PROFESOR: " << (this->cabA + x)->getProfesorAcargo();
+  if (this->cantAu > 0) {
+    for (int x = 0; x < this->cantAu; x++) {
+      mostrarListaAu(*(this->cab + x), x);
+    }
+  } else {
+    system("cls");
+    gotoxy(30, 5);
+    cout << "NO HAY REGISTRO DE AULAS - OPCION 1 " << endl << endl;
   }
+  system("pause");
+}
+
+void listaAu::crecerAu() {
+  aulaAu *aux = new aulaAu[this->cantAu + incre];
+  for (int i = 0; i < this->cantAu; i++) {
+    *(aux + i) = *(this->cab + i);
+  }
+  if (this->cab != NULL) {
+    delete this->cab;
+  }
+  this->cab = aux;
+  this->max += incre;
+}
+
+void listaAu::insertarAu(aulaAu *aU) {
+  if (this->cantAu == this->max) {
+    this->crecerAu();
+  }
+  *(this->cab + this->cantAu) = *aU;
+  this->cantAu++;
+}
+
+void listaAu::registrarAu() {
+  aulaAu *aU = new aulaAu();
+  aU->leerAu();
+  this->insertarAu(aU);
+}
+
+void listaAu::mostrarAl(aulaAu &aU, int x) {
+  system("cls");
+  alumnoAl *aux;
+  gotoxy(1, 7 + x);
+  cout << "CODIGO: " << aU.getCodigo() << " - "
+       << "SECCION: " << aU.getNombre() << endl
+       << endl;
+  aux = aU.getLAlu().getCab();
+  while (aux != NULL) {
+    gotoxy(1, 8 + x);
+    cout << "CODIGO: " << aux->getCodigo();
+  }
+}
+
+void listaAu::mostrarListaAl() {
+  system("cls");
+  if (this->cantAu > 0) {
+    for (int x = 0; x < this->cantAu; x++) {
+      mostrarAl(*(this->cab + x), x);
+    }
+  } else {
+    system("cls");
+    gotoxy(30, 5);
+    cout << "NO HAY REGISTRO DE AULAS - OPCION 1 " << endl << endl;
+  }
+  system("pause");
+}
+
+// Separador :) //
+
+int listaAu::menu() {
+  unsigned short opc;
+  system("cls");
+  gotoxy(35, 4);
+  cout << "***************************";
+  gotoxy(35, 5);
+  cout << "*COLEGIO NO ME DESAPRUEBES*";
+  gotoxy(35, 6);
+  cout << "***************************";
+  gotoxy(30, 7);
+  cout << "1. Registrar Aula";
+  gotoxy(30, 8);
+  cout << "2. Mostrar Lista de Aulas";
+  gotoxy(30, 9);
+  cout << "3. Buscar Aula";
+  gotoxy(30, 10);
+  cout << "4. Registrar Alumno en Aula";
+  gotoxy(30, 11);
+  cout << "5. Mostar Alumnos con sus Aulas";
+  gotoxy(30, 12);
+  cout << "6. Buscar Alumno";
+  gotoxy(30, 13);
+  cout << "7. Salir ";
   do {
-    gotoxy(18, 8 + 2 * x);
+    gotoxy(31, 14);
     cout << "Ingrese Opcion: ";
     cin >> opc;
-  } while (!(opc > 0 && opc <= this->nAulas));
-  return (this->cabA + opc - 1);
+  } while (!(opc >= 1 && opc <= 7));
+  return opc;
 }
 
-void alumno::leerAlumno(int x) {
-  system("cls");
-  gotoxy(35, 5);
-  cout << "=======================";
-  gotoxy(35, 6);
-  cout << "| REGISTRO ALUMNO N - " << x + 1 << " |";
-  gotoxy(35, 7);
-  cout << "=======================";
-  gotoxy(28, 9);
-  this->nameAlumno = this->leerTexto("Ingrese Nombre del Alumno: ");
-  gotoxy(28, 10);
-  this->apellidoAlumno = this->leerTexto("Ingrese Apellido del Alumno: ");
-  gotoxy(28, 11);
-  this->dni = this->leerTexto("Ingrese DNI del Alumno: ");
-  gotoxy(28, 12);
-  this->edad = this->leerEntero("Ingrese Edad del Alumno: ");
+string listaAu::leerTexto(string mensaje) {
+  string texto;
+  cout << mensaje;
+  fflush(stdin);
+  getline(cin, texto);
+  return texto;
 }
 
-void listaAlumnos::crecerListaAlumno() {
-  alumno *temp = new alumno[this->nAlumnos + Max];
-  for (int i = 0; i < this->nAlumnos; i++) {
-    *(temp + i) = *(this->cabAlu + i);
-  }
-  /*if (lE.cab != NULL){
-      delete lE.cab;
-  }*/
-  this->cabAlu = temp;
-  this->maxAlu += Max;
+void listaAu::gotoxy(int x, int y) {
+  HANDLE hcon;
+  hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+  COORD dwPos;
+  dwPos.X = x;
+  dwPos.Y = y;
+  SetConsoleCursorPosition(hcon, dwPos);
 }
-
-void listaAlumnos::insertarAlumno(alumno *alu) {
-  if (this->nAlumnos == this->maxAlu) {
-    this->crecerListaAlumno();
-  }
-  *(this->cabAlu + this->nAlumnos) = *alu;
-  this->nAlumnos++;
-}
-
-void listaAlumnos::registrarEstudiante() {
-  alumno *alu = new alumno();
-  alu->leerAlumno(this->nAlumnos);
-  this->insertarAlumno(alu);
-}
-
-void listaAulas::registrarAlumno() {
-  system("cls");
-  if (this->nAulas > 0) {
-    aula *aux = new aula();
-    aux = elegirAula();
-    if (aux != NULL) {
-      aux->getLA()->registrarEstudiante();
-    }
-  } else {
-    gotoxy(28, 5);
-    cout << "NO HAY REGISTROS DE AULAS";
-    Sleep(1500);
-    return;
-  }
-}
-
-void listaAulas::mostrarEstudiantesAulas() {}
 
 int main() {
-  listaAulas *lA = new listaAulas();
-  int opc;
+  listaAu *lAu = new listaAu();
+  unsigned short opc;
   do {
-    opc = lA->menuOpciones();
+    opc = lAu->menu();
     switch (opc) {
       case 1:
-        lA->registrarAula();
+        lAu->registrarAu();
         break;
       case 2:
-        lA->listarAulas();
+        lAu->mostrarListaAulas();
         break;
       case 3:
-        lA->buscarAula();
+        lAu->buscarAu();
         break;
       case 4:
-        lA->registrarAlumno();
+        lAu->registrarAl();
         break;
       case 5:
-        lA->mostrarEstudiantesAulas();
+        lAu->mostrarListaAl();
         break;
-      case 6:
+      case 6:  // lAu->buscarAl();
         break;
     }
-  } while (!(opc == 7));
+  } while (!(opc == 6));
   return 0;
 }
