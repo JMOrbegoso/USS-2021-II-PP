@@ -29,19 +29,20 @@ class menu {
 
     cout << "[1] Editar nombre de la escuela" << endl;
     cout << "[2] Registrar aula" << endl;
-    cout << "[3] Mostrar aulas" << endl;
-    cout << "[4] Editar aula" << endl;
-    cout << "[5] Registrar estudiante" << endl;
-    cout << "[6] Mostrar estudiantes" << endl;
-    cout << "[7] Editar estudiante" << endl;
-    cout << "[8] Buscar estudiante por DNI" << endl;
+    cout << "[3] Mostrar todas las aulas" << endl;
+    cout << "[4] Ver aula en detalle" << endl;
+    cout << "[5] Editar aula" << endl;
+    cout << "[6] Registrar estudiante" << endl;
+    cout << "[7] Mostrar estudiantes" << endl;
+    cout << "[8] Editar estudiante" << endl;
+    cout << "[9] Buscar estudiante por DNI" << endl;
 
     cout << endl;
     cout << "[0] Cerrar" << endl;
 
     cout << endl << "Por favor ingrese una de las opciones:" << endl;
     cin >> selectedOption;
-    while (!(0 <= selectedOption && selectedOption <= 8)) {
+    while (!(0 <= selectedOption && selectedOption <= 9)) {
       cout << "La opcion seleccionada fue inválida, por favor seleccione una "
               "opcion válida:"
            << endl;
@@ -133,6 +134,37 @@ class menu {
     this->showClassRoomsTableHeader(7);
 
     this->college->getClassRooms()->showClassRooms(8);
+
+    cout << endl << endl;
+  }
+
+  void showClassRoomDetail() {
+    classRoom* auxClassRoom;
+    student* auxStudent;
+
+    auxClassRoom = this->college->getClassRooms()->pickClassRoom(
+        "Seleccione el aula que quiere ver en detalle");
+
+    if (auxClassRoom == NULL) {
+      cout << "Eligió una aula de clase no valida o no hay aulas registradas";
+      cout << endl << endl;
+      return;
+    }
+
+    helpers::clearScreen();
+    this->showAppTitle();
+
+    helpers::gotoxy(20, 5);
+    cout << "Detalle del aula " << auxClassRoom->getCode() << endl << endl;
+
+    this->showStudentsTableHeader(7);
+
+    int i = 1;
+    for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
+      auxStudent = auxClassRoom->getStudents()->getHead() + y;
+      auxStudent->showStudent(8 + i, i);
+      i++;
+    }
 
     cout << endl << endl;
   }
@@ -353,22 +385,26 @@ class menu {
             helpers::pauseProcess();
             break;
           case 4:
+            this->showClassRoomDetail();
+            helpers::pauseProcess();
+            break;
+          case 5:
             this->editClassRoom();
             Sleep(1500);
             break;
-          case 5:
+          case 6:
             this->registerNewStudent();
             Sleep(1500);
             break;
-          case 6:
+          case 7:
             this->showStudents();
             helpers::pauseProcess();
             break;
-          case 7:
+          case 8:
             this->editStudent();
             Sleep(1500);
             break;
-          case 8:
+          case 9:
             this->findStudentByDni();
             helpers::pauseProcess();
             break;
