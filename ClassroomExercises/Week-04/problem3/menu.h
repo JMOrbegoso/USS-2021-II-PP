@@ -25,7 +25,7 @@ class menu {
     int selectedOption;
 
     helpers::clearScreen();
-    showAppTitle();
+    this->showAppTitle();
 
     cout << endl
          << "Esta aplicación tiene las siguientes opciones:" << endl
@@ -84,6 +84,7 @@ class menu {
 
   void editSchoolName() {
     helpers::clearScreen();
+    this->showAppTitle();
 
     cout << "Editar nombre de la escuela:" << endl << endl;
 
@@ -102,6 +103,7 @@ class menu {
     string teacherFullName;
 
     helpers::clearScreen();
+    this->showAppTitle();
 
     cout << "Registrar nueva aula del colegio:" << endl << endl;
 
@@ -121,6 +123,7 @@ class menu {
 
   void showClassRooms() {
     helpers::clearScreen();
+    this->showAppTitle();
 
     helpers::gotoxy(20, 5);
     cout << "Lista de todas las aulas del colegio:" << endl << endl;
@@ -144,6 +147,7 @@ class menu {
     string teacherFullName;
 
     helpers::clearScreen();
+    this->showAppTitle();
 
     cout << "Editar aula del colegio:" << endl << endl;
 
@@ -180,6 +184,7 @@ class menu {
     bool genre;
 
     helpers::clearScreen();
+    this->showAppTitle();
 
     cout << "Registrar nuevo estudiante del colegio:" << endl << endl;
 
@@ -217,6 +222,7 @@ class menu {
     student* auxStudent;
 
     helpers::clearScreen();
+    this->showAppTitle();
 
     helpers::gotoxy(20, 5);
     cout << "Lista de todos los estudiantes del colegio:" << endl << endl;
@@ -254,6 +260,7 @@ class menu {
     bool genre;
 
     helpers::clearScreen();
+    this->showAppTitle();
 
     cout << "Editar estudiante del colegio:" << endl << endl;
 
@@ -306,6 +313,7 @@ class menu {
         helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
 
     helpers::clearScreen();
+    this->showAppTitle();
 
     auxStudent = this->college->getClassRooms()->findStudentByDni(dniToFind);
 
