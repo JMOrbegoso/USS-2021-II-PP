@@ -26,11 +26,14 @@ class classRoom {
   studentsList *getStudents() { return this->students; }
   void setStudents(studentsList *value) { this->students = value; }
 
-  void showClassRoom(int itemNumber) {
-    cout << "#: " << itemNumber << endl;
-    cout << "Codigo: " << this->getCode() << endl;
-    cout << "Profesor: " << this->getTeacherFullName() << endl;
-    cout << "# de Estudiantes: " << this->getStudents()->getLength() << endl;
-    cout << endl;
+  void showClassRoom(int rowNumber, int itemNumber) {
+    helpers::gotoxy(0, rowNumber);
+    cout << itemNumber;
+    helpers::gotoxy(5, rowNumber);
+    cout << this->getCode();
+    helpers::gotoxy(15, rowNumber);
+    cout << this->getTeacherFullName();
+    helpers::gotoxy(45, rowNumber);
+    cout << this->getStudents()->getLength();
   }
 };

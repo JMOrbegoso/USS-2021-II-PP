@@ -38,7 +38,7 @@ class classRoomsList {
   classRoom* getHead() { return this->head; }
   void setHead(classRoom* value) { this->head = value; }
 
-  void showClassRooms() {
+  void showClassRooms(int rowNumber) {
     if (this->length == 0) {
       cout << "No hay ningún aula registrada" << endl;
       cout << "Primero registre al menos un aula" << endl;
@@ -46,7 +46,7 @@ class classRoomsList {
     }
 
     for (int x = 0; x < this->length; x++) {
-      (*(this->head + x)).showClassRoom(x + 1);
+      (*(this->head + x)).showClassRoom(rowNumber + x + 1, x + 1);
     }
   }
 

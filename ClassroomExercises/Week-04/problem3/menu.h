@@ -94,9 +94,10 @@ class menu {
   void showClassRooms() {
     system("cls");
 
+    helpers::gotoxy(20, 5);
     cout << "Lista de todas las aulas del colegio:" << endl << endl;
 
-    this->college->getClassRooms()->showClassRooms();
+    this->college->getClassRooms()->showClassRooms(7);
 
     cout << endl << endl;
   }
@@ -181,6 +182,7 @@ class menu {
 
     system("cls");
 
+    helpers::gotoxy(20, 5);
     cout << "Lista de todos los estudiantes del colegio:" << endl << endl;
 
     if (this->college->getClassRooms()->getLength() == 0) {
@@ -195,7 +197,7 @@ class menu {
 
       for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
         auxStudent = auxClassRoom->getStudents()->getHead() + y;
-        auxStudent->showStudent(i);
+        auxStudent->showStudent(7 + i, i);
         i++;
       }
     }
@@ -260,15 +262,14 @@ class menu {
 
   void findStudentByDni() {
     student* auxStudent;
-    string dni;
+    string dniToFind;
+
+    dniToFind =
+        helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
 
     system("cls");
 
-    cout << "Buscar estudiante del colegio por su DNI:" << endl << endl;
-
-    dni = helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
-
-    auxStudent = this->college->getClassRooms()->findStudentByDni(dni);
+    auxStudent = this->college->getClassRooms()->findStudentByDni(dniToFind);
 
     if (auxStudent == NULL) {
       cout << "No se encontró un estudiante con el DNI ingresado";
@@ -276,9 +277,10 @@ class menu {
       return;
     }
 
-    cout << "Estudiante con el DNI: " << dni << endl;
+    helpers::gotoxy(20, 5);
+    cout << "Estudiante con el DNI: " << dniToFind << endl;
 
-    auxStudent->showStudent(1);
+    auxStudent->showStudent(7, 1);
 
     cout << endl << endl;
   }
