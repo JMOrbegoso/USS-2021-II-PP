@@ -262,7 +262,7 @@ class menu {
   }
 
  public:
-  menu(school* school) { this->college = school; }
+  menu(school*& school) { this->college = school; }
 
   void showMenu() {
     int selectedOption;

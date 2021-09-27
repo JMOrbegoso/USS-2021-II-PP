@@ -40,13 +40,13 @@ class student {
   void setAge(unsigned short value) { this->age = value; }
 
   bool getGenre() { return this->genre; }
+  void setGenre(bool value) { this->genre = value; }
   string getGenreAsString() {
     if (this->genre)
       return "Masculino";
     else
       return "Femenino";
   }
-  void setGenre(bool value) { this->genre = value; }
 
   void showStudent(int itemNumber) {
     cout << "# de Orden: " << itemNumber << endl;
