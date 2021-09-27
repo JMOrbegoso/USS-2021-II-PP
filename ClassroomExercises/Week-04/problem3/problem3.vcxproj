@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="classRoom.h" />
     <ClInclude Include="classRoomsList.h" />
+    <ClInclude Include="dataSeed.h" />
     <ClInclude Include="helpers.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="school.h" />

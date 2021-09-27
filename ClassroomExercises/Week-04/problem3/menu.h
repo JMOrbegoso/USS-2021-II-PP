@@ -2,8 +2,8 @@
 
 #include <iostream>
 
+#include "dataSeed.h";
 #include "helpers.h";
-#include "school.h";
 
 using namespace std;
 
