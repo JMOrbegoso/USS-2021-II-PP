@@ -5,8 +5,9 @@
 using namespace std;
 
 int main() {
-  school* uss = new school("USS");
-  menu* appMenu = new menu(uss);
+  school* school1 = new school();
+
+  menu* appMenu = new menu(school1);
 
   appMenu->showMenu();
 
