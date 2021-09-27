@@ -13,15 +13,15 @@ class dataSeed {
 
     schoolToSeed->setName("USS");
 
-    classRoom_1 = new classRoom("cr-1", "Juan Perez");
-    classRoom_2 = new classRoom("cr-1", "Juana Perez");
+    classRoom_1 = new classRoom("c01", "Juan Perez");
+    classRoom_2 = new classRoom("c02", "Juana Perez");
 
-    student_1 = new student("st-1", "Ricardo", "Flores", "10117618", 19, true);
-    student_2 = new student("st-2", "Susana", "Diaz", "80121607", 20, false);
-    student_3 = new student("st-3", "Roberto", "Rioja", "71188517", 19, true);
-    student_4 = new student("st-4", "Marcos", "Garcia", "52421620", 20, true);
-    student_5 = new student("st-5", "Maria", "Gonzales", "95101014", 21, false);
-    student_6 = new student("st-6", "Guillermo", "Lopez", "13729607", 22, true);
+    student_1 = new student("s01", "Ricardo", "Flores", "10117618", 19, true);
+    student_2 = new student("s02", "Susana", "Diaz", "80121607", 20, false);
+    student_3 = new student("s03", "Roberto", "Rioja", "71188517", 19, true);
+    student_4 = new student("s04", "Marcos", "Garcia", "52421620", 20, true);
+    student_5 = new student("s05", "Maria", "Gonzales", "95101014", 21, false);
+    student_6 = new student("s06", "Guillermo", "Lopez", "13729607", 22, true);
 
     classRoom_1->getStudents()->insert(student_1);
     classRoom_1->getStudents()->insert(student_2);
