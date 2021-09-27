@@ -22,15 +22,6 @@ class classRoomsList {
     this->capacity += growIn;
   }
 
-  void insert(classRoom* newClassRoom) {
-    if (this->length == this->capacity) {
-      this->grow(2);
-    }
-
-    *(this->head + this->length) = *newClassRoom;
-    this->length++;
-  }
-
  public:
   classRoomsList() {
     this->capacity = 0;
@@ -100,10 +91,13 @@ class classRoomsList {
     }
   }
 
-  void registerNewClassRoom(string code, string teacherFullName) {
-    classRoom* newClassRoom = new classRoom(code, teacherFullName);
+  void insert(classRoom* newClassRoom) {
+    if (this->length == this->capacity) {
+      this->grow(2);
+    }
 
-    this->insert(newClassRoom);
+    *(this->head + this->length) = *newClassRoom;
+    this->length++;
   }
 
   classRoom* pickClassRoom(string message) {

@@ -22,15 +22,6 @@ class studentsList {
     this->capacity += growIn;
   }
 
-  void insert(student* newStudent) {
-    if (this->length == this->capacity) {
-      this->grow(2);
-    }
-
-    *(this->head + this->length) = *newStudent;
-    this->length++;
-  }
-
  public:
   studentsList() {
     this->capacity = 0;
@@ -64,12 +55,13 @@ class studentsList {
     }
   }
 
-  void registerNewStudent(string code, string firstName, string lastName,
-                          string dni, unsigned short age, bool genre) {
-    student* newStudent =
-        new student(code, firstName, lastName, dni, age, genre);
+  void insert(student* newStudent) {
+    if (this->length == this->capacity) {
+      this->grow(2);
+    }
 
-    this->insert(newStudent);
+    *(this->head + this->length) = *newStudent;
+    this->length++;
   }
 
   student* pickStudent(string message) {

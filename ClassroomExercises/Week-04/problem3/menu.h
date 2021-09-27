@@ -70,6 +70,7 @@ class menu {
   }
 
   void registerNewClassRoom() {
+    classRoom* newClassRoom;
     string code;
     string teacherFullName;
 
@@ -83,7 +84,9 @@ class menu {
         "Por favor ingrese el nombre del docente responsable de la nueva aula",
         3);
 
-    this->college->getClassRooms()->registerNewClassRoom(code, teacherFullName);
+    newClassRoom = new classRoom(code, teacherFullName);
+
+    this->college->getClassRooms()->insert(newClassRoom);
 
     cout << "Aula registrada correctamente" << endl;
     cout << endl;
@@ -131,6 +134,7 @@ class menu {
   }
 
   void registerNewStudent() {
+    student* newStudent;
     classRoom* auxClassRoom;
     string code;
     string firstName;
@@ -164,8 +168,9 @@ class menu {
     genre = helpers::requestGenre(
         "Porfavor ingrese el genero del nuevo estudiante");
 
-    auxClassRoom->getStudents()->registerNewStudent(code, firstName, lastName,
-                                                    dni, age, genre);
+    newStudent = new student(code, firstName, lastName, dni, age, genre);
+
+    auxClassRoom->getStudents()->insert(newStudent);
 
     cout << "Estudiante registrado correctamente" << endl;
     cout << endl;
