@@ -1,7 +1,3 @@
-#include <Windows.h>
-
-#include <iostream>
-
 #include "dataSeed.h";
 
 using namespace std;

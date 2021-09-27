@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-
 #include "classRoom.h";
 
 using namespace std;

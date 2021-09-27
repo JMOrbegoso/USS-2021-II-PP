@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "school.h";
 
 using namespace std;
