@@ -50,28 +50,6 @@ class classRoomsList {
     }
   }
 
-  void showStudents() {
-    classRoom* auxClassRoom;
-    student* auxStudent;
-    int i = 1;
-
-    if (this->length == 0) {
-      cout << "No hay ningún aula registrada" << endl;
-      cout << "Primero registre al menos un aula" << endl;
-      return;
-    }
-
-    for (int x = 0; x < this->length; x++) {
-      auxClassRoom = this->head + x;
-
-      for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-        auxStudent = auxClassRoom->getStudents()->getHead() + y;
-        auxStudent->showStudent(i);
-        i++;
-      }
-    }
-  }
-
   student* findStudentByDni(string dni) {
     classRoom* auxClassRoom;
     student* auxStudent;

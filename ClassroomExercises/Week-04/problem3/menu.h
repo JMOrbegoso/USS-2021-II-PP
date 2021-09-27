@@ -176,11 +176,29 @@ class menu {
   }
 
   void showStudents() {
+    classRoom* auxClassRoom;
+    student* auxStudent;
+
     system("cls");
 
     cout << "Lista de todos los estudiantes del colegio:" << endl << endl;
 
-    this->college->getClassRooms()->showStudents();
+    if (this->college->getClassRooms()->getLength() == 0) {
+      cout << "No hay ningún aula registrada" << endl;
+      cout << "Primero registre al menos un aula" << endl;
+      return;
+    }
+
+    int i = 1;
+    for (int x = 0; x < this->college->getClassRooms()->getLength(); x++) {
+      auxClassRoom = this->college->getClassRooms()->getHead() + x;
+
+      for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
+        auxStudent = auxClassRoom->getStudents()->getHead() + y;
+        auxStudent->showStudent(i);
+        i++;
+      }
+    }
 
     cout << endl << endl;
   }
