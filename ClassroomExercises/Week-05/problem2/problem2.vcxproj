@@ -143,7 +143,6 @@
     <ClCompile Include="clientClass.cpp" />
     <ClCompile Include="clientsListClass.cpp" />
     <ClCompile Include="dataSeedClass.cpp" />
-    <ClCompile Include="GameClass.cpp" />
     <ClCompile Include="gamesListClass.cpp" />
     <ClCompile Include="helpersClass.cpp" />
     <ClCompile Include="main.cpp" />
@@ -154,7 +153,6 @@
     <ClInclude Include="clientClass.h" />
     <ClInclude Include="clientsListClass.h" />
     <ClInclude Include="dataSeedClass.h" />
-    <ClInclude Include="GameClass.h" />
     <ClInclude Include="gamesListClass.h" />
     <ClInclude Include="helpersClass.h" />
     <ClInclude Include="menuClass.h" />
