@@ -147,6 +147,7 @@
     <ClCompile Include="gamesListClass.cpp" />
     <ClCompile Include="helpersClass.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menuClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="amusementParkClass.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="GameClass.h" />
     <ClInclude Include="gamesListClass.h" />
     <ClInclude Include="helpersClass.h" />
+    <ClInclude Include="menuClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
