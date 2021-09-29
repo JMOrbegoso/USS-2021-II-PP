@@ -4,29 +4,27 @@
 
 using namespace std;
 
-classRoomClass::~classRoomClass() {}
-classRoomClass::classRoomClass() {}
-classRoomClass::classRoomClass(string code, string teacherFullName) {
+gameClass::~gameClass() {}
+gameClass::gameClass() {}
+gameClass::gameClass(string code, string teacherFullName) {
   this->code = code;
   this->teacherFullName = teacherFullName;
 
   this->students = new clientsListClass();
 }
 
-string classRoomClass::getCode() { return this->code; }
-void classRoomClass::setCode(string value) { this->code = value; }
+string gameClass::getCode() { return this->code; }
+void gameClass::setCode(string value) { this->code = value; }
 
-string classRoomClass::getTeacherFullName() { return this->teacherFullName; }
-void classRoomClass::setTeacherFullName(string value) {
+string gameClass::getTeacherFullName() { return this->teacherFullName; }
+void gameClass::setTeacherFullName(string value) {
   this->teacherFullName = value;
 }
 
-clientsListClass *classRoomClass::getStudents() { return this->students; }
-void classRoomClass::setStudents(clientsListClass *value) {
-  this->students = value;
-}
+clientsListClass *gameClass::getStudents() { return this->students; }
+void gameClass::setStudents(clientsListClass *value) { this->students = value; }
 
-void classRoomClass::showClassRoom(int rowNumber, int itemNumber) {
+void gameClass::showClassRoom(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);

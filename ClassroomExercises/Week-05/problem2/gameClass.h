@@ -4,16 +4,16 @@
 
 using namespace std;
 
-class classRoomClass {
+class gameClass {
  private:
   string code;
   string teacherFullName;
   clientsListClass *students;
 
  public:
-  ~classRoomClass();
-  classRoomClass();
-  classRoomClass(string code, string teacherFullName);
+  ~gameClass();
+  gameClass();
+  gameClass(string code, string teacherFullName);
 
   string getCode();
   void setCode(string value);

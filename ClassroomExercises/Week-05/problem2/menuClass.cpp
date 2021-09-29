@@ -95,7 +95,7 @@ void menuClass::editSchoolName() {
 }
 
 void menuClass::registerNewClassRoom() {
-  classRoomClass* newClassRoom;
+  gameClass* newClassRoom;
   string code;
   string teacherFullName;
 
@@ -110,7 +110,7 @@ void menuClass::registerNewClassRoom() {
       "Por favor ingrese el nombre del docente responsable de la nueva aula",
       3);
 
-  newClassRoom = new classRoomClass(code, teacherFullName);
+  newClassRoom = new gameClass(code, teacherFullName);
 
   this->school->getClassRooms()->insert(newClassRoom);
 
@@ -139,7 +139,7 @@ void menuClass::showClassRooms() {
 }
 
 void menuClass::showClassRoomDetail() {
-  classRoomClass* auxClassRoom;
+  gameClass* auxClassRoom;
   clientClass* auxStudent;
 
   auxClassRoom = this->school->getClassRooms()->pickClassRoom(
@@ -170,7 +170,7 @@ void menuClass::showClassRoomDetail() {
 }
 
 void menuClass::editClassRoom() {
-  classRoomClass* auxClassRoom;
+  gameClass* auxClassRoom;
   string code;
   string teacherFullName;
 
@@ -202,7 +202,7 @@ void menuClass::editClassRoom() {
 
 void menuClass::registerNewStudent() {
   clientClass* newStudent;
-  classRoomClass* auxClassRoom;
+  gameClass* auxClassRoom;
   string code;
   string firstName;
   string lastName;
@@ -246,7 +246,7 @@ void menuClass::registerNewStudent() {
 }
 
 void menuClass::showStudents() {
-  classRoomClass* auxClassRoom;
+  gameClass* auxClassRoom;
   clientClass* auxStudent;
 
   helpersClass::clearScreen();
@@ -278,7 +278,7 @@ void menuClass::showStudents() {
 }
 
 void menuClass::editStudent() {
-  classRoomClass* auxClassRoom;
+  gameClass* auxClassRoom;
   clientClass* auxStudent;
   string code;
   string firstName;

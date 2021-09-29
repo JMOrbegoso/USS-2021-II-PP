@@ -6,7 +6,7 @@ class classRoomsListClass {
  private:
   int capacity;
   int length;
-  classRoomClass* head;
+  gameClass* head;
 
   void grow(int growIn);
 
@@ -20,14 +20,14 @@ class classRoomsListClass {
   int getLength();
   void setLength(int value);
 
-  classRoomClass* getHead();
-  void setHead(classRoomClass* value);
+  gameClass* getHead();
+  void setHead(gameClass* value);
 
   void showClassRooms(int rowNumber);
 
   clientClass* findStudentByDni(string dni);
 
-  void insert(classRoomClass* newClassRoom);
+  void insert(gameClass* newClassRoom);
 
-  classRoomClass* pickClassRoom(string message);
+  gameClass* pickClassRoom(string message);
 };

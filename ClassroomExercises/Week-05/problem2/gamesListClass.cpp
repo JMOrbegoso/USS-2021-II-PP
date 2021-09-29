@@ -3,7 +3,7 @@
 #include "helpersClass.h"
 
 void classRoomsListClass::grow(int growIn) {
-  classRoomClass* aux = new classRoomClass[this->length + growIn];
+  gameClass* aux = new gameClass[this->length + growIn];
 
   for (int i = 0; i < this->length; i++) {
     *(aux + i) = *(this->head + i);
@@ -26,8 +26,8 @@ void classRoomsListClass::setCapacity(int value) { this->capacity = value; }
 int classRoomsListClass::getLength() { return this->length; }
 void classRoomsListClass::setLength(int value) { this->length = value; }
 
-classRoomClass* classRoomsListClass::getHead() { return this->head; }
-void classRoomsListClass::setHead(classRoomClass* value) { this->head = value; }
+gameClass* classRoomsListClass::getHead() { return this->head; }
+void classRoomsListClass::setHead(gameClass* value) { this->head = value; }
 
 void classRoomsListClass::showClassRooms(int rowNumber) {
   if (this->length == 0) {
@@ -42,7 +42,7 @@ void classRoomsListClass::showClassRooms(int rowNumber) {
 }
 
 clientClass* classRoomsListClass::findStudentByDni(string dni) {
-  classRoomClass* auxClassRoom;
+  gameClass* auxClassRoom;
   clientClass* auxStudent;
 
   if (this->length == 0) {
@@ -60,7 +60,7 @@ clientClass* classRoomsListClass::findStudentByDni(string dni) {
   }
 }
 
-void classRoomsListClass::insert(classRoomClass* newClassRoom) {
+void classRoomsListClass::insert(gameClass* newClassRoom) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
@@ -69,8 +69,8 @@ void classRoomsListClass::insert(classRoomClass* newClassRoom) {
   this->length++;
 }
 
-classRoomClass* classRoomsListClass::pickClassRoom(string message) {
-  classRoomClass* aux;
+gameClass* classRoomsListClass::pickClassRoom(string message) {
+  gameClass* aux;
   int selectedOption;
 
   if (this->length == 0) {
