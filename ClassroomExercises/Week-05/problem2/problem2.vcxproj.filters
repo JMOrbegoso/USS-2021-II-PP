@@ -39,6 +39,9 @@
     <ClCompile Include="menuClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="amusementParkClass.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="menuClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
