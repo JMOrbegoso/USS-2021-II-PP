@@ -363,7 +363,7 @@ void menuClass::findStudentByDni() {
 }
 
 menuClass::~menuClass() {}
-menuClass::menuClass(schoolClass*& school1) { this->school = school1; }
+menuClass::menuClass(amusementParkClass*& school1) { this->school = school1; }
 
 void menuClass::showMenu() {
   int selectedOption;

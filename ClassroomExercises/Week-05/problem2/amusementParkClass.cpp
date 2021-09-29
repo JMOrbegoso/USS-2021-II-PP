@@ -2,13 +2,15 @@
 
 using namespace std;
 
-schoolClass::~schoolClass() {}
-schoolClass::schoolClass() { this->classRooms = new gamesListClass(); }
+amusementParkClass::~amusementParkClass() {}
+amusementParkClass::amusementParkClass() {
+  this->classRooms = new gamesListClass();
+}
 
-string schoolClass::getName() { return this->name; }
-void schoolClass::setName(string value) { this->name = value; }
+string amusementParkClass::getName() { return this->name; }
+void amusementParkClass::setName(string value) { this->name = value; }
 
-gamesListClass *schoolClass::getClassRooms() { return this->classRooms; }
-void schoolClass::setClassRooms(gamesListClass *value) {
+gamesListClass *amusementParkClass::getClassRooms() { return this->classRooms; }
+void amusementParkClass::setClassRooms(gamesListClass *value) {
   this->classRooms = value;
 }

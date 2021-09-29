@@ -4,14 +4,14 @@
 
 using namespace std;
 
-class schoolClass {
+class amusementParkClass {
  private:
   string name;
   gamesListClass *classRooms;
 
  public:
-  ~schoolClass();
-  schoolClass();
+  ~amusementParkClass();
+  amusementParkClass();
 
   string getName();
   void setName(string value);

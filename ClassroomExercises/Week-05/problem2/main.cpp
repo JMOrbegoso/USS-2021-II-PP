@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-  schoolClass* school1 = new schoolClass();
+  amusementParkClass* school1 = new amusementParkClass();
   dataSeedClass::seed(school1);
 
   menuClass* appMenu = new menuClass(school1);
