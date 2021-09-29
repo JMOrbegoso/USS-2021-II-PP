@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void studentsListClass::grow(int growIn) {
+void clientsListClass::grow(int growIn) {
   clientClass* aux = new clientClass[this->length + growIn];
 
   for (int i = 0; i < this->length; i++) {
@@ -15,23 +15,23 @@ void studentsListClass::grow(int growIn) {
   this->capacity += growIn;
 }
 
-studentsListClass::~studentsListClass() {}
-studentsListClass::studentsListClass() {
+clientsListClass::~clientsListClass() {}
+clientsListClass::clientsListClass() {
   this->capacity = 0;
   this->length = 0;
   this->head = NULL;
 }
 
-int studentsListClass::getCapacity() { return this->capacity; }
-void studentsListClass::setCapacity(int value) { this->capacity = value; }
+int clientsListClass::getCapacity() { return this->capacity; }
+void clientsListClass::setCapacity(int value) { this->capacity = value; }
 
-int studentsListClass::getLength() { return this->length; }
-void studentsListClass::setLength(int value) { this->length = value; }
+int clientsListClass::getLength() { return this->length; }
+void clientsListClass::setLength(int value) { this->length = value; }
 
-clientClass* studentsListClass::getHead() { return this->head; }
-void studentsListClass::setHead(clientClass* value) { this->head = value; }
+clientClass* clientsListClass::getHead() { return this->head; }
+void clientsListClass::setHead(clientClass* value) { this->head = value; }
 
-void studentsListClass::showStudents(int rowNumber) {
+void clientsListClass::showStudents(int rowNumber) {
   clientClass* auxStudent;
   int i = 1;
 
@@ -48,7 +48,7 @@ void studentsListClass::showStudents(int rowNumber) {
   }
 }
 
-void studentsListClass::insert(clientClass* newStudent) {
+void clientsListClass::insert(clientClass* newStudent) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
@@ -57,7 +57,7 @@ void studentsListClass::insert(clientClass* newStudent) {
   this->length++;
 }
 
-clientClass* studentsListClass::pickStudent(string message) {
+clientClass* clientsListClass::pickStudent(string message) {
   clientClass* aux;
   int selectedOption;
 

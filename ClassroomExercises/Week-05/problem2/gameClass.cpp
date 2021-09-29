@@ -10,7 +10,7 @@ classRoomClass::classRoomClass(string code, string teacherFullName) {
   this->code = code;
   this->teacherFullName = teacherFullName;
 
-  this->students = new studentsListClass();
+  this->students = new clientsListClass();
 }
 
 string classRoomClass::getCode() { return this->code; }
@@ -21,8 +21,8 @@ void classRoomClass::setTeacherFullName(string value) {
   this->teacherFullName = value;
 }
 
-studentsListClass *classRoomClass::getStudents() { return this->students; }
-void classRoomClass::setStudents(studentsListClass *value) {
+clientsListClass *classRoomClass::getStudents() { return this->students; }
+void classRoomClass::setStudents(clientsListClass *value) {
   this->students = value;
 }
 

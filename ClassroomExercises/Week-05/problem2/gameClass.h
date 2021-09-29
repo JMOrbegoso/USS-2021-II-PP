@@ -8,7 +8,7 @@ class classRoomClass {
  private:
   string code;
   string teacherFullName;
-  studentsListClass *students;
+  clientsListClass *students;
 
  public:
   ~classRoomClass();
@@ -21,8 +21,8 @@ class classRoomClass {
   string getTeacherFullName();
   void setTeacherFullName(string value);
 
-  studentsListClass *getStudents();
-  void setStudents(studentsListClass *value);
+  clientsListClass *getStudents();
+  void setStudents(clientsListClass *value);
 
   void showClassRoom(int rowNumber, int itemNumber);
 };
