@@ -142,6 +142,7 @@
     <ClCompile Include="classRoomClass.cpp" />
     <ClCompile Include="classRoomsListClass.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="schoolClass.cpp" />
     <ClCompile Include="studentClass.cpp" />
     <ClCompile Include="studentsListClass.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="classRoomClass.h" />
     <ClInclude Include="classRoomsListClass.h" />
     <ClInclude Include="helpers.h" />
+    <ClInclude Include="schoolClass.h" />
     <ClInclude Include="studentClass.h" />
     <ClInclude Include="studentsListClass.h" />
   </ItemGroup>
