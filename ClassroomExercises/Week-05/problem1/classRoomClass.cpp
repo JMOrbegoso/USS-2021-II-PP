@@ -1,8 +1,6 @@
 #include "classRoomClass.h"
 
-#include <string>
-
-#include "helpers.h"
+#include "helpersClass.h"
 
 using namespace std;
 
@@ -29,12 +27,12 @@ void classRoomClass::setStudents(studentsListClass *value) {
 }
 
 void classRoomClass::showClassRoom(int rowNumber, int itemNumber) {
-  helpers::gotoxy(0, rowNumber);
+  helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
-  helpers::gotoxy(5, rowNumber);
+  helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
-  helpers::gotoxy(15, rowNumber);
+  helpersClass::gotoxy(15, rowNumber);
   cout << this->getTeacherFullName();
-  helpers::gotoxy(45, rowNumber);
+  helpersClass::gotoxy(45, rowNumber);
   cout << this->getStudents()->getLength();
 }

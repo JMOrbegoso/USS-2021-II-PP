@@ -12,10 +12,10 @@ class studentClass {
   bool genre;
 
  public:
-  ~studentClass() {}
-  studentClass() {}
+  ~studentClass();
+  studentClass();
   studentClass(string code, string firstName, string lastName, string dni,
-               unsigned short age, bool genre) {}
+               unsigned short age, bool genre);
 
   string getCode();
   void setCode(string value);

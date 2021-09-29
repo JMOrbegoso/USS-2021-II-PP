@@ -11,11 +11,11 @@ class schoolClass {
 
  public:
   ~schoolClass();
-  schoolClass() { this->classRooms = new classRoomsListClass(); }
+  schoolClass();
 
-  string getName() { return this->name; }
-  void setName(string value) { this->name = value; }
+  string getName();
+  void setName(string value);
 
-  classRoomsListClass *getClassRooms() { return this->classRooms; }
-  void setClassRooms(classRoomsListClass *value) { this->classRooms = value; }
+  classRoomsListClass *getClassRooms();
+  void setClassRooms(classRoomsListClass *value);
 };

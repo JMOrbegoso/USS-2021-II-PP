@@ -1,10 +1,8 @@
 #include "schoolClass.h"
 
-#include <string>
-
 using namespace std;
 
-schoolClass::~schoolClass(){};
+schoolClass::~schoolClass() {}
 schoolClass::schoolClass() { this->classRooms = new classRoomsListClass(); }
 
 string schoolClass::getName() { return this->name; }

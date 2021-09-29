@@ -1,6 +1,6 @@
 #include "classRoomsListClass.h"
 
-#include "helpers.h"
+#include "helpersClass.h"
 
 void classRoomsListClass::grow(int growIn) {
   classRoomClass* aux = new classRoomClass[this->length + growIn];
@@ -13,7 +13,7 @@ void classRoomsListClass::grow(int growIn) {
   this->capacity += growIn;
 }
 
-classRoomsListClass::~classRoomsListClass(){};
+classRoomsListClass::~classRoomsListClass() {}
 classRoomsListClass::classRoomsListClass() {
   this->capacity = 0;
   this->length = 0;

@@ -1,9 +1,8 @@
 #include "studentClass.h"
 
 #include <iostream>
-#include <string>
 
-#include "helpers.h"
+#include "helpersClass.h"
 
 using namespace std;
 
@@ -44,18 +43,18 @@ string studentClass::getGenreAsString() {
 }
 
 void studentClass::showStudent(int rowNumber, int itemNumber) {
-  helpers::gotoxy(0, rowNumber);
+  helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
-  helpers::gotoxy(5, rowNumber);
+  helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
-  helpers::gotoxy(15, rowNumber);
+  helpersClass::gotoxy(15, rowNumber);
   cout << this->getFirstName();
-  helpers::gotoxy(30, rowNumber);
+  helpersClass::gotoxy(30, rowNumber);
   cout << this->getLastName();
-  helpers::gotoxy(45, rowNumber);
+  helpersClass::gotoxy(45, rowNumber);
   cout << this->getDni();
-  helpers::gotoxy(55, rowNumber);
+  helpersClass::gotoxy(55, rowNumber);
   cout << this->getAge();
-  helpers::gotoxy(65, rowNumber);
+  helpersClass::gotoxy(65, rowNumber);
   cout << this->getGenreAsString();
 }

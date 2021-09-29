@@ -1,6 +1,5 @@
 #include <string>
 
-#include "helpers.h"
 #include "studentsListClass.h"
 
 using namespace std;
@@ -12,8 +11,8 @@ class classRoomClass {
   studentsListClass *students;
 
  public:
-  ~classRoomClass() {}
-  classRoomClass() {}
+  ~classRoomClass();
+  classRoomClass();
   classRoomClass(string code, string teacherFullName);
 
   string getCode();

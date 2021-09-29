@@ -15,7 +15,7 @@ class classRoomsListClass {
   classRoomsListClass();
 
   int getCapacity();
-  void setCapacity(int value) { this->capacity = value; }
+  void setCapacity(int value);
 
   int getLength();
   void setLength(int value);

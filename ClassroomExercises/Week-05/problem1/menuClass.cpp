@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "dataSeedClass.h";
+#include "helpersClass.h"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ void menuClass::showAppTitle() {
 int menuClass::requestMenuOption() {
   int selectedOption;
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   cout << endl
@@ -52,40 +52,40 @@ int menuClass::requestMenuOption() {
 }
 
 void menuClass::showClassRoomsTableHeader(int rowNumber) {
-  helpers::gotoxy(0, rowNumber);
+  helpersClass::gotoxy(0, rowNumber);
   cout << "#";
-  helpers::gotoxy(5, rowNumber);
+  helpersClass::gotoxy(5, rowNumber);
   cout << "Codigo";
-  helpers::gotoxy(15, rowNumber);
+  helpersClass::gotoxy(15, rowNumber);
   cout << "Profesor Responsable";
-  helpers::gotoxy(45, rowNumber);
+  helpersClass::gotoxy(45, rowNumber);
   cout << "# de Estudiantes";
 }
 
 void menuClass::showStudentsTableHeader(int rowNumber) {
-  helpers::gotoxy(0, rowNumber);
+  helpersClass::gotoxy(0, rowNumber);
   cout << "#";
-  helpers::gotoxy(5, rowNumber);
+  helpersClass::gotoxy(5, rowNumber);
   cout << "Codigo";
-  helpers::gotoxy(15, rowNumber);
+  helpersClass::gotoxy(15, rowNumber);
   cout << "Nombres";
-  helpers::gotoxy(30, rowNumber);
+  helpersClass::gotoxy(30, rowNumber);
   cout << "Apellidos";
-  helpers::gotoxy(45, rowNumber);
+  helpersClass::gotoxy(45, rowNumber);
   cout << "DNI";
-  helpers::gotoxy(55, rowNumber);
+  helpersClass::gotoxy(55, rowNumber);
   cout << "Edad";
-  helpers::gotoxy(65, rowNumber);
+  helpersClass::gotoxy(65, rowNumber);
   cout << "Genero";
 }
 
 void menuClass::editSchoolName() {
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   cout << "Editar nombre de la escuela:" << endl << endl;
 
-  string name = helpers::requestText(
+  string name = helpersClass::requestText(
       "Por favor ingrese el nuevo nombre de la escuela", 1);
 
   this->school->setName(name);
@@ -99,14 +99,14 @@ void menuClass::registerNewClassRoom() {
   string code;
   string teacherFullName;
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   cout << "Registrar nueva aula del colegio:" << endl << endl;
 
-  code = helpers::requestText("Por favor ingrese el codigo de la nueva aula", 3,
-                              3);
-  teacherFullName = helpers::requestText(
+  code = helpersClass::requestText(
+      "Por favor ingrese el codigo de la nueva aula", 3, 3);
+  teacherFullName = helpersClass::requestText(
       "Por favor ingrese el nombre del docente responsable de la nueva aula",
       3);
 
@@ -119,10 +119,10 @@ void menuClass::registerNewClassRoom() {
 }
 
 void menuClass::showClassRooms() {
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
-  helpers::gotoxy(20, 5);
+  helpersClass::gotoxy(20, 5);
   cout << "Lista de todas las aulas del colegio:" << endl << endl;
 
   if (this->school->getClassRooms()->getLength() == 0) {
@@ -151,10 +151,10 @@ void menuClass::showClassRoomDetail() {
     return;
   }
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
-  helpers::gotoxy(20, 5);
+  helpersClass::gotoxy(20, 5);
   cout << "Detalle del aula " << auxClassRoom->getCode() << endl << endl;
 
   this->showStudentsTableHeader(7);
@@ -174,7 +174,7 @@ void menuClass::editClassRoom() {
   string code;
   string teacherFullName;
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   cout << "Editar aula del colegio:" << endl << endl;
@@ -188,9 +188,9 @@ void menuClass::editClassRoom() {
     return;
   }
 
-  code =
-      helpers::requestText("Por favor ingrese el nuevo codigo del aula", 3, 3);
-  teacherFullName = helpers::requestText(
+  code = helpersClass::requestText("Por favor ingrese el nuevo codigo del aula",
+                                   3, 3);
+  teacherFullName = helpersClass::requestText(
       "Por favor ingrese el nombre del nuevo profesor responsable del aula", 1);
 
   auxClassRoom->setCode(code);
@@ -210,7 +210,7 @@ void menuClass::registerNewStudent() {
   unsigned short age;
   bool genre;
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   cout << "Registrar nuevo estudiante del colegio:" << endl << endl;
@@ -224,17 +224,18 @@ void menuClass::registerNewStudent() {
     return;
   }
 
-  code = helpers::requestText("Ingrese el codigo del nuevo estudiante", 3, 3);
+  code =
+      helpersClass::requestText("Ingrese el codigo del nuevo estudiante", 3, 3);
   firstName =
-      helpers::requestText("Ingrese los nombres del nuevo estudiante", 2);
-  lastName =
-      helpers::requestText("Ingrese los apellidos del nuevo estudiante", 2);
-  dni = helpers::requestText("Ingrese el DNI del nuevo estudiante", 8, 8);
-  age = helpers::requestIntegerNumber(
+      helpersClass::requestText("Ingrese los nombres del nuevo estudiante", 2);
+  lastName = helpersClass::requestText(
+      "Ingrese los apellidos del nuevo estudiante", 2);
+  dni = helpersClass::requestText("Ingrese el DNI del nuevo estudiante", 8, 8);
+  age = helpersClass::requestIntegerNumber(
       "Ingrese la edad del nuevo estudiante",
       "Por favor ingrese una edad igual o mayor a 3", 3);
-  genre =
-      helpers::requestGenre("Porfavor ingrese el genero del nuevo estudiante");
+  genre = helpersClass::requestGenre(
+      "Porfavor ingrese el genero del nuevo estudiante");
 
   newStudent = new studentClass(code, firstName, lastName, dni, age, genre);
 
@@ -248,10 +249,10 @@ void menuClass::showStudents() {
   classRoomClass* auxClassRoom;
   studentClass* auxStudent;
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
-  helpers::gotoxy(20, 5);
+  helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los estudiantes del colegio:" << endl << endl;
 
   if (this->school->getClassRooms()->getLength() == 0) {
@@ -286,7 +287,7 @@ void menuClass::editStudent() {
   unsigned short age;
   bool genre;
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   cout << "Editar estudiante del colegio:" << endl << endl;
@@ -309,17 +310,18 @@ void menuClass::editStudent() {
     return;
   }
 
-  code = helpers::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
+  code =
+      helpersClass::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
   firstName =
-      helpers::requestText("Ingrese los nuevo nombres del estudiante", 2);
-  lastName =
-      helpers::requestText("Ingrese los nuevo apellidos del estudiante", 2);
-  dni = helpers::requestText("Ingrese el nuevo DNI del estudiante", 8, 8);
-  age = helpers::requestIntegerNumber(
+      helpersClass::requestText("Ingrese los nuevo nombres del estudiante", 2);
+  lastName = helpersClass::requestText(
+      "Ingrese los nuevo apellidos del estudiante", 2);
+  dni = helpersClass::requestText("Ingrese el nuevo DNI del estudiante", 8, 8);
+  age = helpersClass::requestIntegerNumber(
       "Ingrese la nuevo edad del estudiante",
       "Por favor ingrese una edad igual o mayor a 3", 3);
-  genre =
-      helpers::requestGenre("Por favor ingrese el nuevo genero del estudiante");
+  genre = helpersClass::requestGenre(
+      "Por favor ingrese el nuevo genero del estudiante");
 
   auxStudent->setCode(code);
   auxStudent->setFirstName(firstName);
@@ -337,9 +339,9 @@ void menuClass::findStudentByDni() {
   string dniToFind;
 
   dniToFind =
-      helpers::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
+      helpersClass::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
 
-  helpers::clearScreen();
+  helpersClass::clearScreen();
   this->showAppTitle();
 
   auxStudent = this->school->getClassRooms()->findStudentByDni(dniToFind);
@@ -350,7 +352,7 @@ void menuClass::findStudentByDni() {
     return;
   }
 
-  helpers::gotoxy(20, 5);
+  helpersClass::gotoxy(20, 5);
   cout << "Estudiante con el DNI: " << dniToFind << endl;
 
   this->showStudentsTableHeader(7);
@@ -381,11 +383,11 @@ void menuClass::showMenu() {
           break;
         case 3:
           this->showClassRooms();
-          helpers::pauseProcess();
+          helpersClass::pauseProcess();
           break;
         case 4:
           this->showClassRoomDetail();
-          helpers::pauseProcess();
+          helpersClass::pauseProcess();
           break;
         case 5:
           this->editClassRoom();
@@ -397,7 +399,7 @@ void menuClass::showMenu() {
           break;
         case 7:
           this->showStudents();
-          helpers::pauseProcess();
+          helpersClass::pauseProcess();
           break;
         case 8:
           this->editStudent();
@@ -405,7 +407,7 @@ void menuClass::showMenu() {
           break;
         case 9:
           this->findStudentByDni();
-          helpers::pauseProcess();
+          helpersClass::pauseProcess();
           break;
       }
     }

@@ -39,11 +39,11 @@
     <ClCompile Include="menuClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="helpersClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="helpers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="studentClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="menuClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpersClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

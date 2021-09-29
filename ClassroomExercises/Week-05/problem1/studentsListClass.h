@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "studentClass.h"
 
 using namespace std;

@@ -142,6 +142,7 @@
     <ClCompile Include="classRoomClass.cpp" />
     <ClCompile Include="classRoomsListClass.cpp" />
     <ClCompile Include="dataSeedClass.cpp" />
+    <ClCompile Include="helpersClass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menuClass.cpp" />
     <ClCompile Include="schoolClass.cpp" />
@@ -152,7 +153,7 @@
     <ClInclude Include="classRoomClass.h" />
     <ClInclude Include="classRoomsListClass.h" />
     <ClInclude Include="dataSeedClass.h" />
-    <ClInclude Include="helpers.h" />
+    <ClInclude Include="helpersClass.h" />
     <ClInclude Include="menuClass.h" />
     <ClInclude Include="schoolClass.h" />
     <ClInclude Include="studentClass.h" />
