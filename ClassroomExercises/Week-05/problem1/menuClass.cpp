@@ -96,6 +96,7 @@ void menuClass::editSchoolName() {
 
 void menuClass::registerNewClassRoom() {
   classRoomClass* newClassRoom;
+  classRoomsListClass* auxClassRoomsList;
   string code;
   string teacherFullName;
 
@@ -112,7 +113,9 @@ void menuClass::registerNewClassRoom() {
 
   newClassRoom = new classRoomClass(code, teacherFullName);
 
-  this->school->getClassRooms()->insert(newClassRoom);
+  auxClassRoomsList = this->school->getClassRooms();
+  auxClassRoomsList->insert(newClassRoom);
+  this->school->setClassRooms(auxClassRoomsList);
 
   cout << "Aula registrada correctamente" << endl;
   cout << endl;
@@ -203,6 +206,7 @@ void menuClass::editClassRoom() {
 void menuClass::registerNewStudent() {
   studentClass* newStudent;
   classRoomClass* auxClassRoom;
+  studentsListClass* auxStudentsList;
   string code;
   string firstName;
   string lastName;
@@ -239,7 +243,9 @@ void menuClass::registerNewStudent() {
 
   newStudent = new studentClass(code, firstName, lastName, dni, age, genre);
 
-  auxClassRoom->getStudents()->insert(newStudent);
+  auxStudentsList = auxClassRoom->getStudents();
+  auxStudentsList->insert(newStudent);
+  auxClassRoom->setStudents(auxStudentsList);
 
   cout << "Estudiante registrado correctamente" << endl;
   cout << endl;
