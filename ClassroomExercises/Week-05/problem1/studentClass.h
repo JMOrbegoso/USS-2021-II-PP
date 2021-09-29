@@ -36,5 +36,5 @@ class studentClass {
   void setGenre(bool value);
   string getGenreAsString();
 
-  void showStudent(int rowNumber, int itemNumber);
+  void show(int rowNumber, int itemNumber);
 };

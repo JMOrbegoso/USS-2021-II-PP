@@ -133,7 +133,7 @@ void menuClass::showClassRooms() {
 
   this->showClassRoomsTableHeader(7);
 
-  this->school->getClassRooms()->showClassRooms(8);
+  this->school->getClassRooms()->show(8);
 
   cout << endl << endl;
 }
@@ -162,7 +162,7 @@ void menuClass::showClassRoomDetail() {
   int i = 1;
   for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
     auxStudent = auxClassRoom->getStudents()->getHead() + y;
-    auxStudent->showStudent(8 + i, i);
+    auxStudent->show(8 + i, i);
     i++;
   }
 
@@ -269,7 +269,7 @@ void menuClass::showStudents() {
 
     for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
       auxStudent = auxClassRoom->getStudents()->getHead() + y;
-      auxStudent->showStudent(8 + i, i);
+      auxStudent->show(8 + i, i);
       i++;
     }
   }
@@ -357,7 +357,7 @@ void menuClass::findStudentByDni() {
 
   this->showStudentsTableHeader(7);
 
-  auxStudent->showStudent(9, 1);
+  auxStudent->show(9, 1);
 
   cout << endl << endl;
 }

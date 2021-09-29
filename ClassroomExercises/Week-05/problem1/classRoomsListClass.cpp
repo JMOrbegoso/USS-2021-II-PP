@@ -29,7 +29,7 @@ void classRoomsListClass::setLength(int value) { this->length = value; }
 classRoomClass* classRoomsListClass::getHead() { return this->head; }
 void classRoomsListClass::setHead(classRoomClass* value) { this->head = value; }
 
-void classRoomsListClass::showClassRooms(int rowNumber) {
+void classRoomsListClass::show(int rowNumber) {
   if (this->length == 0) {
     cout << "No hay ningún aula registrada" << endl;
     cout << "Primero registre al menos un aula" << endl;
@@ -37,7 +37,7 @@ void classRoomsListClass::showClassRooms(int rowNumber) {
   }
 
   for (int x = 0; x < this->length; x++) {
-    (*(this->head + x)).showClassRoom(rowNumber + x + 1, x + 1);
+    (*(this->head + x)).show(rowNumber + x + 1, x + 1);
   }
 }
 

@@ -31,7 +31,7 @@ void studentsListClass::setLength(int value) { this->length = value; }
 studentClass* studentsListClass::getHead() { return this->head; }
 void studentsListClass::setHead(studentClass* value) { this->head = value; }
 
-void studentsListClass::showStudents(int rowNumber) {
+void studentsListClass::show(int rowNumber) {
   studentClass* auxStudent;
   int i = 1;
 
@@ -43,7 +43,7 @@ void studentsListClass::showStudents(int rowNumber) {
 
   for (int x = 0; x < this->length; x++) {
     auxStudent = this->head + x;
-    auxStudent->showStudent(rowNumber + i, i);
+    auxStudent->show(rowNumber + i, i);
     i++;
   }
 }

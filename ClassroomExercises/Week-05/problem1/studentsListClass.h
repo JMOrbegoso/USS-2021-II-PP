@@ -23,7 +23,7 @@ class studentsListClass {
   studentClass* getHead();
   void setHead(studentClass* value);
 
-  void showStudents(int rowNumber);
+  void show(int rowNumber);
 
   void insert(studentClass* newStudent);
 

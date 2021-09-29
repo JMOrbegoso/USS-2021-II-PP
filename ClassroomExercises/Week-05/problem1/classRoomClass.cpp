@@ -26,7 +26,7 @@ void classRoomClass::setStudents(studentsListClass *value) {
   this->students = value;
 }
 
-void classRoomClass::showClassRoom(int rowNumber, int itemNumber) {
+void classRoomClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);

@@ -23,7 +23,7 @@ class classRoomsListClass {
   classRoomClass* getHead();
   void setHead(classRoomClass* value);
 
-  void showClassRooms(int rowNumber);
+  void show(int rowNumber);
 
   studentClass* findStudentByDni(string dni);
 

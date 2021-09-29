@@ -24,5 +24,5 @@ class classRoomClass {
   studentsListClass *getStudents();
   void setStudents(studentsListClass *value);
 
-  void showClassRoom(int rowNumber, int itemNumber);
+  void show(int rowNumber, int itemNumber);
 };

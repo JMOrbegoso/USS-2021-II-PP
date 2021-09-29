@@ -42,7 +42,7 @@ string studentClass::getGenreAsString() {
     return "Femenino";
 }
 
-void studentClass::showStudent(int rowNumber, int itemNumber) {
+void studentClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);
