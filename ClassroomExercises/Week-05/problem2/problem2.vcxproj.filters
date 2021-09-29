@@ -36,6 +36,9 @@
     <ClCompile Include="helpersClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dataSeedClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="amusementParkClass.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="helpersClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dataSeedClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
