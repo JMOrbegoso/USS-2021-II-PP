@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="amusementParkClass.cpp" />
     <ClCompile Include="GameClass.cpp" />
+    <ClCompile Include="gamesListClass.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="amusementParkClass.h" />
     <ClInclude Include="GameClass.h" />
+    <ClInclude Include="gamesListClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
