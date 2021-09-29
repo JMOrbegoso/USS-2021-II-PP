@@ -25,7 +25,7 @@ class classRoomsListClass {
 
   void showClassRooms(int rowNumber);
 
-  studentClass* findStudentByDni(string dni);
+  clientClass* findStudentByDni(string dni);
 
   void insert(classRoomClass* newClassRoom);
 

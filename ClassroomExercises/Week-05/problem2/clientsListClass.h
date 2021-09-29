@@ -6,7 +6,7 @@ class studentsListClass {
  private:
   int capacity;
   int length;
-  studentClass* head;
+  clientClass* head;
 
   void grow(int growIn);
 
@@ -20,12 +20,12 @@ class studentsListClass {
   int getLength();
   void setLength(int value);
 
-  studentClass* getHead();
-  void setHead(studentClass* value);
+  clientClass* getHead();
+  void setHead(clientClass* value);
 
   void showStudents(int rowNumber);
 
-  void insert(studentClass* newStudent);
+  void insert(clientClass* newStudent);
 
-  studentClass* pickStudent(string message);
+  clientClass* pickStudent(string message);
 };

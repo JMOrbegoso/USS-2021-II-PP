@@ -41,9 +41,9 @@ void classRoomsListClass::showClassRooms(int rowNumber) {
   }
 }
 
-studentClass* classRoomsListClass::findStudentByDni(string dni) {
+clientClass* classRoomsListClass::findStudentByDni(string dni) {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  clientClass* auxStudent;
 
   if (this->length == 0) {
     return NULL;

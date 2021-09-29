@@ -6,10 +6,10 @@
 
 using namespace std;
 
-studentClass::~studentClass() {}
-studentClass::studentClass() {}
-studentClass::studentClass(string code, string firstName, string lastName,
-                           string dni, unsigned short age, bool genre) {
+clientClass::~clientClass() {}
+clientClass::clientClass() {}
+clientClass::clientClass(string code, string firstName, string lastName,
+                         string dni, unsigned short age, bool genre) {
   this->code = code;
   this->firstName = firstName;
   this->lastName = lastName;
@@ -18,31 +18,31 @@ studentClass::studentClass(string code, string firstName, string lastName,
   this->genre = genre;
 }
 
-string studentClass::getCode() { return this->code; }
-void studentClass::setCode(string value) { this->code = value; }
+string clientClass::getCode() { return this->code; }
+void clientClass::setCode(string value) { this->code = value; }
 
-string studentClass::getFirstName() { return this->firstName; }
-void studentClass::setFirstName(string value) { this->firstName = value; }
+string clientClass::getFirstName() { return this->firstName; }
+void clientClass::setFirstName(string value) { this->firstName = value; }
 
-string studentClass::getLastName() { return this->lastName; }
-void studentClass::setLastName(string value) { this->lastName = value; }
+string clientClass::getLastName() { return this->lastName; }
+void clientClass::setLastName(string value) { this->lastName = value; }
 
-string studentClass::getDni() { return this->dni; }
-void studentClass::setDni(string value) { this->dni = value; }
+string clientClass::getDni() { return this->dni; }
+void clientClass::setDni(string value) { this->dni = value; }
 
-unsigned short studentClass::getAge() { return this->age; }
-void studentClass::setAge(unsigned short value) { this->age = value; }
+unsigned short clientClass::getAge() { return this->age; }
+void clientClass::setAge(unsigned short value) { this->age = value; }
 
-bool studentClass::getGenre() { return this->genre; }
-void studentClass::setGenre(bool value) { this->genre = value; }
-string studentClass::getGenreAsString() {
+bool clientClass::getGenre() { return this->genre; }
+void clientClass::setGenre(bool value) { this->genre = value; }
+string clientClass::getGenreAsString() {
   if (this->genre)
     return "Masculino";
   else
     return "Femenino";
 }
 
-void studentClass::showStudent(int rowNumber, int itemNumber) {
+void clientClass::showStudent(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);

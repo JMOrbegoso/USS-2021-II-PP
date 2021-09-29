@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class studentClass {
+class clientClass {
  private:
   string code;
   string firstName;
@@ -12,10 +12,10 @@ class studentClass {
   bool genre;
 
  public:
-  ~studentClass();
-  studentClass();
-  studentClass(string code, string firstName, string lastName, string dni,
-               unsigned short age, bool genre);
+  ~clientClass();
+  clientClass();
+  clientClass(string code, string firstName, string lastName, string dni,
+              unsigned short age, bool genre);
 
   string getCode();
   void setCode(string value);

@@ -140,7 +140,7 @@ void menuClass::showClassRooms() {
 
 void menuClass::showClassRoomDetail() {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  clientClass* auxStudent;
 
   auxClassRoom = this->school->getClassRooms()->pickClassRoom(
       "Seleccione el aula que quiere ver en detalle");
@@ -201,7 +201,7 @@ void menuClass::editClassRoom() {
 }
 
 void menuClass::registerNewStudent() {
-  studentClass* newStudent;
+  clientClass* newStudent;
   classRoomClass* auxClassRoom;
   string code;
   string firstName;
@@ -237,7 +237,7 @@ void menuClass::registerNewStudent() {
   genre = helpersClass::requestGenre(
       "Porfavor ingrese el genero del nuevo estudiante");
 
-  newStudent = new studentClass(code, firstName, lastName, dni, age, genre);
+  newStudent = new clientClass(code, firstName, lastName, dni, age, genre);
 
   auxClassRoom->getStudents()->insert(newStudent);
 
@@ -247,7 +247,7 @@ void menuClass::registerNewStudent() {
 
 void menuClass::showStudents() {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  clientClass* auxStudent;
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -279,7 +279,7 @@ void menuClass::showStudents() {
 
 void menuClass::editStudent() {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  clientClass* auxStudent;
   string code;
   string firstName;
   string lastName;
@@ -335,7 +335,7 @@ void menuClass::editStudent() {
 }
 
 void menuClass::findStudentByDni() {
-  studentClass* auxStudent;
+  clientClass* auxStudent;
   string dniToFind;
 
   dniToFind =
