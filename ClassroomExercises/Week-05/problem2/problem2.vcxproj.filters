@@ -27,6 +27,9 @@
     <ClCompile Include="gamesListClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clientClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="amusementParkClass.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gamesListClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clientClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
