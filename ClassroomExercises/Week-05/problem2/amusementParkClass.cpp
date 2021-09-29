@@ -3,12 +3,12 @@
 using namespace std;
 
 schoolClass::~schoolClass() {}
-schoolClass::schoolClass() { this->classRooms = new classRoomsListClass(); }
+schoolClass::schoolClass() { this->classRooms = new gamesListClass(); }
 
 string schoolClass::getName() { return this->name; }
 void schoolClass::setName(string value) { this->name = value; }
 
-classRoomsListClass *schoolClass::getClassRooms() { return this->classRooms; }
-void schoolClass::setClassRooms(classRoomsListClass *value) {
+gamesListClass *schoolClass::getClassRooms() { return this->classRooms; }
+void schoolClass::setClassRooms(gamesListClass *value) {
   this->classRooms = value;
 }

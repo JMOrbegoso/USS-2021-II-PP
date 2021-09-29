@@ -7,7 +7,7 @@ using namespace std;
 class schoolClass {
  private:
   string name;
-  classRoomsListClass *classRooms;
+  gamesListClass *classRooms;
 
  public:
   ~schoolClass();
@@ -16,6 +16,6 @@ class schoolClass {
   string getName();
   void setName(string value);
 
-  classRoomsListClass *getClassRooms();
-  void setClassRooms(classRoomsListClass *value);
+  gamesListClass *getClassRooms();
+  void setClassRooms(gamesListClass *value);
 };

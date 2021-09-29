@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class classRoomsListClass {
+class gamesListClass {
  private:
   int capacity;
   int length;
@@ -11,8 +11,8 @@ class classRoomsListClass {
   void grow(int growIn);
 
  public:
-  ~classRoomsListClass();
-  classRoomsListClass();
+  ~gamesListClass();
+  gamesListClass();
 
   int getCapacity();
   void setCapacity(int value);

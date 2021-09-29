@@ -2,7 +2,7 @@
 
 #include "helpersClass.h"
 
-void classRoomsListClass::grow(int growIn) {
+void gamesListClass::grow(int growIn) {
   gameClass* aux = new gameClass[this->length + growIn];
 
   for (int i = 0; i < this->length; i++) {
@@ -13,23 +13,23 @@ void classRoomsListClass::grow(int growIn) {
   this->capacity += growIn;
 }
 
-classRoomsListClass::~classRoomsListClass() {}
-classRoomsListClass::classRoomsListClass() {
+gamesListClass::~gamesListClass() {}
+gamesListClass::gamesListClass() {
   this->capacity = 0;
   this->length = 0;
   this->head = NULL;
 }
 
-int classRoomsListClass::getCapacity() { return this->capacity; }
-void classRoomsListClass::setCapacity(int value) { this->capacity = value; }
+int gamesListClass::getCapacity() { return this->capacity; }
+void gamesListClass::setCapacity(int value) { this->capacity = value; }
 
-int classRoomsListClass::getLength() { return this->length; }
-void classRoomsListClass::setLength(int value) { this->length = value; }
+int gamesListClass::getLength() { return this->length; }
+void gamesListClass::setLength(int value) { this->length = value; }
 
-gameClass* classRoomsListClass::getHead() { return this->head; }
-void classRoomsListClass::setHead(gameClass* value) { this->head = value; }
+gameClass* gamesListClass::getHead() { return this->head; }
+void gamesListClass::setHead(gameClass* value) { this->head = value; }
 
-void classRoomsListClass::showClassRooms(int rowNumber) {
+void gamesListClass::showClassRooms(int rowNumber) {
   if (this->length == 0) {
     cout << "No hay ningún aula registrada" << endl;
     cout << "Primero registre al menos un aula" << endl;
@@ -41,7 +41,7 @@ void classRoomsListClass::showClassRooms(int rowNumber) {
   }
 }
 
-clientClass* classRoomsListClass::findStudentByDni(string dni) {
+clientClass* gamesListClass::findStudentByDni(string dni) {
   gameClass* auxClassRoom;
   clientClass* auxStudent;
 
@@ -60,7 +60,7 @@ clientClass* classRoomsListClass::findStudentByDni(string dni) {
   }
 }
 
-void classRoomsListClass::insert(gameClass* newClassRoom) {
+void gamesListClass::insert(gameClass* newClassRoom) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
@@ -69,7 +69,7 @@ void classRoomsListClass::insert(gameClass* newClassRoom) {
   this->length++;
 }
 
-gameClass* classRoomsListClass::pickClassRoom(string message) {
+gameClass* gamesListClass::pickClassRoom(string message) {
   gameClass* aux;
   int selectedOption;
 
