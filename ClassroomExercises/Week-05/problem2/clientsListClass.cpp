@@ -43,7 +43,7 @@ void clientsListClass::showStudents(int rowNumber) {
 
   for (int x = 0; x < this->length; x++) {
     auxStudent = this->head + x;
-    auxStudent->showStudent(rowNumber + i, i);
+    auxStudent->show(rowNumber + i, i);
     i++;
   }
 }

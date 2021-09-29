@@ -9,13 +9,13 @@ class clientClass {
   string lastName;
   string dni;
   unsigned short age;
-  bool genre;
+  float heigh;
 
  public:
   ~clientClass();
   clientClass();
   clientClass(string code, string firstName, string lastName, string dni,
-              unsigned short age, bool genre);
+              unsigned short age, float heigh);
 
   string getCode();
   void setCode(string value);
@@ -32,9 +32,8 @@ class clientClass {
   unsigned short getAge();
   void setAge(unsigned short value);
 
-  bool getGenre();
-  void setGenre(bool value);
-  string getGenreAsString();
+  float getHeigh();
+  void setHeigh(float value);
 
-  void showStudent(int rowNumber, int itemNumber);
+  void show(int rowNumber, int itemNumber);
 };

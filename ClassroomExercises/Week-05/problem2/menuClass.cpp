@@ -32,10 +32,10 @@ int menuClass::requestMenuOption() {
   cout << "[3] Mostrar todas las aulas" << endl;
   cout << "[4] Ver aula en detalle" << endl;
   cout << "[5] Editar aula" << endl;
-  cout << "[6] Registrar estudiante" << endl;
-  cout << "[7] Mostrar estudiantes" << endl;
-  cout << "[8] Editar estudiante" << endl;
-  cout << "[9] Buscar estudiante por DNI" << endl;
+  cout << "[6] Registrar cliente" << endl;
+  cout << "[7] Mostrar clientes" << endl;
+  cout << "[8] Editar cliente" << endl;
+  cout << "[9] Buscar cliente por DNI" << endl;
 
   cout << endl;
   cout << "[0] Cerrar" << endl;
@@ -59,7 +59,7 @@ void menuClass::showClassRoomsTableHeader(int rowNumber) {
   helpersClass::gotoxy(15, rowNumber);
   cout << "Profesor Responsable";
   helpersClass::gotoxy(45, rowNumber);
-  cout << "# de Estudiantes";
+  cout << "# de clientes";
 }
 
 void menuClass::showStudentsTableHeader(int rowNumber) {
@@ -160,9 +160,9 @@ void menuClass::showClassRoomDetail() {
   this->showStudentsTableHeader(7);
 
   int i = 1;
-  for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-    auxStudent = auxClassRoom->getStudents()->getHead() + y;
-    auxStudent->showStudent(8 + i, i);
+  for (int y = 0; y < auxClassRoom->getClients()->getLength(); y++) {
+    auxStudent = auxClassRoom->getClients()->getHead() + y;
+    auxStudent->show(8 + i, i);
     i++;
   }
 
@@ -213,10 +213,10 @@ void menuClass::registerNewStudent() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  cout << "Registrar nuevo estudiante del colegio:" << endl << endl;
+  cout << "Registrar nuevo cliente del colegio:" << endl << endl;
 
   auxClassRoom = this->school->getClassRooms()->pickClassRoom(
-      "Seleccione el aula donde desea añadir el estudiante");
+      "Seleccione el aula donde desea añadir el cliente");
 
   if (auxClassRoom == NULL) {
     cout << "Eligió una aula de clase no valida o no hay aulas registradas";
@@ -224,24 +224,23 @@ void menuClass::registerNewStudent() {
     return;
   }
 
-  code =
-      helpersClass::requestText("Ingrese el codigo del nuevo estudiante", 3, 3);
+  code = helpersClass::requestText("Ingrese el codigo del nuevo cliente", 3, 3);
   firstName =
-      helpersClass::requestText("Ingrese los nombres del nuevo estudiante", 2);
-  lastName = helpersClass::requestText(
-      "Ingrese los apellidos del nuevo estudiante", 2);
-  dni = helpersClass::requestText("Ingrese el DNI del nuevo estudiante", 8, 8);
+      helpersClass::requestText("Ingrese los nombres del nuevo cliente", 2);
+  lastName =
+      helpersClass::requestText("Ingrese los apellidos del nuevo cliente", 2);
+  dni = helpersClass::requestText("Ingrese el DNI del nuevo cliente", 8, 8);
   age = helpersClass::requestIntegerNumber(
-      "Ingrese la edad del nuevo estudiante",
+      "Ingrese la edad del nuevo cliente",
       "Por favor ingrese una edad igual o mayor a 3", 3);
   genre = helpersClass::requestGenre(
-      "Porfavor ingrese el genero del nuevo estudiante");
+      "Porfavor ingrese el genero del nuevo cliente");
 
   newStudent = new clientClass(code, firstName, lastName, dni, age, genre);
 
-  auxClassRoom->getStudents()->insert(newStudent);
+  auxClassRoom->getClients()->insert(newStudent);
 
-  cout << "Estudiante registrado correctamente" << endl;
+  cout << "cliente registrado correctamente" << endl;
   cout << endl;
 }
 
@@ -253,7 +252,7 @@ void menuClass::showStudents() {
   this->showAppTitle();
 
   helpersClass::gotoxy(20, 5);
-  cout << "Lista de todos los estudiantes del colegio:" << endl << endl;
+  cout << "Lista de todos los clientes del colegio:" << endl << endl;
 
   if (this->school->getClassRooms()->getLength() == 0) {
     cout << "No hay ningún aula registrada" << endl;
@@ -267,9 +266,9 @@ void menuClass::showStudents() {
   for (int x = 0; x < this->school->getClassRooms()->getLength(); x++) {
     auxClassRoom = this->school->getClassRooms()->getHead() + x;
 
-    for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-      auxStudent = auxClassRoom->getStudents()->getHead() + y;
-      auxStudent->showStudent(8 + i, i);
+    for (int y = 0; y < auxClassRoom->getClients()->getLength(); y++) {
+      auxStudent = auxClassRoom->getClients()->getHead() + y;
+      auxStudent->show(8 + i, i);
       i++;
     }
   }
@@ -285,15 +284,15 @@ void menuClass::editStudent() {
   string lastName;
   string dni;
   unsigned short age;
-  bool genre;
+  float heigh;
 
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  cout << "Editar estudiante del colegio:" << endl << endl;
+  cout << "Editar cliente del colegio:" << endl << endl;
 
   auxClassRoom = this->school->getClassRooms()->pickClassRoom(
-      "Seleccione el aula donde se encuentra el estudiante que desea editar");
+      "Seleccione el aula donde se encuentra el cliente que desea editar");
 
   if (auxClassRoom == NULL) {
     cout << "Eligió una aula de clase no valida o no hay aulas registradas";
@@ -301,36 +300,36 @@ void menuClass::editStudent() {
     return;
   }
 
-  auxStudent = auxClassRoom->getStudents()->pickStudent(
-      "Seleccione el estudiante que desea editar");
+  auxStudent = auxClassRoom->getClients()->pickStudent(
+      "Seleccione el cliente que desea editar");
 
   if (auxStudent == NULL) {
-    cout << "Eligió un estudiante no valido o no hay estudiantes registrados";
+    cout << "Eligió un cliente no valido o no hay clientes registrados";
     cout << endl << endl;
     return;
   }
 
-  code =
-      helpersClass::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
+  code = helpersClass::requestText("Ingrese el nuevo codigo del cliente", 3, 3);
   firstName =
-      helpersClass::requestText("Ingrese los nuevo nombres del estudiante", 2);
-  lastName = helpersClass::requestText(
-      "Ingrese los nuevo apellidos del estudiante", 2);
-  dni = helpersClass::requestText("Ingrese el nuevo DNI del estudiante", 8, 8);
+      helpersClass::requestText("Ingrese los nuevo nombres del cliente", 2);
+  lastName =
+      helpersClass::requestText("Ingrese los nuevo apellidos del cliente", 2);
+  dni = helpersClass::requestText("Ingrese el nuevo DNI del cliente", 8, 8);
   age = helpersClass::requestIntegerNumber(
-      "Ingrese la nuevo edad del estudiante",
+      "Ingrese la nuevo edad del cliente",
       "Por favor ingrese una edad igual o mayor a 3", 3);
-  genre = helpersClass::requestGenre(
-      "Por favor ingrese el nuevo genero del estudiante");
+  heigh = helpersClass::requestFloatNumber(
+      "Por favor ingrese la altura del cliente en metros",
+      "Por favor ingrese una altura igual o superior a 1m", 1);
 
   auxStudent->setCode(code);
   auxStudent->setFirstName(firstName);
   auxStudent->setLastName(lastName);
   auxStudent->setDni(dni);
   auxStudent->setAge(age);
-  auxStudent->setGenre(genre);
+  auxStudent->setHeigh(heigh);
 
-  cout << "Datos del estudiante editados correctamente";
+  cout << "Datos del clientes editados correctamente";
   cout << endl << endl;
 }
 
@@ -339,7 +338,7 @@ void menuClass::findStudentByDni() {
   string dniToFind;
 
   dniToFind =
-      helpersClass::requestText("Ingrese el DNI del estudiante a buscar", 8, 8);
+      helpersClass::requestText("Ingrese el DNI del cliente a buscar", 8, 8);
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -347,17 +346,17 @@ void menuClass::findStudentByDni() {
   auxStudent = this->school->getClassRooms()->findStudentByDni(dniToFind);
 
   if (auxStudent == NULL) {
-    cout << "No se encontró un estudiante con el DNI ingresado";
+    cout << "No se encontró un cliente con el DNI ingresado";
     cout << endl << endl;
     return;
   }
 
   helpersClass::gotoxy(20, 5);
-  cout << "Estudiante con el DNI: " << dniToFind << endl;
+  cout << "Cliente con el DNI: " << dniToFind << endl;
 
   this->showStudentsTableHeader(7);
 
-  auxStudent->showStudent(9, 1);
+  auxStudent->show(9, 1);
 
   cout << endl << endl;
 }

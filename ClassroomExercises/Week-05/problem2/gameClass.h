@@ -7,13 +7,13 @@ using namespace std;
 class gameClass {
  private:
   string code;
-  string teacherFullName;
-  clientsListClass *students;
+  string managerFullName;
+  clientsListClass *clients;
 
  public:
   ~gameClass();
   gameClass();
-  gameClass(string code, string teacherFullName);
+  gameClass(string code, string managerFullName);
 
   string getCode();
   void setCode(string value);
@@ -21,8 +21,8 @@ class gameClass {
   string getTeacherFullName();
   void setTeacherFullName(string value);
 
-  clientsListClass *getStudents();
-  void setStudents(clientsListClass *value);
+  clientsListClass *getClients();
+  void setClients(clientsListClass *value);
 
-  void showClassRoom(int rowNumber, int itemNumber);
+  void show(int rowNumber, int itemNumber);
 };

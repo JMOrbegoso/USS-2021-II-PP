@@ -9,13 +9,13 @@ using namespace std;
 clientClass::~clientClass() {}
 clientClass::clientClass() {}
 clientClass::clientClass(string code, string firstName, string lastName,
-                         string dni, unsigned short age, bool genre) {
+                         string dni, unsigned short age, float heigh) {
   this->code = code;
   this->firstName = firstName;
   this->lastName = lastName;
   this->dni = dni;
   this->age = age;
-  this->genre = genre;
+  this->heigh = heigh;
 }
 
 string clientClass::getCode() { return this->code; }
@@ -33,16 +33,10 @@ void clientClass::setDni(string value) { this->dni = value; }
 unsigned short clientClass::getAge() { return this->age; }
 void clientClass::setAge(unsigned short value) { this->age = value; }
 
-bool clientClass::getGenre() { return this->genre; }
-void clientClass::setGenre(bool value) { this->genre = value; }
-string clientClass::getGenreAsString() {
-  if (this->genre)
-    return "Masculino";
-  else
-    return "Femenino";
-}
+float clientClass::getHeigh() { return this->heigh; }
+void clientClass::setHeigh(float value) { this->heigh = value; }
 
-void clientClass::showStudent(int rowNumber, int itemNumber) {
+void clientClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);
@@ -56,5 +50,5 @@ void clientClass::showStudent(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(55, rowNumber);
   cout << this->getAge();
   helpersClass::gotoxy(65, rowNumber);
-  cout << this->getGenreAsString();
+  cout << this->getHeigh();
 }

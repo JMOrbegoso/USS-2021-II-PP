@@ -37,7 +37,7 @@ void gamesListClass::showClassRooms(int rowNumber) {
   }
 
   for (int x = 0; x < this->length; x++) {
-    (*(this->head + x)).showClassRoom(rowNumber + x + 1, x + 1);
+    (*(this->head + x)).show(rowNumber + x + 1, x + 1);
   }
 }
 
@@ -52,8 +52,8 @@ clientClass* gamesListClass::findStudentByDni(string dni) {
   for (int x = 0; x < this->length; x++) {
     auxClassRoom = this->head + x;
 
-    for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-      auxStudent = auxClassRoom->getStudents()->getHead() + y;
+    for (int y = 0; y < auxClassRoom->getClients()->getLength(); y++) {
+      auxStudent = auxClassRoom->getClients()->getHead() + y;
 
       if (auxStudent->getDni() == dni) return auxStudent;
     }

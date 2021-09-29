@@ -18,12 +18,12 @@ void dataSeedClass::seed(amusementParkClass *&amusementPark) {
   client_5 = new clientClass("s05", "Maria", "Gonzales", "95101014", 21, false);
   client_6 = new clientClass("s06", "Guillermo", "Lopez", "13729607", 22, true);
 
-  game_1->getStudents()->insert(client_1);
-  game_1->getStudents()->insert(client_2);
-  game_1->getStudents()->insert(client_3);
-  game_1->getStudents()->insert(client_4);
-  game_2->getStudents()->insert(client_5);
-  game_2->getStudents()->insert(client_6);
+  game_1->getClients()->insert(client_1);
+  game_1->getClients()->insert(client_2);
+  game_1->getClients()->insert(client_3);
+  game_1->getClients()->insert(client_4);
+  game_2->getClients()->insert(client_5);
+  game_2->getClients()->insert(client_6);
 
   amusementPark->getClassRooms()->insert(game_1);
   amusementPark->getClassRooms()->insert(game_2);
