@@ -34,7 +34,7 @@ class menuClass {
 
  public:
   ~menuClass();
-  menuClass(schoolClass*& school1);
+  menuClass(schoolClass*& school);
 
   void showMenu();
 };

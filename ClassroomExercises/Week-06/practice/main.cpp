@@ -3,10 +3,10 @@
 using namespace std;
 
 int main() {
-  schoolClass* school1 = new schoolClass();
-  dataSeedClass::seed(school1);
+  schoolClass* school = new schoolClass();
+  dataSeedClass::seed(school);
 
-  menuClass* appMenu = new menuClass(school1);
+  menuClass* appMenu = new menuClass(school);
 
   appMenu->showMenu();
 

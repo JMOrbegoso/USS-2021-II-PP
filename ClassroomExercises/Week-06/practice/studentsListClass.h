@@ -1,31 +1,26 @@
-#include "studentClass.h"
+#include "studentNodeClass.h"
 
 using namespace std;
 
 class studentsListClass {
  private:
-  int capacity;
+  studentNodeClass* head;
   int length;
-  studentClass* head;
-
-  void grow(int growIn);
 
  public:
   ~studentsListClass();
   studentsListClass();
 
-  int getCapacity();
-  void setCapacity(int value);
-
   int getLength();
   void setLength(int value);
 
-  studentClass* getHead();
-  void setHead(studentClass* value);
+  studentNodeClass* getHead();
+  void setHead(studentNodeClass* value);
 
   void show(int rowNumber);
 
   void insert(studentClass* newStudent);
 
+  studentClass* getElementByIndex(int index);
   studentClass* pickStudent(string message);
 };

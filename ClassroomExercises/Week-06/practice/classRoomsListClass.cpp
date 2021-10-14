@@ -43,7 +43,7 @@ void classRoomsListClass::show(int rowNumber) {
 
 studentClass* classRoomsListClass::findStudentByDni(string dni) {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  studentNodeClass* auxStudentNode;
 
   if (this->length == 0) {
     return NULL;
@@ -52,10 +52,12 @@ studentClass* classRoomsListClass::findStudentByDni(string dni) {
   for (int x = 0; x < this->length; x++) {
     auxClassRoom = this->head + x;
 
-    for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-      auxStudent = auxClassRoom->getStudents()->getHead() + y;
+    auxStudentNode = auxClassRoom->getStudents()->getHead();
+    while (auxStudentNode != NULL) {
+      if (auxStudentNode->getStudent()->getDni() == dni)
+        return auxStudentNode->getStudent();
 
-      if (auxStudent->getDni() == dni) return auxStudent;
+      auxStudentNode = auxStudentNode->getNext();
     }
   }
 }

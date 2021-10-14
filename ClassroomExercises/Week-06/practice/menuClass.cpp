@@ -143,7 +143,7 @@ void menuClass::showClassRooms() {
 
 void menuClass::showClassRoomDetail() {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  studentNodeClass* auxStudentNode;
 
   auxClassRoom = this->school->getClassRooms()->pickClassRoom(
       "Seleccione el aula que quiere ver en detalle");
@@ -163,10 +163,11 @@ void menuClass::showClassRoomDetail() {
   this->showStudentsTableHeader(7);
 
   int i = 1;
-  for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-    auxStudent = auxClassRoom->getStudents()->getHead() + y;
-    auxStudent->show(8 + i, i);
+  auxStudentNode = auxClassRoom->getStudents()->getHead();
+  while (auxStudentNode != NULL) {
+    auxStudentNode->getStudent()->show(8 + i, i);
     i++;
+    auxStudentNode = auxStudentNode->getNext();
   }
 
   cout << endl << endl;
@@ -174,7 +175,6 @@ void menuClass::showClassRoomDetail() {
 
 void menuClass::editClassRoom() {
   classRoomClass* auxClassRoom;
-  string code;
   string teacherFullName;
 
   helpersClass::clearScreen();
@@ -191,12 +191,11 @@ void menuClass::editClassRoom() {
     return;
   }
 
-  code = helpersClass::requestText("Por favor ingrese el nuevo codigo del aula",
-                                   3, 3);
   teacherFullName = helpersClass::requestText(
-      "Por favor ingrese el nombre del nuevo profesor responsable del aula", 1);
+      "Por favor ingrese el nombre completo del nuevo profesor responsable del "
+      "aula",
+      1);
 
-  auxClassRoom->setCode(code);
   auxClassRoom->setTeacherFullName(teacherFullName);
 
   cout << "Datos del aula editados correctamente";
@@ -253,7 +252,7 @@ void menuClass::registerNewStudent() {
 
 void menuClass::showStudents() {
   classRoomClass* auxClassRoom;
-  studentClass* auxStudent;
+  studentNodeClass* auxStudentNode;
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -273,10 +272,11 @@ void menuClass::showStudents() {
   for (int x = 0; x < this->school->getClassRooms()->getLength(); x++) {
     auxClassRoom = this->school->getClassRooms()->getHead() + x;
 
-    for (int y = 0; y < auxClassRoom->getStudents()->getLength(); y++) {
-      auxStudent = auxClassRoom->getStudents()->getHead() + y;
-      auxStudent->show(8 + i, i);
+    auxStudentNode = auxClassRoom->getStudents()->getHead();
+    while (auxStudentNode != NULL) {
+      auxStudentNode->getStudent()->show(8 + i, i);
       i++;
+      auxStudentNode = auxStudentNode->getNext();
     }
   }
 
@@ -286,7 +286,6 @@ void menuClass::showStudents() {
 void menuClass::editStudent() {
   classRoomClass* auxClassRoom;
   studentClass* auxStudent;
-  string code;
   string firstName;
   string lastName;
   string dni;
@@ -316,8 +315,6 @@ void menuClass::editStudent() {
     return;
   }
 
-  code =
-      helpersClass::requestText("Ingrese el nuevo codigo del estudiante", 3, 3);
   firstName =
       helpersClass::requestText("Ingrese los nuevo nombres del estudiante", 2);
   lastName = helpersClass::requestText(
@@ -329,7 +326,6 @@ void menuClass::editStudent() {
   genre = helpersClass::requestGenre(
       "Por favor ingrese el nuevo genero del estudiante");
 
-  auxStudent->setCode(code);
   auxStudent->setFirstName(firstName);
   auxStudent->setLastName(lastName);
   auxStudent->setDni(dni);
@@ -369,7 +365,7 @@ void menuClass::findStudentByDni() {
 }
 
 menuClass::~menuClass() {}
-menuClass::menuClass(schoolClass*& school1) { this->school = school1; }
+menuClass::menuClass(schoolClass*& school) { this->school = school; }
 
 void menuClass::showMenu() {
   int selectedOption;

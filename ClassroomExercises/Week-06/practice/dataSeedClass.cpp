@@ -2,12 +2,12 @@
 
 using namespace std;
 
-void dataSeedClass::seed(schoolClass *&schoolToSeed) {
+void dataSeedClass::seed(schoolClass *&school) {
   classRoomClass *classRoom_1, *classRoom_2;
   studentClass *student_1, *student_2, *student_3, *student_4, *student_5,
       *student_6;
 
-  schoolToSeed->setName("USS");
+  school->setName("USS");
 
   classRoom_1 = new classRoomClass("c01", "Juan Perez");
   classRoom_2 = new classRoomClass("c02", "Juana Perez");
@@ -29,6 +29,6 @@ void dataSeedClass::seed(schoolClass *&schoolToSeed) {
   classRoom_2->getStudents()->insert(student_5);
   classRoom_2->getStudents()->insert(student_6);
 
-  schoolToSeed->getClassRooms()->insert(classRoom_1);
-  schoolToSeed->getClassRooms()->insert(classRoom_2);
+  school->getClassRooms()->insert(classRoom_1);
+  school->getClassRooms()->insert(classRoom_2);
 }

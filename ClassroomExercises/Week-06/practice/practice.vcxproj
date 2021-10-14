@@ -147,6 +147,7 @@
     <ClCompile Include="menuClass.cpp" />
     <ClCompile Include="schoolClass.cpp" />
     <ClCompile Include="studentClass.cpp" />
+    <ClCompile Include="studentNodeClass.cpp" />
     <ClCompile Include="studentsListClass.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="menuClass.h" />
     <ClInclude Include="schoolClass.h" />
     <ClInclude Include="studentClass.h" />
+    <ClInclude Include="studentNodeClass.h" />
     <ClInclude Include="studentsListClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

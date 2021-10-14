@@ -4,35 +4,20 @@
 
 using namespace std;
 
-void studentsListClass::grow(int growIn) {
-  studentClass* aux = new studentClass[this->length + growIn];
-
-  for (int i = 0; i < this->length; i++) {
-    *(aux + i) = *(this->head + i);
-  }
-
-  this->head = aux;
-  this->capacity += growIn;
-}
-
 studentsListClass::~studentsListClass() {}
 studentsListClass::studentsListClass() {
-  this->capacity = 0;
   this->length = 0;
   this->head = NULL;
 }
 
-int studentsListClass::getCapacity() { return this->capacity; }
-void studentsListClass::setCapacity(int value) { this->capacity = value; }
-
 int studentsListClass::getLength() { return this->length; }
 void studentsListClass::setLength(int value) { this->length = value; }
 
-studentClass* studentsListClass::getHead() { return this->head; }
-void studentsListClass::setHead(studentClass* value) { this->head = value; }
+studentNodeClass* studentsListClass::getHead() { return this->head; }
+void studentsListClass::setHead(studentNodeClass* value) { this->head = value; }
 
 void studentsListClass::show(int rowNumber) {
-  studentClass* auxStudent;
+  studentNodeClass* auxStudentNode = new studentNodeClass();
   int i = 1;
 
   if (this->length == 0) {
@@ -41,24 +26,58 @@ void studentsListClass::show(int rowNumber) {
     return;
   }
 
-  for (int x = 0; x < this->length; x++) {
-    auxStudent = this->head + x;
-    auxStudent->show(rowNumber + i, i);
-    i++;
+  while (auxStudentNode != NULL) {
+    auxStudentNode->getStudent()->show(rowNumber + i, i);
+    auxStudentNode = auxStudentNode->getNext();
   }
 }
 
 void studentsListClass::insert(studentClass* newStudent) {
-  if (this->length == this->capacity) {
-    this->grow(2);
+  studentNodeClass* newNode = new studentNodeClass();
+
+  studentNodeClass* lastNode = this->getHead();
+
+  newNode->setStudent(newStudent);
+  newNode->setNext(NULL);
+
+  if (this->getHead() == NULL) {
+    newNode->setPrevious(NULL);
+    this->setHead(newNode);
+  } else {
+    while (lastNode->getNext() != NULL) {
+      lastNode = lastNode->getNext();
+    }
+
+    lastNode->setNext(newNode);
+    newNode->setPrevious(lastNode);
   }
 
-  *(this->head + this->length) = *newStudent;
-  this->length++;
+  this->setLength(this->getLength() + 1);
+}
+
+studentClass* studentsListClass::getElementByIndex(int index) {
+  studentNodeClass* auxNode = this->getHead();
+
+  if (0 >= index) {
+    return NULL;
+  }
+
+  if (index > this->getLength()) {
+    return NULL;
+  }
+
+  for (int i = 1; auxNode != NULL; i++) {
+    if (i == index) {
+      return auxNode->getStudent();
+    }
+    auxNode = auxNode->getNext();
+  }
+
+  return NULL;
 }
 
 studentClass* studentsListClass::pickStudent(string message) {
-  studentClass* aux;
+  studentNodeClass* aux;
   int selectedOption;
 
   if (this->length == 0) {
@@ -76,11 +95,11 @@ studentClass* studentsListClass::pickStudent(string message) {
 
     cout << "[" << x + 1 << "]";
     cout << " - ";
-    cout << aux->getCode();
+    cout << aux->getStudent()->getCode();
     cout << " - ";
-    cout << aux->getLastName();
+    cout << aux->getStudent()->getLastName();
     cout << " ";
-    cout << aux->getFirstName();
+    cout << aux->getStudent()->getFirstName();
     cout << endl;
   }
 
@@ -94,5 +113,5 @@ studentClass* studentsListClass::pickStudent(string message) {
     cin >> selectedOption;
   }
 
-  return (this->getHead() + selectedOption - 1);
+  return getElementByIndex(selectedOption);
 }
