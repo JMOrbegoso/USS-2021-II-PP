@@ -139,7 +139,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="practice.cpp" />
+    <ClCompile Include="classRoomClass.cpp" />
+    <ClCompile Include="classRoomsListClass.cpp" />
+    <ClCompile Include="dataSeedClass.cpp" />
+    <ClCompile Include="helpersClass.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menuClass.cpp" />
+    <ClCompile Include="schoolClass.cpp" />
+    <ClCompile Include="studentClass.cpp" />
+    <ClCompile Include="studentsListClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="classRoomClass.h" />
+    <ClInclude Include="classRoomsListClass.h" />
+    <ClInclude Include="dataSeedClass.h" />
+    <ClInclude Include="helpersClass.h" />
+    <ClInclude Include="menuClass.h" />
+    <ClInclude Include="schoolClass.h" />
+    <ClInclude Include="studentClass.h" />
+    <ClInclude Include="studentsListClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
