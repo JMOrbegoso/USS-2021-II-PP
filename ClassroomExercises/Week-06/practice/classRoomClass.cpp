@@ -4,17 +4,20 @@
 
 using namespace std;
 
+int classRoomClass::counter = 1;
+
 classRoomClass::~classRoomClass() {}
 classRoomClass::classRoomClass() {}
-classRoomClass::classRoomClass(string code, string teacherFullName) {
-  this->code = code;
+classRoomClass::classRoomClass(string teacherFullName) {
+  this->code = "cls-" + to_string(classRoomClass::counter);
+  classRoomClass::counter++;
+
   this->teacherFullName = teacherFullName;
 
   this->students = new studentsListClass();
 }
 
 string classRoomClass::getCode() { return this->code; }
-void classRoomClass::setCode(string value) { this->code = value; }
 
 string classRoomClass::getTeacherFullName() { return this->teacherFullName; }
 void classRoomClass::setTeacherFullName(string value) {

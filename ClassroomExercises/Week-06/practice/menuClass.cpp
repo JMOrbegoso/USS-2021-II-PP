@@ -97,7 +97,6 @@ void menuClass::editSchoolName() {
 void menuClass::registerNewClassRoom() {
   classRoomClass* newClassRoom;
   classRoomsListClass* auxClassRoomsList;
-  string code;
   string teacherFullName;
 
   helpersClass::clearScreen();
@@ -105,13 +104,11 @@ void menuClass::registerNewClassRoom() {
 
   cout << "Registrar nueva aula del colegio:" << endl << endl;
 
-  code = helpersClass::requestText(
-      "Por favor ingrese el codigo de la nueva aula", 3, 3);
   teacherFullName = helpersClass::requestText(
       "Por favor ingrese el nombre del docente responsable de la nueva aula",
       3);
 
-  newClassRoom = new classRoomClass(code, teacherFullName);
+  newClassRoom = new classRoomClass(teacherFullName);
 
   auxClassRoomsList = this->school->getClassRooms();
   auxClassRoomsList->insert(newClassRoom);
@@ -206,7 +203,6 @@ void menuClass::registerNewStudent() {
   studentClass* newStudent;
   classRoomClass* auxClassRoom;
   studentsListClass* auxStudentsList;
-  string code;
   string firstName;
   string lastName;
   string dni;
@@ -227,8 +223,6 @@ void menuClass::registerNewStudent() {
     return;
   }
 
-  code =
-      helpersClass::requestText("Ingrese el codigo del nuevo estudiante", 3, 3);
   firstName =
       helpersClass::requestText("Ingrese los nombres del nuevo estudiante", 2);
   lastName = helpersClass::requestText(
@@ -240,7 +234,7 @@ void menuClass::registerNewStudent() {
   genre = helpersClass::requestGenre(
       "Porfavor ingrese el genero del nuevo estudiante");
 
-  newStudent = new studentClass(code, firstName, lastName, dni, age, genre);
+  newStudent = new studentClass(firstName, lastName, dni, age, genre);
 
   auxStudentsList = auxClassRoom->getStudents();
   auxStudentsList->insert(newStudent);

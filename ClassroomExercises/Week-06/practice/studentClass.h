@@ -4,6 +4,7 @@ using namespace std;
 
 class studentClass {
  private:
+  static int counter;
   string code;
   string firstName;
   string lastName;
@@ -14,11 +15,10 @@ class studentClass {
  public:
   ~studentClass();
   studentClass();
-  studentClass(string code, string firstName, string lastName, string dni,
+  studentClass(string firstName, string lastName, string dni,
                unsigned short age, bool genre);
 
   string getCode();
-  void setCode(string value);
 
   string getFirstName();
   void setFirstName(string value);

@@ -6,6 +6,7 @@ using namespace std;
 
 class classRoomClass {
  private:
+  static int counter;
   string code;
   string teacherFullName;
   studentsListClass *students;
@@ -13,10 +14,9 @@ class classRoomClass {
  public:
   ~classRoomClass();
   classRoomClass();
-  classRoomClass(string code, string teacherFullName);
+  classRoomClass(string teacherFullName);
 
   string getCode();
-  void setCode(string value);
 
   string getTeacherFullName();
   void setTeacherFullName(string value);

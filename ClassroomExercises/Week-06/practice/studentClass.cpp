@@ -6,11 +6,15 @@
 
 using namespace std;
 
+int studentClass::counter = 1;
+
 studentClass::~studentClass() {}
 studentClass::studentClass() {}
-studentClass::studentClass(string code, string firstName, string lastName,
-                           string dni, unsigned short age, bool genre) {
-  this->code = code;
+studentClass::studentClass(string firstName, string lastName, string dni,
+                           unsigned short age, bool genre) {
+  this->code = "std-" + to_string(studentClass::counter);
+  studentClass::counter++;
+
   this->firstName = firstName;
   this->lastName = lastName;
   this->dni = dni;
@@ -19,7 +23,6 @@ studentClass::studentClass(string code, string firstName, string lastName,
 }
 
 string studentClass::getCode() { return this->code; }
-void studentClass::setCode(string value) { this->code = value; }
 
 string studentClass::getFirstName() { return this->firstName; }
 void studentClass::setFirstName(string value) { this->firstName = value; }
