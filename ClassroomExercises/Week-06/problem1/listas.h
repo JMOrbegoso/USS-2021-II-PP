@@ -25,6 +25,7 @@ class listaS {
   void mostrarLista();
   void mostrarListaL();
   void encabezado();
+  libroL *buscarLibroPorCodigo(string codigo);
 };
 
 #endif  // LISTAS_H

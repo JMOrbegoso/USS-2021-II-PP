@@ -162,3 +162,18 @@ string listaS::leerTexto(string mensaje) {
   getline(cin, texto);
   return texto;
 }
+
+libroL *listaS::buscarLibroPorCodigo(string codigo) {
+  salasS *auxSala;
+  libroL *auxLibro;
+
+  for (int x = 0; x < this->cantS; x++) {
+    auxSala = this->cabS + x;
+
+    for (int y = 0; y < auxSala->getLL()->getCantL(); y++) {
+      auxLibro = auxSala->getLL()->getCabL() + y;
+
+      if (auxLibro->getCodigo() == codigo) return auxLibro;
+    }
+  }
+}
