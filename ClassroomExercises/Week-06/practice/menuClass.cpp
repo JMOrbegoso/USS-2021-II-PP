@@ -371,11 +371,11 @@ void menuClass::showMenu() {
       switch (selectedOption) {
         case 1:
           this->editSchoolName();
-          helpersClass::addDelay(1500);
+          helpersClass::addDelay(1.5);
           break;
         case 2:
           this->registerNewClassRoom();
-          helpersClass::addDelay(1500);
+          helpersClass::addDelay(1.5);
           break;
         case 3:
           this->showClassRooms();

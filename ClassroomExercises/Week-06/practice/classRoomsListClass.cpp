@@ -60,6 +60,8 @@ studentClass* classRoomsListClass::findStudentByDni(string dni) {
       auxStudentNode = auxStudentNode->getNext();
     }
   }
+
+  return NULL;
 }
 
 void classRoomsListClass::insert(classRoomClass* newClassRoom) {
