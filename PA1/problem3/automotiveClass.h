@@ -7,7 +7,7 @@ using namespace std;
 class automotiveClass {
  private:
   string name;
-  clientsListClass *classRooms;
+  clientsListClass *clients;
 
  public:
   ~automotiveClass();
@@ -16,6 +16,6 @@ class automotiveClass {
   string getName();
   void setName(string value);
 
-  clientsListClass *getClassRooms();
-  void setClassRooms(clientsListClass *value);
+  clientsListClass *getClients();
+  void setClients(clientsListClass *value);
 };

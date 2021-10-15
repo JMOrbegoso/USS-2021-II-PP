@@ -25,6 +25,7 @@ class clientsListClass {
 
   void show(int rowNumber);
 
+  clientClass* findClientByDni(string dni);
   carClass* findCarByPlate(string plate);
 
   void insert(clientClass* newClient);

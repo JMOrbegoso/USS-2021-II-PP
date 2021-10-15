@@ -3,14 +3,12 @@
 using namespace std;
 
 automotiveClass::~automotiveClass() {}
-automotiveClass::automotiveClass() {
-  this->classRooms = new clientsListClass();
-}
+automotiveClass::automotiveClass() { this->clients = new clientsListClass(); }
 
 string automotiveClass::getName() { return this->name; }
 void automotiveClass::setName(string value) { this->name = value; }
 
-clientsListClass *automotiveClass::getClassRooms() { return this->classRooms; }
-void automotiveClass::setClassRooms(clientsListClass *value) {
-  this->classRooms = value;
+clientsListClass *automotiveClass::getClients() { return this->clients; }
+void automotiveClass::setClients(clientsListClass *value) {
+  this->clients = value;
 }

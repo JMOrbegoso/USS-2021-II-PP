@@ -41,6 +41,22 @@ void clientsListClass::show(int rowNumber) {
   }
 }
 
+clientClass* clientsListClass::findClientByDni(string dni) {
+  clientClass* auxClient;
+
+  if (this->length == 0) {
+    return NULL;
+  }
+
+  for (int x = 0; x < this->length; x++) {
+    auxClient = this->head + x;
+
+    if (auxClient->getDni() == dni) return auxClient;
+  }
+
+  return NULL;
+}
+
 carClass* clientsListClass::findCarByPlate(string plate) {
   clientClass* auxClient;
   carNodeClass* auxCarNode;
@@ -60,6 +76,8 @@ carClass* clientsListClass::findCarByPlate(string plate) {
       auxCarNode = auxCarNode->getNext();
     }
   }
+
+  return NULL;
 }
 
 void clientsListClass::insert(clientClass* newClassRoom) {

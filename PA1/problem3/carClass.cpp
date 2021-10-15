@@ -54,10 +54,10 @@ void carClass::show(int rowNumber, int itemNumber) {
   cout << this->getModel();
   helpersClass::gotoxy(45, rowNumber);
   cout << this->getPrice();
-  helpersClass::gotoxy(55, rowNumber);
+  helpersClass::gotoxy(60, rowNumber);
   cout << this->getPlate();
-  helpersClass::gotoxy(65, rowNumber);
+  helpersClass::gotoxy(70, rowNumber);
   cout << this->getColor();
-  helpersClass::gotoxy(85, rowNumber);
+  helpersClass::gotoxy(80, rowNumber);
   cout << this->getStatus();
 }
