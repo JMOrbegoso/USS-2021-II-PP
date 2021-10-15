@@ -31,8 +31,8 @@ void clientsListClass::setHead(clientClass* value) { this->head = value; }
 
 void clientsListClass::show(int rowNumber) {
   if (this->length == 0) {
-    cout << "No hay ningún aula registrada" << endl;
-    cout << "Primero registre al menos un aula" << endl;
+    cout << "No hay ningún cliente registrado" << endl;
+    cout << "Primero registre al menos un cliente" << endl;
     return;
   }
 
@@ -41,23 +41,23 @@ void clientsListClass::show(int rowNumber) {
   }
 }
 
-carClass* clientsListClass::findStudentByDni(string dni) {
-  clientClass* auxClassRoom;
-  carNodeClass* auxStudentNode;
+carClass* clientsListClass::findCarByPlate(string plate) {
+  clientClass* auxClient;
+  carNodeClass* auxCarNode;
 
   if (this->length == 0) {
     return NULL;
   }
 
   for (int x = 0; x < this->length; x++) {
-    auxClassRoom = this->head + x;
+    auxClient = this->head + x;
 
-    auxStudentNode = auxClassRoom->getStudents()->getHead();
-    while (auxStudentNode != NULL) {
-      if (auxStudentNode->getStudent()->getDni() == dni)
-        return auxStudentNode->getStudent();
+    auxCarNode = auxClient->getCars()->getHead();
+    while (auxCarNode != NULL) {
+      if (auxCarNode->getCar()->getPlate() == plate)
+        return auxCarNode->getCar();
 
-      auxStudentNode = auxStudentNode->getNext();
+      auxCarNode = auxCarNode->getNext();
     }
   }
 }
@@ -71,7 +71,7 @@ void clientsListClass::insert(clientClass* newClassRoom) {
   this->length++;
 }
 
-clientClass* clientsListClass::pickClassRoom(string message) {
+clientClass* clientsListClass::pickClient(string message) {
   clientClass* aux;
   int selectedOption;
 
@@ -81,18 +81,20 @@ clientClass* clientsListClass::pickClassRoom(string message) {
 
   cout << endl
        << message << "." << endl
-       << "Escoja entre las " << this->getLength()
-       << " aulas siguientes:" << endl
+       << "Escoja entre los " << this->getLength()
+       << " clientes siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
     aux = this->getHead() + x;
 
     cout << "[" << x + 1 << "]";
-    cout << " - Aula: ";
+    cout << " - Cliente: ";
     cout << aux->getCode();
-    cout << " - Con el prof. ";
-    cout << aux->getTeacherFullName();
+    cout << " - ";
+    cout << aux->getFirstName();
+    cout << " ";
+    cout << aux->getLastName();
     cout << endl;
   }
 

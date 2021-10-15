@@ -6,6 +6,7 @@ class carsListClass {
  private:
   carNodeClass* head;
   int length;
+  carClass* getElementByIndex(int index);
 
  public:
   ~carsListClass();
@@ -19,8 +20,7 @@ class carsListClass {
 
   void show(int rowNumber);
 
-  void insert(carClass* newStudent);
+  void insert(carClass* newCar);
 
-  carClass* getElementByIndex(int index);
-  carClass* pickStudent(string message);
+  carClass* pickCar(string message);
 };

@@ -4,6 +4,27 @@
 
 using namespace std;
 
+carClass* carsListClass::getElementByIndex(int index) {
+  carNodeClass* auxNode = this->getHead();
+
+  if (0 >= index) {
+    return NULL;
+  }
+
+  if (index > this->getLength()) {
+    return NULL;
+  }
+
+  for (int i = 1; auxNode != NULL; i++) {
+    if (i == index) {
+      return auxNode->getCar();
+    }
+    auxNode = auxNode->getNext();
+  }
+
+  return NULL;
+}
+
 carsListClass::~carsListClass() {}
 carsListClass::carsListClass() {
   this->length = 0;
@@ -17,27 +38,27 @@ carNodeClass* carsListClass::getHead() { return this->head; }
 void carsListClass::setHead(carNodeClass* value) { this->head = value; }
 
 void carsListClass::show(int rowNumber) {
-  carNodeClass* auxStudentNode = new carNodeClass();
+  carNodeClass* auxCarNode = new carNodeClass();
   int i = 1;
 
   if (this->length == 0) {
-    cout << "No hay ningún estudiante registrado" << endl;
-    cout << "Primero registre al menos un estudiante" << endl;
+    cout << "No hay ningún vehiculo registrado" << endl;
+    cout << "Primero registre al menos un vehiculo" << endl;
     return;
   }
 
-  while (auxStudentNode != NULL) {
-    auxStudentNode->getStudent()->show(rowNumber + i, i);
-    auxStudentNode = auxStudentNode->getNext();
+  while (auxCarNode != NULL) {
+    auxCarNode->getCar()->show(rowNumber + i, i);
+    auxCarNode = auxCarNode->getNext();
   }
 }
 
-void carsListClass::insert(carClass* newStudent) {
+void carsListClass::insert(carClass* newCar) {
   carNodeClass* newNode = new carNodeClass();
 
   carNodeClass* lastNode = this->getHead();
 
-  newNode->setStudent(newStudent);
+  newNode->setCar(newCar);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {
@@ -55,28 +76,7 @@ void carsListClass::insert(carClass* newStudent) {
   this->setLength(this->getLength() + 1);
 }
 
-carClass* carsListClass::getElementByIndex(int index) {
-  carNodeClass* auxNode = this->getHead();
-
-  if (0 >= index) {
-    return NULL;
-  }
-
-  if (index > this->getLength()) {
-    return NULL;
-  }
-
-  for (int i = 1; auxNode != NULL; i++) {
-    if (i == index) {
-      return auxNode->getStudent();
-    }
-    auxNode = auxNode->getNext();
-  }
-
-  return NULL;
-}
-
-carClass* carsListClass::pickStudent(string message) {
+carClass* carsListClass::pickCar(string message) {
   carNodeClass* aux;
   int selectedOption;
 
@@ -87,7 +87,7 @@ carClass* carsListClass::pickStudent(string message) {
   cout << endl
        << message << "." << endl
        << "Escoja entre los " << this->getLength()
-       << " estudiantes siguientes:" << endl
+       << " vehiculos siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
@@ -95,11 +95,13 @@ carClass* carsListClass::pickStudent(string message) {
 
     cout << "[" << x + 1 << "]";
     cout << " - ";
-    cout << aux->getStudent()->getCode();
+    cout << aux->getCar()->getCode();
     cout << " - ";
-    cout << aux->getStudent()->getLastName();
+    cout << aux->getCar()->getBrand();
     cout << " ";
-    cout << aux->getStudent()->getFirstName();
+    cout << aux->getCar()->getModel();
+    cout << " ";
+    cout << aux->getCar()->getPlate();
     cout << endl;
   }
 
@@ -113,5 +115,5 @@ carClass* carsListClass::pickStudent(string message) {
     cin >> selectedOption;
   }
 
-  return getElementByIndex(selectedOption);
+  return this->getElementByIndex(selectedOption);
 }

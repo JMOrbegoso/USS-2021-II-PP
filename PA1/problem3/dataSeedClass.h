@@ -4,5 +4,5 @@ using namespace std;
 
 class dataSeedClass {
  public:
-  static void seed(automotiveClass *&school);
+  static void seed(automotiveClass *&automotive);
 };

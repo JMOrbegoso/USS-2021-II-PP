@@ -10,40 +10,38 @@ int carClass::counter = 1;
 
 carClass::~carClass() {}
 carClass::carClass() {}
-carClass::carClass(string firstName, string lastName, string dni,
-                   unsigned short age, bool genre) {
-  this->code = "std-" + to_string(carClass::counter);
+carClass::carClass(string brand, string model, float price, string plate,
+                   string color, string status) {
+  this->code = "car-" + to_string(carClass::counter);
   carClass::counter++;
 
-  this->firstName = firstName;
-  this->lastName = lastName;
-  this->dni = dni;
-  this->age = age;
-  this->genre = genre;
+  this->brand = brand;
+  this->model = model;
+  this->price = price;
+  this->plate = plate;
+  this->color = color;
+  this->status = status;
 }
 
 string carClass::getCode() { return this->code; }
 
-string carClass::getFirstName() { return this->firstName; }
-void carClass::setFirstName(string value) { this->firstName = value; }
+string carClass::getBrand() { return this->brand; }
+void carClass::setBrand(string value) { this->brand = value; }
 
-string carClass::getLastName() { return this->lastName; }
-void carClass::setLastName(string value) { this->lastName = value; }
+string carClass::getModel() { return this->model; }
+void carClass::setModel(string value) { this->model = value; }
 
-string carClass::getDni() { return this->dni; }
-void carClass::setDni(string value) { this->dni = value; }
+float carClass::getPrice() { return this->price; }
+void carClass::setPrice(float value) { this->price = value; }
 
-unsigned short carClass::getAge() { return this->age; }
-void carClass::setAge(unsigned short value) { this->age = value; }
+string carClass::getPlate() { return this->plate; }
+void carClass::setPlate(string value) { this->plate = value; }
 
-bool carClass::getGenre() { return this->genre; }
-void carClass::setGenre(bool value) { this->genre = value; }
-string carClass::getGenreAsString() {
-  if (this->genre)
-    return "Masculino";
-  else
-    return "Femenino";
-}
+string carClass::getColor() { return this->color; }
+void carClass::setColor(string value) { this->color = value; }
+
+string carClass::getStatus() { return this->status; }
+void carClass::setStatus(string value) { this->status = value; }
 
 void carClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
@@ -51,13 +49,15 @@ void carClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
   helpersClass::gotoxy(15, rowNumber);
-  cout << this->getFirstName();
+  cout << this->getBrand();
   helpersClass::gotoxy(30, rowNumber);
-  cout << this->getLastName();
+  cout << this->getModel();
   helpersClass::gotoxy(45, rowNumber);
-  cout << this->getDni();
+  cout << this->getPrice();
   helpersClass::gotoxy(55, rowNumber);
-  cout << this->getAge();
+  cout << this->getPlate();
   helpersClass::gotoxy(65, rowNumber);
-  cout << this->getGenreAsString();
+  cout << this->getColor();
+  helpersClass::gotoxy(85, rowNumber);
+  cout << this->getStatus();
 }

@@ -8,21 +8,39 @@ class clientClass {
  private:
   static int counter;
   string code;
-  string teacherFullName;
-  carsListClass *students;
+  string firstName;
+  string lastName;
+  string dni;
+  unsigned short age;
+  bool genre;
+  carsListClass *cars;
 
  public:
   ~clientClass();
   clientClass();
-  clientClass(string teacherFullName);
+  clientClass(string firstName, string lastName, string dni, unsigned short age,
+              bool genre);
 
   string getCode();
 
-  string getTeacherFullName();
-  void setTeacherFullName(string value);
+  string getFirstName();
+  void setFirstName(string value);
 
-  carsListClass *getStudents();
-  void setStudents(carsListClass *value);
+  string getLastName();
+  void setLastName(string value);
+
+  string getDni();
+  void setDni(string value);
+
+  unsigned short getAge();
+  void setAge(unsigned short value);
+
+  bool getGenre();
+  void setGenre(bool value);
+  string getGenreAsString();
+
+  carsListClass *getCars();
+  void setCars(carsListClass *value);
 
   void show(int rowNumber, int itemNumber);
 };

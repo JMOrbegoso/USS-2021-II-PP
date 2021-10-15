@@ -2,7 +2,7 @@
 
 class carNodeClass {
  private:
-  carClass* student;
+  carClass* car;
   carNodeClass* next;
   carNodeClass* previous;
 
@@ -10,8 +10,8 @@ class carNodeClass {
   ~carNodeClass();
   carNodeClass();
 
-  carClass* getStudent();
-  void setStudent(carClass* value);
+  carClass* getCar();
+  void setCar(carClass* value);
 
   carNodeClass* getNext();
   void setNext(carNodeClass* value);

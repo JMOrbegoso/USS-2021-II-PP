@@ -4,13 +4,13 @@ using namespace std;
 
 carNodeClass::~carNodeClass() {}
 carNodeClass::carNodeClass() {
-  this->student = NULL;
+  this->car = NULL;
   this->next = NULL;
   this->previous = NULL;
 }
 
-carClass* carNodeClass::getStudent() { return this->student; }
-void carNodeClass::setStudent(carClass* value) { this->student = value; }
+carClass* carNodeClass::getCar() { return this->car; }
+void carNodeClass::setCar(carClass* value) { this->car = value; }
 
 carNodeClass* carNodeClass::getNext() { return this->next; }
 void carNodeClass::setNext(carNodeClass* value) { this->next = value; }

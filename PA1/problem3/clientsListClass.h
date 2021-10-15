@@ -25,9 +25,9 @@ class clientsListClass {
 
   void show(int rowNumber);
 
-  carClass* findStudentByDni(string dni);
+  carClass* findCarByPlate(string plate);
 
-  void insert(clientClass* newClassRoom);
+  void insert(clientClass* newClient);
 
-  clientClass* pickClassRoom(string message);
+  clientClass* pickClient(string message);
 };
