@@ -371,11 +371,11 @@ void menuClass::showMenu() {
       switch (selectedOption) {
         case 1:
           this->editSchoolName();
-          Sleep(1500);
+          helpersClass::addDelay(1500);
           break;
         case 2:
           this->registerNewClassRoom();
-          Sleep(1500);
+          helpersClass::addDelay(1500);
           break;
         case 3:
           this->showClassRooms();
@@ -387,11 +387,11 @@ void menuClass::showMenu() {
           break;
         case 5:
           this->editClassRoom();
-          Sleep(1500);
+          helpersClass::addDelay(1500);
           break;
         case 6:
           this->registerNewStudent();
-          Sleep(1500);
+          helpersClass::addDelay(1500);
           break;
         case 7:
           this->showStudents();
@@ -399,7 +399,7 @@ void menuClass::showMenu() {
           break;
         case 8:
           this->editStudent();
-          Sleep(1500);
+          helpersClass::addDelay(1500);
           break;
         case 9:
           this->findStudentByDni();
