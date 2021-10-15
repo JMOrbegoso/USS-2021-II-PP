@@ -80,12 +80,12 @@ carClass* clientsListClass::findCarByPlate(string plate) {
   return NULL;
 }
 
-void clientsListClass::insert(clientClass* newClassRoom) {
+void clientsListClass::insert(clientClass* newClient) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
 
-  *(this->head + this->length) = *newClassRoom;
+  *(this->head + this->length) = *newClient;
   this->length++;
 }
 
