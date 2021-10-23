@@ -1,4 +1,4 @@
-#include "clientClass.h";
+#include "clientClass.h"
 
 using namespace std;
 

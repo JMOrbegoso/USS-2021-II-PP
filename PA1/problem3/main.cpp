@@ -1,4 +1,4 @@
-#include "menuClass.h";
+#include "menuClass.h"
 
 using namespace std;
 

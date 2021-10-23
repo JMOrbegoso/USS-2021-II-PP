@@ -1,4 +1,4 @@
-#include "dataSeedClass.h";
+#include "dataSeedClass.h"
 
 using namespace std;
 
