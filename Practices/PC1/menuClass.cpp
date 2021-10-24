@@ -112,9 +112,9 @@ void menuClass::registerNewClient() {
 
   newClient = new roomClass(firstName, lastName, dni, age, genre);
 
-  auxClientsList = this->automotive->getClients();
+  auxClientsList = this->automotive->getRooms();
   auxClientsList->insert(newClient);
-  this->automotive->setClients(auxClientsList);
+  this->automotive->setRooms(auxClientsList);
 
   cout << "Cliente registrado correctamente" << endl;
   cout << endl;
@@ -136,7 +136,7 @@ void menuClass::registerNewCar() {
 
   cout << "Registrar nuevo auto:" << endl << endl;
 
-  auxClient = this->automotive->getClients()->pickClient(
+  auxClient = this->automotive->getRooms()->pickRoom(
       "Seleccione el cliente al que desea asignar el auto");
 
   if (auxClient == NULL) {
@@ -156,9 +156,9 @@ void menuClass::registerNewCar() {
 
   newCar = new clientClass(brand, model, price, plate, color, status);
 
-  auxCarsList = auxClient->getCars();
+  auxCarsList = auxClient->getClients();
   auxCarsList->insert(newCar);
-  auxClient->setCars(auxCarsList);
+  auxClient->setClients(auxCarsList);
 
   cout << "Auto registrado correctamente" << endl;
   cout << endl;
@@ -171,7 +171,7 @@ void menuClass::showClients() {
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los clientes de la empresa:" << endl << endl;
 
-  if (this->automotive->getClients()->getLength() == 0) {
+  if (this->automotive->getRooms()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -179,7 +179,7 @@ void menuClass::showClients() {
 
   this->showClientsTableHeader(7);
 
-  this->automotive->getClients()->show(8);
+  this->automotive->getRooms()->show(8);
 
   cout << endl << endl;
 }
@@ -194,7 +194,7 @@ void menuClass::showCars() {
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los autos en la empresa:" << endl << endl;
 
-  if (this->automotive->getClients()->getLength() == 0) {
+  if (this->automotive->getRooms()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -203,10 +203,10 @@ void menuClass::showCars() {
   this->showCarsTableHeader(7);
 
   int i = 1;
-  for (int x = 0; x < this->automotive->getClients()->getLength(); x++) {
-    auxClient = this->automotive->getClients()->getHead() + x;
+  for (int x = 0; x < this->automotive->getRooms()->getLength(); x++) {
+    auxClient = this->automotive->getRooms()->getHead() + x;
 
-    auxCarNode = auxClient->getCars()->getHead();
+    auxCarNode = auxClient->getClients()->getHead();
     while (auxCarNode != NULL) {
       auxCarNode->getCar()->show(8 + i, i);
       i++;
@@ -227,7 +227,7 @@ void menuClass::findClientByDni() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxClient = this->automotive->getClients()->findClientByDni(dniToFind);
+  auxClient = this->automotive->getRooms()->findRoomByDni(dniToFind);
 
   if (auxClient == NULL) {
     cout << "No se encontró un cliente con el DNI ingresada";
@@ -255,7 +255,7 @@ void menuClass::findCarByPlate() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxCar = this->automotive->getClients()->findCarByPlate(plateToFind);
+  auxCar = this->automotive->getRooms()->findClientByDni(plateToFind);
 
   if (auxCar == NULL) {
     cout << "No se encontró un autor con la placa ingresada";

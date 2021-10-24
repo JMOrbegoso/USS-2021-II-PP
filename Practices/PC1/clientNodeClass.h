@@ -2,7 +2,7 @@
 
 class clientNodeClass {
  private:
-  clientClass* car;
+  clientClass* client;
   clientNodeClass* next;
   clientNodeClass* previous;
 

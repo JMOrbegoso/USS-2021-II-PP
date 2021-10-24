@@ -3,10 +3,10 @@
 using namespace std;
 
 hotelClass::~hotelClass() {}
-hotelClass::hotelClass() { this->clients = new roomsListClass(); }
+hotelClass::hotelClass() { this->rooms = new roomsListClass(); }
 
 string hotelClass::getName() { return this->name; }
 void hotelClass::setName(string value) { this->name = value; }
 
-roomsListClass *hotelClass::getClients() { return this->clients; }
-void hotelClass::setClients(roomsListClass *value) { this->clients = value; }
+roomsListClass *hotelClass::getRooms() { return this->rooms; }
+void hotelClass::setRooms(roomsListClass *value) { this->rooms = value; }

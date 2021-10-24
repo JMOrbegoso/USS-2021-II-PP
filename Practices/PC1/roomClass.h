@@ -13,7 +13,7 @@ class roomClass {
   string dni;
   unsigned short age;
   bool genre;
-  clientsListClass *cars;
+  clientsListClass *clients;
 
  public:
   ~roomClass();
@@ -39,8 +39,8 @@ class roomClass {
   void setGenre(bool value);
   string getGenreAsString();
 
-  clientsListClass *getCars();
-  void setCars(clientsListClass *value);
+  clientsListClass *getClients();
+  void setClients(clientsListClass *value);
 
   void show(int rowNumber, int itemNumber);
 };

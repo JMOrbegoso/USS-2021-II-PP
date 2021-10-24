@@ -19,7 +19,7 @@ roomClass::roomClass(string firstName, string lastName, string dni,
   this->age = age;
   this->genre = genre;
 
-  this->cars = new clientsListClass();
+  this->clients = new clientsListClass();
 }
 
 string roomClass::getCode() { return this->code; }
@@ -45,8 +45,8 @@ string roomClass::getGenreAsString() {
     return "Femenino";
 }
 
-clientsListClass *roomClass::getCars() { return this->cars; }
-void roomClass::setCars(clientsListClass *value) { this->cars = value; }
+clientsListClass *roomClass::getClients() { return this->clients; }
+void roomClass::setClients(clientsListClass *value) { this->clients = value; }
 
 void roomClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);

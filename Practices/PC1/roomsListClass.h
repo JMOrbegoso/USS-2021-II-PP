@@ -25,10 +25,10 @@ class roomsListClass {
 
   void show(int rowNumber);
 
-  roomClass* findClientByDni(string dni);
-  clientClass* findCarByPlate(string plate);
+  roomClass* findRoomByDni(string dni);
+  clientClass* findClientByDni(string plate);
 
   void insert(roomClass* newClient);
 
-  roomClass* pickClient(string message);
+  roomClass* pickRoom(string message);
 };

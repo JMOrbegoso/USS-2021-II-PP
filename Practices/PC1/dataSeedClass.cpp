@@ -20,13 +20,13 @@ void dataSeedClass::seed(hotelClass *&automotive) {
       new clientClass("Chevrolet", "N300", 40000, "dc-256", "blanco", "nuevo");
   car_6 = new clientClass("Kia", "Picanto", 40000, "ba-512", "rojo", "nuevo");
 
-  client_1->getCars()->insert(car_1);
-  client_1->getCars()->insert(car_2);
-  client_1->getCars()->insert(car_3);
-  client_1->getCars()->insert(car_4);
-  client_2->getCars()->insert(car_5);
-  client_2->getCars()->insert(car_6);
+  client_1->getClients()->insert(car_1);
+  client_1->getClients()->insert(car_2);
+  client_1->getClients()->insert(car_3);
+  client_1->getClients()->insert(car_4);
+  client_2->getClients()->insert(car_5);
+  client_2->getClients()->insert(car_6);
 
-  automotive->getClients()->insert(client_1);
-  automotive->getClients()->insert(client_2);
+  automotive->getRooms()->insert(client_1);
+  automotive->getRooms()->insert(client_2);
 }

@@ -41,7 +41,7 @@ void roomsListClass::show(int rowNumber) {
   }
 }
 
-roomClass* roomsListClass::findClientByDni(string dni) {
+roomClass* roomsListClass::findRoomByDni(string dni) {
   roomClass* auxClient;
 
   if (this->length == 0) {
@@ -57,7 +57,7 @@ roomClass* roomsListClass::findClientByDni(string dni) {
   return NULL;
 }
 
-clientClass* roomsListClass::findCarByPlate(string plate) {
+clientClass* roomsListClass::findClientByDni(string plate) {
   roomClass* auxClient;
   clientNodeClass* auxCarNode;
 
@@ -68,7 +68,7 @@ clientClass* roomsListClass::findCarByPlate(string plate) {
   for (int x = 0; x < this->length; x++) {
     auxClient = this->head + x;
 
-    auxCarNode = auxClient->getCars()->getHead();
+    auxCarNode = auxClient->getClients()->getHead();
     while (auxCarNode != NULL) {
       if (auxCarNode->getCar()->getPlate() == plate)
         return auxCarNode->getCar();
@@ -89,7 +89,7 @@ void roomsListClass::insert(roomClass* newClient) {
   this->length++;
 }
 
-roomClass* roomsListClass::pickClient(string message) {
+roomClass* roomsListClass::pickRoom(string message) {
   roomClass* aux;
   int selectedOption;
 

@@ -76,7 +76,7 @@ void clientsListClass::insert(clientClass* newCar) {
   this->setLength(this->getLength() + 1);
 }
 
-clientClass* clientsListClass::pickCar(string message) {
+clientClass* clientsListClass::pickClient(string message) {
   clientNodeClass* aux;
   int selectedOption;
 
