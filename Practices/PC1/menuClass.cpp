@@ -179,6 +179,7 @@ void menuClass::registerNewClient() {
   auxClientsList = auxRoom->getClients();
   auxClientsList->insert(newClient);
   auxRoom->setClients(auxClientsList);
+  auxRoom->setStatus("ocupada");
 
   cout << "Cliente registrado correctamente" << endl;
   cout << endl;
