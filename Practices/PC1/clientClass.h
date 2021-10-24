@@ -1,46 +1,43 @@
 #include <string>
 
-#include "carsListClass.h"
-
 using namespace std;
 
-class roomClass {
+class clientClass {
  private:
   static int counter;
   string code;
-  string firstName;
-  string lastName;
-  string dni;
-  unsigned short age;
-  bool genre;
-  clientsListClass *cars;
+  string brand;
+  string model;
+  float price;
+  string plate;
+  string color;
+  string status;
 
  public:
-  ~roomClass();
-  roomClass();
-  roomClass(string firstName, string lastName, string dni, unsigned short age,
-            bool genre);
+  ~clientClass();
+  clientClass();
+  clientClass(string brand, string model, float price, string plate,
+              string color, string status);
 
   string getCode();
 
-  string getFirstName();
-  void setFirstName(string value);
+  string getBrand();
+  void setBrand(string value);
 
-  string getLastName();
-  void setLastName(string value);
+  string getModel();
+  void setModel(string value);
 
-  string getDni();
-  void setDni(string value);
+  float getPrice();
+  void setPrice(float value);
 
-  unsigned short getAge();
-  void setAge(unsigned short value);
+  string getPlate();
+  void setPlate(string value);
 
-  bool getGenre();
-  void setGenre(bool value);
-  string getGenreAsString();
+  string getColor();
+  void setColor(string value);
 
-  clientsListClass *getCars();
-  void setCars(clientsListClass *value);
+  string getStatus();
+  void setStatus(string value);
 
   void show(int rowNumber, int itemNumber);
 };

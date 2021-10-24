@@ -1,96 +1,83 @@
 #include "clientsListClass.h"
 
-#include "helpersClass.h"
+#include <iostream>
 
-void roomsListClass::grow(int growIn) {
-  roomClass* aux = new roomClass[this->length + growIn];
+using namespace std;
 
-  for (int i = 0; i < this->length; i++) {
-    *(aux + i) = *(this->head + i);
+clientClass* clientsListClass::getElementByIndex(int index) {
+  clientNodeClass* auxNode = this->getHead();
+
+  if (0 >= index) {
+    return NULL;
   }
 
-  this->head = aux;
-  this->capacity += growIn;
+  if (index > this->getLength()) {
+    return NULL;
+  }
+
+  for (int i = 1; auxNode != NULL; i++) {
+    if (i == index) {
+      return auxNode->getCar();
+    }
+    auxNode = auxNode->getNext();
+  }
+
+  return NULL;
 }
 
-roomsListClass::~roomsListClass() {}
-roomsListClass::roomsListClass() {
-  this->capacity = 0;
+clientsListClass::~clientsListClass() {}
+clientsListClass::clientsListClass() {
   this->length = 0;
   this->head = NULL;
 }
 
-int roomsListClass::getCapacity() { return this->capacity; }
-void roomsListClass::setCapacity(int value) { this->capacity = value; }
+int clientsListClass::getLength() { return this->length; }
+void clientsListClass::setLength(int value) { this->length = value; }
 
-int roomsListClass::getLength() { return this->length; }
-void roomsListClass::setLength(int value) { this->length = value; }
+clientNodeClass* clientsListClass::getHead() { return this->head; }
+void clientsListClass::setHead(clientNodeClass* value) { this->head = value; }
 
-roomClass* roomsListClass::getHead() { return this->head; }
-void roomsListClass::setHead(roomClass* value) { this->head = value; }
+void clientsListClass::show(int rowNumber) {
+  clientNodeClass* auxCarNode = new clientNodeClass();
+  int i = 1;
 
-void roomsListClass::show(int rowNumber) {
   if (this->length == 0) {
-    cout << "No hay ningún cliente registrado" << endl;
-    cout << "Primero registre al menos un cliente" << endl;
+    cout << "No hay ningún vehiculo registrado" << endl;
+    cout << "Primero registre al menos un vehiculo" << endl;
     return;
   }
 
-  for (int x = 0; x < this->length; x++) {
-    (*(this->head + x)).show(rowNumber + x + 1, x + 1);
+  while (auxCarNode != NULL) {
+    auxCarNode->getCar()->show(rowNumber + i, i);
+    auxCarNode = auxCarNode->getNext();
   }
 }
 
-roomClass* roomsListClass::findClientByDni(string dni) {
-  roomClass* auxClient;
+void clientsListClass::insert(clientClass* newCar) {
+  clientNodeClass* newNode = new clientNodeClass();
 
-  if (this->length == 0) {
-    return NULL;
-  }
+  clientNodeClass* lastNode = this->getHead();
 
-  for (int x = 0; x < this->length; x++) {
-    auxClient = this->head + x;
+  newNode->setCar(newCar);
+  newNode->setNext(NULL);
 
-    if (auxClient->getDni() == dni) return auxClient;
-  }
-
-  return NULL;
-}
-
-clientClass* roomsListClass::findCarByPlate(string plate) {
-  roomClass* auxClient;
-  clientNodeClass* auxCarNode;
-
-  if (this->length == 0) {
-    return NULL;
-  }
-
-  for (int x = 0; x < this->length; x++) {
-    auxClient = this->head + x;
-
-    auxCarNode = auxClient->getCars()->getHead();
-    while (auxCarNode != NULL) {
-      if (auxCarNode->getCar()->getPlate() == plate)
-        return auxCarNode->getCar();
-
-      auxCarNode = auxCarNode->getNext();
+  if (this->getHead() == NULL) {
+    newNode->setPrevious(NULL);
+    this->setHead(newNode);
+  } else {
+    while (lastNode->getNext() != NULL) {
+      lastNode = lastNode->getNext();
     }
+
+    lastNode->setNext(newNode);
+    newNode->setPrevious(lastNode);
   }
 
-  return NULL;
+  this->setLength(this->getLength() + 1);
 }
 
-void roomsListClass::insert(roomClass* newClient) {
-  if (this->length == this->capacity) {
-    this->grow(2);
-  }
-
-  *(this->head + this->length) = *newClient;
-  this->length++;
-}
-
-roomClass* roomsListClass::pickClient(string message) {
-  roomClass* aux;
+clientClass* clientsListClass::pickCar(string message) {
+  clientNodeClass* aux;
   int selectedOption;
 
   if (this->length == 0) {
@@ -100,19 +87,21 @@ roomClass* roomsListClass::pickClient(string message) {
   cout << endl
        << message << "." << endl
        << "Escoja entre los " << this->getLength()
-       << " clientes siguientes:" << endl
+       << " vehiculos siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
     aux = this->getHead() + x;
 
     cout << "[" << x + 1 << "]";
-    cout << " - Cliente: ";
-    cout << aux->getCode();
     cout << " - ";
-    cout << aux->getFirstName();
+    cout << aux->getCar()->getCode();
+    cout << " - ";
+    cout << aux->getCar()->getBrand();
     cout << " ";
-    cout << aux->getLastName();
+    cout << aux->getCar()->getModel();
+    cout << " ";
+    cout << aux->getCar()->getPlate();
     cout << endl;
   }
 
@@ -126,5 +115,5 @@ roomClass* roomsListClass::pickClient(string message) {
     cin >> selectedOption;
   }
 
-  return (this->getHead() + selectedOption - 1);
+  return this->getElementByIndex(selectedOption);
 }

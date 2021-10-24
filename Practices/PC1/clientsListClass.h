@@ -1,34 +1,26 @@
-#include "clientClass.h"
+#include "clientNodeClass.h"
 
 using namespace std;
 
-class roomsListClass {
+class clientsListClass {
  private:
-  int capacity;
+  clientNodeClass* head;
   int length;
-  roomClass* head;
-
-  void grow(int growIn);
+  clientClass* getElementByIndex(int index);
 
  public:
-  ~roomsListClass();
-  roomsListClass();
-
-  int getCapacity();
-  void setCapacity(int value);
+  ~clientsListClass();
+  clientsListClass();
 
   int getLength();
   void setLength(int value);
 
-  roomClass* getHead();
-  void setHead(roomClass* value);
+  clientNodeClass* getHead();
+  void setHead(clientNodeClass* value);
 
   void show(int rowNumber);
 
-  roomClass* findClientByDni(string dni);
-  clientClass* findCarByPlate(string plate);
+  void insert(clientClass* newCar);
 
-  void insert(roomClass* newClient);
-
-  roomClass* pickClient(string message);
+  clientClass* pickCar(string message);
 };

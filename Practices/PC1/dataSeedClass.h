@@ -1,4 +1,4 @@
-#include "automotiveClass.h"
+#include "hotelClass.h"
 
 using namespace std;
 

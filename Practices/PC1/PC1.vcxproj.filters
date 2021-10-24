@@ -21,22 +21,22 @@
     <ClCompile Include="menuClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="automotiveClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="carClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="carNodeClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="carsListClass.cpp">
+    <ClCompile Include="hotelClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="clientClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clientNodeClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="clientsListClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="roomClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="roomsListClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dataSeedClass.cpp">
@@ -50,22 +50,22 @@
     <ClInclude Include="menuClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="automotiveClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="carClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="carNodeClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="carsListClass.h">
+    <ClInclude Include="hotelClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="clientClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clientNodeClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="clientsListClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="roomClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="roomsListClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dataSeedClass.h">
