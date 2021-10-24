@@ -10,38 +10,53 @@ int clientClass::counter = 1;
 
 clientClass::~clientClass() {}
 clientClass::clientClass() {}
-clientClass::clientClass(string brand, string model, float price, string plate,
-                         string color, string status) {
-  this->code = "car-" + to_string(clientClass::counter);
+clientClass::clientClass(string firstName, string lastName, string dni,
+                         string address, string phone, unsigned short age,
+                         bool genre, string arrivalDate) {
+  this->code = "cli-" + to_string(clientClass::counter);
   clientClass::counter++;
 
-  this->brand = brand;
-  this->model = model;
-  this->price = price;
-  this->plate = plate;
-  this->color = color;
-  this->status = status;
+  this->firstName = firstName;
+  this->lastName = lastName;
+  this->dni = dni;
+  this->address = address;
+  this->phone = phone;
+  this->age = age;
+  this->genre = genre;
+  this->arrivalDate = arrivalDate;
 }
 
 string clientClass::getCode() { return this->code; }
 
-string clientClass::getBrand() { return this->brand; }
-void clientClass::setBrand(string value) { this->brand = value; }
+string clientClass::getFirstName() { return this->firstName; }
+void clientClass::setFirstName(string value) { this->firstName = value; }
 
-string clientClass::getModel() { return this->model; }
-void clientClass::setModel(string value) { this->model = value; }
+string clientClass::getLastName() { return this->lastName; }
+void clientClass::setLastName(string value) { this->lastName = value; }
 
-float clientClass::getPrice() { return this->price; }
-void clientClass::setPrice(float value) { this->price = value; }
+string clientClass::getDni() { return this->dni; }
+void clientClass::setDni(string value) { this->dni = value; }
 
-string clientClass::getPlate() { return this->plate; }
-void clientClass::setPlate(string value) { this->plate = value; }
+string clientClass::getAddress() { return this->address; }
+void clientClass::setAddress(string value) { this->address = value; }
 
-string clientClass::getColor() { return this->color; }
-void clientClass::setColor(string value) { this->color = value; }
+string clientClass::getPhone() { return this->phone; }
+void clientClass::setPhone(string value) { this->phone = value; }
 
-string clientClass::getStatus() { return this->status; }
-void clientClass::setStatus(string value) { this->status = value; }
+unsigned short clientClass::getAge() { return this->age; }
+void clientClass::setAge(unsigned short value) { this->age = value; }
+
+bool clientClass::getGenre() { return this->genre; }
+void clientClass::setGenre(bool value) { this->genre = value; }
+string clientClass::getGenreAsString() {
+  if (this->genre)
+    return "Masculino";
+  else
+    return "Femenino";
+}
+
+string clientClass::getArrivalDate() { return this->arrivalDate; }
+void clientClass::setArrivalDate(string value) { this->arrivalDate = value; }
 
 void clientClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
@@ -49,15 +64,13 @@ void clientClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
   helpersClass::gotoxy(15, rowNumber);
-  cout << this->getBrand();
+  cout << this->getFirstName();
   helpersClass::gotoxy(30, rowNumber);
-  cout << this->getModel();
+  cout << this->getLastName();
   helpersClass::gotoxy(45, rowNumber);
-  cout << this->getPrice();
-  helpersClass::gotoxy(60, rowNumber);
-  cout << this->getPlate();
-  helpersClass::gotoxy(70, rowNumber);
-  cout << this->getColor();
-  helpersClass::gotoxy(80, rowNumber);
-  cout << this->getStatus();
+  cout << this->getDni();
+  helpersClass::gotoxy(55, rowNumber);
+  cout << this->getAge();
+  helpersClass::gotoxy(65, rowNumber);
+  cout << this->getGenreAsString();
 }

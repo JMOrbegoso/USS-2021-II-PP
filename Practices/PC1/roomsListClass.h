@@ -25,8 +25,8 @@ class roomsListClass {
 
   void show(int rowNumber);
 
-  roomClass* findRoomByDni(string dni);
-  clientClass* findClientByDni(string plate);
+  roomClass* findRoomByRoomNumber(unsigned short roomNumber);
+  clientClass* findClientByDni(string dni);
 
   void insert(roomClass* newClient);
 

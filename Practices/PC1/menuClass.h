@@ -13,11 +13,11 @@ class menuClass {
   void showClientsTableHeader(int rowNumber);
   void showCarsTableHeader(int rowNumber);
 
+  void registerNewRoom();
   void registerNewClient();
-  void registerNewCar();
-  void showCars();
   void showClients();
-  void findClientByDni();
+  void showRooms();
+  void findRoomByNumber();
   void findCarByPlate();
 
  public:

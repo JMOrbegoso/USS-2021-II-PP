@@ -17,7 +17,7 @@ clientClass* clientsListClass::getElementByIndex(int index) {
 
   for (int i = 1; auxNode != NULL; i++) {
     if (i == index) {
-      return auxNode->getCar();
+      return auxNode->getClient();
     }
     auxNode = auxNode->getNext();
   }
@@ -48,7 +48,7 @@ void clientsListClass::show(int rowNumber) {
   }
 
   while (auxCarNode != NULL) {
-    auxCarNode->getCar()->show(rowNumber + i, i);
+    auxCarNode->getClient()->show(rowNumber + i, i);
     auxCarNode = auxCarNode->getNext();
   }
 }
@@ -58,7 +58,7 @@ void clientsListClass::insert(clientClass* newCar) {
 
   clientNodeClass* lastNode = this->getHead();
 
-  newNode->setCar(newCar);
+  newNode->setClient(newCar);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {
@@ -95,13 +95,11 @@ clientClass* clientsListClass::pickClient(string message) {
 
     cout << "[" << x + 1 << "]";
     cout << " - ";
-    cout << aux->getCar()->getCode();
+    cout << aux->getClient()->getCode();
     cout << " - ";
-    cout << aux->getCar()->getBrand();
+    cout << aux->getClient()->getFirstName();
     cout << " ";
-    cout << aux->getCar()->getModel();
-    cout << " ";
-    cout << aux->getCar()->getPlate();
+    cout << aux->getClient()->getLastName();
     cout << endl;
   }
 

@@ -9,8 +9,8 @@ clientNodeClass::clientNodeClass() {
   this->previous = NULL;
 }
 
-clientClass* clientNodeClass::getCar() { return this->client; }
-void clientNodeClass::setCar(clientClass* value) { this->client = value; }
+clientClass* clientNodeClass::getClient() { return this->client; }
+void clientNodeClass::setClient(clientClass* value) { this->client = value; }
 
 clientNodeClass* clientNodeClass::getNext() { return this->next; }
 void clientNodeClass::setNext(clientNodeClass* value) { this->next = value; }

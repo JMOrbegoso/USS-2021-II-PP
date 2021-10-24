@@ -41,7 +41,7 @@ void roomsListClass::show(int rowNumber) {
   }
 }
 
-roomClass* roomsListClass::findRoomByDni(string dni) {
+roomClass* roomsListClass::findRoomByRoomNumber(unsigned short roomNumber) {
   roomClass* auxClient;
 
   if (this->length == 0) {
@@ -51,13 +51,13 @@ roomClass* roomsListClass::findRoomByDni(string dni) {
   for (int x = 0; x < this->length; x++) {
     auxClient = this->head + x;
 
-    if (auxClient->getDni() == dni) return auxClient;
+    if (auxClient->getRoomNumber() == roomNumber) return auxClient;
   }
 
   return NULL;
 }
 
-clientClass* roomsListClass::findClientByDni(string plate) {
+clientClass* roomsListClass::findClientByDni(string dni) {
   roomClass* auxClient;
   clientNodeClass* auxCarNode;
 
@@ -70,8 +70,8 @@ clientClass* roomsListClass::findClientByDni(string plate) {
 
     auxCarNode = auxClient->getClients()->getHead();
     while (auxCarNode != NULL) {
-      if (auxCarNode->getCar()->getPlate() == plate)
-        return auxCarNode->getCar();
+      if (auxCarNode->getClient()->getDni() == dni)
+        return auxCarNode->getClient();
 
       auxCarNode = auxCarNode->getNext();
     }
@@ -109,10 +109,17 @@ roomClass* roomsListClass::pickRoom(string message) {
     cout << "[" << x + 1 << "]";
     cout << " - Cliente: ";
     cout << aux->getCode();
-    cout << " - ";
-    cout << aux->getFirstName();
-    cout << " ";
-    cout << aux->getLastName();
+    cout << " - Piso: ";
+    cout << aux->getFloor();
+    cout << " - Habitación #: ";
+    cout << aux->getRoomNumber();
+    cout << " - Tipo: ";
+    cout << aux->getRoomType();
+    cout << " - Status: ";
+    cout << aux->getStatus();
+    cout << " - Con  ";
+    cout << aux->getClients()->getLength();
+    cout << " clientes.";
     cout << endl;
   }
 

@@ -2,31 +2,29 @@
 
 using namespace std;
 
-void dataSeedClass::seed(hotelClass *&automotive) {
-  roomClass *client_1, *client_2;
-  clientClass *car_1, *car_2, *car_3, *car_4, *car_5, *car_6;
+void dataSeedClass::seed(hotelClass *&hotel) {
+  roomClass *room_1, *room_2, *room_3;
+  clientClass *client_1, *client_2, *client_3;
 
-  automotive->setName("Don Lopez");
+  hotel->setName("“SIN COMENTARIOS”");
 
-  client_1 = new roomClass("Ricardo", "Flores", "10117618", 19, true);
-  client_2 = new roomClass("Susana", "Rojas", "80121607", 20, false);
+  room_1 = new roomClass(101, 35, 1, "clasica", "ocupada");
+  room_2 = new roomClass(102, 60, 1, "matrimonial", "ocupada");
+  room_3 = new roomClass(201, 90, 2, "vip", "libre");
 
-  car_1 =
-      new clientClass("Toyota", "Yaris", 40000, "ab-128", "blanco", "nuevo");
-  car_2 = new clientClass("Toyota", "Hilux", 40000, "ad-256", "rojo", "nuevo");
-  car_3 = new clientClass("Kia", "Rio", 40000, "cd-512", "negro", "nuevo");
-  car_4 = new clientClass("Nissan", "Versa", 40000, "dd-128", "azul", "nuevo");
-  car_5 =
-      new clientClass("Chevrolet", "N300", 40000, "dc-256", "blanco", "nuevo");
-  car_6 = new clientClass("Kia", "Picanto", 40000, "ba-512", "rojo", "nuevo");
+  client_1 =
+      new clientClass("Ricardo", "Flores", "10117618", "av. Bolognesi 711",
+                      "901088920", 21, true, "24 de Octubre del 2021");
+  client_2 = new clientClass("Susana", "Rioja", "80121607", "av. Heroes 111",
+                             "911028920", 20, false, "25 de Octubre del 2021");
+  client_3 = new clientClass("Roberto", "Diaz", "52421620", "av. Heroes 111",
+                             "951028920", 35, true, "25 de Octubre del 2021");
 
-  client_1->getClients()->insert(car_1);
-  client_1->getClients()->insert(car_2);
-  client_1->getClients()->insert(car_3);
-  client_1->getClients()->insert(car_4);
-  client_2->getClients()->insert(car_5);
-  client_2->getClients()->insert(car_6);
+  room_1->getClients()->insert(client_1);
+  room_2->getClients()->insert(client_2);
+  room_2->getClients()->insert(client_3);
 
-  automotive->getRooms()->insert(client_1);
-  automotive->getRooms()->insert(client_2);
+  hotel->getRooms()->insert(room_1);
+  hotel->getRooms()->insert(room_2);
+  hotel->getRooms()->insert(room_3);
 }

@@ -8,42 +8,38 @@ int roomClass::counter = 1;
 
 roomClass::~roomClass() {}
 roomClass::roomClass() {}
-roomClass::roomClass(string firstName, string lastName, string dni,
-                     unsigned short age, bool genre) {
-  this->code = "cl-" + to_string(roomClass::counter);
+roomClass::roomClass(unsigned short roomNumber, float price,
+                     unsigned short floor, string roomType, string status) {
+  this->code = "hab-" + to_string(roomClass::counter);
   roomClass::counter++;
 
-  this->firstName = firstName;
-  this->lastName = lastName;
-  this->dni = dni;
-  this->age = age;
-  this->genre = genre;
+  this->roomNumber = roomNumber;
+  this->price = price;
+  this->floor = floor;
+  this->roomType = roomType;
+  this->status = status;
 
   this->clients = new clientsListClass();
 }
 
 string roomClass::getCode() { return this->code; }
 
-string roomClass::getFirstName() { return this->firstName; }
-void roomClass::setFirstName(string value) { this->firstName = value; }
-
-string roomClass::getLastName() { return this->lastName; }
-void roomClass::setLastName(string value) { this->lastName = value; }
-
-string roomClass::getDni() { return this->dni; }
-void roomClass::setDni(string value) { this->dni = value; }
-
-unsigned short roomClass::getAge() { return this->age; }
-void roomClass::setAge(unsigned short value) { this->age = value; }
-
-bool roomClass::getGenre() { return this->genre; }
-void roomClass::setGenre(bool value) { this->genre = value; }
-string roomClass::getGenreAsString() {
-  if (this->genre)
-    return "Masculino";
-  else
-    return "Femenino";
+unsigned short roomClass::getRoomNumber() { return this->roomNumber; }
+void roomClass::setRoomNumber(unsigned short value) {
+  this->roomNumber = value;
 }
+
+float roomClass::getPrice() { return this->price; }
+void roomClass::setPrice(float value) { this->price = value; }
+
+unsigned short roomClass::getFloor() { return this->floor; }
+void roomClass::setFloor(unsigned short value) { this->floor = value; }
+
+string roomClass::getRoomType() { return this->roomType; }
+void roomClass::setRoomType(string value) { this->roomType = value; }
+
+string roomClass::getStatus() { return this->status; }
+void roomClass::setStatus(string value) { this->status = value; }
 
 clientsListClass *roomClass::getClients() { return this->clients; }
 void roomClass::setClients(clientsListClass *value) { this->clients = value; }
@@ -54,13 +50,13 @@ void roomClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
   helpersClass::gotoxy(15, rowNumber);
-  cout << this->getFirstName();
+  cout << this->getRoomNumber();
   helpersClass::gotoxy(30, rowNumber);
-  cout << this->getLastName();
+  cout << this->getPrice();
   helpersClass::gotoxy(45, rowNumber);
-  cout << this->getDni();
+  cout << this->getFloor();
   helpersClass::gotoxy(55, rowNumber);
-  cout << this->getAge();
+  cout << this->getRoomType();
   helpersClass::gotoxy(65, rowNumber);
-  cout << this->getGenreAsString();
+  cout << this->getStatus();
 }

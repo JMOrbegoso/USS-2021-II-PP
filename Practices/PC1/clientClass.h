@@ -6,38 +6,47 @@ class clientClass {
  private:
   static int counter;
   string code;
-  string brand;
-  string model;
-  float price;
-  string plate;
-  string color;
-  string status;
+  string firstName;
+  string lastName;
+  string dni;
+  string address;
+  string phone;
+  unsigned short age;
+  bool genre;
+  string arrivalDate;
 
  public:
   ~clientClass();
   clientClass();
-  clientClass(string brand, string model, float price, string plate,
-              string color, string status);
+  clientClass(string firstName, string lastName, string dni, string address,
+              string phone, unsigned short age, bool genre, string arrivalDate);
 
   string getCode();
 
-  string getBrand();
-  void setBrand(string value);
+  string getFirstName();
+  void setFirstName(string value);
 
-  string getModel();
-  void setModel(string value);
+  string getLastName();
+  void setLastName(string value);
 
-  float getPrice();
-  void setPrice(float value);
+  string getDni();
+  void setDni(string value);
 
-  string getPlate();
-  void setPlate(string value);
+  string getAddress();
+  void setAddress(string value);
 
-  string getColor();
-  void setColor(string value);
+  string getPhone();
+  void setPhone(string value);
 
-  string getStatus();
-  void setStatus(string value);
+  unsigned short getAge();
+  void setAge(unsigned short value);
+
+  bool getGenre();
+  void setGenre(bool value);
+  string getGenreAsString();
+
+  string getArrivalDate();
+  void setArrivalDate(string value);
 
   void show(int rowNumber, int itemNumber);
 };

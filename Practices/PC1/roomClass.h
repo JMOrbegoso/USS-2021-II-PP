@@ -8,36 +8,36 @@ class roomClass {
  private:
   static int counter;
   string code;
-  string firstName;
-  string lastName;
-  string dni;
-  unsigned short age;
-  bool genre;
+  unsigned short roomNumber;
+  float price;
+  unsigned short floor;
+  string roomType;
+  string status;
+
   clientsListClass *clients;
 
  public:
   ~roomClass();
   roomClass();
-  roomClass(string firstName, string lastName, string dni, unsigned short age,
-            bool genre);
+  roomClass(unsigned short roomNumber, float price, unsigned short floor,
+            string roomType, string status);
 
   string getCode();
 
-  string getFirstName();
-  void setFirstName(string value);
+  unsigned short getRoomNumber();
+  void setRoomNumber(unsigned short value);
 
-  string getLastName();
-  void setLastName(string value);
+  float getPrice();
+  void setPrice(float value);
 
-  string getDni();
-  void setDni(string value);
+  unsigned short getFloor();
+  void setFloor(unsigned short value);
 
-  unsigned short getAge();
-  void setAge(unsigned short value);
+  string getRoomType();
+  void setRoomType(string value);
 
-  bool getGenre();
-  void setGenre(bool value);
-  string getGenreAsString();
+  string getStatus();
+  void setStatus(string value);
 
   clientsListClass *getClients();
   void setClients(clientsListClass *value);

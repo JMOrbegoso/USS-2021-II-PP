@@ -85,19 +85,71 @@ void menuClass::showCarsTableHeader(int rowNumber) {
   cout << "Estado";
 }
 
+void menuClass::registerNewRoom() {
+  roomClass* newRoom;
+  roomsListClass* auxRoomsList;
+  unsigned short roomNumber;
+  float price;
+  unsigned short floor;
+  string roomType;
+  string status;
+
+  helpersClass::clearScreen();
+  this->showAppTitle();
+
+  cout << "Registrar nuevo cliente de la empresa:" << endl << endl;
+
+  roomNumber = helpersClass::requestIntegerNumber(
+      "Ingrese el numero de la nueva habitación",
+      "Por favor ingrese un numero valido", 0);
+  price =
+      helpersClass::requestMoney("Ingrese el precio de la nueva habitación", 1);
+  floor = helpersClass::requestIntegerNumber(
+      "Ingrese el piso de la nueva habitación",
+      "Por favor ingrese un numero de piso valido", 1);
+  roomType = helpersClass::requestText(
+      "Ingrese el tipo de habitación (clasica, matrimonial, vip)", 2);
+  status = helpersClass::requestText(
+      "Ingrese el estado de la nueva habitación (ocupada, libre, en "
+      "mantenimiento, etc)",
+      2);
+
+  newRoom = new roomClass(roomNumber, price, floor, roomType, status);
+
+  auxRoomsList = this->automotive->getRooms();
+  auxRoomsList->insert(newRoom);
+  this->automotive->setRooms(auxRoomsList);
+
+  cout << "Cliente registrado correctamente" << endl;
+  cout << endl;
+}
+
 void menuClass::registerNewClient() {
-  roomClass* newClient;
-  roomsListClass* auxClientsList;
+  clientClass* newClient;
+  roomClass* auxRoom;
+  clientsListClass* auxClientsList;
   string firstName;
   string lastName;
   string dni;
+  string address;
+  string phone;
+  string arrivalDate;
   unsigned short age;
   bool genre;
 
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  cout << "Registrar nuevo cliente de la empresa:" << endl << endl;
+  cout << "Registrar nuevo auto:" << endl << endl;
+
+  auxRoom = this->automotive->getRooms()->pickRoom(
+      "Seleccione el cliente al que desea asignar el auto");
+
+  if (auxRoom == NULL) {
+    cout << "Eligió un cliente no valido o no hay clientes registrados";
+    cout << endl << endl;
+    return;
+  }
 
   firstName =
       helpersClass::requestText("Ingrese los nombres del nuevo cliente", 2);
@@ -109,62 +161,25 @@ void menuClass::registerNewClient() {
       "Por favor ingrese una edad igual o mayor a 18", 18);
   genre = helpersClass::requestGenre(
       "Porfavor ingrese el genero del nuevo cliente");
+  address =
+      helpersClass::requestText("Ingrese la direccion del nuevo cliente", 1);
+  phone =
+      helpersClass::requestText("Ingrese el telefono del nuevo cliente", 9, 9);
+  arrivalDate =
+      helpersClass::requestText("Ingrese la fecha de llegada del cliente", 2);
 
-  newClient = new roomClass(firstName, lastName, dni, age, genre);
+  newClient = new clientClass(firstName, lastName, dni, address, phone, age,
+                              genre, arrivalDate);
 
-  auxClientsList = this->automotive->getRooms();
+  auxClientsList = auxRoom->getClients();
   auxClientsList->insert(newClient);
-  this->automotive->setRooms(auxClientsList);
-
-  cout << "Cliente registrado correctamente" << endl;
-  cout << endl;
-}
-
-void menuClass::registerNewCar() {
-  clientClass* newCar;
-  roomClass* auxClient;
-  clientsListClass* auxCarsList;
-  string brand;
-  string model;
-  float price;
-  string plate;
-  string color;
-  string status;
-
-  helpersClass::clearScreen();
-  this->showAppTitle();
-
-  cout << "Registrar nuevo auto:" << endl << endl;
-
-  auxClient = this->automotive->getRooms()->pickRoom(
-      "Seleccione el cliente al que desea asignar el auto");
-
-  if (auxClient == NULL) {
-    cout << "Eligió un cliente no valido o no hay clientes registrados";
-    cout << endl << endl;
-    return;
-  }
-
-  brand = helpersClass::requestText("Ingrese la marca del nuevo auto", 2);
-  model = helpersClass::requestText("Ingrese el modelo del nuevo auto", 2);
-  price = helpersClass::requestFloatNumber(
-      "Ingrese el precio del nuevo auto",
-      "Por favor ingrese un precio mayor o igual a 1.", 1);
-  plate = helpersClass::requestText("Ingrese la placa del nuevo auto", 2);
-  color = helpersClass::requestText("Ingrese el color del nuevo auto", 2);
-  status = helpersClass::requestText("Ingrese el estado del nuevo auto", 2);
-
-  newCar = new clientClass(brand, model, price, plate, color, status);
-
-  auxCarsList = auxClient->getClients();
-  auxCarsList->insert(newCar);
-  auxClient->setClients(auxCarsList);
+  auxRoom->setClients(auxClientsList);
 
   cout << "Auto registrado correctamente" << endl;
   cout << endl;
 }
 
-void menuClass::showClients() {
+void menuClass::showRooms() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
@@ -184,9 +199,9 @@ void menuClass::showClients() {
   cout << endl << endl;
 }
 
-void menuClass::showCars() {
-  roomClass* auxClient;
-  clientNodeClass* auxCarNode;
+void menuClass::showClients() {
+  roomClass* auxRoom;
+  clientNodeClass* auxClientNode;
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -204,32 +219,33 @@ void menuClass::showCars() {
 
   int i = 1;
   for (int x = 0; x < this->automotive->getRooms()->getLength(); x++) {
-    auxClient = this->automotive->getRooms()->getHead() + x;
+    auxRoom = this->automotive->getRooms()->getHead() + x;
 
-    auxCarNode = auxClient->getClients()->getHead();
-    while (auxCarNode != NULL) {
-      auxCarNode->getCar()->show(8 + i, i);
+    auxClientNode = auxRoom->getClients()->getHead();
+    while (auxClientNode != NULL) {
+      auxClientNode->getClient()->show(8 + i, i);
       i++;
-      auxCarNode = auxCarNode->getNext();
+      auxClientNode = auxClientNode->getNext();
     }
   }
 
   cout << endl << endl;
 }
 
-void menuClass::findClientByDni() {
-  roomClass* auxClient;
-  string dniToFind;
+void menuClass::findRoomByNumber() {
+  roomClass* auxRoom;
+  unsigned short dniToFind;
 
-  dniToFind =
-      helpersClass::requestText("Ingrese el DNI del cliente a buscar", 8, 8);
+  dniToFind = helpersClass::requestIntegerNumber(
+      "Ingrese el numero de la habitación a buscar",
+      "Por favor ingrese un numero valido", 0);
 
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxClient = this->automotive->getRooms()->findRoomByDni(dniToFind);
+  auxRoom = this->automotive->getRooms()->findRoomByRoomNumber(dniToFind);
 
-  if (auxClient == NULL) {
+  if (auxRoom == NULL) {
     cout << "No se encontró un cliente con el DNI ingresada";
     cout << endl << endl;
     return;
@@ -240,13 +256,13 @@ void menuClass::findClientByDni() {
 
   this->showClientsTableHeader(7);
 
-  auxClient->show(9, 1);
+  auxRoom->show(9, 1);
 
   cout << endl << endl;
 }
 
 void menuClass::findCarByPlate() {
-  clientClass* auxCar;
+  clientClass* auxClient;
   string plateToFind;
 
   plateToFind =
@@ -255,9 +271,9 @@ void menuClass::findCarByPlate() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxCar = this->automotive->getRooms()->findClientByDni(plateToFind);
+  auxClient = this->automotive->getRooms()->findClientByDni(plateToFind);
 
-  if (auxCar == NULL) {
+  if (auxClient == NULL) {
     cout << "No se encontró un autor con la placa ingresada";
     cout << endl << endl;
     return;
@@ -268,7 +284,7 @@ void menuClass::findCarByPlate() {
 
   this->showCarsTableHeader(7);
 
-  auxCar->show(9, 1);
+  auxClient->show(9, 1);
 
   cout << endl << endl;
 }
@@ -285,23 +301,23 @@ void menuClass::showMenu() {
     if (selectedOption != 0) {
       switch (selectedOption) {
         case 1:
-          this->registerNewClient();
+          this->registerNewRoom();
           helpersClass::addDelay(1.5);
           break;
         case 2:
-          this->registerNewCar();
+          this->registerNewClient();
           helpersClass::addDelay(1.5);
           break;
         case 3:
-          this->showClients();
+          this->showRooms();
           helpersClass::pauseProcess();
           break;
         case 4:
-          this->showCars();
+          this->showClients();
           helpersClass::pauseProcess();
           break;
         case 5:
-          this->findClientByDni();
+          this->findRoomByNumber();
           helpersClass::pauseProcess();
           break;
         case 6:
