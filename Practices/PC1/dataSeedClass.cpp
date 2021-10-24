@@ -7,6 +7,8 @@ void dataSeedClass::seed(hotelClass *&hotel) {
   clientClass *client_1, *client_2, *client_3;
 
   hotel->setName("“SIN COMENTARIOS”");
+  hotel->setAddress("Calle Lora y Cordero 867, Chiclayo");
+  hotel->setRuc("20167834567");
 
   room_1 = new roomClass(101, 35, 1, "clasica", "ocupada");
   room_2 = new roomClass(102, 60, 1, "matrimonial", "ocupada");
@@ -14,11 +16,11 @@ void dataSeedClass::seed(hotelClass *&hotel) {
 
   client_1 =
       new clientClass("Ricardo", "Flores", "10117618", "av. Bolognesi 711",
-                      "901088920", 21, true, "24 de Octubre del 2021");
+                      "901088920", 21, true, "20 de Octubre del 2021");
   client_2 = new clientClass("Susana", "Rioja", "80121607", "av. Heroes 111",
-                             "911028920", 20, false, "25 de Octubre del 2021");
+                             "911028920", 20, false, "24 de Octubre del 2021");
   client_3 = new clientClass("Roberto", "Diaz", "52421620", "av. Heroes 111",
-                             "951028920", 35, true, "25 de Octubre del 2021");
+                             "951028920", 35, true, "24 de Octubre del 2021");
 
   room_1->getClients()->insert(client_1);
   room_2->getClients()->insert(client_2);

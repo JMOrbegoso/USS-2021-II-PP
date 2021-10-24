@@ -38,7 +38,7 @@ clientNodeClass* clientsListClass::getHead() { return this->head; }
 void clientsListClass::setHead(clientNodeClass* value) { this->head = value; }
 
 void clientsListClass::show(int rowNumber) {
-  clientNodeClass* auxCarNode = new clientNodeClass();
+  clientNodeClass* auxClientNode = new clientNodeClass();
   int i = 1;
 
   if (this->length == 0) {
@@ -47,9 +47,9 @@ void clientsListClass::show(int rowNumber) {
     return;
   }
 
-  while (auxCarNode != NULL) {
-    auxCarNode->getClient()->show(rowNumber + i, i);
-    auxCarNode = auxCarNode->getNext();
+  while (auxClientNode != NULL) {
+    auxClientNode->getClient()->show(rowNumber + i, i);
+    auxClientNode = auxClientNode->getNext();
   }
 }
 

@@ -42,38 +42,38 @@ void roomsListClass::show(int rowNumber) {
 }
 
 roomClass* roomsListClass::findRoomByRoomNumber(unsigned short roomNumber) {
-  roomClass* auxClient;
+  roomClass* auxRoom;
 
   if (this->length == 0) {
     return NULL;
   }
 
   for (int x = 0; x < this->length; x++) {
-    auxClient = this->head + x;
+    auxRoom = this->head + x;
 
-    if (auxClient->getRoomNumber() == roomNumber) return auxClient;
+    if (auxRoom->getRoomNumber() == roomNumber) return auxRoom;
   }
 
   return NULL;
 }
 
 clientClass* roomsListClass::findClientByDni(string dni) {
-  roomClass* auxClient;
-  clientNodeClass* auxCarNode;
+  roomClass* auxRoom;
+  clientNodeClass* auxClientNode;
 
   if (this->length == 0) {
     return NULL;
   }
 
   for (int x = 0; x < this->length; x++) {
-    auxClient = this->head + x;
+    auxRoom = this->head + x;
 
-    auxCarNode = auxClient->getClients()->getHead();
-    while (auxCarNode != NULL) {
-      if (auxCarNode->getClient()->getDni() == dni)
-        return auxCarNode->getClient();
+    auxClientNode = auxRoom->getClients()->getHead();
+    while (auxClientNode != NULL) {
+      if (auxClientNode->getClient()->getDni() == dni)
+        return auxClientNode->getClient();
 
-      auxCarNode = auxCarNode->getNext();
+      auxClientNode = auxClientNode->getNext();
     }
   }
 

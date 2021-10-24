@@ -4,25 +4,26 @@ using namespace std;
 
 class menuClass {
  private:
-  hotelClass* automotive;
+  hotelClass* hotel;
 
   void showAppTitle();
 
   int requestMenuOption();
 
+  void showRoomsTableHeader(int rowNumber);
   void showClientsTableHeader(int rowNumber);
-  void showCarsTableHeader(int rowNumber);
 
   void registerNewRoom();
   void registerNewClient();
   void showClients();
   void showRooms();
-  void findRoomByNumber();
-  void findCarByPlate();
+  void findClientByArrivalDate();
+  void findClientByDni();
+  void calculateProfits();
 
  public:
   ~menuClass();
-  menuClass(hotelClass*& automotive);
+  menuClass(hotelClass*& hotel);
 
   void showMenu();
 };

@@ -10,11 +10,11 @@ registra: la fecha de llegada, la fecha de salida, el DNI del cliente y la
 habitación. Cuando se asigna la habitación debe cambiar el estado a ocupado.
 Los datos generales del hotel deben ser asignados inicialmente.
 Realizar un programa que:
-- Registre las habitaciones
-- Registre un cliente y su alojamiento
-- Liste las habitaciones libres y ocupadas
-- Liste las personas alojadas en cierta fecha
-- Buscar una persona alojada
+- Registre las habitaciones <- OK
+- Registre un cliente y su alojamiento <- OK
+- Liste las habitaciones libres y ocupadas <- OK
+- Liste las personas alojadas en cierta fecha <- OK
+- Buscar una persona alojada <- OK
 - Mostrar el monto total recaudado por los alojamiento
 */
 

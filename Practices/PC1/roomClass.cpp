@@ -57,6 +57,6 @@ void roomClass::show(int rowNumber, int itemNumber) {
   cout << this->getFloor();
   helpersClass::gotoxy(55, rowNumber);
   cout << this->getRoomType();
-  helpersClass::gotoxy(65, rowNumber);
+  helpersClass::gotoxy(75, rowNumber);
   cout << this->getStatus();
 }

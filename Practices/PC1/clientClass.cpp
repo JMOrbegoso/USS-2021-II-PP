@@ -69,8 +69,10 @@ void clientClass::show(int rowNumber, int itemNumber) {
   cout << this->getLastName();
   helpersClass::gotoxy(45, rowNumber);
   cout << this->getDni();
-  helpersClass::gotoxy(55, rowNumber);
+  helpersClass::gotoxy(60, rowNumber);
+  cout << this->getPhone();
+  helpersClass::gotoxy(75, rowNumber);
   cout << this->getAge();
-  helpersClass::gotoxy(65, rowNumber);
+  helpersClass::gotoxy(85, rowNumber);
   cout << this->getGenreAsString();
 }
