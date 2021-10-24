@@ -1,21 +1,21 @@
 #include "carClass.h"
 
-class carNodeClass {
+class clientNodeClass {
  private:
-  carClass* car;
-  carNodeClass* next;
-  carNodeClass* previous;
+  clientClass* car;
+  clientNodeClass* next;
+  clientNodeClass* previous;
 
  public:
-  ~carNodeClass();
-  carNodeClass();
+  ~clientNodeClass();
+  clientNodeClass();
 
-  carClass* getCar();
-  void setCar(carClass* value);
+  clientClass* getCar();
+  void setCar(clientClass* value);
 
-  carNodeClass* getNext();
-  void setNext(carNodeClass* value);
+  clientNodeClass* getNext();
+  void setNext(clientNodeClass* value);
 
-  carNodeClass* getPrevious();
-  void setPrevious(carNodeClass* value);
+  clientNodeClass* getPrevious();
+  void setPrevious(clientNodeClass* value);
 };

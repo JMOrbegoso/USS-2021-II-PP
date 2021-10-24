@@ -2,8 +2,8 @@
 
 #include "helpersClass.h"
 
-void clientsListClass::grow(int growIn) {
-  clientClass* aux = new clientClass[this->length + growIn];
+void roomsListClass::grow(int growIn) {
+  roomClass* aux = new roomClass[this->length + growIn];
 
   for (int i = 0; i < this->length; i++) {
     *(aux + i) = *(this->head + i);
@@ -13,23 +13,23 @@ void clientsListClass::grow(int growIn) {
   this->capacity += growIn;
 }
 
-clientsListClass::~clientsListClass() {}
-clientsListClass::clientsListClass() {
+roomsListClass::~roomsListClass() {}
+roomsListClass::roomsListClass() {
   this->capacity = 0;
   this->length = 0;
   this->head = NULL;
 }
 
-int clientsListClass::getCapacity() { return this->capacity; }
-void clientsListClass::setCapacity(int value) { this->capacity = value; }
+int roomsListClass::getCapacity() { return this->capacity; }
+void roomsListClass::setCapacity(int value) { this->capacity = value; }
 
-int clientsListClass::getLength() { return this->length; }
-void clientsListClass::setLength(int value) { this->length = value; }
+int roomsListClass::getLength() { return this->length; }
+void roomsListClass::setLength(int value) { this->length = value; }
 
-clientClass* clientsListClass::getHead() { return this->head; }
-void clientsListClass::setHead(clientClass* value) { this->head = value; }
+roomClass* roomsListClass::getHead() { return this->head; }
+void roomsListClass::setHead(roomClass* value) { this->head = value; }
 
-void clientsListClass::show(int rowNumber) {
+void roomsListClass::show(int rowNumber) {
   if (this->length == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
@@ -41,8 +41,8 @@ void clientsListClass::show(int rowNumber) {
   }
 }
 
-clientClass* clientsListClass::findClientByDni(string dni) {
-  clientClass* auxClient;
+roomClass* roomsListClass::findClientByDni(string dni) {
+  roomClass* auxClient;
 
   if (this->length == 0) {
     return NULL;
@@ -57,9 +57,9 @@ clientClass* clientsListClass::findClientByDni(string dni) {
   return NULL;
 }
 
-carClass* clientsListClass::findCarByPlate(string plate) {
-  clientClass* auxClient;
-  carNodeClass* auxCarNode;
+clientClass* roomsListClass::findCarByPlate(string plate) {
+  roomClass* auxClient;
+  clientNodeClass* auxCarNode;
 
   if (this->length == 0) {
     return NULL;
@@ -80,7 +80,7 @@ carClass* clientsListClass::findCarByPlate(string plate) {
   return NULL;
 }
 
-void clientsListClass::insert(clientClass* newClient) {
+void roomsListClass::insert(roomClass* newClient) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
@@ -89,8 +89,8 @@ void clientsListClass::insert(clientClass* newClient) {
   this->length++;
 }
 
-clientClass* clientsListClass::pickClient(string message) {
-  clientClass* aux;
+roomClass* roomsListClass::pickClient(string message) {
+  roomClass* aux;
   int selectedOption;
 
   if (this->length == 0) {

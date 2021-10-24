@@ -6,14 +6,14 @@
 
 using namespace std;
 
-int carClass::counter = 1;
+int clientClass::counter = 1;
 
-carClass::~carClass() {}
-carClass::carClass() {}
-carClass::carClass(string brand, string model, float price, string plate,
-                   string color, string status) {
-  this->code = "car-" + to_string(carClass::counter);
-  carClass::counter++;
+clientClass::~clientClass() {}
+clientClass::clientClass() {}
+clientClass::clientClass(string brand, string model, float price, string plate,
+                         string color, string status) {
+  this->code = "car-" + to_string(clientClass::counter);
+  clientClass::counter++;
 
   this->brand = brand;
   this->model = model;
@@ -23,27 +23,27 @@ carClass::carClass(string brand, string model, float price, string plate,
   this->status = status;
 }
 
-string carClass::getCode() { return this->code; }
+string clientClass::getCode() { return this->code; }
 
-string carClass::getBrand() { return this->brand; }
-void carClass::setBrand(string value) { this->brand = value; }
+string clientClass::getBrand() { return this->brand; }
+void clientClass::setBrand(string value) { this->brand = value; }
 
-string carClass::getModel() { return this->model; }
-void carClass::setModel(string value) { this->model = value; }
+string clientClass::getModel() { return this->model; }
+void clientClass::setModel(string value) { this->model = value; }
 
-float carClass::getPrice() { return this->price; }
-void carClass::setPrice(float value) { this->price = value; }
+float clientClass::getPrice() { return this->price; }
+void clientClass::setPrice(float value) { this->price = value; }
 
-string carClass::getPlate() { return this->plate; }
-void carClass::setPlate(string value) { this->plate = value; }
+string clientClass::getPlate() { return this->plate; }
+void clientClass::setPlate(string value) { this->plate = value; }
 
-string carClass::getColor() { return this->color; }
-void carClass::setColor(string value) { this->color = value; }
+string clientClass::getColor() { return this->color; }
+void clientClass::setColor(string value) { this->color = value; }
 
-string carClass::getStatus() { return this->status; }
-void carClass::setStatus(string value) { this->status = value; }
+string clientClass::getStatus() { return this->status; }
+void clientClass::setStatus(string value) { this->status = value; }
 
-void carClass::show(int rowNumber, int itemNumber) {
+void clientClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);

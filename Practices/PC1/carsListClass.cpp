@@ -4,8 +4,8 @@
 
 using namespace std;
 
-carClass* carsListClass::getElementByIndex(int index) {
-  carNodeClass* auxNode = this->getHead();
+clientClass* clientsListClass::getElementByIndex(int index) {
+  clientNodeClass* auxNode = this->getHead();
 
   if (0 >= index) {
     return NULL;
@@ -25,20 +25,20 @@ carClass* carsListClass::getElementByIndex(int index) {
   return NULL;
 }
 
-carsListClass::~carsListClass() {}
-carsListClass::carsListClass() {
+clientsListClass::~clientsListClass() {}
+clientsListClass::clientsListClass() {
   this->length = 0;
   this->head = NULL;
 }
 
-int carsListClass::getLength() { return this->length; }
-void carsListClass::setLength(int value) { this->length = value; }
+int clientsListClass::getLength() { return this->length; }
+void clientsListClass::setLength(int value) { this->length = value; }
 
-carNodeClass* carsListClass::getHead() { return this->head; }
-void carsListClass::setHead(carNodeClass* value) { this->head = value; }
+clientNodeClass* clientsListClass::getHead() { return this->head; }
+void clientsListClass::setHead(clientNodeClass* value) { this->head = value; }
 
-void carsListClass::show(int rowNumber) {
-  carNodeClass* auxCarNode = new carNodeClass();
+void clientsListClass::show(int rowNumber) {
+  clientNodeClass* auxCarNode = new clientNodeClass();
   int i = 1;
 
   if (this->length == 0) {
@@ -53,10 +53,10 @@ void carsListClass::show(int rowNumber) {
   }
 }
 
-void carsListClass::insert(carClass* newCar) {
-  carNodeClass* newNode = new carNodeClass();
+void clientsListClass::insert(clientClass* newCar) {
+  clientNodeClass* newNode = new clientNodeClass();
 
-  carNodeClass* lastNode = this->getHead();
+  clientNodeClass* lastNode = this->getHead();
 
   newNode->setCar(newCar);
   newNode->setNext(NULL);
@@ -76,8 +76,8 @@ void carsListClass::insert(carClass* newCar) {
   this->setLength(this->getLength() + 1);
 }
 
-carClass* carsListClass::pickCar(string message) {
-  carNodeClass* aux;
+clientClass* clientsListClass::pickCar(string message) {
+  clientNodeClass* aux;
   int selectedOption;
 
   if (this->length == 0) {

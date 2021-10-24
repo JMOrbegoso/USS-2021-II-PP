@@ -2,18 +2,20 @@
 
 using namespace std;
 
-carNodeClass::~carNodeClass() {}
-carNodeClass::carNodeClass() {
+clientNodeClass::~clientNodeClass() {}
+clientNodeClass::clientNodeClass() {
   this->car = NULL;
   this->next = NULL;
   this->previous = NULL;
 }
 
-carClass* carNodeClass::getCar() { return this->car; }
-void carNodeClass::setCar(carClass* value) { this->car = value; }
+clientClass* clientNodeClass::getCar() { return this->car; }
+void clientNodeClass::setCar(clientClass* value) { this->car = value; }
 
-carNodeClass* carNodeClass::getNext() { return this->next; }
-void carNodeClass::setNext(carNodeClass* value) { this->next = value; }
+clientNodeClass* clientNodeClass::getNext() { return this->next; }
+void clientNodeClass::setNext(clientNodeClass* value) { this->next = value; }
 
-carNodeClass* carNodeClass::getPrevious() { return this->previous; }
-void carNodeClass::setPrevious(carNodeClass* value) { this->previous = value; };
+clientNodeClass* clientNodeClass::getPrevious() { return this->previous; }
+void clientNodeClass::setPrevious(clientNodeClass* value) {
+  this->previous = value;
+};

@@ -86,8 +86,8 @@ void menuClass::showCarsTableHeader(int rowNumber) {
 }
 
 void menuClass::registerNewClient() {
-  clientClass* newClient;
-  clientsListClass* auxClientsList;
+  roomClass* newClient;
+  roomsListClass* auxClientsList;
   string firstName;
   string lastName;
   string dni;
@@ -110,7 +110,7 @@ void menuClass::registerNewClient() {
   genre = helpersClass::requestGenre(
       "Porfavor ingrese el genero del nuevo cliente");
 
-  newClient = new clientClass(firstName, lastName, dni, age, genre);
+  newClient = new roomClass(firstName, lastName, dni, age, genre);
 
   auxClientsList = this->automotive->getClients();
   auxClientsList->insert(newClient);
@@ -121,9 +121,9 @@ void menuClass::registerNewClient() {
 }
 
 void menuClass::registerNewCar() {
-  carClass* newCar;
-  clientClass* auxClient;
-  carsListClass* auxCarsList;
+  clientClass* newCar;
+  roomClass* auxClient;
+  clientsListClass* auxCarsList;
   string brand;
   string model;
   float price;
@@ -154,7 +154,7 @@ void menuClass::registerNewCar() {
   color = helpersClass::requestText("Ingrese el color del nuevo auto", 2);
   status = helpersClass::requestText("Ingrese el estado del nuevo auto", 2);
 
-  newCar = new carClass(brand, model, price, plate, color, status);
+  newCar = new clientClass(brand, model, price, plate, color, status);
 
   auxCarsList = auxClient->getCars();
   auxCarsList->insert(newCar);
@@ -185,8 +185,8 @@ void menuClass::showClients() {
 }
 
 void menuClass::showCars() {
-  clientClass* auxClient;
-  carNodeClass* auxCarNode;
+  roomClass* auxClient;
+  clientNodeClass* auxCarNode;
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -218,7 +218,7 @@ void menuClass::showCars() {
 }
 
 void menuClass::findClientByDni() {
-  clientClass* auxClient;
+  roomClass* auxClient;
   string dniToFind;
 
   dniToFind =
@@ -246,7 +246,7 @@ void menuClass::findClientByDni() {
 }
 
 void menuClass::findCarByPlate() {
-  carClass* auxCar;
+  clientClass* auxCar;
   string plateToFind;
 
   plateToFind =
@@ -274,9 +274,7 @@ void menuClass::findCarByPlate() {
 }
 
 menuClass::~menuClass() {}
-menuClass::menuClass(automotiveClass*& automotive) {
-  this->automotive = automotive;
-}
+menuClass::menuClass(hotelClass*& automotive) { this->automotive = automotive; }
 
 void menuClass::showMenu() {
   int selectedOption;
