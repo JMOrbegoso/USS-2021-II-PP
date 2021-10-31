@@ -84,7 +84,20 @@ void menuClass::showClientsTableHeader(int rowNumber) {
   cout << "Email";
 }
 
-void menuClass::showOrdersTableHeader(int rowNumber) {}
+void menuClass::showOrdersTableHeader(int rowNumber) {
+  helpersClass::gotoxy(0, rowNumber);
+  cout << "#";
+  helpersClass::gotoxy(5, rowNumber);
+  cout << "Codigo";
+  helpersClass::gotoxy(13, rowNumber);
+  cout << "Cliente";
+  helpersClass::gotoxy(30, rowNumber);
+  cout << "Fecha";
+  helpersClass::gotoxy(45, rowNumber);
+  cout << "Productos";
+  helpersClass::gotoxy(100, rowNumber);
+  cout << "Total";
+}
 
 void menuClass::registerNewProduct() {
   productClass* newProduct;
@@ -196,7 +209,26 @@ void menuClass::showClients() {
 }
 
 void menuClass::registerNewOrder() {}
-void menuClass::showOrders() {}
+
+void menuClass::showOrders() {
+  helpersClass::clearScreen();
+  this->showAppTitle();
+
+  helpersClass::gotoxy(20, 5);
+  cout << "Lista de todas las ordenes de la empresa:" << endl << endl;
+
+  if (this->store->getOrders()->getLength() == 0) {
+    cout << "No hay ninguna orden registrada" << endl;
+    cout << "Primero registre al menos una orden" << endl;
+    return;
+  }
+
+  this->showOrdersTableHeader(7);
+
+  this->store->getOrders()->show(8);
+
+  cout << endl << endl;
+}
 
 menuClass::~menuClass() {}
 menuClass::menuClass(storeClass*& store) { this->store = store; }

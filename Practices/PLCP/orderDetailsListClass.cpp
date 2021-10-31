@@ -18,28 +18,12 @@ void orderDetailsListClass::setHead(orderDetailNodeClass* value) {
   this->head = value;
 }
 
-void orderDetailsListClass::show(int rowNumber) {
-  orderDetailNodeClass* auxClientNode = new orderDetailNodeClass();
-  int i = 1;
-
-  if (this->length == 0) {
-    cout << "No hay ningún vehiculo registrado" << endl;
-    cout << "Primero registre al menos un vehiculo" << endl;
-    return;
-  }
-
-  while (auxClientNode != NULL) {
-    auxClientNode->getClient()->show(rowNumber + i, i);
-    auxClientNode = auxClientNode->getNext();
-  }
-}
-
 void orderDetailsListClass::insert(orderDetailClass* newOrderDetail) {
   orderDetailNodeClass* newNode = new orderDetailNodeClass();
 
   orderDetailNodeClass* lastNode = this->getHead();
 
-  newNode->setClient(newOrderDetail);
+  newNode->setOrderDetail(newOrderDetail);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {

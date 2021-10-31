@@ -6,6 +6,7 @@ storeClass::~storeClass() {}
 storeClass::storeClass() {
   this->products = new productsListClass();
   this->clients = new clientsListClass();
+  this->orders = new ordersListClass();
 }
 
 string storeClass::getName() { return this->name; }

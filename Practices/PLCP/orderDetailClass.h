@@ -7,11 +7,13 @@ class orderDetailClass {
   string code;
   string name;
   float price;
+  unsigned short quantity;
 
  public:
   ~orderDetailClass();
   orderDetailClass();
-  orderDetailClass(string code, string name, float price);
+  orderDetailClass(string code, string name, float price,
+                   unsigned short quantity);
 
   string getCode();
   void setCode(string value);
@@ -22,5 +24,6 @@ class orderDetailClass {
   float getPrice();
   void setPrice(float value);
 
-  void show(int rowNumber, int itemNumber);
+  unsigned short getQuantity();
+  void setQuantity(unsigned short value);
 };

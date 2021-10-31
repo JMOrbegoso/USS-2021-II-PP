@@ -8,10 +8,12 @@ using namespace std;
 
 orderDetailClass::~orderDetailClass() {}
 orderDetailClass::orderDetailClass() {}
-orderDetailClass::orderDetailClass(string code, string name, float price) {
+orderDetailClass::orderDetailClass(string code, string name, float price,
+                                   unsigned short quantity) {
   this->code = code;
   this->name = name;
   this->price = price;
+  this->quantity = quantity;
 }
 
 string orderDetailClass::getCode() { return this->code; }
@@ -23,10 +25,7 @@ void orderDetailClass::setName(string value) { this->name = value; }
 float orderDetailClass::getPrice() { return this->price; }
 void orderDetailClass::setPrice(float value) { this->price = value; }
 
-void orderDetailClass::show(int rowNumber, int itemNumber) {
-  helpersClass::gotoxy(0, rowNumber);
-  cout << itemNumber;
-  helpersClass::gotoxy(5, rowNumber);
-  cout << this->getCode();
-  helpersClass::gotoxy(15, rowNumber);
+unsigned short orderDetailClass::getQuantity() { return this->quantity; }
+void orderDetailClass::setQuantity(unsigned short value) {
+  this->quantity = value;
 }

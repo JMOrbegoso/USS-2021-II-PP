@@ -3,10 +3,17 @@
 using namespace std;
 
 void dataSeedClass::seed(storeClass *&store) {
-  productClass *product_1;
   productsListClass *auxProducts;
-  clientClass *client_1, *client_2;
+  productClass *product_1;
+
   clientsListClass *auxClients;
+  clientClass *client_1, *client_2;
+
+  orderDetailsListClass *auxOrderDetails;
+  orderDetailClass *orderDetail_1, *orderDetail_2;
+
+  ordersListClass *auxOrders;
+  orderClass *order_1;
 
   store->setName("Don Lopez");
   store->setAddress("Calle Bolognesi 867, Chiclayo");
@@ -29,4 +36,17 @@ void dataSeedClass::seed(storeClass *&store) {
   auxClients->insert(client_1);
   auxClients->insert(client_2);
   store->setClients(auxClients);
+
+  orderDetail_1 = new orderDetailClass("101010", "jabon", 10, 2);
+  orderDetail_2 = new orderDetailClass("101050", "detergente", 10, 2);
+
+  order_1 = new orderClass("2015-10-11", "Julio Lopez Ramos");
+  auxOrderDetails = order_1->getOrderDetails();
+  auxOrderDetails->insert(orderDetail_1);
+  auxOrderDetails->insert(orderDetail_2);
+  order_1->setOrderDetails(auxOrderDetails);
+
+  auxOrders = store->getOrders();
+  auxOrders->insert(order_1);
+  store->setOrders(auxOrders);
 }

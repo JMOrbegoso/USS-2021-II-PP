@@ -9,10 +9,10 @@ orderDetailNodeClass::orderDetailNodeClass() {
   this->previous = NULL;
 }
 
-orderDetailClass* orderDetailNodeClass::getClient() {
+orderDetailClass* orderDetailNodeClass::getOrderDetail() {
   return this->orderDetail;
 }
-void orderDetailNodeClass::setClient(orderDetailClass* value) {
+void orderDetailNodeClass::setOrderDetail(orderDetailClass* value) {
   this->orderDetail = value;
 }
 

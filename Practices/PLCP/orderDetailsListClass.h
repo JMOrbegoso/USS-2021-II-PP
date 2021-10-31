@@ -17,7 +17,5 @@ class orderDetailsListClass {
   orderDetailNodeClass* getHead();
   void setHead(orderDetailNodeClass* value);
 
-  void show(int rowNumber);
-
   void insert(orderDetailClass* newOrderDetail);
 };

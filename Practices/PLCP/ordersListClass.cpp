@@ -31,7 +31,7 @@ void ordersListClass::setHead(orderClass* value) { this->head = value; }
 
 void ordersListClass::show(int rowNumber) {
   if (this->length == 0) {
-    cout << "No hay ninguna orden registrado" << endl;
+    cout << "No hay ninguna orden registrada" << endl;
     cout << "Primero registre al menos una orden" << endl;
     return;
   }

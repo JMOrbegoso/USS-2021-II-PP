@@ -10,8 +10,8 @@ class orderDetailNodeClass {
   ~orderDetailNodeClass();
   orderDetailNodeClass();
 
-  orderDetailClass* getClient();
-  void setClient(orderDetailClass* value);
+  orderDetailClass* getOrderDetail();
+  void setOrderDetail(orderDetailClass* value);
 
   orderDetailNodeClass* getNext();
   void setNext(orderDetailNodeClass* value);
