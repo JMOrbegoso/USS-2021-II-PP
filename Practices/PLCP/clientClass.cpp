@@ -6,33 +6,30 @@
 
 using namespace std;
 
-int clientClass::counter = 1;
-
 clientClass::~clientClass() {}
 clientClass::clientClass() {}
-clientClass::clientClass(string firstName, string lastName, string dni,
-                         string address, string phone, unsigned short age,
-                         bool genre, string arrivalDate) {
-  this->code = "cli-" + to_string(clientClass::counter);
-  clientClass::counter++;
-
+clientClass::clientClass(string firstName, string lastName,
+                         string motherLastName, string dni, string address,
+                         string phone, string email) {
   this->firstName = firstName;
   this->lastName = lastName;
+  this->motherLastName = motherLastName;
   this->dni = dni;
   this->address = address;
   this->phone = phone;
-  this->age = age;
-  this->genre = genre;
-  this->arrivalDate = arrivalDate;
+  this->email = email;
 }
-
-string clientClass::getCode() { return this->code; }
 
 string clientClass::getFirstName() { return this->firstName; }
 void clientClass::setFirstName(string value) { this->firstName = value; }
 
 string clientClass::getLastName() { return this->lastName; }
 void clientClass::setLastName(string value) { this->lastName = value; }
+
+string clientClass::getMotherLastName() { return this->motherLastName; }
+void clientClass::setMotherLastName(string value) {
+  this->motherLastName = value;
+}
 
 string clientClass::getDni() { return this->dni; }
 void clientClass::setDni(string value) { this->dni = value; }
@@ -43,36 +40,22 @@ void clientClass::setAddress(string value) { this->address = value; }
 string clientClass::getPhone() { return this->phone; }
 void clientClass::setPhone(string value) { this->phone = value; }
 
-unsigned short clientClass::getAge() { return this->age; }
-void clientClass::setAge(unsigned short value) { this->age = value; }
-
-bool clientClass::getGenre() { return this->genre; }
-void clientClass::setGenre(bool value) { this->genre = value; }
-string clientClass::getGenreAsString() {
-  if (this->genre)
-    return "Masculino";
-  else
-    return "Femenino";
-}
-
-string clientClass::getArrivalDate() { return this->arrivalDate; }
-void clientClass::setArrivalDate(string value) { this->arrivalDate = value; }
+string clientClass::getEmail() { return this->email; }
+void clientClass::setEmail(string value) { this->email = value; }
 
 void clientClass::show(int rowNumber, int itemNumber) {
-  helpersClass::gotoxy(0, rowNumber);
-  cout << itemNumber;
-  helpersClass::gotoxy(5, rowNumber);
-  cout << this->getCode();
+  helpersClass::gotoxy(1, rowNumber);
+  cout << this->getDni();
   helpersClass::gotoxy(15, rowNumber);
   cout << this->getFirstName();
-  helpersClass::gotoxy(30, rowNumber);
+  cout << " ";
   cout << this->getLastName();
-  helpersClass::gotoxy(45, rowNumber);
-  cout << this->getDni();
-  helpersClass::gotoxy(60, rowNumber);
-  cout << this->getPhone();
+  cout << " ";
+  cout << this->getMotherLastName();
+  helpersClass::gotoxy(50, rowNumber);
+  cout << this->getAddress();
   helpersClass::gotoxy(75, rowNumber);
-  cout << this->getAge();
+  cout << this->getPhone();
   helpersClass::gotoxy(85, rowNumber);
-  cout << this->getGenreAsString();
+  cout << this->getEmail();
 }

@@ -31,31 +31,14 @@ void productsListClass::setHead(productClass* value) { this->head = value; }
 
 void productsListClass::show(int rowNumber) {
   if (this->length == 0) {
-    cout << "No hay ningún cliente registrado" << endl;
-    cout << "Primero registre al menos un cliente" << endl;
+    cout << "No hay ningún producto registrado" << endl;
+    cout << "Primero registre al menos un producto" << endl;
     return;
   }
 
   for (int x = 0; x < this->length; x++) {
     (*(this->head + x)).show(rowNumber + x + 1, x + 1);
   }
-}
-
-productClass* productsListClass::findRoomByRoomNumber(
-    unsigned short roomNumber) {
-  productClass* auxRoom;
-
-  if (this->length == 0) {
-    return NULL;
-  }
-
-  for (int x = 0; x < this->length; x++) {
-    auxRoom = this->head + x;
-
-    if (auxRoom->getRoomNumber() == roomNumber) return auxRoom;
-  }
-
-  return NULL;
 }
 
 void productsListClass::insert(productClass* newProduct) {
@@ -78,23 +61,17 @@ productClass* productsListClass::pickProduct(string message) {
   cout << endl
        << message << "." << endl
        << "Escoja entre los " << this->getLength()
-       << " clientes siguientes:" << endl
+       << " productos siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
     aux = this->getHead() + x;
 
     cout << "[" << x + 1 << "]";
-    cout << " - Cliente: ";
-    cout << aux->getCode();
-    cout << " - Piso: ";
-    cout << aux->getFloor();
-    cout << " - Habitación #: ";
-    cout << aux->getRoomNumber();
-    cout << " - Tipo: ";
-    cout << aux->getRoomType();
-    cout << " - Status: ";
-    cout << aux->getStatus();
+    cout << " - Producto: ";
+    cout << aux->getName();
+    cout << " - Cantidad: ";
+    cout << aux->getStock();
     cout << endl;
   }
 

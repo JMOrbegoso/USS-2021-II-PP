@@ -3,41 +3,35 @@
 
 using namespace std;
 
-int productClass::counter = 1;
-
 productClass::~productClass() {}
 productClass::productClass() {}
-productClass::productClass(unsigned short roomNumber, float price,
-                           unsigned short floor, string roomType,
-                           string status) {
-  this->code = "hab-" + to_string(productClass::counter);
-  productClass::counter++;
-
-  this->roomNumber = roomNumber;
+productClass::productClass(string code, string name, string supplier,
+                           unsigned short stock, float price, string category) {
+  this->code = code;
+  this->name = name;
+  this->supplier = supplier;
+  this->stock = stock;
   this->price = price;
-  this->floor = floor;
-  this->roomType = roomType;
-  this->status = status;
+  this->category = category;
 }
 
 string productClass::getCode() { return this->code; }
+void productClass::setCode(string value) { this->code = value; }
 
-unsigned short productClass::getRoomNumber() { return this->roomNumber; }
-void productClass::setRoomNumber(unsigned short value) {
-  this->roomNumber = value;
-}
+string productClass::getName() { return this->name; }
+void productClass::setName(string value) { this->name = value; }
+
+string productClass::getSupplier() { return this->supplier; }
+void productClass::setSupplier(string value) { this->supplier = value; }
+
+unsigned short productClass::getStock() { return this->stock; }
+void productClass::setStock(unsigned short value) { this->stock = value; }
 
 float productClass::getPrice() { return this->price; }
 void productClass::setPrice(float value) { this->price = value; }
 
-unsigned short productClass::getFloor() { return this->floor; }
-void productClass::setFloor(unsigned short value) { this->floor = value; }
-
-string productClass::getRoomType() { return this->roomType; }
-void productClass::setRoomType(string value) { this->roomType = value; }
-
-string productClass::getStatus() { return this->status; }
-void productClass::setStatus(string value) { this->status = value; }
+string productClass::getCategory() { return this->category; }
+void productClass::setCategory(string value) { this->category = value; }
 
 void productClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
@@ -45,13 +39,13 @@ void productClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
   helpersClass::gotoxy(15, rowNumber);
-  cout << this->getRoomNumber();
+  cout << this->getName();
   helpersClass::gotoxy(30, rowNumber);
-  cout << this->getPrice();
+  cout << this->getStock();
   helpersClass::gotoxy(45, rowNumber);
-  cout << this->getFloor();
+  cout << this->getPrice();
   helpersClass::gotoxy(55, rowNumber);
-  cout << this->getRoomType();
+  cout << this->getSupplier();
   helpersClass::gotoxy(75, rowNumber);
-  cout << this->getStatus();
+  cout << this->getCategory();
 }

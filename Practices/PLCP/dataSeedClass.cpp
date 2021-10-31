@@ -3,30 +3,30 @@
 using namespace std;
 
 void dataSeedClass::seed(storeClass *&store) {
-  productClass *room_1, *room_2, *room_3;
-  clientClass *client_1, *client_2, *client_3;
+  productClass *product_1;
+  productsListClass *auxProducts;
+  clientClass *client_1, *client_2;
+  clientsListClass *auxClients;
 
-  store->setName("SIN COMENTARIOS");
-  store->setAddress("Calle Lora y Cordero 867, Chiclayo");
-  store->setRuc("20167834567");
+  store->setName("Don Lopez");
+  store->setAddress("Calle Bolognesi 867, Chiclayo");
+  store->setRuc("20217832040");
 
-  room_1 = new productClass(101, 35, 1, "clasica", "ocupada");
-  room_2 = new productClass(102, 60, 1, "matrimonial", "ocupada");
-  room_3 = new productClass(201, 90, 2, "vip", "en mantenimiento");
+  product_1 = new productClass("44780449", "Bolivar", "Kimberly Clark", 100,
+                               1.5, "Detergente");
 
-  client_1 =
-      new clientClass("Ricardo", "Flores", "10117618", "av. Bolognesi 711",
-                      "901088920", 21, true, "20 de Octubre del 2021");
-  client_2 = new clientClass("Susana", "Rioja", "80121607", "av. Heroes 111",
-                             "911028920", 20, false, "24 de Octubre del 2021");
-  client_3 = new clientClass("Roberto", "Diaz", "52421620", "av. Heroes 111",
-                             "951028920", 35, true, "24 de Octubre del 2021");
+  client_1 = new clientClass("Liz", "Rios", "Maz", "44780449", "José Díaz Maz",
+                             "960024028", "liz@rios.com");
+  client_2 =
+      new clientClass("Betty", "Sanchez", "Ruiz", "16459212",
+                      "Luis Atarama Ríos", "910522841", "betty@sanchez.com");
 
-  store->getClients()->insert(client_1);
-  store->getClients()->insert(client_2);
-  store->getClients()->insert(client_3);
+  auxProducts = store->getProducts();
+  auxProducts->insert(product_1);
+  store->setProducts(auxProducts);
 
-  store->getProducts()->insert(room_1);
-  store->getProducts()->insert(room_2);
-  store->getProducts()->insert(room_3);
+  auxClients = store->getClients();
+  auxClients->insert(client_1);
+  auxClients->insert(client_2);
+  store->setClients(auxClients);
 }

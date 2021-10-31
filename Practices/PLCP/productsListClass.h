@@ -25,8 +25,6 @@ class productsListClass {
 
   void show(int rowNumber);
 
-  productClass* findRoomByRoomNumber(unsigned short roomNumber);
-
   void insert(productClass* newProduct);
 
   productClass* pickProduct(string message);

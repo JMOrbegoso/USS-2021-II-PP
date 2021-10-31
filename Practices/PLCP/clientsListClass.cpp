@@ -42,14 +42,17 @@ void clientsListClass::show(int rowNumber) {
   int i = 1;
 
   if (this->length == 0) {
-    cout << "No hay ningún vehiculo registrado" << endl;
-    cout << "Primero registre al menos un vehiculo" << endl;
+    cout << "No hay ningún cliente registrado" << endl;
+    cout << "Primero registre al menos un cliente" << endl;
     return;
   }
+
+  auxClientNode = this->getHead();
 
   while (auxClientNode != NULL) {
     auxClientNode->getClient()->show(rowNumber + i, i);
     auxClientNode = auxClientNode->getNext();
+    i++;
   }
 }
 
@@ -87,7 +90,7 @@ clientClass* clientsListClass::pickClient(string message) {
   cout << endl
        << message << "." << endl
        << "Escoja entre los " << this->getLength()
-       << " vehiculos siguientes:" << endl
+       << " clientes siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
@@ -95,11 +98,11 @@ clientClass* clientsListClass::pickClient(string message) {
 
     cout << "[" << x + 1 << "]";
     cout << " - ";
-    cout << aux->getClient()->getCode();
-    cout << " - ";
     cout << aux->getClient()->getFirstName();
     cout << " ";
     cout << aux->getClient()->getLastName();
+    cout << " ";
+    cout << aux->getClient()->getMotherLastName();
     cout << endl;
   }
 

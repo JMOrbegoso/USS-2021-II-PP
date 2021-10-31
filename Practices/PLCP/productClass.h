@@ -1,41 +1,39 @@
 #include <string>
 
-#include "clientsListClass.h"
-
 using namespace std;
 
 class productClass {
  private:
-  static int counter;
   string code;
-  unsigned short roomNumber;
+  string name;
+  string supplier;
+  unsigned short stock;
   float price;
-  unsigned short floor;
-  string roomType;
-  string status;
+  string category;
 
  public:
   ~productClass();
   productClass();
-  productClass(unsigned short roomNumber, float price, unsigned short floor,
-               string roomType, string status);
+  productClass(string code, string name, string supplier, unsigned short stock,
+               float price, string category);
 
   string getCode();
+  void setCode(string value);
 
-  unsigned short getRoomNumber();
-  void setRoomNumber(unsigned short value);
+  string getName();
+  void setName(string value);
+
+  string getSupplier();
+  void setSupplier(string value);
+
+  unsigned short getStock();
+  void setStock(unsigned short value);
 
   float getPrice();
   void setPrice(float value);
 
-  unsigned short getFloor();
-  void setFloor(unsigned short value);
-
-  string getRoomType();
-  void setRoomType(string value);
-
-  string getStatus();
-  void setStatus(string value);
+  string getCategory();
+  void setCategory(string value);
 
   void show(int rowNumber, int itemNumber);
 };

@@ -10,18 +10,22 @@ class menuClass {
 
   int requestMenuOption();
 
-  void showRoomsTableHeader(int rowNumber);
+  void showProductsTableHeader(int rowNumber);
   void showClientsTableHeader(int rowNumber);
+  void showOrdersTableHeader(int rowNumber);
 
-  void registerNewRoom();
+  void registerNewProduct();
+  void showProducts();
+
   void registerNewClient();
   void showClients();
-  void showRooms();
-  void calculateProfits();
+
+  void registerNewOrder();
+  void showOrders();
 
  public:
   ~menuClass();
-  menuClass(storeClass*& hotel);
+  menuClass(storeClass*& store);
 
   void showMenu();
 };

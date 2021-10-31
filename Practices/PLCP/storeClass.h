@@ -1,5 +1,6 @@
 #include <string>
 
+#include "clientsListClass.h"
 #include "productsListClass.h"
 
 using namespace std;
@@ -9,7 +10,7 @@ class storeClass {
   string name;
   string address;
   string ruc;
-  productsListClass *rooms;
+  productsListClass *products;
   clientsListClass *clients;
 
  public:

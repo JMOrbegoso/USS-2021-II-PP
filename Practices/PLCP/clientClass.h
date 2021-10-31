@@ -4,30 +4,28 @@ using namespace std;
 
 class clientClass {
  private:
-  static int counter;
-  string code;
   string firstName;
   string lastName;
+  string motherLastName;
   string dni;
   string address;
   string phone;
-  unsigned short age;
-  bool genre;
-  string arrivalDate;
+  string email;
 
  public:
   ~clientClass();
   clientClass();
-  clientClass(string firstName, string lastName, string dni, string address,
-              string phone, unsigned short age, bool genre, string arrivalDate);
-
-  string getCode();
+  clientClass(string firstName, string lastName, string motherLastName,
+              string dni, string address, string phone, string email);
 
   string getFirstName();
   void setFirstName(string value);
 
   string getLastName();
   void setLastName(string value);
+
+  string getMotherLastName();
+  void setMotherLastName(string value);
 
   string getDni();
   void setDni(string value);
@@ -38,15 +36,8 @@ class clientClass {
   string getPhone();
   void setPhone(string value);
 
-  unsigned short getAge();
-  void setAge(unsigned short value);
-
-  bool getGenre();
-  void setGenre(bool value);
-  string getGenreAsString();
-
-  string getArrivalDate();
-  void setArrivalDate(string value);
+  string getEmail();
+  void setEmail(string value);
 
   void show(int rowNumber, int itemNumber);
 };

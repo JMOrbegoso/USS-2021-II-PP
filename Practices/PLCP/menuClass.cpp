@@ -9,7 +9,7 @@ using namespace std;
 void menuClass::showAppTitle() {
   cout << "-------------------------------------------------------------------";
   cout << endl;
-  cout << "\t\t Sistema virtual del hotel ";
+  cout << "\t\t Sistema virtual del la tienda ";
   cout << this->store->getName();
   cout << endl;
   cout << "\t Dirección: ";
@@ -31,20 +31,19 @@ int menuClass::requestMenuOption() {
        << "Esta aplicación tiene las siguientes opciones:" << endl
        << endl;
 
-  cout << "[1] Registrar nueva habitación" << endl;
-  cout << "[2] Registrar nuevo cliente" << endl;
-  cout << "[3] Listar todas las habitaciones" << endl;
-  cout << "[4] Listar todos los clientes" << endl;
-  cout << "[5] Buscar cliente por fecha de llegada" << endl;
-  cout << "[6] Buscar cliente por DNI" << endl;
-  cout << "[7] Calcular ganancias" << endl;
+  cout << "[1] Registrar nuevo cliente" << endl;
+  cout << "[2] Registrar nuevo producto" << endl;
+  cout << "[3] Realizar venta" << endl;
+  cout << "[4] Mostrar lista de ventas realizadas" << endl;
+  cout << "[5] Mostrar lista de clientes" << endl;
+  cout << "[6] Mostrar lista de productos" << endl;
 
   cout << endl;
   cout << "[0] Cerrar" << endl;
 
   cout << endl << "Por favor ingrese una de las opciones:" << endl;
   cin >> selectedOption;
-  while (!(0 <= selectedOption && selectedOption <= 9)) {
+  while (!(0 <= selectedOption && selectedOption <= 6)) {
     cout << "La opcion seleccionada fue inválida, por favor seleccione una "
             "opcion válida:"
          << endl;
@@ -53,92 +52,99 @@ int menuClass::requestMenuOption() {
   return selectedOption;
 }
 
-void menuClass::showRoomsTableHeader(int rowNumber) {
+void menuClass::showProductsTableHeader(int rowNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << "#";
   helpersClass::gotoxy(5, rowNumber);
   cout << "Codigo";
   helpersClass::gotoxy(15, rowNumber);
-  cout << "Habitación #";
+  cout << "Nombre";
   helpersClass::gotoxy(30, rowNumber);
-  cout << "Precio";
+  cout << "Stock";
   helpersClass::gotoxy(45, rowNumber);
-  cout << "Piso";
+  cout << "Precio";
   helpersClass::gotoxy(55, rowNumber);
-  cout << "Tipo";
+  cout << "Proveedor";
   helpersClass::gotoxy(75, rowNumber);
-  cout << "Estado";
+  cout << "Category";
 }
 
 void menuClass::showClientsTableHeader(int rowNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << "#";
   helpersClass::gotoxy(5, rowNumber);
-  cout << "Codigo";
-  helpersClass::gotoxy(15, rowNumber);
-  cout << "Nombres";
-  helpersClass::gotoxy(30, rowNumber);
-  cout << "Apellidos";
-  helpersClass::gotoxy(45, rowNumber);
   cout << "DNI";
-  helpersClass::gotoxy(60, rowNumber);
-  cout << "Telefono";
+  helpersClass::gotoxy(15, rowNumber);
+  cout << "Cliente";
+  helpersClass::gotoxy(50, rowNumber);
+  cout << "Direccion";
   helpersClass::gotoxy(75, rowNumber);
-  cout << "Edad";
+  cout << "Telefono";
   helpersClass::gotoxy(85, rowNumber);
-  cout << "Genero";
+  cout << "Email";
 }
 
-void menuClass::registerNewRoom() {
-  productClass* newRoom;
-  productsListClass* auxRoomsList;
-  unsigned short roomNumber;
+void menuClass::showOrdersTableHeader(int rowNumber) {}
+
+void menuClass::registerNewProduct() {
+  productClass* newProduct;
+  productsListClass* auxProductsList;
+  string code, name, supplier, category;
+  unsigned short stock;
   float price;
-  unsigned short floor;
-  string roomType;
-  string status;
 
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  cout << "Registrar nueva habitación en el hotel:" << endl << endl;
+  cout << "Registrar nuevo producto:" << endl << endl;
 
-  roomNumber = helpersClass::requestIntegerNumber(
-      "Ingrese el numero de la nueva habitación",
-      "Por favor ingrese un numero valido", 0);
+  code = helpersClass::requestText("Ingrese el codigo del nuevo producto", 2);
+  name = helpersClass::requestText("Ingrese el nombre del nuevo producto", 2);
+  supplier =
+      helpersClass::requestText("Ingrese el proveedor del nuevo producto", 2);
+  category =
+      helpersClass::requestText("Ingrese la categoria del nuevo producto", 2);
+  stock = helpersClass::requestIntegerNumber(
+      "Ingrese el stock del nuevo producto",
+      "Por favor ingrese un numero valido.", 0);
   price =
-      helpersClass::requestMoney("Ingrese el precio de la nueva habitación", 1);
-  floor = helpersClass::requestIntegerNumber(
-      "Ingrese el piso de la nueva habitación",
-      "Por favor ingrese un numero de piso valido", 1);
-  roomType = helpersClass::requestText(
-      "Ingrese el tipo de habitación (clasica, matrimonial, vip)", 2);
-  status = helpersClass::requestText(
-      "Ingrese el estado de la nueva habitación (ocupada, libre, en "
-      "mantenimiento, etc)",
-      2);
+      helpersClass::requestFloatNumber("Ingrese el precio del nuevo producto",
+                                       "Por favor ingrese un numero valido", 1);
 
-  newRoom = new productClass(roomNumber, price, floor, roomType, status);
+  newProduct = new productClass(code, name, supplier, stock, price, category);
 
-  auxRoomsList = this->store->getProducts();
-  auxRoomsList->insert(newRoom);
-  this->store->setProducts(auxRoomsList);
+  auxProductsList = this->store->getProducts();
+  auxProductsList->insert(newProduct);
+  this->store->setProducts(auxProductsList);
 
-  cout << "Habitación registrada correctamente" << endl;
+  cout << "Producto registrado correctamente" << endl;
   cout << endl;
+}
+
+void menuClass::showProducts() {
+  helpersClass::clearScreen();
+  this->showAppTitle();
+
+  helpersClass::gotoxy(20, 5);
+  cout << "Lista de todos los productos de la empresa:" << endl << endl;
+
+  if (this->store->getProducts()->getLength() == 0) {
+    cout << "No hay ningún producto registrado" << endl;
+    cout << "Primero registre al menos un producto" << endl;
+    return;
+  }
+
+  this->showProductsTableHeader(7);
+
+  this->store->getProducts()->show(8);
+
+  cout << endl << endl;
 }
 
 void menuClass::registerNewClient() {
   clientClass* newClient;
   clientsListClass* auxClientsList;
-  string firstName;
-  string lastName;
-  string dni;
-  string address;
-  string phone;
-  string arrivalDate;
-  unsigned short age;
-  bool genre;
+  string firstName, lastName, motherLastName, dni, address, phone, email;
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -147,23 +153,19 @@ void menuClass::registerNewClient() {
 
   firstName =
       helpersClass::requestText("Ingrese los nombres del nuevo cliente", 2);
-  lastName =
-      helpersClass::requestText("Ingrese los apellidos del nuevo cliente", 2);
+  lastName = helpersClass::requestText(
+      "Ingrese los apellidos paternos del nuevo cliente", 2);
+  motherLastName = helpersClass::requestText(
+      "Ingrese los apellidos maternos del nuevo cliente", 2);
   dni = helpersClass::requestText("Ingrese el DNI del nuevo cliente", 8, 8);
-  age = helpersClass::requestIntegerNumber(
-      "Ingrese la edad del nuevo cliente",
-      "Por favor ingrese una edad igual o mayor a 18", 18);
-  genre = helpersClass::requestGenre(
-      "Porfavor ingrese el genero del nuevo cliente");
   address =
       helpersClass::requestText("Ingrese la direccion del nuevo cliente", 1);
   phone =
       helpersClass::requestText("Ingrese el telefono del nuevo cliente", 9, 9);
-  arrivalDate =
-      helpersClass::requestText("Ingrese la fecha de llegada del cliente", 2);
+  email = helpersClass::requestText("Ingrese el email del cliente", 2);
 
-  newClient = new clientClass(firstName, lastName, dni, address, phone, age,
-                              genre, arrivalDate);
+  newClient = new clientClass(firstName, lastName, motherLastName, dni, address,
+                              phone, email);
 
   auxClientsList = this->store->getClients();
   auxClientsList->insert(newClient);
@@ -173,37 +175,14 @@ void menuClass::registerNewClient() {
   cout << endl;
 }
 
-void menuClass::showRooms() {
+void menuClass::showClients() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los clientes de la empresa:" << endl << endl;
 
-  if (this->store->getProducts()->getLength() == 0) {
-    cout << "No hay ningún cliente registrado" << endl;
-    cout << "Primero registre al menos un cliente" << endl;
-    return;
-  }
-
-  this->showRoomsTableHeader(7);
-
-  this->store->getProducts()->show(8);
-
-  cout << endl << endl;
-}
-
-void menuClass::showClients() {
-  productClass* auxRoom;
-  clientNodeClass* auxClientNode;
-
-  helpersClass::clearScreen();
-  this->showAppTitle();
-
-  helpersClass::gotoxy(20, 5);
-  cout << "Lista de todos los autos en la empresa:" << endl << endl;
-
-  if (this->store->getProducts()->getLength() == 0) {
+  if (this->store->getClients()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -211,53 +190,13 @@ void menuClass::showClients() {
 
   this->showClientsTableHeader(7);
 
-  int i = 1;
-  for (int x = 0; x < this->store->getProducts()->getLength(); x++) {
-    auxRoom = this->store->getProducts()->getHead() + x;
-
-    auxClientNode = this->store->getClients()->getHead();
-    while (auxClientNode != NULL) {
-      auxClientNode->getClient()->show(8 + i, i);
-      i++;
-      auxClientNode = auxClientNode->getNext();
-    }
-  }
+  this->store->getClients()->show(8);
 
   cout << endl << endl;
 }
 
-void menuClass::calculateProfits() {
-  productClass* auxRoom;
-  float profits = 0;
-  int occupiedRooms = 0;
-
-  helpersClass::clearScreen();
-  this->showAppTitle();
-
-  if (this->store->getProducts()->getLength() == 0) {
-    cout << "No hay ninguna habitación registrada, por lo que no hay ganancias";
-    cout << endl << endl;
-    return;
-  }
-
-  helpersClass::gotoxy(20, 5);
-  cout << "Ganancias actuales" << endl;
-
-  for (int x = 0; x < this->store->getProducts()->getLength(); x++) {
-    auxRoom = this->store->getProducts()->getHead() + x;
-
-    if (this->store->getClients()->getLength() > 0) {
-      profits += auxRoom->getPrice();
-      occupiedRooms++;
-    }
-  }
-
-  cout << endl;
-  cout << "Las ganancias son de S/" << profits;
-  cout << " con " << occupiedRooms;
-  cout << " habitaciones ocupadas.";
-  cout << endl << endl;
-}
+void menuClass::registerNewOrder() {}
+void menuClass::showOrders() {}
 
 menuClass::~menuClass() {}
 menuClass::menuClass(storeClass*& store) { this->store = store; }
@@ -271,23 +210,27 @@ void menuClass::showMenu() {
     if (selectedOption != 0) {
       switch (selectedOption) {
         case 1:
-          this->registerNewRoom();
-          helpersClass::addDelay(1.5);
-          break;
-        case 2:
           this->registerNewClient();
           helpersClass::addDelay(1.5);
           break;
+        case 2:
+          this->registerNewProduct();
+          helpersClass::addDelay(1.5);
+          break;
         case 3:
-          this->showRooms();
-          helpersClass::pauseProcess();
+          this->registerNewOrder();
+          helpersClass::addDelay(1.5);
           break;
         case 4:
+          this->showOrders();
+          helpersClass::pauseProcess();
+          break;
+        case 5:
           this->showClients();
           helpersClass::pauseProcess();
           break;
-        case 7:
-          this->calculateProfits();
+        case 6:
+          this->showProducts();
           helpersClass::pauseProcess();
           break;
       }
