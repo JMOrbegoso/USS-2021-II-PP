@@ -208,7 +208,44 @@ void menuClass::showClients() {
   cout << endl << endl;
 }
 
-void menuClass::registerNewOrder() {}
+void menuClass::registerNewOrder() {
+  orderClass* newOrder;
+  ordersListClass* auxOrdersList;
+  orderDetailClass* newOrderDetail;
+  orderDetailsListClass* auxOrderDetailsList;
+  clientClass* auxClient;
+  productClass* auxProduct;
+  string date, clientFullName;
+
+  helpersClass::clearScreen();
+  this->showAppTitle();
+
+  cout << "Registrar nueva orden de compra:" << endl << endl;
+
+  date = helpersClass::requestText("Ingrese la fecha de la orden de compra", 2);
+
+  auxClient = this->store->getClients()->pickClient(
+      "Seleccione el cliente de esta orden de compra");
+
+  if (auxClient == NULL) {
+    cout << "Eligió un cliente no valido o no hay clientes registrados";
+    cout << endl << endl;
+    return;
+  }
+
+  clientFullName = auxClient->getFirstName() + " " + auxClient->getLastName() +
+                   " " + auxClient->getMotherLastName();
+  newOrder = new orderClass(date, clientFullName);
+
+  // TODO: Add products as order details to the order
+
+  auxOrdersList = this->store->getOrders();
+  auxOrdersList->insert(newOrder);
+  this->store->setOrders(auxOrdersList);
+
+  cout << "Orden de compra registrada correctamente" << endl;
+  cout << endl;
+}
 
 void menuClass::showOrders() {
   helpersClass::clearScreen();
