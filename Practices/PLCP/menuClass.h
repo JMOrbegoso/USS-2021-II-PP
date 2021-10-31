@@ -4,7 +4,7 @@ using namespace std;
 
 class menuClass {
  private:
-  hotelClass* hotel;
+  storeClass* hotel;
 
   void showAppTitle();
 
@@ -23,7 +23,7 @@ class menuClass {
 
  public:
   ~menuClass();
-  menuClass(hotelClass*& hotel);
+  menuClass(storeClass*& hotel);
 
   void showMenu();
 };

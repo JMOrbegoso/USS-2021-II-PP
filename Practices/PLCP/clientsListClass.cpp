@@ -53,12 +53,12 @@ void clientsListClass::show(int rowNumber) {
   }
 }
 
-void clientsListClass::insert(clientClass* newCar) {
+void clientsListClass::insert(clientClass* newClient) {
   clientNodeClass* newNode = new clientNodeClass();
 
   clientNodeClass* lastNode = this->getHead();
 
-  newNode->setClient(newCar);
+  newNode->setClient(newClient);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {

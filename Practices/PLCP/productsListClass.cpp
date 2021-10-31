@@ -1,9 +1,9 @@
-#include "roomsListClass.h"
+#include "productsListClass.h"
 
 #include "helpersClass.h"
 
-void roomsListClass::grow(int growIn) {
-  roomClass* aux = new roomClass[this->length + growIn];
+void productsListClass::grow(int growIn) {
+  productClass* aux = new productClass[this->length + growIn];
 
   for (int i = 0; i < this->length; i++) {
     *(aux + i) = *(this->head + i);
@@ -13,23 +13,23 @@ void roomsListClass::grow(int growIn) {
   this->capacity += growIn;
 }
 
-roomsListClass::~roomsListClass() {}
-roomsListClass::roomsListClass() {
+productsListClass::~productsListClass() {}
+productsListClass::productsListClass() {
   this->capacity = 0;
   this->length = 0;
   this->head = NULL;
 }
 
-int roomsListClass::getCapacity() { return this->capacity; }
-void roomsListClass::setCapacity(int value) { this->capacity = value; }
+int productsListClass::getCapacity() { return this->capacity; }
+void productsListClass::setCapacity(int value) { this->capacity = value; }
 
-int roomsListClass::getLength() { return this->length; }
-void roomsListClass::setLength(int value) { this->length = value; }
+int productsListClass::getLength() { return this->length; }
+void productsListClass::setLength(int value) { this->length = value; }
 
-roomClass* roomsListClass::getHead() { return this->head; }
-void roomsListClass::setHead(roomClass* value) { this->head = value; }
+productClass* productsListClass::getHead() { return this->head; }
+void productsListClass::setHead(productClass* value) { this->head = value; }
 
-void roomsListClass::show(int rowNumber) {
+void productsListClass::show(int rowNumber) {
   if (this->length == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
@@ -41,8 +41,9 @@ void roomsListClass::show(int rowNumber) {
   }
 }
 
-roomClass* roomsListClass::findRoomByRoomNumber(unsigned short roomNumber) {
-  roomClass* auxRoom;
+productClass* productsListClass::findRoomByRoomNumber(
+    unsigned short roomNumber) {
+  productClass* auxRoom;
 
   if (this->length == 0) {
     return NULL;
@@ -57,8 +58,8 @@ roomClass* roomsListClass::findRoomByRoomNumber(unsigned short roomNumber) {
   return NULL;
 }
 
-clientClass* roomsListClass::findClientByDni(string dni) {
-  roomClass* auxRoom;
+clientClass* productsListClass::findClientByDni(string dni) {
+  productClass* auxRoom;
   clientNodeClass* auxClientNode;
 
   if (this->length == 0) {
@@ -80,17 +81,17 @@ clientClass* roomsListClass::findClientByDni(string dni) {
   return NULL;
 }
 
-void roomsListClass::insert(roomClass* newClient) {
+void productsListClass::insert(productClass* newProduct) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
 
-  *(this->head + this->length) = *newClient;
+  *(this->head + this->length) = *newProduct;
   this->length++;
 }
 
-roomClass* roomsListClass::pickRoom(string message) {
-  roomClass* aux;
+productClass* productsListClass::pickProduct(string message) {
+  productClass* aux;
   int selectedOption;
 
   if (this->length == 0) {

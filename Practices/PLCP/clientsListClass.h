@@ -20,7 +20,7 @@ class clientsListClass {
 
   void show(int rowNumber);
 
-  void insert(clientClass* newCar);
+  void insert(clientClass* newClient);
 
   clientClass* pickClient(string message);
 };

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class roomClass {
+class productClass {
  private:
   static int counter;
   string code;
@@ -17,10 +17,10 @@ class roomClass {
   clientsListClass *clients;
 
  public:
-  ~roomClass();
-  roomClass();
-  roomClass(unsigned short roomNumber, float price, unsigned short floor,
-            string roomType, string status);
+  ~productClass();
+  productClass();
+  productClass(unsigned short roomNumber, float price, unsigned short floor,
+               string roomType, string status);
 
   string getCode();
 

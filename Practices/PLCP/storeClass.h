@@ -1,19 +1,19 @@
 #include <string>
 
-#include "roomsListClass.h"
+#include "productsListClass.h"
 
 using namespace std;
 
-class hotelClass {
+class storeClass {
  private:
   string name;
   string address;
   string ruc;
-  roomsListClass *rooms;
+  productsListClass *rooms;
 
  public:
-  ~hotelClass();
-  hotelClass();
+  ~storeClass();
+  storeClass();
 
   string getName();
   void setName(string value);
@@ -24,6 +24,6 @@ class hotelClass {
   string getRuc();
   void setRuc(string value);
 
-  roomsListClass *getRooms();
-  void setRooms(roomsListClass *value);
+  productsListClass *getProducts();
+  void setProducts(productsListClass *value);
 };

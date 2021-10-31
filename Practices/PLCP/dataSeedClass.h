@@ -1,8 +1,8 @@
-#include "hotelClass.h"
+#include "storeClass.h"
 
 using namespace std;
 
 class dataSeedClass {
  public:
-  static void seed(hotelClass *&hotel);
+  static void seed(storeClass *&hotel);
 };

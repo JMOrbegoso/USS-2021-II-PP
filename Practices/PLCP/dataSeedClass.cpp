@@ -2,17 +2,17 @@
 
 using namespace std;
 
-void dataSeedClass::seed(hotelClass *&hotel) {
-  roomClass *room_1, *room_2, *room_3;
+void dataSeedClass::seed(storeClass *&hotel) {
+  productClass *room_1, *room_2, *room_3;
   clientClass *client_1, *client_2, *client_3;
 
   hotel->setName("SIN COMENTARIOS");
   hotel->setAddress("Calle Lora y Cordero 867, Chiclayo");
   hotel->setRuc("20167834567");
 
-  room_1 = new roomClass(101, 35, 1, "clasica", "ocupada");
-  room_2 = new roomClass(102, 60, 1, "matrimonial", "ocupada");
-  room_3 = new roomClass(201, 90, 2, "vip", "en mantenimiento");
+  room_1 = new productClass(101, 35, 1, "clasica", "ocupada");
+  room_2 = new productClass(102, 60, 1, "matrimonial", "ocupada");
+  room_3 = new productClass(201, 90, 2, "vip", "en mantenimiento");
 
   client_1 =
       new clientClass("Ricardo", "Flores", "10117618", "av. Bolognesi 711",
@@ -26,7 +26,7 @@ void dataSeedClass::seed(hotelClass *&hotel) {
   room_2->getClients()->insert(client_2);
   room_2->getClients()->insert(client_3);
 
-  hotel->getRooms()->insert(room_1);
-  hotel->getRooms()->insert(room_2);
-  hotel->getRooms()->insert(room_3);
+  hotel->getProducts()->insert(room_1);
+  hotel->getProducts()->insert(room_2);
+  hotel->getProducts()->insert(room_3);
 }

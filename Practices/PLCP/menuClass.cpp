@@ -90,8 +90,8 @@ void menuClass::showClientsTableHeader(int rowNumber) {
 }
 
 void menuClass::registerNewRoom() {
-  roomClass* newRoom;
-  roomsListClass* auxRoomsList;
+  productClass* newRoom;
+  productsListClass* auxRoomsList;
   unsigned short roomNumber;
   float price;
   unsigned short floor;
@@ -118,11 +118,11 @@ void menuClass::registerNewRoom() {
       "mantenimiento, etc)",
       2);
 
-  newRoom = new roomClass(roomNumber, price, floor, roomType, status);
+  newRoom = new productClass(roomNumber, price, floor, roomType, status);
 
-  auxRoomsList = this->hotel->getRooms();
+  auxRoomsList = this->hotel->getProducts();
   auxRoomsList->insert(newRoom);
-  this->hotel->setRooms(auxRoomsList);
+  this->hotel->setProducts(auxRoomsList);
 
   cout << "Habitación registrada correctamente" << endl;
   cout << endl;
@@ -130,7 +130,7 @@ void menuClass::registerNewRoom() {
 
 void menuClass::registerNewClient() {
   clientClass* newClient;
-  roomClass* auxRoom;
+  productClass* auxRoom;
   clientsListClass* auxClientsList;
   string firstName;
   string lastName;
@@ -146,7 +146,7 @@ void menuClass::registerNewClient() {
 
   cout << "Registrar nuevo cliente:" << endl << endl;
 
-  auxRoom = this->hotel->getRooms()->pickRoom(
+  auxRoom = this->hotel->getProducts()->pickProduct(
       "Seleccione la habitación en donde se va a hospedar el nuevo cliente");
 
   if (auxRoom == NULL) {
@@ -192,7 +192,7 @@ void menuClass::showRooms() {
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los clientes de la empresa:" << endl << endl;
 
-  if (this->hotel->getRooms()->getLength() == 0) {
+  if (this->hotel->getProducts()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -200,13 +200,13 @@ void menuClass::showRooms() {
 
   this->showRoomsTableHeader(7);
 
-  this->hotel->getRooms()->show(8);
+  this->hotel->getProducts()->show(8);
 
   cout << endl << endl;
 }
 
 void menuClass::showClients() {
-  roomClass* auxRoom;
+  productClass* auxRoom;
   clientNodeClass* auxClientNode;
 
   helpersClass::clearScreen();
@@ -215,7 +215,7 @@ void menuClass::showClients() {
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los autos en la empresa:" << endl << endl;
 
-  if (this->hotel->getRooms()->getLength() == 0) {
+  if (this->hotel->getProducts()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -224,8 +224,8 @@ void menuClass::showClients() {
   this->showClientsTableHeader(7);
 
   int i = 1;
-  for (int x = 0; x < this->hotel->getRooms()->getLength(); x++) {
-    auxRoom = this->hotel->getRooms()->getHead() + x;
+  for (int x = 0; x < this->hotel->getProducts()->getLength(); x++) {
+    auxRoom = this->hotel->getProducts()->getHead() + x;
 
     auxClientNode = auxRoom->getClients()->getHead();
     while (auxClientNode != NULL) {
@@ -239,7 +239,7 @@ void menuClass::showClients() {
 }
 
 void menuClass::findClientByArrivalDate() {
-  roomClass* auxRoom;
+  productClass* auxRoom;
   clientNodeClass* auxClientNode;
   string arrivalDateToFind;
 
@@ -249,7 +249,7 @@ void menuClass::findClientByArrivalDate() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  if (this->hotel->getRooms()->getLength() == 0) {
+  if (this->hotel->getProducts()->getLength() == 0) {
     cout << "No se encontró ningun cliente registrado con esa fecha de llegada";
     cout << endl << endl;
     return;
@@ -261,8 +261,8 @@ void menuClass::findClientByArrivalDate() {
   this->showRoomsTableHeader(7);
 
   int i = 1;
-  for (int x = 0; x < this->hotel->getRooms()->getLength(); x++) {
-    auxRoom = this->hotel->getRooms()->getHead() + x;
+  for (int x = 0; x < this->hotel->getProducts()->getLength(); x++) {
+    auxRoom = this->hotel->getProducts()->getHead() + x;
 
     auxClientNode = auxRoom->getClients()->getHead();
     while (auxClientNode != NULL) {
@@ -288,7 +288,7 @@ void menuClass::findClientByDni() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxClient = this->hotel->getRooms()->findClientByDni(dniToFind);
+  auxClient = this->hotel->getProducts()->findClientByDni(dniToFind);
 
   if (auxClient == NULL) {
     cout << "No se encontró un cliente con el DNI ingresado";
@@ -307,14 +307,14 @@ void menuClass::findClientByDni() {
 }
 
 void menuClass::calculateProfits() {
-  roomClass* auxRoom;
+  productClass* auxRoom;
   float profits = 0;
   int occupiedRooms = 0;
 
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  if (this->hotel->getRooms()->getLength() == 0) {
+  if (this->hotel->getProducts()->getLength() == 0) {
     cout << "No hay ninguna habitación registrada, por lo que no hay ganancias";
     cout << endl << endl;
     return;
@@ -323,8 +323,8 @@ void menuClass::calculateProfits() {
   helpersClass::gotoxy(20, 5);
   cout << "Ganancias actuales" << endl;
 
-  for (int x = 0; x < this->hotel->getRooms()->getLength(); x++) {
-    auxRoom = this->hotel->getRooms()->getHead() + x;
+  for (int x = 0; x < this->hotel->getProducts()->getLength(); x++) {
+    auxRoom = this->hotel->getProducts()->getHead() + x;
 
     if (auxRoom->getClients()->getLength() > 0) {
       profits += auxRoom->getPrice();
@@ -340,7 +340,7 @@ void menuClass::calculateProfits() {
 }
 
 menuClass::~menuClass() {}
-menuClass::menuClass(hotelClass*& hotel) { this->hotel = hotel; }
+menuClass::menuClass(storeClass*& hotel) { this->hotel = hotel; }
 
 void menuClass::showMenu() {
   int selectedOption;
