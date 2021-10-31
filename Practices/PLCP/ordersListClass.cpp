@@ -41,11 +41,11 @@ void ordersListClass::show(int rowNumber) {
   }
 }
 
-void ordersListClass::insert(orderClass* newClient) {
+void ordersListClass::insert(orderClass* newOrder) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
 
-  *(this->head + this->length) = *newClient;
+  *(this->head + this->length) = *newOrder;
   this->length++;
 }

@@ -25,5 +25,5 @@ class ordersListClass {
 
   void show(int rowNumber);
 
-  void insert(orderClass* newClient);
+  void insert(orderClass* newOrder);
 };

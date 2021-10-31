@@ -19,5 +19,5 @@ class orderDetailsListClass {
 
   void show(int rowNumber);
 
-  void insert(orderDetailClass* newCar);
+  void insert(orderDetailClass* newOrderDetail);
 };

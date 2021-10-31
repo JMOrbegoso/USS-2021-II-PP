@@ -34,12 +34,12 @@ void orderDetailsListClass::show(int rowNumber) {
   }
 }
 
-void orderDetailsListClass::insert(orderDetailClass* newCar) {
+void orderDetailsListClass::insert(orderDetailClass* newOrderDetail) {
   orderDetailNodeClass* newNode = new orderDetailNodeClass();
 
   orderDetailNodeClass* lastNode = this->getHead();
 
-  newNode->setClient(newCar);
+  newNode->setClient(newOrderDetail);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {

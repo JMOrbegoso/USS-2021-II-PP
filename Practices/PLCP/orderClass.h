@@ -8,36 +8,23 @@ class orderClass {
  private:
   static int counter;
   string code;
-  unsigned short orderNumber;
-  float price;
-  unsigned short floor;
-  string orderType;
-  string status;
+  string date;
+  string clientFullName;
 
   orderDetailsListClass *orderDetails;
 
  public:
   ~orderClass();
   orderClass();
-  orderClass(unsigned short orderNumber, float price, unsigned short floor,
-             string orderType, string status);
+  orderClass(string date, string clientFullName);
 
   string getCode();
 
-  unsigned short getRoomNumber();
-  void setRoomNumber(unsigned short value);
+  string getDate();
+  void setDate(string value);
 
-  float getPrice();
-  void setPrice(float value);
-
-  unsigned short getFloor();
-  void setFloor(unsigned short value);
-
-  string getRoomType();
-  void setRoomType(string value);
-
-  string getStatus();
-  void setStatus(string value);
+  string getClientFullName();
+  void setClientFullName(string value);
 
   orderDetailsListClass *getOrderDetails();
   void setOrderDetails(orderDetailsListClass *value);

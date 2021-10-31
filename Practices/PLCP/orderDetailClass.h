@@ -4,50 +4,23 @@ using namespace std;
 
 class orderDetailClass {
  private:
-  static int counter;
   string code;
-  string firstName;
-  string lastName;
-  string dni;
-  string address;
-  string phone;
-  unsigned short age;
-  bool genre;
-  string arrivalDate;
+  string name;
+  float price;
 
  public:
   ~orderDetailClass();
   orderDetailClass();
-  orderDetailClass(string firstName, string lastName, string dni,
-                   string address, string phone, unsigned short age, bool genre,
-                   string arrivalDate);
+  orderDetailClass(string code, string name, float price);
 
   string getCode();
+  void setCode(string value);
 
-  string getFirstName();
-  void setFirstName(string value);
+  string getName();
+  void setName(string value);
 
-  string getLastName();
-  void setLastName(string value);
-
-  string getDni();
-  void setDni(string value);
-
-  string getAddress();
-  void setAddress(string value);
-
-  string getPhone();
-  void setPhone(string value);
-
-  unsigned short getAge();
-  void setAge(unsigned short value);
-
-  bool getGenre();
-  void setGenre(bool value);
-  string getGenreAsString();
-
-  string getArrivalDate();
-  void setArrivalDate(string value);
+  float getPrice();
+  void setPrice(float value);
 
   void show(int rowNumber, int itemNumber);
 };
