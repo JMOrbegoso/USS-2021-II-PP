@@ -10,6 +10,7 @@ class storeClass {
   string address;
   string ruc;
   productsListClass *rooms;
+  clientsListClass *clients;
 
  public:
   ~storeClass();
@@ -26,4 +27,7 @@ class storeClass {
 
   productsListClass *getProducts();
   void setProducts(productsListClass *value);
+
+  clientsListClass *getClients();
+  void setClients(clientsListClass *value);
 };

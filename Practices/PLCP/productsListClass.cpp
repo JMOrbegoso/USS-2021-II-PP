@@ -58,29 +58,6 @@ productClass* productsListClass::findRoomByRoomNumber(
   return NULL;
 }
 
-clientClass* productsListClass::findClientByDni(string dni) {
-  productClass* auxRoom;
-  clientNodeClass* auxClientNode;
-
-  if (this->length == 0) {
-    return NULL;
-  }
-
-  for (int x = 0; x < this->length; x++) {
-    auxRoom = this->head + x;
-
-    auxClientNode = auxRoom->getClients()->getHead();
-    while (auxClientNode != NULL) {
-      if (auxClientNode->getClient()->getDni() == dni)
-        return auxClientNode->getClient();
-
-      auxClientNode = auxClientNode->getNext();
-    }
-  }
-
-  return NULL;
-}
-
 void productsListClass::insert(productClass* newProduct) {
   if (this->length == this->capacity) {
     this->grow(2);
@@ -118,9 +95,6 @@ productClass* productsListClass::pickProduct(string message) {
     cout << aux->getRoomType();
     cout << " - Status: ";
     cout << aux->getStatus();
-    cout << " - Con  ";
-    cout << aux->getClients()->getLength();
-    cout << " clientes.";
     cout << endl;
   }
 

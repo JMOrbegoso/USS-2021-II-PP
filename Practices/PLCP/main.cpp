@@ -22,10 +22,10 @@ ventas.
 using namespace std;
 
 int main() {
-  storeClass* automotive = new storeClass();
-  dataSeedClass::seed(automotive);
+  storeClass* store = new storeClass();
+  dataSeedClass::seed(store);
 
-  menuClass* appMenu = new menuClass(automotive);
+  menuClass* appMenu = new menuClass(store);
 
   appMenu->showMenu();
 

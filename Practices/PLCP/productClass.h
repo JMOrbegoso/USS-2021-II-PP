@@ -14,8 +14,6 @@ class productClass {
   string roomType;
   string status;
 
-  clientsListClass *clients;
-
  public:
   ~productClass();
   productClass();
@@ -38,9 +36,6 @@ class productClass {
 
   string getStatus();
   void setStatus(string value);
-
-  clientsListClass *getClients();
-  void setClients(clientsListClass *value);
 
   void show(int rowNumber, int itemNumber);
 };

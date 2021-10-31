@@ -18,8 +18,6 @@ productClass::productClass(unsigned short roomNumber, float price,
   this->floor = floor;
   this->roomType = roomType;
   this->status = status;
-
-  this->clients = new clientsListClass();
 }
 
 string productClass::getCode() { return this->code; }
@@ -40,11 +38,6 @@ void productClass::setRoomType(string value) { this->roomType = value; }
 
 string productClass::getStatus() { return this->status; }
 void productClass::setStatus(string value) { this->status = value; }
-
-clientsListClass *productClass::getClients() { return this->clients; }
-void productClass::setClients(clientsListClass *value) {
-  this->clients = value;
-}
 
 void productClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
