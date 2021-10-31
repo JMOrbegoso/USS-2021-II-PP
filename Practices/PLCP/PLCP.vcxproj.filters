@@ -42,6 +42,21 @@
     <ClInclude Include="productsListClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="orderClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="orderDetailClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="orderDetailNodeClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="orderDetailsListClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ordersListClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="clientClass.cpp">
@@ -72,6 +87,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="productsListClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="orderClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="orderDetailClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="orderDetailNodeClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="orderDetailsListClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ordersListClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

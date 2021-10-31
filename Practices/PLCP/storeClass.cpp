@@ -24,3 +24,6 @@ void storeClass::setProducts(productsListClass *value) {
 
 clientsListClass *storeClass::getClients() { return this->clients; }
 void storeClass::setClients(clientsListClass *value) { this->clients = value; }
+
+ordersListClass *storeClass::getOrders() { return this->orders; }
+void storeClass::setOrders(ordersListClass *value) { this->orders = value; }

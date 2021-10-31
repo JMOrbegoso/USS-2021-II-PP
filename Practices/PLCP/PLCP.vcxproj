@@ -24,6 +24,11 @@
     <ClInclude Include="clientsListClass.h" />
     <ClInclude Include="dataSeedClass.h" />
     <ClInclude Include="helpersClass.h" />
+    <ClInclude Include="orderClass.h" />
+    <ClInclude Include="orderDetailClass.h" />
+    <ClInclude Include="orderDetailNodeClass.h" />
+    <ClInclude Include="orderDetailsListClass.h" />
+    <ClInclude Include="ordersListClass.h" />
     <ClInclude Include="storeClass.h" />
     <ClInclude Include="menuClass.h" />
     <ClInclude Include="productClass.h" />
@@ -35,6 +40,11 @@
     <ClCompile Include="clientsListClass.cpp" />
     <ClCompile Include="dataSeedClass.cpp" />
     <ClCompile Include="helpersClass.cpp" />
+    <ClCompile Include="orderClass.cpp" />
+    <ClCompile Include="orderDetailClass.cpp" />
+    <ClCompile Include="orderDetailNodeClass.cpp" />
+    <ClCompile Include="orderDetailsListClass.cpp" />
+    <ClCompile Include="ordersListClass.cpp" />
     <ClCompile Include="storeClass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menuClass.cpp" />
