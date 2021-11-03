@@ -1,5 +1,7 @@
 #include <string>
 
+#include "almacenesListaClass.h"
+
 using namespace std;
 
 class almacenClass {
@@ -8,6 +10,7 @@ class almacenClass {
   string encargado;
   string direccion;
   bool estado;
+  vacunasLoteListaClass* lotesDeVacunas;
 
  public:
   ~almacenClass();

@@ -31,8 +31,8 @@ void almacenesListaClass::setCab(almacenClass* value) { this->max = cab; }
 
 void almacenesListaClass::mostrar(int fila) {
   if (this->cantidad == 0) {
-    cout << "No hay ningún producto registrado" << endl;
-    cout << "Primero registre al menos un producto" << endl;
+    cout << "No hay ningún almacen registrado" << endl;
+    cout << "Primero registre al menos un almacen" << endl;
     return;
   }
 

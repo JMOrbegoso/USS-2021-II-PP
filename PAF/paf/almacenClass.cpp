@@ -3,7 +3,9 @@
 #include <iostream>
 
 almacenClass::~almacenClass() {}
-almacenClass::almacenClass() {}
+almacenClass::almacenClass() {
+  this->lotesDeVacunas = new vacunasLotesListaClass();
+}
 
 string almacenClass::getCodigo() { return this->codigo; }
 void almacenClass::setCodigo(string value) { this->codigo = value; }
