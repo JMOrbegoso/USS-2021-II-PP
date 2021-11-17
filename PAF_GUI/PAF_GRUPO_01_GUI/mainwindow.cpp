@@ -26,6 +26,7 @@
 #include <mostrarestadosalmacenesgui.h>
 #include <habilitarinhabilitaralmacengui.h>
 #include <buscaralmacengui.h>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -190,4 +191,13 @@ void MainWindow::on_actionHabilitar_Deshabilitar_Almacen_triggered(){
 void MainWindow::on_actionBuscar_Almacen_triggered(){
     buscarAlmacenGui *buscarAlmacen = new buscarAlmacenGui();
     buscarAlmacen->show();
+}
+
+void MainWindow::on_actionSalir_triggered()
+{
+    QMessageBox::StandardButton msje;
+    msje = QMessageBox::question(this, "Confirmar", "¿Desea Salir de Verdad?", QMessageBox::Yes | QMessageBox::No);
+    if (msje == QMessageBox::Yes){
+        this->close();
+    }
 }

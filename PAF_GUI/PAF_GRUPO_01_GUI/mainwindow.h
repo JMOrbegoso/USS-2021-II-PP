@@ -68,6 +68,8 @@ private slots:
 
     void on_actionBuscar_Almacen_triggered();
 
+    void on_actionSalir_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -72,36 +72,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QWidget" name="formLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>330</y>
-     <width>201</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <property name="fieldGrowthPolicy">
-     <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-    </property>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="txtElegirLocal"/>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Elija un Local:</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -123,7 +93,6 @@
  </widget>
  <tabstops>
   <tabstop>tableViewListaLocalesHaIn</tabstop>
-  <tabstop>txtElegirLocal</tabstop>
   <tabstop>cmdAceptar</tabstop>
   <tabstop>cmdCancelar</tabstop>
  </tabstops>

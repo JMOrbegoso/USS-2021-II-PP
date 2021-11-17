@@ -16,10 +16,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>20</y>
-     <width>401</width>
-     <height>16</height>
+     <x>100</x>
+     <y>10</y>
+     <width>471</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -49,7 +49,7 @@
       <x>150</x>
       <y>30</y>
       <width>351</width>
-      <height>141</height>
+      <height>150</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">

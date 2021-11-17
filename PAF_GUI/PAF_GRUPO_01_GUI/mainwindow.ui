@@ -21,7 +21,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLocales">
@@ -112,11 +112,19 @@
     <addaction name="actionMostrar_Pacientes_Atendidos"/>
     <addaction name="actionBuscar_Paciente_Atendido"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAcerca_de_2"/>
+    <addaction name="actionSalir"/>
+   </widget>
    <addaction name="menuLocales"/>
    <addaction name="menuAlmacen"/>
    <addaction name="menuLotes"/>
    <addaction name="menuPersonal"/>
    <addaction name="menuPacientes"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionRegistrar_Local">
    <property name="text">
@@ -316,6 +324,16 @@
   <action name="actionBuscar_Enfermera">
    <property name="text">
     <string>Buscar Enfermera...</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_2">
+   <property name="text">
+    <string>Acerca de...</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir...</string>
    </property>
   </action>
  </widget>

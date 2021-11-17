@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
+    <width>570</width>
     <height>355</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>10</y>
      <width>541</width>
      <height>331</height>
@@ -49,7 +49,7 @@
       <x>40</x>
       <y>70</y>
       <width>461</width>
-      <height>111</height>
+      <height>113</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
