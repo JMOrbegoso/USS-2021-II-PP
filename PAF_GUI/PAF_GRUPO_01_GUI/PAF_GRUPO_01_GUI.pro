@@ -35,7 +35,8 @@ SOURCES += \
     buscarpacientegui.cpp \
     atenderpacientegui.cpp \
     mostrarfilaatendidosgui.cpp \
-    buscaratendidogui.cpp
+    buscaratendidogui.cpp \
+    mostrardetalleslocalenfermeras.cpp
 
 HEADERS += \
     aboutgui.h \
@@ -56,7 +57,8 @@ HEADERS += \
     buscarpacientegui.h \
     atenderpacientegui.h \
     mostrarfilaatendidosgui.h \
-    buscaratendidogui.h
+    buscaratendidogui.h \
+    mostrardetalleslocalenfermeras.h
 
 FORMS += \
     aboutgui.ui \
@@ -77,7 +79,8 @@ FORMS += \
     buscarpacientegui.ui \
     atenderpacientegui.ui \
     mostrarfilaatendidosgui.ui \
-    buscaratendidogui.ui
+    buscaratendidogui.ui \
+    mostrardetalleslocalenfermeras.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
