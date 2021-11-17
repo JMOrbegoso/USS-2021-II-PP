@@ -25,6 +25,7 @@
 #include <editaralmacengui.h>
 #include <mostrarestadosalmacenesgui.h>
 #include <habilitarinhabilitaralmacengui.h>
+#include <buscaralmacengui.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -184,4 +185,9 @@ void MainWindow::on_actionMostrar_Almacen_Habilitados_Deshabilitados_triggered()
 void MainWindow::on_actionHabilitar_Deshabilitar_Almacen_triggered(){
     habilitarInhabilitarAlmacenGui *habilitarInhabilitarAlmacen = new habilitarInhabilitarAlmacenGui();
     habilitarInhabilitarAlmacen->show();
+}
+
+void MainWindow::on_actionBuscar_Almacen_triggered(){
+    buscarAlmacenGui *buscarAlmacen = new buscarAlmacenGui();
+    buscarAlmacen->show();
 }

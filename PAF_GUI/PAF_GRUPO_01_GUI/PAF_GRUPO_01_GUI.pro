@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     aboutgui.cpp \
+    buscaralmacengui.cpp \
     buscarlocalgui.cpp \
     buscarlotegui.cpp \
     editaralmacengui.cpp \
@@ -48,6 +49,7 @@ SOURCES += \
 
 HEADERS += \
     aboutgui.h \
+    buscaralmacengui.h \
     buscarlocalgui.h \
     buscarlotegui.h \
     editaralmacengui.h \
@@ -78,6 +80,7 @@ HEADERS += \
 
 FORMS += \
     aboutgui.ui \
+    buscaralmacengui.ui \
     buscarlocalgui.ui \
     buscarlotegui.ui \
     editaralmacengui.ui \
