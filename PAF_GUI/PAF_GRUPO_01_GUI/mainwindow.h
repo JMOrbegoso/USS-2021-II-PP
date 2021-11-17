@@ -48,6 +48,8 @@ private slots:
 
     void on_actionBuscar_Paciente_Atendido_triggered();
 
+    void on_actionEnfermeras_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

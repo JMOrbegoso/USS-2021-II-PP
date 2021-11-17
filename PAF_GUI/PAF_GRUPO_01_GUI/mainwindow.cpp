@@ -16,6 +16,7 @@
 #include <atenderpacientegui.h>
 #include <mostrarfilaatendidosgui.h>
 #include <buscaratendidogui.h>
+#include <mostrardetalleslocalenfermeras.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -124,4 +125,10 @@ void MainWindow::on_actionBuscar_Paciente_Atendido_triggered()
 {
     buscarAtendidoGUI *busAtendido = new buscarAtendidoGUI();
     busAtendido->show();
+}
+
+void MainWindow::on_actionEnfermeras_triggered()
+{
+    mostrarDetallesLocalEnfermeras *mostDetaEnferLocal = new mostrarDetallesLocalEnfermeras();
+    mostDetaEnferLocal->show();
 }
