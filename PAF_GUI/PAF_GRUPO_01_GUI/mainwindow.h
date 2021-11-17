@@ -58,6 +58,8 @@ private slots:
 
     void on_actionLotes_triggered();
 
+    void on_actionPacientes_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

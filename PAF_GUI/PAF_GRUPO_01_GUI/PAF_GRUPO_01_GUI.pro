@@ -28,6 +28,7 @@ SOURCES += \
     mostraralmacenesgui.cpp \
     mostrardetalleslocaldoctores.cpp \
     mostrardetalleslocallotes.cpp \
+    mostrardetalleslocalpacientes.cpp \
     mostrarestadoslocalesgui.cpp \
     mostrarlocalesgui.cpp \
     mostrarlotesgui.cpp \
@@ -54,6 +55,7 @@ HEADERS += \
     mostraralmacenesgui.h \
     mostrardetalleslocaldoctores.h \
     mostrardetalleslocallotes.h \
+    mostrardetalleslocalpacientes.h \
     mostrarestadoslocalesgui.h \
     mostrarlocalesgui.h \
     mostrarlotesgui.h \
@@ -80,6 +82,7 @@ FORMS += \
     mostraralmacenesgui.ui \
     mostrardetalleslocaldoctores.ui \
     mostrardetalleslocallotes.ui \
+    mostrardetalleslocalpacientes.ui \
     mostrarestadoslocalesgui.ui \
     mostrarlocalesgui.ui \
     mostrarlotesgui.ui \

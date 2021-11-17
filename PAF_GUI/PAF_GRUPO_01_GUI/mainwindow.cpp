@@ -21,6 +21,7 @@
 #include <mostraralmacenesgui.h>
 #include <mostrardetalleslocaldoctores.h>
 #include <mostrardetalleslocallotes.h>
+#include <mostrardetalleslocalpacientes.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -158,4 +159,10 @@ void MainWindow::on_actionLotes_triggered()
 {
     mostrarDetallesLocalLotes *detalleLotes = new mostrarDetallesLocalLotes();
     detalleLotes->show();
+}
+
+void MainWindow::on_actionPacientes_triggered()
+{
+    mostrarDetallesLocalPacientes *detallePacientes = new mostrarDetallesLocalPacientes();
+    detallePacientes->show();
 }
