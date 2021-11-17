@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>741</width>
-    <height>479</height>
+    <width>674</width>
+    <height>353</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,48 +39,38 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <item row="0" column="0">
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="codigoAlmacenLabel">
        <property name="text">
         <string>Codigo de Almacén:</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="txtCodigoLocal_4"/>
+      <widget class="QLineEdit" name="codigoAlmacenLineEdit"/>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="label_14">
+      <widget class="QLabel" name="direccionAlmacenLabel">
        <property name="text">
         <string>Dirección de Almacén:</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="txtDireccionLocal_4"/>
+      <widget class="QLineEdit" name="direccionAlmacenLineEdit"/>
      </item>
      <item row="3" column="0">
-      <widget class="QLabel" name="label_15">
+      <widget class="QLabel" name="estadoAlmacenSw">
        <property name="text">
-        <string>Estado del Almacén:</string>
+        <string>¿El almacén está Habilitado?</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QRadioButton" name="cmdHabilitarLocal_4">
+        <widget class="QCheckBox" name="estadoAlmacenCheckbox">
          <property name="text">
-          <string>Habilitado</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="cmdInhabilitarLocal_4">
-         <property name="text">
-          <string>Inhabilitado</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -98,7 +88,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_16">
+   <widget class="QLabel" name="tituloLabel">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -116,7 +106,7 @@
      <string>REGISTRO DE ALMACÉN</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdRegistrarLocal_4">
+   <widget class="QPushButton" name="registrarButton">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -129,7 +119,7 @@
      <string>Registrar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdCancelarLocal_4">
+   <widget class="QPushButton" name="cancelarButton">
     <property name="geometry">
      <rect>
       <x>450</x>

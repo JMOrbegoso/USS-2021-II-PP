@@ -15,6 +15,7 @@ public:
     explicit registrarLoteGUI(QWidget *parent = nullptr);
     ~registrarLoteGUI();
 
+
 private slots:
     void on_cmdCancelarLote_clicked();
 

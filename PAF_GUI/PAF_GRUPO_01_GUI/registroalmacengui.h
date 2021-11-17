@@ -15,6 +15,10 @@ public:
     explicit registroAlmacenGui(QWidget *parent = nullptr);
     ~registroAlmacenGui();
 
+
+private slots:
+    void on_cancelarButton_clicked();
+
 private:
     Ui::registroAlmacenGui *ui;
 };

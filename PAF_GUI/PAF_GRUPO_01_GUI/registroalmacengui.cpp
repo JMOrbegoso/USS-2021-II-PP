@@ -12,3 +12,9 @@ registroAlmacenGui::~registroAlmacenGui()
 {
     delete ui;
 }
+
+void registroAlmacenGui::on_cancelarButton_clicked()
+{
+    this->close();
+}
+
