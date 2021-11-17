@@ -45,7 +45,10 @@ SOURCES += \
     atenderpacientegui.cpp \
     mostrarfilaatendidosgui.cpp \
     buscaratendidogui.cpp \
-    mostrardetalleslocalenfermeras.cpp
+    mostrardetalleslocalenfermeras.cpp \
+    registrarmedicogui.cpp \
+    registrarenfermeragui.cpp \
+    mostrarmedicogui.cpp
 
 HEADERS += \
     aboutgui.h \
@@ -76,7 +79,10 @@ HEADERS += \
     atenderpacientegui.h \
     mostrarfilaatendidosgui.h \
     buscaratendidogui.h \
-    mostrardetalleslocalenfermeras.h
+    mostrardetalleslocalenfermeras.h \
+    registrarmedicogui.h \
+    registrarenfermeragui.h \
+    mostrarmedicogui.h
 
 FORMS += \
     aboutgui.ui \
@@ -107,7 +113,10 @@ FORMS += \
     atenderpacientegui.ui \
     mostrarfilaatendidosgui.ui \
     buscaratendidogui.ui \
-    mostrardetalleslocalenfermeras.ui
+    mostrardetalleslocalenfermeras.ui \
+    registrarmedicogui.ui \
+    registrarenfermeragui.ui \
+    mostrarmedicogui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
