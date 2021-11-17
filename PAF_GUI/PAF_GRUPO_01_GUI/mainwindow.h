@@ -54,6 +54,8 @@ private slots:
 
     void on_actionEnfermeras_triggered();
 
+    void on_actionDoctores_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

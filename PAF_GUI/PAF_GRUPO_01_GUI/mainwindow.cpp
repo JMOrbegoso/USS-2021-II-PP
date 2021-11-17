@@ -19,6 +19,7 @@
 #include <mostrardetalleslocalenfermeras.h>
 #include <registroalmacengui.h>
 #include <mostraralmacenesgui.h>
+#include <mostrardetalleslocaldoctores.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -144,4 +145,10 @@ void MainWindow::on_actionEnfermeras_triggered()
 {
     mostrarDetallesLocalEnfermeras *mostDetaEnferLocal = new mostrarDetallesLocalEnfermeras();
     mostDetaEnferLocal->show();
+}
+
+void MainWindow::on_actionDoctores_triggered()
+{
+    mostrarDetallesLocalDoctores *detalleDoctores = new mostrarDetallesLocalDoctores();
+    detalleDoctores->show();
 }
