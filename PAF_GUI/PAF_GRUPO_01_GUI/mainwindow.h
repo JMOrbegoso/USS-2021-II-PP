@@ -18,6 +18,8 @@ public:
 private slots:
     void on_actionRegistrar_Local_triggered();
 
+    void on_actionRegistrar_Almacen_triggered();
+
     void on_actionEditar_Local_triggered();
 
     void on_actionMostrar_Locales_Habilitados_Desabilitados_triggered();

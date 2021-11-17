@@ -17,6 +17,7 @@
 #include <mostrarfilaatendidosgui.h>
 #include <buscaratendidogui.h>
 #include <mostrardetalleslocalenfermeras.h>
+#include <registroalmacengui.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,6 +36,12 @@ void MainWindow::on_actionRegistrar_Local_triggered()
 {
     registroLocalGUI *regLocal = new registroLocalGUI();
     regLocal->show();
+}
+
+void MainWindow::on_actionRegistrar_Almacen_triggered()
+{
+    registroAlmacenGui *regAlmacen = new registroAlmacenGui();
+    regAlmacen->show();
 }
 
 void MainWindow::on_actionEditar_Local_triggered()

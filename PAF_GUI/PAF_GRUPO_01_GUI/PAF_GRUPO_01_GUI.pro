@@ -29,6 +29,7 @@ SOURCES += \
     mostrarlocalesgui.cpp \
     mostrarlotesgui.cpp \
     registrarlotegui.cpp \
+    registroalmacengui.cpp \
     registrolocalgui.cpp \
     registrarcolapacientesgui.cpp \
     mostrarfilapacientesgui.cpp \
@@ -51,6 +52,7 @@ HEADERS += \
     mostrarlocalesgui.h \
     mostrarlotesgui.h \
     registrarlotegui.h \
+    registroalmacengui.h \
     registrolocalgui.h \
     registrarcolapacientesgui.h \
     mostrarfilapacientesgui.h \
@@ -73,6 +75,7 @@ FORMS += \
     mostrarlocalesgui.ui \
     mostrarlotesgui.ui \
     registrarlotegui.ui \
+    registroalmacengui.ui \
     registrolocalgui.ui \
     registrarcolapacientesgui.ui \
     mostrarfilapacientesgui.ui \
