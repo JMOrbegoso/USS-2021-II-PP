@@ -60,6 +60,8 @@ private slots:
 
     void on_actionPacientes_triggered();
 
+    void on_actionEditar_Almacen_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

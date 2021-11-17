@@ -22,6 +22,7 @@
 #include <mostrardetalleslocaldoctores.h>
 #include <mostrardetalleslocallotes.h>
 #include <mostrardetalleslocalpacientes.h>
+#include <editaralmacengui.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -165,4 +166,10 @@ void MainWindow::on_actionPacientes_triggered()
 {
     mostrarDetallesLocalPacientes *detallePacientes = new mostrarDetallesLocalPacientes();
     detallePacientes->show();
+}
+
+void MainWindow::on_actionEditar_Almacen_triggered()
+{
+    editarAlmacenGui *editarAlmacen = new editarAlmacenGui();
+    editarAlmacen->show();
 }

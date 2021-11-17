@@ -19,6 +19,7 @@ SOURCES += \
     aboutgui.cpp \
     buscarlocalgui.cpp \
     buscarlotegui.cpp \
+    editaralmacengui.cpp \
     editarlocalgui.cpp \
     editarlotegui.cpp \
     habilitarinhabilitarlocalgui.cpp \
@@ -47,6 +48,7 @@ HEADERS += \
     aboutgui.h \
     buscarlocalgui.h \
     buscarlotegui.h \
+    editaralmacengui.h \
     editarlocalgui.h \
     editarlotegui.h \
     habilitarinhabilitarlocalgui.h \
@@ -74,6 +76,7 @@ FORMS += \
     aboutgui.ui \
     buscarlocalgui.ui \
     buscarlotegui.ui \
+    editaralmacengui.ui \
     editarlocalgui.ui \
     editarlotegui.ui \
     habilitarinhabilitarlocalgui.ui \
