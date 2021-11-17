@@ -56,6 +56,8 @@ private slots:
 
     void on_actionDoctores_triggered();
 
+    void on_actionLotes_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

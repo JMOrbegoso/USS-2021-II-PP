@@ -27,6 +27,7 @@ SOURCES += \
     mainwindow.cpp \
     mostraralmacenesgui.cpp \
     mostrardetalleslocaldoctores.cpp \
+    mostrardetalleslocallotes.cpp \
     mostrarestadoslocalesgui.cpp \
     mostrarlocalesgui.cpp \
     mostrarlotesgui.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     mainwindow.h \
     mostraralmacenesgui.h \
     mostrardetalleslocaldoctores.h \
+    mostrardetalleslocallotes.h \
     mostrarestadoslocalesgui.h \
     mostrarlocalesgui.h \
     mostrarlotesgui.h \
@@ -77,6 +79,7 @@ FORMS += \
     mainwindow.ui \
     mostraralmacenesgui.ui \
     mostrardetalleslocaldoctores.ui \
+    mostrardetalleslocallotes.ui \
     mostrarestadoslocalesgui.ui \
     mostrarlocalesgui.ui \
     mostrarlotesgui.ui \
