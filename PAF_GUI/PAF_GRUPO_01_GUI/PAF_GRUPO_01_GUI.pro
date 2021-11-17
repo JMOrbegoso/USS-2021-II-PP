@@ -22,6 +22,7 @@ SOURCES += \
     editaralmacengui.cpp \
     editarlocalgui.cpp \
     editarlotegui.cpp \
+    habilitarinhabilitaralmacengui.cpp \
     habilitarinhabilitarlocalgui.cpp \
     login.cpp \
     main.cpp \
@@ -52,6 +53,7 @@ HEADERS += \
     editaralmacengui.h \
     editarlocalgui.h \
     editarlotegui.h \
+    habilitarinhabilitaralmacengui.h \
     habilitarinhabilitarlocalgui.h \
     login.h \
     mainwindow.h \
@@ -81,6 +83,7 @@ FORMS += \
     editaralmacengui.ui \
     editarlocalgui.ui \
     editarlotegui.ui \
+    habilitarinhabilitaralmacengui.ui \
     habilitarinhabilitarlocalgui.ui \
     login.ui \
     mainwindow.ui \
