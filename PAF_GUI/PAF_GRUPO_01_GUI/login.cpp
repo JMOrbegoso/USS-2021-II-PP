@@ -16,8 +16,10 @@ login::~login()
 
 void login::on_cmdIngresar_clicked()
 {
-    MainWindow *w = new MainWindow();
-    w->show();
+    MainWindow *mainWindow = new MainWindow();
+    mainWindow->show();
+
+    this->close();
 }
 
 void login::on_cmdCerrar_clicked()
