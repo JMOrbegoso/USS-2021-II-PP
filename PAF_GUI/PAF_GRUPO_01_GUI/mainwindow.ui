@@ -92,6 +92,7 @@
      <addaction name="actionRegistrar_Enfermera"/>
      <addaction name="actionMostrar_Enfermeras"/>
      <addaction name="actionEditar_Enfermera"/>
+     <addaction name="actionBuscar_Enfermera"/>
      <addaction name="actionMostrar_Enfermeras_Activas_Inactivas"/>
      <addaction name="separator"/>
      <addaction name="actionAsignar_Enfermera"/>
@@ -224,57 +225,57 @@
   </action>
   <action name="actionRegistrar_Medico">
    <property name="text">
-    <string>Registrar Medico</string>
+    <string>Registrar Medico...</string>
    </property>
   </action>
   <action name="actionMostrar_Medico">
    <property name="text">
-    <string>Mostrar Medico</string>
+    <string>Mostrar Medico...</string>
    </property>
   </action>
   <action name="actionEditar_Medico">
    <property name="text">
-    <string>Editar Medico</string>
+    <string>Editar Medico...</string>
    </property>
   </action>
   <action name="actionBuscar_Medico">
    <property name="text">
-    <string>Buscar Medico</string>
+    <string>Buscar Medico...</string>
    </property>
   </action>
   <action name="actionMostrar_Medicos_Activos_Inactivos">
    <property name="text">
-    <string>Mostrar Medicos Asignados/Libres</string>
+    <string>Mostrar Medicos Asignados/Libres...</string>
    </property>
   </action>
   <action name="actionAsignar_Medico">
    <property name="text">
-    <string>Asignar Medico</string>
+    <string>Asignar Medico...</string>
    </property>
   </action>
   <action name="actionRegistrar_Enfermera">
    <property name="text">
-    <string>Registrar Enfermera</string>
+    <string>Registrar Enfermera...</string>
    </property>
   </action>
   <action name="actionMostrar_Enfermeras">
    <property name="text">
-    <string>Mostrar Enfermeras</string>
+    <string>Mostrar Enfermeras...</string>
    </property>
   </action>
   <action name="actionEditar_Enfermera">
    <property name="text">
-    <string>Editar Enfermera</string>
+    <string>Editar Enfermera...</string>
    </property>
   </action>
   <action name="actionMostrar_Enfermeras_Activas_Inactivas">
    <property name="text">
-    <string>Mostrar Enfermeras Asignadas/Libres</string>
+    <string>Mostrar Enfermeras Asignadas/Libres...</string>
    </property>
   </action>
   <action name="actionAsignar_Enfermera">
    <property name="text">
-    <string>Asignar Enfermera</string>
+    <string>Asignar Enfermera...</string>
    </property>
   </action>
   <action name="actionRegistrar_Cola_de_Pacientes">
@@ -310,6 +311,11 @@
   <action name="actionAcerca_de">
    <property name="text">
     <string>Acerca de ...</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Enfermera">
+   <property name="text">
+    <string>Buscar Enfermera...</string>
    </property>
   </action>
  </widget>
