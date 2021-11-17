@@ -23,6 +23,7 @@
 #include <mostrardetalleslocallotes.h>
 #include <mostrardetalleslocalpacientes.h>
 #include <editaralmacengui.h>
+#include <mostrarestadosalmacenesgui.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -172,4 +173,9 @@ void MainWindow::on_actionEditar_Almacen_triggered()
 {
     editarAlmacenGui *editarAlmacen = new editarAlmacenGui();
     editarAlmacen->show();
+}
+
+void MainWindow::on_actionMostrar_Almacen_Habilitados_Deshabilitados_triggered(){
+    mostrarEstadosAlmacenesGui *mostrarEstadosAlmacenes = new mostrarEstadosAlmacenesGui();
+    mostrarEstadosAlmacenes->show();
 }

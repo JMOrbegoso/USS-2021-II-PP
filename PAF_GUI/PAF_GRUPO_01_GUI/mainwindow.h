@@ -62,6 +62,8 @@ private slots:
 
     void on_actionEditar_Almacen_triggered();
 
+    void on_actionMostrar_Almacen_Habilitados_Deshabilitados_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
