@@ -18,6 +18,7 @@
 #include <buscaratendidogui.h>
 #include <mostrardetalleslocalenfermeras.h>
 #include <registroalmacengui.h>
+#include <mostraralmacenesgui.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -42,6 +43,11 @@ void MainWindow::on_actionRegistrar_Almacen_triggered()
 {
     registroAlmacenGui *regAlmacen = new registroAlmacenGui();
     regAlmacen->show();
+}
+
+void MainWindow::on_actionMostrar_Almacenes_triggered(){
+    mostrarAlmacenesGui *mostrarAlmacenes = new mostrarAlmacenesGui();
+    mostrarAlmacenes->show();
 }
 
 void MainWindow::on_actionEditar_Local_triggered()
