@@ -60,16 +60,6 @@ void localClass::setAtendidos(listaAtendidosClass *value)
     atendidos = value;
 }
 
-
-almacenClass *localClass::getAlmacen() const
-{
-    return almacen;
-}
-
-void localClass::setAlmacen(almacenClass *value)
-{
-    almacen = value;
-}
 localClass::localClass()
 {
     
