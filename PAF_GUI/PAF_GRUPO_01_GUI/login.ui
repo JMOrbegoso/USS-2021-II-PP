@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>317</height>
+    <width>543</width>
+    <height>246</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Login Sistema de Vacunacion Dengue</string>
+   <string>Dialog</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>50</y>
+     <x>20</x>
+     <y>20</y>
      <width>501</width>
      <height>201</height>
     </rect>
@@ -25,7 +25,7 @@
    <property name="title">
     <string>Ingreso de Usuario</string>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -38,7 +38,7 @@
      <string>Usuario:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -51,7 +51,7 @@
      <string>Contraseña:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtUsuario">
+   <widget class="QLineEdit" name="txtUsuario_2">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -61,7 +61,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtClave">
+   <widget class="QLineEdit" name="txtClave_2">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -71,7 +71,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdIngresar">
+   <widget class="QPushButton" name="cmdIngresar_2">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -84,7 +84,7 @@
      <string>Ingresar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdCerrar">
+   <widget class="QPushButton" name="cmdCerrar_2">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -97,90 +97,18 @@
      <string>Cerrar</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QPushButton" name="cmdRegistrarse_2">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>90</y>
-      <width>501</width>
-      <height>201</height>
+      <x>20</x>
+      <y>140</y>
+      <width>80</width>
+      <height>21</height>
      </rect>
     </property>
-    <property name="title">
-     <string>Ingreso de Usuario</string>
+    <property name="text">
+     <string>Registrarse</string>
     </property>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>60</y>
-       <width>51</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Usuario:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>90</y>
-       <width>71</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Contraseña:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txtUsuario_2">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>60</y>
-       <width>301</width>
-       <height>24</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="txtClave_2">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>90</y>
-       <width>301</width>
-       <height>24</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="cmdIngresar_2">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>140</y>
-       <width>80</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Ingresar</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="cmdCerrar_2">
-     <property name="geometry">
-      <rect>
-       <x>350</x>
-       <y>140</y>
-       <width>80</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Cerrar</string>
-     </property>
-    </widget>
    </widget>
   </widget>
  </widget>

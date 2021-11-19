@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>295</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sistema de Vacunatón contra Dengue</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLocales">
+    <property name="title">
+     <string>Locales</string>
+    </property>
+    <widget class="QMenu" name="menuMostrar_Detalle_del_Local">
+     <property name="title">
+      <string>Mostrar Detalle del Local</string>
+     </property>
+     <addaction name="actionEnfermeras"/>
+     <addaction name="actionPacientes"/>
+     <addaction name="actionDoctores"/>
+     <addaction name="actionLotes"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="actionRegistrar_Local"/>
+    <addaction name="actionMostrar_Locales"/>
+    <addaction name="actionEditar_Local"/>
+    <addaction name="actionMostrar_Locales_Habilitados_Desabilitados"/>
+    <addaction name="actionHabilitar_Desabilitar"/>
+    <addaction name="actionBuscar_Local_Registrado"/>
+    <addaction name="separator"/>
+    <addaction name="menuMostrar_Detalle_del_Local"/>
+   </widget>
+   <widget class="QMenu" name="menuAlmacen">
+    <property name="title">
+     <string>Almacen</string>
+    </property>
+    <addaction name="actionRegistrar_Almacen"/>
+    <addaction name="actionMostrar_Almacenes"/>
+    <addaction name="actionEditar_Almacen"/>
+    <addaction name="actionMostrar_Almacen_Habilitados_Deshabilitados"/>
+    <addaction name="actionHabilitar_Deshabilitar_Almacen"/>
+    <addaction name="actionBuscar_Almacen"/>
+    <addaction name="separator"/>
+    <addaction name="actionAdministrar_Lotes"/>
+   </widget>
+   <widget class="QMenu" name="menuLotes">
+    <property name="title">
+     <string>Lotes</string>
+    </property>
+    <addaction name="actionRegistrar_Lote"/>
+    <addaction name="actionMostrar_Lotes"/>
+    <addaction name="actionEditar_Lote"/>
+    <addaction name="actionBuscar_Lote"/>
+   </widget>
+   <widget class="QMenu" name="menuPersonal">
+    <property name="title">
+     <string>Personal</string>
+    </property>
+    <widget class="QMenu" name="menuMedico">
+     <property name="title">
+      <string>Medico</string>
+     </property>
+     <addaction name="actionRegistrar_Medico"/>
+     <addaction name="actionMostrar_Medico"/>
+     <addaction name="actionEditar_Medico"/>
+     <addaction name="actionBuscar_Medico"/>
+     <addaction name="actionMostrar_Medicos_Activos_Inactivos"/>
+     <addaction name="separator"/>
+     <addaction name="actionAsignar_Medico"/>
+    </widget>
+    <widget class="QMenu" name="menuEnfermera">
+     <property name="title">
+      <string>Enfermera</string>
+     </property>
+     <addaction name="actionRegistrar_Enfermera"/>
+     <addaction name="actionMostrar_Enfermeras"/>
+     <addaction name="actionEditar_Enfermera"/>
+     <addaction name="actionBuscar_Enfermera"/>
+     <addaction name="actionMostrar_Enfermeras_Activas_Inactivas"/>
+     <addaction name="separator"/>
+     <addaction name="actionAsignar_Enfermera"/>
+    </widget>
+    <addaction name="menuMedico"/>
+    <addaction name="menuEnfermera"/>
+   </widget>
+   <widget class="QMenu" name="menuPacientes">
+    <property name="title">
+     <string>Pacientes</string>
+    </property>
+    <addaction name="actionRegistrar_Cola_de_Pacientes"/>
+    <addaction name="actionMostrar_fila_de_Pacientes"/>
+    <addaction name="actionBuscar_Paciente_en_Fila"/>
+    <addaction name="separator"/>
+    <addaction name="actionAtender_Paciente"/>
+    <addaction name="actionMostrar_Pacientes_Atendidos"/>
+    <addaction name="actionBuscar_Paciente_Atendido"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAcerca_de_2"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuLocales"/>
+   <addaction name="menuAlmacen"/>
+   <addaction name="menuLotes"/>
+   <addaction name="menuPersonal"/>
+   <addaction name="menuPacientes"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionRegistrar_Local">
+   <property name="text">
+    <string>Registrar Local</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Locales">
+   <property name="text">
+    <string>Mostrar Locales</string>
+   </property>
+  </action>
+  <action name="actionEditar_Local">
+   <property name="text">
+    <string>Editar Local</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Locales_Habilitados_Desabilitados">
+   <property name="text">
+    <string>Mostrar Locales Habilitados/Deshabilitados</string>
+   </property>
+  </action>
+  <action name="actionHabilitar_Desabilitar">
+   <property name="text">
+    <string>Habilitar/Desabilitar Local</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Local_Registrado">
+   <property name="text">
+    <string>Buscar Local</string>
+   </property>
+  </action>
+  <action name="actionEnfermeras">
+   <property name="text">
+    <string>Enfermeras</string>
+   </property>
+  </action>
+  <action name="actionPacientes">
+   <property name="text">
+    <string>Pacientes</string>
+   </property>
+  </action>
+  <action name="actionDoctores">
+   <property name="text">
+    <string>Doctores</string>
+   </property>
+  </action>
+  <action name="actionLotes">
+   <property name="text">
+    <string>Lotes</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Almacen">
+   <property name="text">
+    <string>Registrar Almacen</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Almacenes">
+   <property name="text">
+    <string>Mostrar Almacenes</string>
+   </property>
+  </action>
+  <action name="actionEditar_Almacen">
+   <property name="text">
+    <string>Editar Almacen</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Almacen_Habilitados_Deshabilitados">
+   <property name="text">
+    <string>Mostrar Almacen Habilitados/Deshabilitados</string>
+   </property>
+  </action>
+  <action name="actionHabilitar_Deshabilitar_Almacen">
+   <property name="text">
+    <string>Habilitar/Deshabilitar Almacen</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Almacen">
+   <property name="text">
+    <string>Buscar Almacen</string>
+   </property>
+  </action>
+  <action name="actionAdministrar_Lotes">
+   <property name="text">
+    <string>Administrar Lotes</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Lote">
+   <property name="text">
+    <string>Registrar Lote</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Lotes">
+   <property name="text">
+    <string>Mostrar Lotes</string>
+   </property>
+  </action>
+  <action name="actionEditar_Lote">
+   <property name="text">
+    <string>Editar Lote</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Lote">
+   <property name="text">
+    <string>Buscar Lote</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Medico">
+   <property name="text">
+    <string>Registrar Medico...</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Medico">
+   <property name="text">
+    <string>Mostrar Medico...</string>
+   </property>
+  </action>
+  <action name="actionEditar_Medico">
+   <property name="text">
+    <string>Editar Medico...</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Medico">
+   <property name="text">
+    <string>Buscar Medico...</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Medicos_Activos_Inactivos">
+   <property name="text">
+    <string>Mostrar Medicos Asignados/Libres...</string>
+   </property>
+  </action>
+  <action name="actionAsignar_Medico">
+   <property name="text">
+    <string>Asignar Medico...</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Enfermera">
+   <property name="text">
+    <string>Registrar Enfermera...</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Enfermeras">
+   <property name="text">
+    <string>Mostrar Enfermeras...</string>
+   </property>
+  </action>
+  <action name="actionEditar_Enfermera">
+   <property name="text">
+    <string>Editar Enfermera...</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Enfermeras_Activas_Inactivas">
+   <property name="text">
+    <string>Mostrar Enfermeras Asignadas/Libres...</string>
+   </property>
+  </action>
+  <action name="actionAsignar_Enfermera">
+   <property name="text">
+    <string>Asignar Enfermera...</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Cola_de_Pacientes">
+   <property name="text">
+    <string>Registrar Cola de Pacientes</string>
+   </property>
+  </action>
+  <action name="actionMostrar_fila_de_Pacientes">
+   <property name="text">
+    <string>Mostrar fila de Pacientes</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Paciente_en_Fila">
+   <property name="text">
+    <string>Buscar Paciente en Fila</string>
+   </property>
+  </action>
+  <action name="actionAtender_Paciente">
+   <property name="text">
+    <string>Atender Paciente</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Pacientes_Atendidos">
+   <property name="text">
+    <string>Mostrar Pacientes Atendidos</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Paciente_Atendido">
+   <property name="text">
+    <string>Buscar Paciente Atendido</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de">
+   <property name="text">
+    <string>Acerca de ...</string>
+   </property>
+  </action>
+  <action name="actionBuscar_Enfermera">
+   <property name="text">
+    <string>Buscar Enfermera...</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_2">
+   <property name="text">
+    <string>Acerca de...</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

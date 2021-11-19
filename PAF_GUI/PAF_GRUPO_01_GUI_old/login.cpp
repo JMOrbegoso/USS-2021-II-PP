@@ -1,6 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
-#include "mainwindow.h"
+#include <mainwindow.h>
 
 login::login(QWidget *parent) :
     QDialog(parent),
@@ -14,13 +14,15 @@ login::~login()
     delete ui;
 }
 
-void login::on_cmdGetInto_clicked()
+void login::on_cmdIngresar_clicked()
 {
-    MainWindow *w = new MainWindow();
-    w->show();
+    MainWindow *mainWindow = new MainWindow();
+    mainWindow->show();
+
+    this->close();
 }
 
-void login::on_cmdClose_clicked()
+void login::on_cmdCerrar_clicked()
 {
     this->close();
 }
