@@ -25,7 +25,7 @@
    <property name="title">
     <string>Ingreso de Usuario</string>
    </property>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="labelUser">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -38,7 +38,7 @@
      <string>Usuario:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="labelPass">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -51,7 +51,7 @@
      <string>Contraseña:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtUsuario_2">
+   <widget class="QLineEdit" name="txtUser">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -61,7 +61,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtClave_2">
+   <widget class="QLineEdit" name="txtPass">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -71,7 +71,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdIngresar_2">
+   <widget class="QPushButton" name="cmdGetInto">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -84,7 +84,7 @@
      <string>Ingresar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdCerrar_2">
+   <widget class="QPushButton" name="cmdClose">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -97,7 +97,7 @@
      <string>Cerrar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cmdRegistrarse_2">
+   <widget class="QPushButton" name="cmdSignIn">
     <property name="geometry">
      <rect>
       <x>20</x>
