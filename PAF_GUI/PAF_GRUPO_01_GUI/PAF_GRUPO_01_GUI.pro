@@ -13,6 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    gestionarlocal.cpp \
         mainwindow.cpp \
     login.cpp \
     aboutgui.cpp \
@@ -27,6 +28,7 @@ SOURCES += main.cpp\
     nodopacienteclass.cpp \
     pacienteclass.cpp \
     personaclass.cpp \
+    registrarlocal.cpp \
     vacunadengueclass.cpp \
     vacunaloteclass.cpp \
     listavacunaloteclass.cpp \
@@ -39,6 +41,7 @@ SOURCES += main.cpp\
     gestionaratendidos.cpp
 
 HEADERS  += mainwindow.h \
+    gestionarlocal.h \
     login.h \
     aboutgui.h \
     almacenclass.h \
@@ -52,6 +55,7 @@ HEADERS  += mainwindow.h \
     nodopacienteclass.h \
     pacienteclass.h \
     personaclass.h \
+    registrarlocal.h \
     vacunadengueclass.h \
     vacunaloteclass.h \
     listavacunaloteclass.h \
@@ -64,8 +68,10 @@ HEADERS  += mainwindow.h \
     gestionaratendidos.h
 
 FORMS    += mainwindow.ui \
+    gestionarlocal.ui \
     login.ui \
     aboutgui.ui \
+    registrarlocal.ui \
     registrarpaciente.ui \
     gestionarpaciente.ui \
     gestionaratendidos.ui

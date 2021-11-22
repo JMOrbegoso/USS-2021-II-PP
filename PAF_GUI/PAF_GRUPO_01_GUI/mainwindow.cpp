@@ -4,6 +4,8 @@
 #include <registrarpaciente.h>
 #include <gestionarpaciente.h>
 #include <gestionaratendidos.h>
+#include <registrarlocal.h>
+#include <gestionarlocal.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -39,4 +41,16 @@ void MainWindow::on_actionGestionar_Atenci_n_triggered()
 {
     gestionarAtendidos *gesAtendido = new gestionarAtendidos();
     gesAtendido->show();
+}
+
+void MainWindow::on_actionRegistrar_local_triggered()
+{
+    registrarLocal *regLocal = new registrarLocal();
+    regLocal->show();
+}
+
+void MainWindow::on_actionGestionar_locales_triggered()
+{
+    gestionarLocal *gesLocal = new gestionarLocal();
+    gesLocal->show();
 }
