@@ -18,6 +18,12 @@ public:
 private slots:
     void on_actionAcerca_de_triggered();
 
+    void on_actionRegistrar_Paciente_triggered();
+
+    void on_actionGestionar_Pacientes_triggered();
+
+    void on_actionGestionar_Atenci_n_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

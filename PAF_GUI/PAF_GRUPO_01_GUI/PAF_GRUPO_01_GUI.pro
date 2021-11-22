@@ -32,7 +32,11 @@ SOURCES += main.cpp\
     listavacunaloteclass.cpp \
     personalclass.cpp \
     nodopersonalclass.cpp \
-    listapersonalclass.cpp
+    listapersonalclass.cpp \
+    registrarpaciente.cpp \
+    vacunasloteslistaclass.cpp \
+    gestionarpaciente.cpp \
+    gestionaratendidos.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -53,8 +57,15 @@ HEADERS  += mainwindow.h \
     listavacunaloteclass.h \
     personalclass.h \
     nodopersonalclass.h \
-    listapersonalclass.h
+    listapersonalclass.h \
+    registrarpaciente.h \
+    vacunasloteslistaclass.h \
+    gestionarpaciente.h \
+    gestionaratendidos.h
 
 FORMS    += mainwindow.ui \
     login.ui \
-    aboutgui.ui
+    aboutgui.ui \
+    registrarpaciente.ui \
+    gestionarpaciente.ui \
+    gestionaratendidos.ui

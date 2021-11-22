@@ -2,7 +2,7 @@
 #ifndef ATENDIDOCLASS_H
 #define ATENDIDOCLASS_H
 #include <pacienteclass.h>
-#include <enfermeraclass.h>
+#include <personalclass.h>
 #include <vacunaloteclass.h>
 
 using namespace std;
@@ -12,7 +12,7 @@ private:
     string nombreVacuna;
     string fecha;
     pacienteClass *paciente;
-    enfermeraClass *enfermera;
+    personalClass *personal;
     vacunaLoteClass *dosis;
 public:
     atendidoClass();
@@ -21,6 +21,8 @@ public:
     void setNombreVacuna(const string &value);
     string getFecha() const;
     void setFecha(const string &value);
+    personalClass *getPersonal() const;
+    void setPersonal(personalClass *value);
 };
 
 #endif // ATENDIDOCLASS_H

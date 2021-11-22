@@ -20,13 +20,14 @@ void atendidoClass::setFecha(const string &value)
 {
     fecha = value;
 }
+
 atendidoClass::atendidoClass()
 {
-
+    
 }
 
 atendidoClass::~atendidoClass()
 {
-
+    
 }
 

@@ -17,7 +17,7 @@ login::~login()
 void login::on_cmdGetInto_clicked()
 {
     MainWindow *w = new MainWindow();
-    w->show();
+    w->showMaximized();
 }
 
 void login::on_cmdClose_clicked()
