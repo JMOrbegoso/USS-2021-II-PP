@@ -31,6 +31,7 @@ SOURCES += main.cpp\
     pacienteclass.cpp \
     personaclass.cpp \
     personalclass.cpp \
+    registraralmacen.cpp \
     vacunatoncontradengueclass.cpp \
     aboutgui.cpp \
     gestionaratendidos.cpp \
@@ -58,6 +59,7 @@ HEADERS  += mainwindow.h \
     pacienteclass.h \
     personaclass.h \
     personalclass.h \
+    registraralmacen.h \
     vacunatoncontradengueclass.h \
     aboutgui.h \
     gestionaratendidos.h \
@@ -73,5 +75,6 @@ FORMS    += mainwindow.ui \
     gestionarlocal.ui \
     gestionarpaciente.ui \
     login.ui \
+    registraralmacen.ui \
     registrarlocal.ui \
     registrarpaciente.ui

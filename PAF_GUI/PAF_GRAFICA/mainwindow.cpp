@@ -6,6 +6,7 @@
 #include <gestionaratendidos.h>
 #include <registrarlocal.h>
 #include <gestionarlocal.h>
+#include <registraralmacen.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -54,3 +55,11 @@ void MainWindow::on_actionGestionar_locales_triggered()
     gestionarLocal *gesLocal = new gestionarLocal();
     gesLocal->show();
 }
+
+void MainWindow::on_actionRegistrar_Almacen_triggered()
+{
+    //registrarAlmacen *registrarAlmacen = new registrarAlmacen();
+    registrarAlmacen *reg = new registrarAlmacen();
+    reg->show();
+}
+
