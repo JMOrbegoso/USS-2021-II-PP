@@ -14,10 +14,16 @@ login::~login()
     delete ui;
 }
 
+void login::on_cmdSignIn_clicked()
+{
+    this->close();
+}
+
 void login::on_cmdGetInto_clicked()
 {
     MainWindow *w = new MainWindow();
     w->showMaximized();
+    this->close();
 }
 
 void login::on_cmdClose_clicked()

@@ -20,6 +20,8 @@ private slots:
 
     void on_cmdClose_clicked();
 
+    void on_cmdSignIn_clicked();
+
 private:
     Ui::login *ui;
 };
