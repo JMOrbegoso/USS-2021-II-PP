@@ -6,6 +6,10 @@
 #include <gestionaratendidos.h>
 #include <registrarlocal.h>
 #include <gestionarlocal.h>
+#include "vacunadengueclass.h"
+
+#include "listapersonalclass.h"
+#include "registrarpersonalgui.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -53,4 +57,11 @@ void MainWindow::on_actionGestionar_locales_triggered()
 {
     gestionarLocal *gesLocal = new gestionarLocal();
     gesLocal->show();
+}
+
+void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
+{
+    registrarPersonalGui *regPers = new registrarPersonalGui();
+
+    regPers->show();
 }

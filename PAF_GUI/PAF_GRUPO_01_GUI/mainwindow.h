@@ -28,6 +28,8 @@ private slots:
 
     void on_actionGestionar_locales_triggered();
 
+    void on_actionRegistrar_Personal_M_dico_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

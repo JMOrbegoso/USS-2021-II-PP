@@ -38,7 +38,9 @@ SOURCES += main.cpp\
     registrarpaciente.cpp \
     vacunasloteslistaclass.cpp \
     gestionarpaciente.cpp \
-    gestionaratendidos.cpp
+    gestionaratendidos.cpp \
+    registrarpersonalgui.cpp
+
 
 HEADERS  += mainwindow.h \
     gestionarlocal.h \
@@ -65,7 +67,8 @@ HEADERS  += mainwindow.h \
     registrarpaciente.h \
     vacunasloteslistaclass.h \
     gestionarpaciente.h \
-    gestionaratendidos.h
+    gestionaratendidos.h \
+    registrarpersonalgui.h
 
 FORMS    += mainwindow.ui \
     gestionarlocal.ui \
@@ -74,4 +77,5 @@ FORMS    += mainwindow.ui \
     registrarlocal.ui \
     registrarpaciente.ui \
     gestionarpaciente.ui \
-    gestionaratendidos.ui
+    gestionaratendidos.ui \
+    registrarpersonalgui.ui

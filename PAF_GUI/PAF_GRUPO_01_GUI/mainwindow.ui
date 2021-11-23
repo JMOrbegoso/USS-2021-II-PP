@@ -119,12 +119,12 @@
   </action>
   <action name="actionRegistrar_Personal_M_dico">
    <property name="text">
-    <string>Registrar Personal Médico...</string>
+    <string>Registrar Personal...</string>
    </property>
   </action>
   <action name="actionGestionar_Personal_M_dico">
    <property name="text">
-    <string>Gestionar Personal Médico...</string>
+    <string>Gestionar Personal...</string>
    </property>
   </action>
   <action name="actionRegistrar_Paciente">
