@@ -7,6 +7,7 @@
 #include <registrarlocal.h>
 #include <gestionarlocal.h>
 #include <registraralmacen.h>
+#include <gestionaralmacenes.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -58,8 +59,14 @@ void MainWindow::on_actionGestionar_locales_triggered()
 
 void MainWindow::on_actionRegistrar_Almacen_triggered()
 {
-    //registrarAlmacen *registrarAlmacen = new registrarAlmacen();
     registrarAlmacen *reg = new registrarAlmacen();
     reg->show();
+}
+
+
+void MainWindow::on_actionGestionar_Almacenes_triggered()
+{
+    gestionarAlmacenes *gest = new gestionarAlmacenes();
+    gest->show();
 }
 

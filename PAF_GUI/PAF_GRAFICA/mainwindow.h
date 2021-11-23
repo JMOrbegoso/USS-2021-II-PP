@@ -30,6 +30,8 @@ private slots:
 
     void on_actionRegistrar_Almacen_triggered();
 
+    void on_actionGestionar_Almacenes_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

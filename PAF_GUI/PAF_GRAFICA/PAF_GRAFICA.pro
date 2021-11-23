@@ -13,6 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    gestionaralmacenes.cpp \
         mainwindow.cpp \
     almacenclass.cpp \
     almacengeneralclass.cpp \
@@ -45,6 +46,7 @@ HEADERS  += mainwindow.h \
     almacenclass.h \
     almacengeneralclass.h \
     atendidoclass.h \
+    gestionaralmacenes.h \
     listalocalesclass.h \
     listalotesvacunaclass.h \
     listalotesvacunageneralclass.h \
@@ -71,6 +73,7 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     aboutgui.ui \
+    gestionaralmacenes.ui \
     gestionaratendidos.ui \
     gestionarlocal.ui \
     gestionarpaciente.ui \
