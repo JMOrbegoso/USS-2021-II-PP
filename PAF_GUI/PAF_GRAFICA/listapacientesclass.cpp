@@ -1,0 +1,32 @@
+#include "listapacientesclass.h"
+
+
+nodoPacienteClass *listaPacientesClass::getCab() const
+{
+    return cab;
+}
+
+void listaPacientesClass::setCab(nodoPacienteClass *value)
+{
+    cab = value;
+}
+
+int listaPacientesClass::getCant() const
+{
+    return cant;
+}
+
+void listaPacientesClass::setCant(int value)
+{
+    cant = value;
+}
+listaPacientesClass::listaPacientesClass()
+{
+
+}
+
+listaPacientesClass::~listaPacientesClass()
+{
+
+}
+
