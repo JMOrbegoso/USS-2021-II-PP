@@ -18,6 +18,8 @@ public:
 private slots:
     void on_regresarButton_clicked();
 
+    void on_editarAlmacenButton_clicked();
+
 private:
     Ui::gestionarAlmacenes *ui;
 };

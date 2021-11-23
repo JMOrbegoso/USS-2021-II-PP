@@ -1,5 +1,6 @@
 #include "gestionaralmacenes.h"
 #include "ui_gestionaralmacenes.h"
+#include <editaralmacen.h>
 
 gestionarAlmacenes::gestionarAlmacenes(QWidget *parent) :
     QDialog(parent),
@@ -16,5 +17,12 @@ gestionarAlmacenes::~gestionarAlmacenes()
 void gestionarAlmacenes::on_regresarButton_clicked()
 {
     this->close();
+}
+
+
+void gestionarAlmacenes::on_editarAlmacenButton_clicked()
+{
+    editarAlmacen *edit = new editarAlmacen();
+    edit->show();
 }
 
