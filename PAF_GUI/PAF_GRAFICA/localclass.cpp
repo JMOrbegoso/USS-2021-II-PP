@@ -30,15 +30,6 @@ void localClass::setAlmacen(almacenClass *value)
 {
     almacen = value;
 }
-string localClass::getCodigoLocal() const
-{
-    return codigoLocal;
-}
-
-void localClass::setCodigoLocal(const string &value)
-{
-    codigoLocal = value;
-}
 
 string localClass::getDireccionLocal() const
 {
