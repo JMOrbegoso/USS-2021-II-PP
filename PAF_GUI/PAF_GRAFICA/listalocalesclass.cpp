@@ -32,7 +32,9 @@ void listaLocalesClass::setMax(int value)
 }
 listaLocalesClass::listaLocalesClass()
 {
-
+    this->max = 0;
+    this->cant = 0;
+    this->local = NULL;
 }
 
 listaLocalesClass::~listaLocalesClass()

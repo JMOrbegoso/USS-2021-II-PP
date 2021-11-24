@@ -18,11 +18,10 @@ public:
 
     listaLocalesClass *getLLo() const;
     void setLLo(listaLocalesClass *value);
-    void limpiarControles();
 
 private slots:
     void on_cancelarLocalPb_clicked();
-
+    void limpiarControles();
     void on_registrarLocalPb_clicked();
 
 private:
