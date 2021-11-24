@@ -36,6 +36,8 @@ private slots:
 
     void on_actionGestionar_Personal_M_dico_triggered();
 
+    void on_actionRegistrar_Lote_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
