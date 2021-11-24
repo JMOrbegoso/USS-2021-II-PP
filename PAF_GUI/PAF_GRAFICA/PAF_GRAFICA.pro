@@ -14,6 +14,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     almaceneslistaclass.cpp \
+    atenderpaciente.cpp \
     editaralmacen.cpp \
     gestionaralmacenes.cpp \
         mainwindow.cpp \
@@ -35,6 +36,7 @@ SOURCES += main.cpp\
     personaclass.cpp \
     personalclass.cpp \
     registraralmacen.cpp \
+    registrarlotegui.cpp \
     vacunatoncontradengueclass.cpp \
     aboutgui.cpp \
     gestionaratendidos.cpp \
@@ -50,6 +52,7 @@ HEADERS  += mainwindow.h \
     almacenclass.h \
     almaceneslistaclass.h \
     almacengeneralclass.h \
+    atenderpaciente.h \
     atendidoclass.h \
     editaralmacen.h \
     gestionaralmacenes.h \
@@ -68,6 +71,7 @@ HEADERS  += mainwindow.h \
     personaclass.h \
     personalclass.h \
     registraralmacen.h \
+    registrarlotegui.h \
     vacunatoncontradengueclass.h \
     aboutgui.h \
     gestionaratendidos.h \
@@ -81,6 +85,7 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     aboutgui.ui \
+    atenderpaciente.ui \
     editaralmacen.ui \
     gestionaralmacenes.ui \
     gestionaratendidos.ui \
@@ -89,6 +94,7 @@ FORMS    += mainwindow.ui \
     login.ui \
     registraralmacen.ui \
     registrarlocal.ui \
+    registrarlotegui.ui \
     registrarpaciente.ui \
     registrarpersonalgui.ui \
     gestionarpersonalgui.ui

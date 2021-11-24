@@ -10,6 +10,7 @@
 #include <gestionaralmacenes.h>
 #include <registrarpersonalgui.h>
 #include <gestionarpersonalgui.h>
+#include <registrarlotegui.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -84,5 +85,12 @@ void MainWindow::on_actionGestionar_Personal_M_dico_triggered()
 {
     gestionarPersonalGui *gest = new gestionarPersonalGui();
     gest->show();
+}
+
+
+void MainWindow::on_actionRegistrar_Lote_triggered()
+{
+    registrarLoteGui *reg = new registrarLoteGui();
+    reg->show();
 }
 
