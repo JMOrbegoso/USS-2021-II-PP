@@ -41,24 +41,6 @@
     <string>Buscar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="atenderCmd">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>310</y>
-     <width>80</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Atender</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="registrarPacienteCmd">
    <property name="geometry">
     <rect>
