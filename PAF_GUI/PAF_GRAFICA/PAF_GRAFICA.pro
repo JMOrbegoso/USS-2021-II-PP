@@ -13,6 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    almaceneslistaclass.cpp \
     editaralmacen.cpp \
     gestionaralmacenes.cpp \
         mainwindow.cpp \
@@ -46,6 +47,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     almacenclass.h \
+    almaceneslistaclass.h \
     almacengeneralclass.h \
     atendidoclass.h \
     editaralmacen.h \

@@ -14,6 +14,11 @@ class registrarPersonalGui : public QDialog
 public:
     explicit registrarPersonalGui(QWidget *parent = 0);
     ~registrarPersonalGui();
+    void clear();
+private slots:
+    void on_cmdCanMed_clicked();
+
+    void on_cmdRegMed_clicked();
 
 private:
     Ui::registrarPersonalGui *ui;
