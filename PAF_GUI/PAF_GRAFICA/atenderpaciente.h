@@ -15,6 +15,11 @@ public:
     explicit atenderPaciente(QWidget *parent = nullptr);
     ~atenderPaciente();
 
+private slots:
+    void on_regresarButton_clicked();
+
+    void on_atenderButton_clicked();
+
 private:
     Ui::atenderPaciente *ui;
 };

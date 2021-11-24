@@ -12,3 +12,15 @@ atenderPaciente::~atenderPaciente()
 {
     delete ui;
 }
+
+void atenderPaciente::on_regresarButton_clicked()
+{
+    this->close();
+}
+
+
+void atenderPaciente::on_atenderButton_clicked()
+{
+    this->close();
+}
+
