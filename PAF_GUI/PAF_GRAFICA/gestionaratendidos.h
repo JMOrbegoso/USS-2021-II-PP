@@ -18,6 +18,8 @@ public:
 private slots:
     void on_regresarCmd_clicked();
 
+    void on_registrarOtroPacienteCmd_clicked();
+
 private:
     Ui::gestionarAtendidos *ui;
 };

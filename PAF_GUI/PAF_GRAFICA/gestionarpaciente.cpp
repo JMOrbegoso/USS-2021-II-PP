@@ -23,4 +23,5 @@ void gestionarPaciente::on_registrarPacienteCmd_clicked()
 {
     registrarPaciente *regiPaciente = new registrarPaciente();
     regiPaciente->show();
+    this->close();
 }
