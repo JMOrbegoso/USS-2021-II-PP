@@ -17,3 +17,9 @@ void registrarLocal::on_cancelarLocalPb_clicked()
 {
     this->close();
 }
+
+void registrarLocal::on_registrarLocalPb_clicked()
+{
+    this->close();
+}
+

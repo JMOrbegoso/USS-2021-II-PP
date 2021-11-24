@@ -66,17 +66,17 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
     pers->setNombre(ui->txtNomPers->text().toStdString());
     pers->setApellido(ui->txtApePers->text().toStdString());
     pers->setDni(ui->txtDniPers->text().toStdString());
-    pers->setEdad(ui->txtEdadPers->text().toStdString());
+    //pers->setEdad(atoi(ui->txtEdadPers->text().toStdString().c_str()));
     pers->setTelefono(ui->txtTelPers->text().toStdString());
     pers->setDireccion(ui->txtDirPers->text().toStdString());
-    pers->setHorasTrabajo(ui->spinHdtPers->value());
+    // pers->setHorasTrabajo(ui->spinHdtPers->value());
     pers->setSueldo(ui->douSpinSuePers->value());
     if(ui->radMed->isChecked()==true)
         pers->setTipoPersonal(true);
     else
         pers->setTipoPersonal(false);
 
-    this->lC->insertarCliente( clie );
+   // this->lC->insertarCliente( clie );
     msje.setText("Cliente registrado correctamente");
     msje.exec();
 
