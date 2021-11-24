@@ -2,6 +2,7 @@
 #define REGISTRARLOCAL_H
 
 #include <QDialog>
+#include <listalocalesclass.h>
 
 namespace Ui {
 class registrarLocal;
@@ -15,6 +16,10 @@ public:
     explicit registrarLocal(QWidget *parent = nullptr);
     ~registrarLocal();
 
+    listaLocalesClass *getLLo() const;
+    void setLLo(listaLocalesClass *value);
+    void limpiarControles();
+
 private slots:
     void on_cancelarLocalPb_clicked();
 
@@ -22,6 +27,7 @@ private slots:
 
 private:
     Ui::registrarLocal *ui;
+    listaLocalesClass *lLo;
 };
 
 #endif // REGISTRARLOCAL_H

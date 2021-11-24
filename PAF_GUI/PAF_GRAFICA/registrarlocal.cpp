@@ -22,22 +22,45 @@ void registrarLocal::on_cancelarLocalPb_clicked()
 
 void registrarLocal::on_registrarLocalPb_clicked()
 {
-
     QMessageBox msje;
     localClass *local = new localClass();
+    if (ui->nombreLocalTxt->text().length() == 0){
+        msje.setText("Debe Ingresar el Nombre del Local");
+        msje.exec();
+        return;
+    }
     if (ui->direccionLocalTxt->toPlainText().length() == 0){
         msje.setText("Debe Ingresar la Direccion del Local");
         msje.exec();
         return;
     }
+    local->setNombreLocal(ui->nombreLocalTxt->text().toStdString());
     local->setDireccionLocal(ui->direccionLocalTxt->toPlainText().toStdString());
     if (ui->habilitarLocalRb->isChecked() == true){
         local->setEstadoLocal(true);
     }else{
         local->setEstadoLocal(false);
     }
-    msje.setText("Cliente Registrado Correctamente");
+    this->lLo->insertarLocal(local);
+    msje.setText("Local Registrado Correctamente");
     msje.exec();
-   // limpiarControles();
+    limpiarControles();
+}
+
+void registrarLocal::limpiarControles()
+{
+    ui->nombreLocalTxt->setText("");
+    ui->direccionLocalTxt->setText("");
+    ui->nombreLocalTxt->setFocus();
+}
+
+listaLocalesClass *registrarLocal::getLLo() const
+{
+    return lLo;
+}
+
+void registrarLocal::setLLo(listaLocalesClass *value)
+{
+    lLo = value;
 }
 

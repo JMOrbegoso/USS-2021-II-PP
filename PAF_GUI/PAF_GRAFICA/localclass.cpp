@@ -51,6 +51,16 @@ void localClass::setEstadoLocal(bool value)
     estadoLocal = value;
 }
 
+string localClass::getNombreLocal() const
+{
+    return nombreLocal;
+}
+
+void localClass::setNombreLocal(const string &value)
+{
+    nombreLocal = value;
+}
+
 localClass::localClass()
 {
     this->estadoLocal = TRUE;
