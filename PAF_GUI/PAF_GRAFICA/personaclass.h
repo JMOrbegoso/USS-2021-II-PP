@@ -1,6 +1,7 @@
 #include <iostream>
 #ifndef PERSONACLASS_H
 #define PERSONACLASS_H
+#define Max 3
 
 using namespace std;
 

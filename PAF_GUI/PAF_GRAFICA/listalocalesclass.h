@@ -16,6 +16,8 @@ public:
     void setCant(int value);
     int getMax() const;
     void setMax(int value);
+    void crecerListaLocal();
+    void insertarLocal(localClass *local);
 };
 
 #endif // LISTALOCALESCLASS_H

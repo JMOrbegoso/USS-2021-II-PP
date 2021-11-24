@@ -63,6 +63,8 @@
     <addaction name="separator"/>
     <addaction name="actionGestionar_Pacientes"/>
     <addaction name="actionGestionar_Atenci_n"/>
+    <addaction name="separator"/>
+    <addaction name="actionAtender_Paciente"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -150,6 +152,11 @@
   <action name="actionSalir">
    <property name="text">
     <string>Salir...</string>
+   </property>
+  </action>
+  <action name="actionAtender_Paciente">
+   <property name="text">
+    <string>Atender Paciente</string>
    </property>
   </action>
  </widget>
