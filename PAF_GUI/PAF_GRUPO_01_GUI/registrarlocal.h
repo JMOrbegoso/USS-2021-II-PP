@@ -18,6 +18,8 @@ public:
 private slots:
     void on_cancelarLocalPb_clicked();
 
+    void on_registrarLocalPb_clicked();
+
 private:
     Ui::registrarLocal *ui;
 };
