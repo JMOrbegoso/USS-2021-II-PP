@@ -105,6 +105,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="QScrollBar" name="verticalScrollBar">
+   <property name="geometry">
+    <rect>
+     <x>666</x>
+     <y>90</y>
+     <width>16</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
