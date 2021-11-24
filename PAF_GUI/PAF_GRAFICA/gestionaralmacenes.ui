@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestionar Almacenes</string>
   </property>
   <widget class="QPushButton" name="editarAlmacenButton">
    <property name="geometry">
