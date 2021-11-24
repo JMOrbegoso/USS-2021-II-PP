@@ -50,9 +50,11 @@ void vacunatonContraDengueClass::setAlmaGeneral(almacenGeneralClass *value)
 {
     almaGeneral = value;
 }
+
 vacunatonContraDengueClass::vacunatonContraDengueClass()
 {
-
+    this->locales = new listaLocalesClass();
+    this->almaGeneral = new almacenGeneralClass();
 }
 
 vacunatonContraDengueClass::~vacunatonContraDengueClass()

@@ -7,6 +7,7 @@ registrarLocal::registrarLocal(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrarLocal)
 {
+    this->lLo = new listaLocalesClass();
     ui->setupUi(this);
 }
 
@@ -49,8 +50,8 @@ void registrarLocal::on_registrarLocalPb_clicked()
 
 void registrarLocal::limpiarControles()
 {
-    ui->nombreLocalTxt->setText("");
-    ui->direccionLocalTxt->setText("");
+    ui->nombreLocalTxt->clear();
+    ui->direccionLocalTxt->clear();
     ui->nombreLocalTxt->setFocus();
 }
 

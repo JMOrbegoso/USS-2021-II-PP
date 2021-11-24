@@ -15,13 +15,13 @@ class registrarLocal : public QDialog
 public:
     explicit registrarLocal(QWidget *parent = nullptr);
     ~registrarLocal();
-
+    void limpiarControles();
     listaLocalesClass *getLLo() const;
     void setLLo(listaLocalesClass *value);
 
 private slots:
     void on_cancelarLocalPb_clicked();
-    void limpiarControles();
+
     void on_registrarLocalPb_clicked();
 
 private:
