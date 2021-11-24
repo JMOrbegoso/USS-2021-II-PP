@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     atenderpaciente.cpp \
     editaralmacen.cpp \
     gestionaralmacenes.cpp \
+    gestionarlotegui.cpp \
         mainwindow.cpp \
     almacenclass.cpp \
     almacengeneralclass.cpp \
@@ -56,6 +57,7 @@ HEADERS  += mainwindow.h \
     atendidoclass.h \
     editaralmacen.h \
     gestionaralmacenes.h \
+    gestionarlotegui.h \
     listalocalesclass.h \
     listalotesvacunaclass.h \
     listalotesvacunageneralclass.h \
@@ -90,6 +92,7 @@ FORMS    += mainwindow.ui \
     gestionaralmacenes.ui \
     gestionaratendidos.ui \
     gestionarlocal.ui \
+    gestionarlotegui.ui \
     gestionarpaciente.ui \
     login.ui \
     registraralmacen.ui \

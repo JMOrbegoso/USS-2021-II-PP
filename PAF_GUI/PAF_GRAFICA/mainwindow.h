@@ -38,6 +38,8 @@ private slots:
 
     void on_actionRegistrar_Lote_triggered();
 
+    void on_actionGestionar_Lotes_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
