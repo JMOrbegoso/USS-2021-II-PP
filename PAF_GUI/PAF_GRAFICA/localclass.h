@@ -9,6 +9,8 @@ private:
     listaPersonalClass *personales;
     listaPacientesClass *pacientes;
     almacenClass *almacen;
+    string direccionLocal;
+    bool estadoLocal;
 public:
     localClass();
     ~localClass();
@@ -18,6 +20,10 @@ public:
     void setPacientes(listaPacientesClass *value);
     almacenClass *getAlmacen() const;
     void setAlmacen(almacenClass *value);
+    string getDireccionLocal() const;
+    void setDireccionLocal(const string &value);
+    bool getEstadoLocal() const;
+    void setEstadoLocal(bool value);
 };
 
 #endif // LOCALCLASS_H
