@@ -32,6 +32,10 @@ private slots:
 
     void on_actionGestionar_Almacenes_triggered();
 
+    void on_actionRegistrar_Personal_M_dico_triggered();
+
+    void on_actionGestionar_Personal_M_dico_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

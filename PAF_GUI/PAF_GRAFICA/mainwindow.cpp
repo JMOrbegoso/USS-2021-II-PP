@@ -8,6 +8,8 @@
 #include <gestionarlocal.h>
 #include <registraralmacen.h>
 #include <gestionaralmacenes.h>
+#include <registrarpersonalgui.h>
+#include <gestionarpersonalgui.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -67,6 +69,20 @@ void MainWindow::on_actionRegistrar_Almacen_triggered()
 void MainWindow::on_actionGestionar_Almacenes_triggered()
 {
     gestionarAlmacenes *gest = new gestionarAlmacenes();
+    gest->show();
+}
+
+
+void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
+{
+    registrarPersonalGui *reg = new registrarPersonalGui();
+    reg->show();
+}
+
+
+void MainWindow::on_actionGestionar_Personal_M_dico_triggered()
+{
+    gestionarPersonalGui *gest = new gestionarPersonalGui();
     gest->show();
 }
 

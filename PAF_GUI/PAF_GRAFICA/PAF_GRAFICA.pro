@@ -43,7 +43,8 @@ SOURCES += main.cpp\
     login.cpp \
     registrarlocal.cpp \
     registrarpaciente.cpp \
-    registrarpersonalgui.cpp
+    registrarpersonalgui.cpp \
+    gestionarpersonalgui.cpp
 
 HEADERS  += mainwindow.h \
     almacenclass.h \
@@ -75,7 +76,8 @@ HEADERS  += mainwindow.h \
     login.h \
     registrarlocal.h \
     registrarpaciente.h \
-    registrarpersonalgui.h
+    registrarpersonalgui.h \
+    gestionarpersonalgui.h
 
 FORMS    += mainwindow.ui \
     aboutgui.ui \
@@ -88,4 +90,5 @@ FORMS    += mainwindow.ui \
     registraralmacen.ui \
     registrarlocal.ui \
     registrarpaciente.ui \
-    registrarpersonalgui.ui
+    registrarpersonalgui.ui \
+    gestionarpersonalgui.ui
