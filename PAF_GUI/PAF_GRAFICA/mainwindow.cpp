@@ -11,6 +11,7 @@
 #include <registrarpersonalgui.h>
 #include <gestionarpersonalgui.h>
 #include <registrarlotegui.h>
+#include <gestionarlotegui.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -92,5 +93,12 @@ void MainWindow::on_actionRegistrar_Lote_triggered()
 {
     registrarLoteGui *reg = new registrarLoteGui();
     reg->show();
+}
+
+
+void MainWindow::on_actionGestionar_Lotes_triggered()
+{
+    gestionarLoteGui *gest = new gestionarLoteGui();
+    gest->show();
 }
 
