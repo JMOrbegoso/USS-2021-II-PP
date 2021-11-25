@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
+listaLocalesClass *locales = new listaLocalesClass();
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -51,13 +53,13 @@ void MainWindow::on_actionGestionar_Atenci_n_triggered()
 
 void MainWindow::on_actionRegistrar_local_triggered()
 {
-    registrarLocal *regLocal = new registrarLocal();
+    registrarLocal *regLocal = new registrarLocal(locales);
     regLocal->show();
 }
 
 void MainWindow::on_actionGestionar_locales_triggered()
 {
-    gestionarLocal *gesLocal = new gestionarLocal();
+    gestionarLocal *gesLocal = new gestionarLocal(locales);
     gesLocal->show();
 }
 

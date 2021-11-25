@@ -3,11 +3,11 @@
 #include <QMessageBox>
 #include <localclass.h>
 
-registrarLocal::registrarLocal(QWidget *parent) :
+registrarLocal::registrarLocal(listaLocalesClass* locales, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrarLocal)
 {
-    this->lLo = new listaLocalesClass();
+    this->lLo = locales;
     ui->setupUi(this);
 }
 

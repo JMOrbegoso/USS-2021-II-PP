@@ -2,6 +2,7 @@
 #define GESTIONARLOCAL_H
 
 #include <QDialog>
+#include <listalocalesclass.h>
 
 namespace Ui {
 class gestionarLocal;
@@ -12,7 +13,7 @@ class gestionarLocal : public QDialog
     Q_OBJECT
 
 public:
-    explicit gestionarLocal(QWidget *parent = nullptr);
+    explicit gestionarLocal(listaLocalesClass* locales, QWidget *parent = nullptr);
     ~gestionarLocal();
 
 private:
