@@ -1,5 +1,6 @@
 #include "atenderpaciente.h"
 #include "ui_atenderpaciente.h"
+#include <registrarpaciente.h>
 
 atenderPaciente::atenderPaciente(QWidget *parent) :
     QDialog(parent),
@@ -24,3 +25,10 @@ void atenderPaciente::on_atenderButton_clicked()
     this->close();
 }
 
+
+void atenderPaciente::on_registrarPacienteButton_clicked()
+{
+    registrarPaciente *regiPaciente = new registrarPaciente();
+    regiPaciente->show();
+    this->close();
+}

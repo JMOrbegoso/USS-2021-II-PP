@@ -7,16 +7,16 @@
     <x>0</x>
     <y>0</y>
     <width>738</width>
-    <height>452</height>
+    <height>381</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Atender Paciente</string>
   </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>450</x>
      <y>10</y>
      <width>271</width>
      <height>31</height>
@@ -66,17 +66,20 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>190</y>
+     <y>200</y>
      <width>271</width>
      <height>31</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_4">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="dniLineEdit"/>
+    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="dniLabel">
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
        </font>
       </property>
       <property name="text">
@@ -84,16 +87,13 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="dniLineEdit"/>
-    </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="buscarButton">
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>190</y>
+     <y>200</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -110,8 +110,8 @@
   <widget class="QPushButton" name="atenderButton">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>190</y>
+     <x>460</x>
+     <y>270</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -128,8 +128,8 @@
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>190</y>
+     <x>650</x>
+     <y>340</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -193,16 +193,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLabel" name="direccionLocalLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="lineEdit_2"/>
     </item>
    </layout>
   </widget>
@@ -224,23 +215,55 @@
        </font>
       </property>
       <property name="text">
-       <string>Dirección del Local:</string>
+       <string>Nombre de la Vacunal:</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLabel" name="encargadoLocalLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="lineEdit"/>
     </item>
    </layout>
+  </widget>
+  <widget class="QTableView" name="mostrarPacienteTview">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>60</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="registrarPacienteButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Registrar Paciente</string>
+   </property>
+  </widget>
+  <widget class="QScrollBar" name="verticalScrollBar">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>70</y>
+     <width>16</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -40,6 +40,8 @@ private slots:
 
     void on_actionGestionar_Lotes_triggered();
 
+    void on_actionAtender_Paciente_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

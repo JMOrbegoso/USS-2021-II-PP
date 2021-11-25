@@ -20,6 +20,8 @@ private slots:
 
     void on_atenderButton_clicked();
 
+    void on_registrarPacienteButton_clicked();
+
 private:
     Ui::atenderPaciente *ui;
 };

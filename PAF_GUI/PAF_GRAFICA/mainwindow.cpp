@@ -12,6 +12,7 @@
 #include <gestionarpersonalgui.h>
 #include <registrarlotegui.h>
 #include <gestionarlotegui.h>
+#include <atenderpaciente.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -104,3 +105,9 @@ void MainWindow::on_actionGestionar_Lotes_triggered()
     gest->show();
 }
 
+
+void MainWindow::on_actionAtender_Paciente_triggered()
+{
+    atenderPaciente *atePaciente = new atenderPaciente();
+    atePaciente->show();
+}
