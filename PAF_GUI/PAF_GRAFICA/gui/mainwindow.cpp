@@ -23,8 +23,6 @@ MainWindow::MainWindow(QWidget *parent) :
     this->vacunaDengue = new vacunatonContraDengueClass();
 }
 
-vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
-
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -56,14 +54,16 @@ void MainWindow::on_actionGestionar_Atenci_n_triggered()
 
 void MainWindow::on_actionRegistrar_local_triggered()
 {
-    registrarLocal *regLocal = new registrarLocal(vacunaton->getLocales());
+    registrarLocal *regLocal = new registrarLocal();
+    regLocal->setLocales(this->getVacunaDengue()->getLocales());
     regLocal->show();
 }
 
 void MainWindow::on_actionGestionar_locales_triggered()
 {
-    gestionarLocal *gesLocal = new gestionarLocal(vacunaton->getLocales());
-    gesLocal->show();
+    gestionarLocal *gesLocal = new gestionarLocal();
+    gesLocal->setListLocales(this->getVacunaDengue()->getLocales());
+    gesLocal->show(); //set -> poner     //get  -> obtener
 }
 
 void MainWindow::on_actionRegistrar_Almacen_triggered()
@@ -113,4 +113,14 @@ void MainWindow::on_actionAtender_Paciente_triggered()
 {
     atenderPaciente *atePaciente = new atenderPaciente();
     atePaciente->show();
+}
+
+vacunatonContraDengueClass *MainWindow::getVacunaDengue() const
+{
+    return vacunaDengue;
+}
+
+void MainWindow::setVacunaDengue(vacunatonContraDengueClass *value)
+{
+    vacunaDengue = value;
 }

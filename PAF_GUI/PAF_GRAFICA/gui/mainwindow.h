@@ -16,6 +16,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    vacunatonContraDengueClass *getVacunaDengue() const;
+    void setVacunaDengue(vacunatonContraDengueClass *value);
+
 private slots:
     void on_actionAcerca_de_triggered();
 

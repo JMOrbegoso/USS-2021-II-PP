@@ -13,11 +13,15 @@ class gestionarLocal : public QDialog
     Q_OBJECT
 
 public:
-    explicit gestionarLocal(listaLocalesClass* locales, QWidget *parent = nullptr);
+    explicit gestionarLocal(QWidget *parent = nullptr);
     ~gestionarLocal();
+
+    listaLocalesClass *getListLocales() const;
+    void setListLocales(listaLocalesClass *value);
 
 private:
     Ui::gestionarLocal *ui;
+    listaLocalesClass *listLocales;
 };
 
 #endif // GESTIONARLOCAL_H

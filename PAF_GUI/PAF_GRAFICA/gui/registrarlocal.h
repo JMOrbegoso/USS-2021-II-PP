@@ -13,7 +13,7 @@ class registrarLocal : public QDialog
     Q_OBJECT
 
 public:
-    explicit registrarLocal(listaLocalesClass* locales, QWidget *parent = nullptr);
+    explicit registrarLocal(QWidget *parent = nullptr);
     ~registrarLocal();
     void limpiarControles();
     listaLocalesClass *getLocales() const;
