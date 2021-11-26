@@ -9,7 +9,7 @@ registrarPersonalGui::registrarPersonalGui(QWidget *parent) :
     ui(new Ui::registrarPersonalGui)
 {
     ui->setupUi(this);
-
+    this->listLocales = new listaLocalesClass();
     for(int i=0;i < this->listLocales->getCant();i++){
         ui->selectLocales->addItem(QString::fromUtf8((this->listLocales->getCab()+i)->getNombreLocal().c_str()));
     }
