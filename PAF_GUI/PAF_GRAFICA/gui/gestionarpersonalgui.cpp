@@ -12,3 +12,8 @@ gestionarPersonalGui::~gestionarPersonalGui()
 {
     delete ui;
 }
+
+void gestionarPersonalGui::on_bntVolPers_clicked()
+{
+    this->close();
+}

@@ -110,9 +110,6 @@
      <item row="2" column="1">
       <widget class="QLineEdit" name="txtDniPers"/>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="txtEdadPers"/>
-     </item>
      <item row="4" column="1">
       <widget class="QLineEdit" name="txtTelPers"/>
      </item>
@@ -120,10 +117,21 @@
       <widget class="QLineEdit" name="txtDirPers"/>
      </item>
      <item row="6" column="1">
-      <widget class="QDoubleSpinBox" name="douSpinSuePers"/>
+      <widget class="QDoubleSpinBox" name="douSpinSuePers">
+       <property name="minimum">
+        <double>900.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>35000.000000000000000</double>
+       </property>
+      </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QSpinBox" name="spinHdtPers"/>
+      <widget class="QSpinBox" name="spinHdtPers">
+       <property name="minimum">
+        <number>8</number>
+       </property>
+      </widget>
      </item>
      <item row="8" column="0">
       <widget class="QLabel" name="label_10">
@@ -149,6 +157,13 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSpinBox" name="spinEdaPers">
+       <property name="minimum">
+        <number>18</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -180,6 +195,20 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtNomPers</tabstop>
+  <tabstop>txtApePers</tabstop>
+  <tabstop>txtDniPers</tabstop>
+  <tabstop>spinEdaPers</tabstop>
+  <tabstop>txtTelPers</tabstop>
+  <tabstop>txtDirPers</tabstop>
+  <tabstop>douSpinSuePers</tabstop>
+  <tabstop>spinHdtPers</tabstop>
+  <tabstop>radMed</tabstop>
+  <tabstop>radEnf</tabstop>
+  <tabstop>cmdRegMed</tabstop>
+  <tabstop>cmdCanMed</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
