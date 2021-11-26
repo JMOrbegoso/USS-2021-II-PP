@@ -84,7 +84,7 @@ void MainWindow::on_actionGestionar_Almacenes_triggered()
 void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
 {
     registrarPersonalGui *reg = new registrarPersonalGui();
-
+    reg->setListLocales(this->getVacunaDengue()->getLocales());
     reg->show();
 }
 
@@ -92,6 +92,7 @@ void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
 void MainWindow::on_actionGestionar_Personal_M_dico_triggered()
 {
     gestionarPersonalGui *gest = new gestionarPersonalGui();
+
     gest->show();
 }
 

@@ -2,7 +2,7 @@
 #define REGISTRARPERSONALGUI_H
 
 #include <QDialog>
-#include <listapersonalclass.h>
+//#include <listapersonalclass.h>
 #include <listalocalesclass.h>
 
 namespace Ui {
@@ -20,15 +20,21 @@ public:
     listaPersonalClass *getListPers() const;
     void setListPers(listaPersonalClass *value);
 
+    //void habilitarCmdTxt();
+    listaLocalesClass *getListLocales() const;
+    void setListLocales(listaLocalesClass *value);
+
 private slots:
     void on_cmdCanMed_clicked();
 
     void on_cmdRegMed_clicked();
 
+    void on_selectLocales_textHighlighted(const QString &arg1);
+
 private:
     Ui::registrarPersonalGui *ui;
     listaLocalesClass *listLocales;
-    listaPersonalClass *listPers;
+    //listaPersonalClass *listPers;
 };
 
 #endif // REGISTRARPERSONALGUI_H

@@ -17,3 +17,13 @@ void gestionarPersonalGui::on_bntVolPers_clicked()
 {
     this->close();
 }
+
+listaLocalesClass *gestionarPersonalGui::getLocales() const
+{
+    return locales;
+}
+
+void gestionarPersonalGui::setLocales(listaLocalesClass *value)
+{
+    locales = value;
+}

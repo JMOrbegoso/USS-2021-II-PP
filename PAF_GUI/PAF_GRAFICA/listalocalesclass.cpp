@@ -1,6 +1,9 @@
 #include "listalocalesclass.h"
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 int listaLocalesClass::getCant() const
 {
     return cant;

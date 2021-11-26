@@ -2,12 +2,17 @@
 #include "registrarpersonalgui.h"
 #include "ui_registrarpersonalgui.h"
 #include "personalclass.h"
+//#include "QComboBox"
 
 registrarPersonalGui::registrarPersonalGui(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrarPersonalGui)
 {
     ui->setupUi(this);
+
+    for(int i=0;i < this->listLocales->getCant();i++){
+        ui->selectLocales->addItem(QString::fromUtf8((this->listLocales->getCab()+i)->getNombreLocal().c_str()));
+    }
 }
 
 registrarPersonalGui::~registrarPersonalGui()
@@ -25,7 +30,7 @@ void registrarPersonalGui::clear()
     ui->txtTelPers->setText("");
     ui->douSpinSuePers->setValue(0.00);
     ui->spinHdtPers->setValue(0);
-    ui->txtApePers->clear();
+    //ui->txtApePers->clear();
 }
 
 void registrarPersonalGui::on_cmdCanMed_clicked()
@@ -80,10 +85,10 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
    // this->lC->insertarCliente( clie );
     msje.setText("Cliente registrado correctamente");
     msje.exec();
-
+    ui->txtNomPers->setReadOnly(false);
     clear();
 }
-
+/*
 listaPersonalClass *registrarPersonalGui::getListPers() const
 {
     return listPers;
@@ -92,4 +97,35 @@ listaPersonalClass *registrarPersonalGui::getListPers() const
 void registrarPersonalGui::setListPers(listaPersonalClass *value)
 {
     listPers = value;
+}*/
+/*
+void registrarPersonalGui::habilitarCmdTxt()
+{
+    ui->txtNomPers->setEnabled(true);
+    ui->txtApePers->setEnabled(true);
+    ui->txtDniPers->setEnabled(true);
+    ui->txtDirPers->setEnabled(true);
+    ui->txtTelPers->setEnabled(true);
+    ui->spinEdaPers->setEnabled(true);
+    ui->spinHdtPers->setEnabled(true);
+    ui->douSpinSuePers->setEnabled(true);
+    ui->radEnf->setEnabled(true);
+    ui->radMed->setEnabled(true);
+}
+*/
+void registrarPersonalGui::on_selectLocales_textHighlighted(const QString &arg1)
+{
+    //this->habilitarCmdTxt();
+    string selected;
+    selected = arg1.toStdString();
+}
+
+listaLocalesClass *registrarPersonalGui::getListLocales() const
+{
+    return listLocales;
+}
+
+void registrarPersonalGui::setListLocales(listaLocalesClass *value)
+{
+    listLocales = value;
 }

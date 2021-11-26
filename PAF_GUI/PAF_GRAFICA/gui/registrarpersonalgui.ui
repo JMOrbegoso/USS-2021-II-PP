@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>392</height>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>20</x>
      <y>20</y>
      <width>511</width>
-     <height>351</height>
+     <height>381</height>
     </rect>
    </property>
    <property name="title">
@@ -29,9 +29,9 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>30</y>
+      <y>40</y>
       <width>411</width>
-      <height>261</height>
+      <height>281</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -42,82 +42,114 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Locales:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Nombre:</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="txtNomPers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>Apellido:</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="txtApePers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
       <widget class="QLabel" name="label_4">
        <property name="text">
         <string>DNI:</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="txtDniPers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
         <string>Edad:</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="4" column="1">
+      <widget class="QSpinBox" name="spinEdaPers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="minimum">
+        <number>18</number>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
       <widget class="QLabel" name="label_6">
        <property name="text">
         <string>Teléfono:</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txtTelPers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
       <widget class="QLabel" name="label_7">
        <property name="text">
         <string>Dirección:</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="txtDirPers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
       <widget class="QLabel" name="label_8">
        <property name="text">
         <string>Sueldo:</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>Horas de Trabajo:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="txtNomPers">
+     <item row="7" column="1">
+      <widget class="QDoubleSpinBox" name="douSpinSuePers">
        <property name="enabled">
         <bool>true</bool>
        </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="txtApePers"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="txtDniPers"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="txtTelPers"/>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="txtDirPers"/>
-     </item>
-     <item row="6" column="1">
-      <widget class="QDoubleSpinBox" name="douSpinSuePers">
        <property name="minimum">
         <double>900.000000000000000</double>
        </property>
@@ -126,24 +158,37 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Horas de Trabajo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
       <widget class="QSpinBox" name="spinHdtPers">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="minimum">
         <number>8</number>
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
+     <item row="9" column="0">
       <widget class="QLabel" name="label_10">
        <property name="text">
         <string>TextLabel</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
+     <item row="9" column="1">
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QRadioButton" name="radMed">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string>Enfermera</string>
          </property>
@@ -151,6 +196,9 @@
        </item>
        <item>
         <widget class="QRadioButton" name="radEnf">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string>Médico</string>
          </property>
@@ -158,10 +206,10 @@
        </item>
       </layout>
      </item>
-     <item row="3" column="1">
-      <widget class="QSpinBox" name="spinEdaPers">
-       <property name="minimum">
-        <number>18</number>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="selectLocales">
+       <property name="enabled">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -171,7 +219,7 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>310</y>
+      <y>340</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -181,10 +229,13 @@
     </property>
    </widget>
    <widget class="QPushButton" name="cmdRegMed">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>310</y>
+      <y>340</y>
       <width>80</width>
       <height>21</height>
      </rect>
