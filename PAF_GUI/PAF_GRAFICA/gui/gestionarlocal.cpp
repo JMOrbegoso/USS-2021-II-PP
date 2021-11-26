@@ -7,10 +7,10 @@ gestionarLocal::gestionarLocal( QWidget *parent) :
 {
     ui->setupUi(this);
     this->listLocales = new listaLocalesClass();
-    this->ui->twMostrarLocales->setColumnWidth(0, 120);
+    this->ui->twMostrarLocales->setColumnWidth(0, 90);
     this->ui->twMostrarLocales->setColumnWidth(1, 180);
-    this->ui->twMostrarLocales->setColumnWidth(2, 280);
-    this->ui->twMostrarLocales->setColumnWidth(3, 150);
+    this->ui->twMostrarLocales->setColumnWidth(2, 290);
+    this->ui->twMostrarLocales->setColumnWidth(3, 160);
     /*
     for (int x = 0; x < locales->getCant(); x++) {
         string direccion = (*(locales->getLocal() + x)).getDireccionLocal();
@@ -40,10 +40,15 @@ void gestionarLocal::setListLocales(listaLocalesClass *value)
 
 void gestionarLocal::mostrarListaLocales(listaLocalesClass *locales){
     for (int x = 0; x < locales->getCant(); x++){
+        this->ui->twMostrarLocales->insertRow(x);
         this->ui->twMostrarLocales->setItem(x, 0, new QTableWidgetItem(QString::number((locales->getCab() + x)->getCodigoLocal())));
         this->ui->twMostrarLocales->setItem(x, 1, new QTableWidgetItem(QString::fromUtf8((locales->getCab() + x)->getNombreLocal().c_str())));
         this->ui->twMostrarLocales->setItem(x, 2, new QTableWidgetItem(QString::fromUtf8((locales->getCab() + x)->getDireccionLocal().c_str())));
-        //this->ui->twMostrarLocales->setItem(x, 0, new QTableWidgetItem(QString::bool((this->listLocales->getCab() + x)->getEstadoLocal().c_str())));
+        if ((this->listLocales->getCab() + x)->getEstadoLocal() == true){
+            this->ui->twMostrarLocales->setItem(x, 3, new QTableWidgetItem((("Habilitado"))));
+        }else{
+            this->ui->twMostrarLocales->setItem(x, 3, new QTableWidgetItem((("Inhabilitado"))));
+        }
     }
 }
 
