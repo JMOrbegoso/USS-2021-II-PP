@@ -9,6 +9,7 @@ private:
     listaPersonalClass *personales;
     listaPacientesClass *pacientes;
     almacenClass *almacen;
+    static int codigoLocal;
     string nombreLocal;
     string direccionLocal;
     bool estadoLocal;

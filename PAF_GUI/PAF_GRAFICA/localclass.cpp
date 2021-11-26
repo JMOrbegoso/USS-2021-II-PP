@@ -63,6 +63,7 @@ void localClass::setNombreLocal(const string &value)
 
 localClass::localClass()
 {
+    localClass::codigoLocal++;
     this->estadoLocal = TRUE;
     this->personales = new listaPersonalClass();
     this->pacientes = new listaPacientesClass();

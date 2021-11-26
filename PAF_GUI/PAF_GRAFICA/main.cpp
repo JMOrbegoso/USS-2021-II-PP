@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <localclass.h>
+
+int localClass::codigoLocal = 0;
 
 int main(int argc, char *argv[])
 {
