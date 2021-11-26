@@ -14,11 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     almaceneslistaclass.cpp \
-    atenderpaciente.cpp \
-    editaralmacen.cpp \
-    gestionaralmacenes.cpp \
-    gestionarlotegui.cpp \
-        mainwindow.cpp \
+    gui/atenderpaciente.cpp \
+    gui/editaralmacen.cpp \
+    gui/gestionaralmacenes.cpp \
+    gui/gestionarlotegui.cpp \
+        gui/mainwindow.cpp \
     almacenclass.cpp \
     almacengeneralclass.cpp \
     atendidoclass.cpp \
@@ -36,28 +36,28 @@ SOURCES += main.cpp\
     pacienteclass.cpp \
     personaclass.cpp \
     personalclass.cpp \
-    registraralmacen.cpp \
-    registrarlotegui.cpp \
+    gui/registraralmacen.cpp \
+    gui/registrarlotegui.cpp \
     vacunatoncontradengueclass.cpp \
-    aboutgui.cpp \
-    gestionaratendidos.cpp \
-    gestionarlocal.cpp \
-    gestionarpaciente.cpp \
-    login.cpp \
-    registrarlocal.cpp \
-    registrarpaciente.cpp \
-    registrarpersonalgui.cpp \
-    gestionarpersonalgui.cpp
+    gui/aboutgui.cpp \
+    gui/gestionaratendidos.cpp \
+    gui/gestionarlocal.cpp \
+    gui/gestionarpaciente.cpp \
+    gui/login.cpp \
+    gui/registrarlocal.cpp \
+    gui/registrarpaciente.cpp \
+    gui/registrarpersonalgui.cpp \
+    gui/gestionarpersonalgui.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += gui/mainwindow.h \
     almacenclass.h \
     almaceneslistaclass.h \
     almacengeneralclass.h \
-    atenderpaciente.h \
+    gui/atenderpaciente.h \
     atendidoclass.h \
-    editaralmacen.h \
-    gestionaralmacenes.h \
-    gestionarlotegui.h \
+    gui/editaralmacen.h \
+    gui/gestionaralmacenes.h \
+    gui/gestionarlotegui.h \
     listalocalesclass.h \
     listalotesvacunaclass.h \
     listalotesvacunageneralclass.h \
@@ -72,32 +72,32 @@ HEADERS  += mainwindow.h \
     pacienteclass.h \
     personaclass.h \
     personalclass.h \
-    registraralmacen.h \
-    registrarlotegui.h \
+    gui/registraralmacen.h \
+    gui/registrarlotegui.h \
     vacunatoncontradengueclass.h \
-    aboutgui.h \
-    gestionaratendidos.h \
-    gestionarlocal.h \
-    gestionarpaciente.h \
-    login.h \
-    registrarlocal.h \
-    registrarpaciente.h \
-    registrarpersonalgui.h \
-    gestionarpersonalgui.h
+    gui/aboutgui.h \
+    gui/gestionaratendidos.h \
+    gui/gestionarlocal.h \
+    gui/gestionarpaciente.h \
+    gui/login.h \
+    gui/registrarlocal.h \
+    gui/registrarpaciente.h \
+    gui/registrarpersonalgui.h \
+    gui/gestionarpersonalgui.h
 
-FORMS    += mainwindow.ui \
-    aboutgui.ui \
-    atenderpaciente.ui \
-    editaralmacen.ui \
-    gestionaralmacenes.ui \
-    gestionaratendidos.ui \
-    gestionarlocal.ui \
-    gestionarlotegui.ui \
-    gestionarpaciente.ui \
-    login.ui \
-    registraralmacen.ui \
-    registrarlocal.ui \
-    registrarlotegui.ui \
-    registrarpaciente.ui \
-    registrarpersonalgui.ui \
-    gestionarpersonalgui.ui
+FORMS    += gui/mainwindow.ui \
+    gui/aboutgui.ui \
+    gui/atenderpaciente.ui \
+    gui/editaralmacen.ui \
+    gui/gestionaralmacenes.ui \
+    gui/gestionaratendidos.ui \
+    gui/gestionarlocal.ui \
+    gui/gestionarlotegui.ui \
+    gui/gestionarpaciente.ui \
+    gui/login.ui \
+    gui/registraralmacen.ui \
+    gui/registrarlocal.ui \
+    gui/registrarlotegui.ui \
+    gui/registrarpaciente.ui \
+    gui/registrarpersonalgui.ui \
+    gui/gestionarpersonalgui.ui

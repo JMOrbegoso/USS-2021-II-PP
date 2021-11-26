@@ -1,18 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "aboutgui.h"
-#include <registrarpaciente.h>
-#include <gestionarpaciente.h>
-#include <gestionaratendidos.h>
-#include <registrarlocal.h>
-#include <gestionarlocal.h>
-#include <registraralmacen.h>
-#include <gestionaralmacenes.h>
-#include <registrarpersonalgui.h>
-#include <gestionarpersonalgui.h>
-#include <registrarlotegui.h>
-#include <gestionarlotegui.h>
-#include <atenderpaciente.h>
+#include <gui/aboutgui.h>
+#include <gui/registrarpaciente.h>
+#include <gui/gestionarpaciente.h>
+#include <gui/gestionaratendidos.h>
+#include <gui/registrarlocal.h>
+#include <gui/gestionarlocal.h>
+#include <gui/registraralmacen.h>
+#include <gui/gestionaralmacenes.h>
+#include <gui/registrarpersonalgui.h>
+#include <gui/gestionarpersonalgui.h>
+#include <gui/registrarlotegui.h>
+#include <gui/gestionarlotegui.h>
+#include <gui/atenderpaciente.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
