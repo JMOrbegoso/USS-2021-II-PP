@@ -4,18 +4,18 @@
 
 class listaLotesVacunaClass{
 private:
-    loteVacunaLocalClass *lote;
+    loteVacunaLocalClass *cab;
     int cant;
     int max;
 public:
     listaLotesVacunaClass();
     ~listaLotesVacunaClass();
-    loteVacunaLocalClass *getLote() const;
-    void setLote(loteVacunaLocalClass *value);
     int getCant() const;
     void setCant(int value);
     int getMax() const;
     void setMax(int value);
+    loteVacunaLocalClass *getCab() const;
+    void setCab(loteVacunaLocalClass *value);
 };
 
 #endif // LISTALOTESVACUNACLASS_H

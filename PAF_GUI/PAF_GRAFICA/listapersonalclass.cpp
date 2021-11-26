@@ -22,7 +22,8 @@ void listaPersonalClass::setCant(int value)
 }
 listaPersonalClass::listaPersonalClass()
 {
-
+    cab = NULL;
+    cant = 0;
 }
 
 listaPersonalClass::~listaPersonalClass()

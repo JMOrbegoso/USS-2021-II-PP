@@ -1,16 +1,5 @@
 #include "listalotesvacunaclass.h"
 
-
-loteVacunaLocalClass *listaLotesVacunaClass::getLote() const
-{
-    return lote;
-}
-
-void listaLotesVacunaClass::setLote(loteVacunaLocalClass *value)
-{
-    lote = value;
-}
-
 int listaLotesVacunaClass::getCant() const
 {
     return cant;
@@ -30,9 +19,21 @@ void listaLotesVacunaClass::setMax(int value)
 {
     max = value;
 }
+loteVacunaLocalClass *listaLotesVacunaClass::getCab() const
+{
+    return cab;
+}
+
+void listaLotesVacunaClass::setCab(loteVacunaLocalClass *value)
+{
+    cab = value;
+}
+
 listaLotesVacunaClass::listaLotesVacunaClass()
 {
-
+    cab = NULL;
+    cant = 0;
+    max = 0;
 }
 
 listaLotesVacunaClass::~listaLotesVacunaClass()

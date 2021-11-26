@@ -78,6 +78,7 @@ localClass::localClass()
     this->personales = new listaPersonalClass();
     this->pacientes = new listaPacientesClass();
     this->almacen = new almacenClass();
+
 }
 
 localClass::~localClass()

@@ -52,7 +52,7 @@ void almacenClass::setLotes(listaLotesVacunaClass *value)
 }
 almacenClass::almacenClass()
 {
-
+    this->lotes = new listaLotesVacunaClass();
 }
 
 almacenClass::~almacenClass()

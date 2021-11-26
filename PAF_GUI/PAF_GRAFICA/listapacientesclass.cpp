@@ -22,7 +22,8 @@ void listaPacientesClass::setCant(int value)
 }
 listaPacientesClass::listaPacientesClass()
 {
-
+    cab = NULL;
+    cant = 0;
 }
 
 listaPacientesClass::~listaPacientesClass()
