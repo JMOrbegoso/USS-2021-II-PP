@@ -39,7 +39,6 @@ SOURCES += main.cpp\
     gui/registraralmacen.cpp \
     gui/registrarlotegui.cpp \
     vacunatoncontradengueclass.cpp \
-<<<<<<< Updated upstream
     gui/aboutgui.cpp \
     gui/gestionaratendidos.cpp \
     gui/gestionarlocal.cpp \
@@ -49,16 +48,6 @@ SOURCES += main.cpp\
     gui/registrarpaciente.cpp \
     gui/registrarpersonalgui.cpp \
     gui/gestionarpersonalgui.cpp
-=======
-    aboutgui.cpp \
-    gestionaratendidos.cpp \
-    gestionarlocal.cpp \
-    gestionarpaciente.cpp \
-    login.cpp \
-    registrarlocal.cpp \
-    registrarpaciente.cpp \
-    registrarpersonalgui.cpp
->>>>>>> Stashed changes
 
 HEADERS  += gui/mainwindow.h \
     almacenclass.h \
@@ -86,7 +75,6 @@ HEADERS  += gui/mainwindow.h \
     gui/registraralmacen.h \
     gui/registrarlotegui.h \
     vacunatoncontradengueclass.h \
-<<<<<<< Updated upstream
     gui/aboutgui.h \
     gui/gestionaratendidos.h \
     gui/gestionarlocal.h \
@@ -113,26 +101,3 @@ FORMS    += gui/mainwindow.ui \
     gui/registrarpaciente.ui \
     gui/registrarpersonalgui.ui \
     gui/gestionarpersonalgui.ui
-=======
-    aboutgui.h \
-    gestionaratendidos.h \
-    gestionarlocal.h \
-    gestionarpaciente.h \
-    login.h \
-    registrarlocal.h \
-    registrarpaciente.h \
-    registrarpersonalgui.h
-
-FORMS    += mainwindow.ui \
-    aboutgui.ui \
-    editaralmacen.ui \
-    gestionaralmacenes.ui \
-    gestionaratendidos.ui \
-    gestionarlocal.ui \
-    gestionarpaciente.ui \
-    login.ui \
-    registraralmacen.ui \
-    registrarlocal.ui \
-    registrarpaciente.ui \
-    registrarpersonalgui.ui
->>>>>>> Stashed changes
