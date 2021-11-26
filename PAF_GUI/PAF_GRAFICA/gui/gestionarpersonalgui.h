@@ -15,6 +15,9 @@ public:
     explicit gestionarPersonalGui(QWidget *parent = 0);
     ~gestionarPersonalGui();
 
+private slots:
+    void on_bntVolPers_clicked();
+
 private:
     Ui::gestionarPersonalGui *ui;
 };

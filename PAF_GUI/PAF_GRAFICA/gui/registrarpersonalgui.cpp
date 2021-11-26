@@ -20,7 +20,7 @@ void registrarPersonalGui::clear()
     ui->txtApePers->setText("");
     ui->txtNomPers->setText("");
     ui->txtDirPers->setText("");
-    ui->txtEdadPers->setText("");
+    ui->spinEdaPers->setValue(0);
     ui->txtDniPers->setText("");
     ui->txtTelPers->setText("");
     ui->douSpinSuePers->setValue(0.00);
@@ -50,10 +50,10 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
         msje.setText("El campo DNI debe tener 8 dígitos");
         msje.exec(); return;
     }
-    if(ui->txtEdadPers->text().length()==0){
-        msje.setText("Llene el campo edad");
-        msje.exec(); return;
-    }
+    //if(ui->txtEdadPers->text().length()==0){
+    //    msje.setText("Llene el campo edad");
+    //    msje.exec(); return;
+    //}
     if(ui->txtDirPers->text().length()==0){
         msje.setText("Llene el campo dirección");
         msje.exec(); return;
@@ -66,6 +66,7 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
     pers->setNombre(ui->txtNomPers->text().toStdString());
     pers->setApellido(ui->txtApePers->text().toStdString());
     pers->setDni(ui->txtDniPers->text().toStdString());
+    pers->setEdad(ui->spinEdaPers->value());
     //pers->setEdad(atoi(ui->txtEdadPers->text().toStdString().c_str()));
     pers->setTelefono(ui->txtTelPers->text().toStdString());
     pers->setDireccion(ui->txtDirPers->text().toStdString());
