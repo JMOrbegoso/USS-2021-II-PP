@@ -28,6 +28,8 @@ public:
     void setEstadoLocal(bool value);
     string getNombreLocal() const;
     void setNombreLocal(const string &value);
+    static int getCodigoLocal();
+    static void setCodigoLocal(int value);
 };
 
 #endif // LOCALCLASS_H

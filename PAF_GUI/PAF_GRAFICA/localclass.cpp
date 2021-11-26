@@ -61,6 +61,16 @@ void localClass::setNombreLocal(const string &value)
     nombreLocal = value;
 }
 
+int localClass::getCodigoLocal()
+{
+    return codigoLocal;
+}
+
+void localClass::setCodigoLocal(int value)
+{
+    codigoLocal = value;
+}
+
 localClass::localClass()
 {
     localClass::codigoLocal++;

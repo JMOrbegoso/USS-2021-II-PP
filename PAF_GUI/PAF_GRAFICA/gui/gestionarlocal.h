@@ -18,6 +18,7 @@ public:
 
     listaLocalesClass *getListLocales() const;
     void setListLocales(listaLocalesClass *value);
+    void mostrarListaLocales(listaLocalesClass *locales);
 
 private:
     Ui::gestionarLocal *ui;
