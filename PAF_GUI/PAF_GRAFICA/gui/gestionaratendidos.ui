@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>770</width>
-    <height>409</height>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>24</x>
-     <y>20</y>
+     <x>30</x>
+     <y>60</y>
      <width>151</width>
      <height>31</height>
     </rect>
@@ -32,20 +32,26 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="buscarAtendidoTxt">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>20</y>
+     <y>60</y>
      <width>238</width>
      <height>31</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="buscarAtendidoCmd">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>440</x>
-     <y>20</y>
+     <y>60</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -63,7 +69,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>360</y>
+     <y>390</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -81,7 +87,7 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>360</y>
+     <y>390</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -95,23 +101,50 @@
     <string>Regresar</string>
    </property>
   </widget>
-  <widget class="QTableView" name="listaAtendidosTview">
+  <widget class="QTableWidget" name="listaAtendidosTwidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
+     <x>30</x>
+     <y>110</y>
      <width>671</width>
      <height>221</height>
     </rect>
    </property>
   </widget>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>291</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Elegir Local:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="elegirLocalCbox"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QScrollBar" name="verticalScrollBar">
    <property name="geometry">
     <rect>
-     <x>666</x>
-     <y>90</y>
+     <x>680</x>
+     <y>120</y>
      <width>16</width>
-     <height>181</height>
+     <height>201</height>
     </rect>
    </property>
    <property name="orientation">

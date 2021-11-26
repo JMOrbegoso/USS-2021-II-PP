@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>652</width>
-    <height>365</height>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>20</y>
+     <x>30</x>
+     <y>80</y>
      <width>571</width>
-     <height>281</height>
+     <height>221</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -39,7 +39,11 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="nombreTxt"/>
+     <widget class="QLineEdit" name="nombreTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
@@ -54,7 +58,11 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="apellidoTxt"/>
+     <widget class="QLineEdit" name="apellidoTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_3">
@@ -70,6 +78,9 @@
     </item>
     <item row="2" column="1">
      <widget class="QSpinBox" name="edadSpbox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="minimum">
        <number>18</number>
       </property>
@@ -88,7 +99,17 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="telefonoTxt"/>
+     <widget class="QLineEdit" name="telefonoTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+     </widget>
     </item>
     <item row="5" column="0">
      <widget class="QLabel" name="label_6">
@@ -104,6 +125,9 @@
     </item>
     <item row="5" column="1">
      <widget class="QComboBox" name="enfermedadCbox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <item>
        <property name="text">
         <string>NO</string>
@@ -129,14 +153,40 @@
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QTextEdit" name="direccionTxt"/>
+     <widget class="QTextEdit" name="direccionTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>¿Cual?:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPlainTextEdit" name="cualTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="registrarCmd">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>520</x>
      <y>320</y>
      <width>80</width>
      <height>31</height>
@@ -152,10 +202,13 @@
    </property>
   </widget>
   <widget class="QPushButton" name="editarCmd">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>320</y>
+     <x>10</x>
+     <y>410</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -172,8 +225,8 @@
   <widget class="QPushButton" name="regresarCmd">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>320</y>
+     <x>560</x>
+     <y>410</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -187,7 +240,75 @@
     <string>Regresar</string>
    </property>
   </widget>
+  <widget class="QWidget" name="formLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Local:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="elegirLocalCbox"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>10</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_3">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Fecha:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDateEdit" name="elegirDateEdit"/>
+    </item>
+   </layout>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>elegirLocalCbox</tabstop>
+  <tabstop>elegirDateEdit</tabstop>
+  <tabstop>nombreTxt</tabstop>
+  <tabstop>apellidoTxt</tabstop>
+  <tabstop>edadSpbox</tabstop>
+  <tabstop>telefonoTxt</tabstop>
+  <tabstop>direccionTxt</tabstop>
+  <tabstop>enfermedadCbox</tabstop>
+  <tabstop>cualTxt</tabstop>
+  <tabstop>registrarCmd</tabstop>
+  <tabstop>editarCmd</tabstop>
+  <tabstop>regresarCmd</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
