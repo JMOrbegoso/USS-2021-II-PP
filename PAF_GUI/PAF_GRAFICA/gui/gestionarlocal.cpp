@@ -6,6 +6,7 @@ gestionarLocal::gestionarLocal( QWidget *parent) :
     ui(new Ui::gestionarLocal)
 {
     ui->setupUi(this);
+    this->listLocales = new listaLocalesClass();
     this->ui->twMostrarLocales->setColumnWidth(0, 120);
     this->ui->twMostrarLocales->setColumnWidth(1, 180);
     this->ui->twMostrarLocales->setColumnWidth(2, 280);

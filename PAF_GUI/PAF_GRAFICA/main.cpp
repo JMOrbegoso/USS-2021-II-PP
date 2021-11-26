@@ -2,7 +2,7 @@
 #include <QApplication>
 #include <localclass.h>
 
-int localClass::codigoLocal = 0;
+int localClass::codigoLocal = 1;
 
 int main(int argc, char *argv[])
 {
