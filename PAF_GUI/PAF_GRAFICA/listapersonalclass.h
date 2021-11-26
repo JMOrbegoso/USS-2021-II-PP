@@ -13,6 +13,8 @@ public:
     void setCab(nodoPersonalClass *value);
     int getCant() const;
     void setCant(int value);
+
+    void insertarPersonal(personalClass *pers);
 };
 
 #endif // LISTAPERSONALCLASS_H
