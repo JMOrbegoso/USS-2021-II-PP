@@ -10,9 +10,6 @@ registrarPersonalGui::registrarPersonalGui(QWidget *parent) :
 {
     ui->setupUi(this);
     this->listLocales = new listaLocalesClass();
-    for(int i=0;i < this->listLocales->getCant();i++){
-        ui->selectLocales->addItem(QString::fromUtf8((this->listLocales->getCab()+i)->getNombreLocal().c_str()));
-    }
 }
 
 registrarPersonalGui::~registrarPersonalGui()
@@ -68,6 +65,12 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
         msje.exec(); return;
     }
 
+    int i;
+    for(i = 0; i < this->listLocales->getCant();i++){
+        if((this->listLocales->getCab()+i)->getNombreLocal() == ui->selectLocales->currentText().toStdString())
+            break;
+    }
+
     pers->setNombre(ui->txtNomPers->text().toStdString());
     pers->setApellido(ui->txtApePers->text().toStdString());
     pers->setDni(ui->txtDniPers->text().toStdString());
@@ -83,6 +86,7 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
         pers->setTipoPersonal(false);
 
    // this->lC->insertarCliente( clie );
+    (this->listLocales->getCab()+i)->getPersonales()->insertarPersonal(pers);
     msje.setText("Cliente registrado correctamente");
     msje.exec();
     ui->txtNomPers->setReadOnly(false);
@@ -118,6 +122,7 @@ void registrarPersonalGui::on_selectLocales_textHighlighted(const QString &arg1)
     //this->habilitarCmdTxt();
     string selected;
     selected = arg1.toStdString();
+    listaLocalesClass *listLoc =  this->listLocales;
 }
 
 listaLocalesClass *registrarPersonalGui::getListLocales() const
@@ -128,4 +133,11 @@ listaLocalesClass *registrarPersonalGui::getListLocales() const
 void registrarPersonalGui::setListLocales(listaLocalesClass *value)
 {
     listLocales = value;
+}
+
+void registrarPersonalGui::addListLocalComBox()
+{
+    for(int i=0;i < this->listLocales->getCant();i++){
+        ui->selectLocales->addItem(QString::fromStdString((this->listLocales->getCab()+i)->getNombreLocal()));
+    }
 }

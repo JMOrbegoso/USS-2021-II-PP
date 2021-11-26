@@ -42,7 +42,7 @@ void gestionarLocal::mostrarListaLocales(listaLocalesClass *locales){
     for (int x = 0; x < locales->getCant(); x++){
         this->ui->twMostrarLocales->insertRow(x);
         this->ui->twMostrarLocales->setItem(x, 0, new QTableWidgetItem(QString::number((locales->getCab() + x)->getCodigoLocal())));
-        this->ui->twMostrarLocales->setItem(x, 1, new QTableWidgetItem(QString::fromUtf8((locales->getCab() + x)->getNombreLocal().c_str())));
+        this->ui->twMostrarLocales->setItem(x, 1, new QTableWidgetItem(QString::fromStdString((locales->getCab() + x)->getNombreLocal())));
         this->ui->twMostrarLocales->setItem(x, 2, new QTableWidgetItem(QString::fromUtf8((locales->getCab() + x)->getDireccionLocal().c_str())));
         if ((this->listLocales->getCab() + x)->getEstadoLocal() == true){
             this->ui->twMostrarLocales->setItem(x, 3, new QTableWidgetItem((("Habilitado"))));

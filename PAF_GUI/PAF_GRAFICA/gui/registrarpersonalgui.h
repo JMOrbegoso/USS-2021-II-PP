@@ -23,7 +23,7 @@ public:
     //void habilitarCmdTxt();
     listaLocalesClass *getListLocales() const;
     void setListLocales(listaLocalesClass *value);
-
+    void addListLocalComBox();
 private slots:
     void on_cmdCanMed_clicked();
 

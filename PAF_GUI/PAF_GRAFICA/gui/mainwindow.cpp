@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "QMessageBox"
 
 #include <gui/aboutgui.h>
 #include <gui/registrarpaciente.h>
@@ -83,9 +84,18 @@ void MainWindow::on_actionGestionar_Almacenes_triggered()
 
 void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
 {
-    registrarPersonalGui *reg = new registrarPersonalGui();
-    reg->setListLocales(this->getVacunaDengue()->getLocales());
-    reg->show();
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        registrarPersonalGui *reg = new registrarPersonalGui();
+        reg->setListLocales(this->getVacunaDengue()->getLocales());
+        reg->addListLocalComBox();
+        reg->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero registre locales");
+        msje.exec();
+        return;
+    }
+
 }
 
 
