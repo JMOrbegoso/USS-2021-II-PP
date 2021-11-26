@@ -10,9 +10,6 @@ registrarPersonalGui::registrarPersonalGui(QWidget *parent) :
 {
     ui->setupUi(this);
     this->listLocales = new listaLocalesClass();
-    for(int i=0;i < this->listLocales->getCant();i++){
-        ui->selectLocales->addItem(QString::fromUtf8((this->listLocales->getCab()+i)->getNombreLocal().c_str()));
-    }
 }
 
 registrarPersonalGui::~registrarPersonalGui()
@@ -128,4 +125,11 @@ listaLocalesClass *registrarPersonalGui::getListLocales() const
 void registrarPersonalGui::setListLocales(listaLocalesClass *value)
 {
     listLocales = value;
+}
+
+void registrarPersonalGui::addListLocalComBox()
+{
+    for(int i=0;i < this->listLocales->getCant();i++){
+        ui->selectLocales->addItem(QString::fromStdString((this->listLocales->getCab()+i)->getNombreLocal()));
+    }
 }
