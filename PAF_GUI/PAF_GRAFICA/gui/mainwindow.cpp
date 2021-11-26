@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <vacunatoncontradengueclass.h>
 #include <gui/aboutgui.h>
 #include <gui/registrarpaciente.h>
 #include <gui/gestionarpaciente.h>
@@ -21,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
-listaLocalesClass *locales = new listaLocalesClass();
+vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
 
 MainWindow::~MainWindow()
 {
@@ -54,13 +55,13 @@ void MainWindow::on_actionGestionar_Atenci_n_triggered()
 
 void MainWindow::on_actionRegistrar_local_triggered()
 {
-    registrarLocal *regLocal = new registrarLocal(locales);
+    registrarLocal *regLocal = new registrarLocal(vacunaton->getLocales());
     regLocal->show();
 }
 
 void MainWindow::on_actionGestionar_locales_triggered()
 {
-    gestionarLocal *gesLocal = new gestionarLocal(locales);
+    gestionarLocal *gesLocal = new gestionarLocal(vacunaton->getLocales());
     gesLocal->show();
 }
 
