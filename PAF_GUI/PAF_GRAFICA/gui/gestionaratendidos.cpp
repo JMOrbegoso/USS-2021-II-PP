@@ -1,6 +1,6 @@
 #include "gestionaratendidos.h"
 #include "ui_gestionaratendidos.h"
-#include <registrarpaciente.h>
+#include <gui/registrarpaciente.h>
 
 gestionarAtendidos::gestionarAtendidos(QWidget *parent) :
     QDialog(parent),

@@ -2,6 +2,8 @@
 #define REGISTRARPERSONALGUI_H
 
 #include <QDialog>
+#include <listapersonalclass.h>
+#include <listalocalesclass.h>
 
 namespace Ui {
 class registrarPersonalGui;
@@ -15,6 +17,9 @@ public:
     explicit registrarPersonalGui(QWidget *parent = 0);
     ~registrarPersonalGui();
     void clear();
+    listaPersonalClass *getListPers() const;
+    void setListPers(listaPersonalClass *value);
+
 private slots:
     void on_cmdCanMed_clicked();
 
@@ -22,6 +27,8 @@ private slots:
 
 private:
     Ui::registrarPersonalGui *ui;
+    listaLocalesClass *listLocales;
+    listaPersonalClass *listPers;
 };
 
 #endif // REGISTRARPERSONALGUI_H

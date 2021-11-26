@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <vacunatoncontradengueclass.h>
 
 namespace Ui {
 class MainWindow;
@@ -44,6 +45,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    vacunatonContraDengueClass *vacunaDengue;
 };
 
 #endif // MAINWINDOW_H

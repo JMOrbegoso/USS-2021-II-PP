@@ -83,3 +83,13 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
 
     clear();
 }
+
+listaPersonalClass *registrarPersonalGui::getListPers() const
+{
+    return listPers;
+}
+
+void registrarPersonalGui::setListPers(listaPersonalClass *value)
+{
+    listPers = value;
+}

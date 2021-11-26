@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <vacunatoncontradengueclass.h>
+
 #include <gui/aboutgui.h>
 #include <gui/registrarpaciente.h>
 #include <gui/gestionarpaciente.h>
@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->vacunaDengue = new vacunatonContraDengueClass();
 }
 
 vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
@@ -82,6 +83,7 @@ void MainWindow::on_actionGestionar_Almacenes_triggered()
 void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
 {
     registrarPersonalGui *reg = new registrarPersonalGui();
+
     reg->show();
 }
 

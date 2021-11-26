@@ -1,6 +1,6 @@
 #include "gestionarpaciente.h"
 #include "ui_gestionarpaciente.h"
-#include <registrarpaciente.h>
+#include <gui/registrarpaciente.h>
 
 gestionarPaciente::gestionarPaciente(QWidget *parent) :
     QDialog(parent),

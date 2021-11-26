@@ -1,6 +1,6 @@
 #include "gestionaralmacenes.h"
 #include "ui_gestionaralmacenes.h"
-#include <editaralmacen.h>
+#include <gui/editaralmacen.h>
 
 gestionarAlmacenes::gestionarAlmacenes(QWidget *parent) :
     QDialog(parent),
