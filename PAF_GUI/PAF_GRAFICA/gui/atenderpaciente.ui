@@ -16,8 +16,8 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>10</y>
+     <x>10</x>
+     <y>60</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -38,7 +38,7 @@
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>530</x>
      <y>10</y>
      <width>192</width>
      <height>31</height>
@@ -147,7 +147,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
+     <y>10</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -224,7 +224,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QTableView" name="mostrarPacienteTview">
+  <widget class="QTableWidget" name="mostrarPacienteTview">
    <property name="geometry">
     <rect>
      <x>460</x>
@@ -252,20 +252,20 @@
     <string>Registrar Paciente</string>
    </property>
   </widget>
-  <widget class="QScrollBar" name="verticalScrollBar">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>70</y>
-     <width>16</width>
-     <height>171</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-  </widget>
  </widget>
+ <tabstops>
+  <tabstop>localesComboBox</tabstop>
+  <tabstop>fechaDateTimeEdit</tabstop>
+  <tabstop>enfermerasComboBox</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>dniLineEdit</tabstop>
+  <tabstop>buscarButton</tabstop>
+  <tabstop>mostrarPacienteTview</tabstop>
+  <tabstop>atenderButton</tabstop>
+  <tabstop>registrarPacienteButton</tabstop>
+  <tabstop>regresarButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
