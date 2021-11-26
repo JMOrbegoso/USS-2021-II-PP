@@ -16,8 +16,8 @@ public:
     explicit registrarLocal(listaLocalesClass* locales, QWidget *parent = nullptr);
     ~registrarLocal();
     void limpiarControles();
-    listaLocalesClass *getLLo() const;
-    void setLLo(listaLocalesClass *value);
+    listaLocalesClass *getLocales() const;
+    void setLocales(listaLocalesClass *value);
 
 private slots:
     void on_cancelarLocalPb_clicked();
@@ -26,7 +26,7 @@ private slots:
 
 private:
     Ui::registrarLocal *ui;
-    listaLocalesClass *lLo;
+    listaLocalesClass *locales;
 };
 
 #endif // REGISTRARLOCAL_H

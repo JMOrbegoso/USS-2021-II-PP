@@ -7,7 +7,7 @@ registrarLocal::registrarLocal(listaLocalesClass* locales, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrarLocal)
 {
-    this->lLo = locales;
+    this->locales = locales;
     ui->setupUi(this);
 }
 
@@ -42,7 +42,7 @@ void registrarLocal::on_registrarLocalPb_clicked()
     }else{
         local->setEstadoLocal(false);
     }
-    this->lLo->insertarLocal(local);
+    this->locales->insertarLocal(local);
     msje.setText("Local Registrado Correctamente");
     msje.exec();
     limpiarControles();
@@ -55,13 +55,13 @@ void registrarLocal::limpiarControles()
     ui->nombreLocalTxt->setFocus();
 }
 
-listaLocalesClass *registrarLocal::getLLo() const
+listaLocalesClass *registrarLocal::getLocales() const
 {
-    return lLo;
+    return this->locales;
 }
 
-void registrarLocal::setLLo(listaLocalesClass *value)
+void registrarLocal::setLocales(listaLocalesClass *value)
 {
-    lLo = value;
+    this->locales = value;
 }
 
