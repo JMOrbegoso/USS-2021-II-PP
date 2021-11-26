@@ -14,6 +14,9 @@
    <string>Gestionar Pacientes Registrados</string>
   </property>
   <widget class="QPushButton" name="buscarPacienteCmd">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -68,6 +71,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="editarCmd">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -86,6 +92,9 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="buscarPacienteTxt">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>150</x>

@@ -32,6 +32,9 @@
    </property>
   </widget>
   <widget class="QLineEdit" name="buscarAtendidoTxt">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -42,6 +45,9 @@
    </property>
   </widget>
   <widget class="QPushButton" name="buscarAtendidoCmd">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>440</x>
