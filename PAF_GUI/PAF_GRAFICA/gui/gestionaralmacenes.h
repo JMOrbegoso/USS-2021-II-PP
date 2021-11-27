@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::gestionarAlmacenes *ui;
+
 };
 
 #endif // GESTIONARALMACENES_H

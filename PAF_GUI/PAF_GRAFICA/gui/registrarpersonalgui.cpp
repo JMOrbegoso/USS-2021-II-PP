@@ -22,11 +22,11 @@ void registrarPersonalGui::clear()
     ui->txtApePers->setText("");
     ui->txtNomPers->setText("");
     ui->txtDirPers->setText("");
-    ui->spinEdaPers->setValue(0);
+    ui->spinEdaPers->setValue(18);
     ui->txtDniPers->setText("");
     ui->txtTelPers->setText("");
-    ui->douSpinSuePers->setValue(0.00);
-    ui->spinHdtPers->setValue(0);
+    ui->douSpinSuePers->setValue(900.00);
+    ui->spinHdtPers->setValue(8);
     //ui->txtApePers->clear();
 }
 
@@ -87,7 +87,7 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
 
    // this->lC->insertarCliente( clie );
     (this->listLocales->getCab()+i)->getPersonales()->insertarPersonal(pers);
-    msje.setText("Cliente registrado correctamente");
+    msje.setText("Personal registrado correctamente");
     msje.exec();
     ui->txtNomPers->setReadOnly(false);
     clear();
