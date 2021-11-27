@@ -63,8 +63,7 @@ void MainWindow::on_actionGestionar_locales_triggered()
 {
     gestionarLocal *gesLocal = new gestionarLocal();
     gesLocal->setListLocales(this->getVacunaDengue()->getLocales());
-    gesLocal->show(); //set -> poner     //get  -> obtener
-    gesLocal->mostrarListaLocales(this->getVacunaDengue()->getLocales());
+    gesLocal->show();
 }
 
 void MainWindow::on_actionRegistrar_Almacen_triggered()
@@ -94,7 +93,6 @@ void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
         msje.exec();
         return;
     }
-
 }
 
 

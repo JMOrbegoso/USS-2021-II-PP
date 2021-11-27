@@ -18,11 +18,11 @@ public:
 
     listaLocalesClass *getListLocales() const;
     void setListLocales(listaLocalesClass *value);
-    void mostrarListaLocales(listaLocalesClass *locales);
+    void actualizarControles();
 
 private:
     Ui::gestionarLocal *ui;
-    listaLocalesClass *listLocales;
+    listaLocalesClass *locales;
 };
 
 #endif // GESTIONARLOCAL_H
