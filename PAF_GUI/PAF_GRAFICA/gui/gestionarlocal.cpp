@@ -75,7 +75,9 @@ void gestionarLocal::on_twMostrarLocales_itemClicked(QTableWidgetItem *item)
 
 void gestionarLocal::on_editarLocalPb_clicked()
 {
-    for (int x = 0; x < this->locales->getCant(); x++){
-
-    }
+    int x = this->ui->twMostrarLocales->currentRow();
+    (this->locales->getCab() + x)->setNombreLocal(ui->txtNombre->text().toStdString());
+    (this->locales->getCab() + x)->setDireccionLocal(ui->txtDireccion->text().toStdString());
+    this->ui->twMostrarLocales->item(x, 1)->setText(QString::fromStdString(ui->txtNombre->text().toStdString()));
+    this->ui->twMostrarLocales->item(x, 2)->setText(QString::fromStdString(ui->txtDireccion->text().toStdString()));
 }
