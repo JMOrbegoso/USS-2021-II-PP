@@ -1,5 +1,6 @@
 #include "pacienteclass.h"
 
+int pacienteClass::contador = 1;
 
 string pacienteClass::getEnfermedad() const
 {
@@ -30,9 +31,15 @@ void pacienteClass::setCualEnfermedad(const string &value)
     cualEnfermedad = value;
 }
 
+string pacienteClass::getCodigo()
+{
+    return this->codigo;
+}
+
 pacienteClass::pacienteClass()
 {
-
+    this->codigo = "PACI-" + to_string(pacienteClass::contador);
+    pacienteClass::contador++;
 }
 
 pacienteClass::~pacienteClass()
