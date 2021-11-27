@@ -40,7 +40,7 @@ void gestionarLocal::actualizarControles(){
 
         // Propiedades en ui
         this->ui->twMostrarLocales->insertRow(x);
-        this->ui->twMostrarLocales->setItem(x, 0, new QTableWidgetItem(QString::number(codigo)));
+        this->ui->twMostrarLocales->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
         this->ui->twMostrarLocales->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(nombre)));
         this->ui->twMostrarLocales->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(direccion)));
         this->ui->twMostrarLocales->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(estadoTexto)));

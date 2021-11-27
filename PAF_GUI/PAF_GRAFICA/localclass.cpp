@@ -1,6 +1,8 @@
 #include "localclass.h"
 #include <windows.h>
 
+int localClass::contador = 1;
+
 listaPersonalClass *localClass::getPersonales() const
 {
     return personales;
@@ -61,24 +63,20 @@ void localClass::setNombreLocal(const string &value)
     nombreLocal = value;
 }
 
-int localClass::getCodigoLocal()
+string localClass::getCodigoLocal()
 {
-    return codigoLocal;
-}
-
-void localClass::setCodigoLocal(int value)
-{
-    codigoLocal = value;
+    return this->codigo;
 }
 
 localClass::localClass()
 {
-    localClass::codigoLocal++;
+    this->codigo = "local-" + to_string(localClass::contador);
+    localClass::contador++;
+
     this->estadoLocal = TRUE;
     this->personales = new listaPersonalClass();
     this->pacientes = new listaPacientesClass();
     this->almacen = new almacenClass();
-
 }
 
 localClass::~localClass()
