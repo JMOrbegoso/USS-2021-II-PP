@@ -14,6 +14,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     almaceneslistaclass.cpp \
+    datossemillaclass.cpp \
     gui/atenderpaciente.cpp \
     gui/editaralmacen.cpp \
     gui/gestionaralmacenes.cpp \
@@ -53,6 +54,7 @@ HEADERS  += gui/mainwindow.h \
     almacenclass.h \
     almaceneslistaclass.h \
     almacengeneralclass.h \
+    datossemillaclass.h \
     gui/atenderpaciente.h \
     atendidoclass.h \
     gui/editaralmacen.h \
