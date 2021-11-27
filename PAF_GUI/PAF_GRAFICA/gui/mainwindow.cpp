@@ -20,7 +20,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);    
+    ui->setupUi(this);
+
+    this->centralWidget()->setStyleSheet("background-image:url(:/img/bg.jpg); background-position: center;");
 }
 
 MainWindow::~MainWindow()
