@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>793</width>
-    <height>468</height>
+    <width>790</width>
+    <height>481</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Gestionar Pacientes Registrados</string>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
   </property>
   <widget class="QPushButton" name="buscarPacienteCmd">
    <property name="enabled">
@@ -20,7 +23,7 @@
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>70</y>
+     <y>90</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -38,7 +41,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>420</y>
+     <y>440</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -56,7 +59,7 @@
    <property name="geometry">
     <rect>
      <x>700</x>
-     <y>420</y>
+     <y>440</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -77,7 +80,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>360</y>
+     <y>380</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -98,7 +101,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>70</y>
+     <y>90</y>
      <width>238</width>
      <height>31</height>
     </rect>
@@ -108,7 +111,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>70</y>
+     <y>90</y>
      <width>95</width>
      <height>31</height>
     </rect>
@@ -145,7 +148,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QComboBox" name="comboBox"/>
+     <widget class="QComboBox" name="elegirLocalCbox"/>
     </item>
    </layout>
   </widget>
@@ -153,30 +156,94 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>120</y>
-     <width>691</width>
+     <y>130</y>
+     <width>681</width>
      <height>221</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>CODIGO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>DNI</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>NOMBRE</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>APELLIDO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>EDAD</string>
+    </property>
+   </column>
   </widget>
-  <widget class="QScrollBar" name="verticalScrollBar">
+  <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>130</y>
-     <width>16</width>
-     <height>201</height>
+     <x>450</x>
+     <y>20</y>
+     <width>301</width>
+     <height>52</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Direccion:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="direccionTxt">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Nombre:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="nombreLocalTxt">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>comboBox</tabstop>
+  <tabstop>elegirLocalCbox</tabstop>
+  <tabstop>direccionTxt</tabstop>
   <tabstop>buscarPacienteTxt</tabstop>
   <tabstop>buscarPacienteCmd</tabstop>
+  <tabstop>mostrarPacienteTwidget</tabstop>
   <tabstop>editarCmd</tabstop>
   <tabstop>registrarPacienteCmd</tabstop>
   <tabstop>regresarCmd</tabstop>
