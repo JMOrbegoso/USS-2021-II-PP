@@ -30,6 +30,8 @@ private slots:
 
     void on_editarLocalPb_clicked();
 
+    void on_registrarLocalPb_clicked();
+
 private:
     Ui::gestionarLocal *ui;
     listaLocalesClass *locales;
