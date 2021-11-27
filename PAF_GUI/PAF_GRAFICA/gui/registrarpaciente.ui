@@ -16,9 +16,9 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>80</y>
-     <width>571</width>
+     <x>20</x>
+     <y>50</y>
+     <width>601</width>
      <height>231</height>
     </rect>
    </property>
@@ -176,6 +176,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
     <item row="0" column="0">
@@ -197,7 +200,7 @@
    <property name="geometry">
     <rect>
      <x>540</x>
-     <y>340</y>
+     <y>300</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -277,37 +280,9 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="formLayoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>10</y>
-     <width>191</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout_3">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_8">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Fecha:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QDateEdit" name="elegirDateEdit"/>
-    </item>
-   </layout>
-  </widget>
  </widget>
  <tabstops>
   <tabstop>elegirLocalCbox</tabstop>
-  <tabstop>elegirDateEdit</tabstop>
   <tabstop>nombreTxt</tabstop>
   <tabstop>apellidoTxt</tabstop>
   <tabstop>edadSpbox</tabstop>

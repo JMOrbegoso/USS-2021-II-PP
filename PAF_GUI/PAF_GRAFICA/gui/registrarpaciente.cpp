@@ -38,7 +38,6 @@ void registrarPaciente::clear()
     ui->edadSpbox->setValue(18);
     ui->telefonoTxt->setText("");
     ui->direccionTxt->setText("");
-    ui->elegirDateEdit->clear();
     ui->enfermedadCbox->clear();
     ui->cualTxt->clear();
 }
@@ -71,10 +70,10 @@ void registrarPaciente::on_registrarCmd_clicked()
     }
     if(ui->enfermedadCbox->currentText() == "SI"){
         if(ui->cualTxt->toPlainText().length() == 0){
-            msje.setText("Debe llenar el Campo de la enfermedad");
-            msje.exec();
-            return;
-        }
+                msje.setText("Debe llenar el Campo de la enfermedad");
+                msje.exec();
+                return;
+          }
     }
     if(ui->telefonoTxt->text().length() != 9){
         msje.setText("El Campo Telefono debe tener 9 dígitos");

@@ -52,9 +52,18 @@ void MainWindow::on_actionRegistrar_Paciente_triggered()
 }
 
 void MainWindow::on_actionGestionar_Pacientes_triggered()
-{
-    gestionarPaciente *gesPaciente = new gestionarPaciente();
-    gesPaciente->show();
+{   
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        gestionarPaciente *gesPaciente = new gestionarPaciente();
+        gesPaciente->setLocales(this->getVacunaDengue()->getLocales());
+        gesPaciente->listaLocalComboBox();
+        gesPaciente->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero Debe Registrar Locales");
+        msje.exec();
+        return;
+    }
 }
 
 void MainWindow::on_actionGestionar_Atenci_n_triggered()
