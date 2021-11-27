@@ -54,9 +54,13 @@ void gestionarLocal::on_regresarPb_clicked()
 
 void gestionarLocal::on_habilitarInLocalPb_clicked()
 {
-    auto i = this->ui->twMostrarLocales->currentRow();
-    auto item = (this->locales->getCab() + i);
+    int x = this->ui->twMostrarLocales->currentRow();
+    auto item = (this->locales->getCab() + x);
     item->setEstadoLocal(!item->getEstadoLocal());
+
+    auto estado = item->getEstadoLocal();
+    auto estadoTexto = estado ? "Habilitado" : "Inhabilitado";
+    this->ui->twMostrarLocales->item(x, 3)->setText(QString::fromStdString(estadoTexto));
 }
 
 void gestionarLocal::on_twMostrarLocales_itemClicked(QTableWidgetItem *item)
