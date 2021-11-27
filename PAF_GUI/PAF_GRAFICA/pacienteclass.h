@@ -4,12 +4,21 @@
 
 class pacienteClass : public personaClass{
 private:
+    static int contador;
+    string codigo;
     string enfermedad;
+    string fecha;
+    string cualEnfermedad;
 public:
     pacienteClass();
     ~pacienteClass();
     string getEnfermedad() const;
     void setEnfermedad(const string &value);
+    string getFecha() const;
+    void setFecha(const string &value);
+    string getCualEnfermedad() const;
+    void setCualEnfermedad(const string &value);
+    string getCodigo();
 };
 
 #endif // PACIENTECLASS_H

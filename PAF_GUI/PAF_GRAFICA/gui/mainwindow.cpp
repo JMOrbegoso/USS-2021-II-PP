@@ -20,8 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    this->vacunaDengue = new vacunatonContraDengueClass();
+    ui->setupUi(this);    
 }
 
 MainWindow::~MainWindow()
@@ -37,8 +36,17 @@ void MainWindow::on_actionAcerca_de_triggered()
 
 void MainWindow::on_actionRegistrar_Paciente_triggered()
 {
-    registrarPaciente *regiPaciente = new registrarPaciente();
-    regiPaciente->show();
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        registrarPaciente *regiPaciente = new registrarPaciente();
+        regiPaciente->setLocales(this->getVacunaDengue()->getLocales());
+        regiPaciente->listaLocalComboBox();
+        regiPaciente->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero Debe Registrar Locales");
+        msje.exec();
+        return;
+    }
 }
 
 void MainWindow::on_actionGestionar_Pacientes_triggered()
@@ -64,8 +72,7 @@ void MainWindow::on_actionGestionar_locales_triggered()
 {
     gestionarLocal *gesLocal = new gestionarLocal();
     gesLocal->setListLocales(this->getVacunaDengue()->getLocales());
-    gesLocal->show(); //set -> poner     //get  -> obtener
-    gesLocal->mostrarListaLocales(this->getVacunaDengue()->getLocales());
+    gesLocal->show();
 }
 
 void MainWindow::on_actionRegistrar_Almacen_triggered()
@@ -95,7 +102,6 @@ void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
         msje.exec();
         return;
     }
-
 }
 
 
@@ -129,10 +135,10 @@ void MainWindow::on_actionAtender_Paciente_triggered()
 
 vacunatonContraDengueClass *MainWindow::getVacunaDengue() const
 {
-    return vacunaDengue;
+    return this->vacunaDengue;
 }
 
 void MainWindow::setVacunaDengue(vacunatonContraDengueClass *value)
 {
-    vacunaDengue = value;
+    this->vacunaDengue = value;
 }

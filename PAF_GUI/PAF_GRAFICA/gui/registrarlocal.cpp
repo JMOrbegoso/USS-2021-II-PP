@@ -7,7 +7,6 @@ registrarLocal::registrarLocal(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::registrarLocal)
 {
-    //this->locales = locales;
     ui->setupUi(this);
 }
 
@@ -24,6 +23,7 @@ void registrarLocal::on_cancelarLocalPb_clicked()
 void registrarLocal::on_registrarLocalPb_clicked()
 {
     QMessageBox msje;
+
     localClass *local = new localClass();
     if (ui->nombreLocalTxt->text().length() == 0){
         msje.setText("Debe Ingresar el Nombre del Local");
@@ -37,15 +37,16 @@ void registrarLocal::on_registrarLocalPb_clicked()
     }
     local->setNombreLocal(ui->nombreLocalTxt->text().toStdString());
     local->setDireccionLocal(ui->direccionLocalTxt->toPlainText().toStdString());
-    if (ui->habilitarLocalRb->isChecked() == true){
-        local->setEstadoLocal(true);
-    }else{
-        local->setEstadoLocal(false);
-    }
+    local->setEstadoLocal(ui->habilitarLocalRb->isChecked());
+
     this->locales->insertarLocal(local);
+
+    // Muestra mensaje del resultado
     msje.setText("Local Registrado Correctamente");
     msje.exec();
-    limpiarControles();
+
+    // Limpia controles del formulario
+    this->limpiarControles();
 }
 
 void registrarLocal::limpiarControles()
