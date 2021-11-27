@@ -18,6 +18,7 @@ public:
     void insertarLocal(localClass *local);
     localClass *getCab() const;
     void setCab(localClass *value);
+    listaLocalesClass* filtrarPorDireccion(string direccion);
 };
 
 #endif // LISTALOCALESCLASS_H
