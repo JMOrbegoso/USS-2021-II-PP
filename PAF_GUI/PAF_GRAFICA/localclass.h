@@ -6,10 +6,11 @@
 
 class localClass{
 private:
+    static int contador;
     listaPersonalClass *personales;
     listaPacientesClass *pacientes;
     almacenClass *almacen;
-    static int codigoLocal;
+    string codigo;
     string nombreLocal;
     string direccionLocal;
     bool estadoLocal;
@@ -28,8 +29,7 @@ public:
     void setEstadoLocal(bool value);
     string getNombreLocal() const;
     void setNombreLocal(const string &value);
-    static int getCodigoLocal();
-    static void setCodigoLocal(int value);
+    string getCodigoLocal();
 };
 
 #endif // LOCALCLASS_H

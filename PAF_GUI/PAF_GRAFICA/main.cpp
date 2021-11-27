@@ -3,8 +3,6 @@
 #include <localclass.h>
 #include <datossemillaclass.h>
 
-int localClass::codigoLocal = 1;
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
