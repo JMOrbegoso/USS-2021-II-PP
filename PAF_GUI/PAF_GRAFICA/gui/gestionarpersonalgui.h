@@ -18,10 +18,10 @@ public:
 
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
-    listaPersonalClass *getPers() const;
-    void setPers(listaPersonalClass *value);
+    listaPersonalClass *getPersonal() const;
+    void setPersonal(listaPersonalClass *value);
 
-    void actualizarControles(listaPersonalClass *pers);
+    void actualizarControles(listaPersonalClass *personal = NULL);
     void addListLocalComBox();
 
 private slots:
@@ -32,7 +32,7 @@ private slots:
 private:
     Ui::gestionarPersonalGui *ui;
     listaLocalesClass *locales;
-    listaPersonalClass *pers;
+    listaPersonalClass *personal;
 };
 
 #endif // GESTIONARPERSONALGUI_H

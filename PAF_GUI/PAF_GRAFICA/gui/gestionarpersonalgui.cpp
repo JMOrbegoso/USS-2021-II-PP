@@ -25,33 +25,40 @@ void gestionarPersonalGui::on_bntVolPers_clicked()
     this->close();
 }
 
-listaPersonalClass *gestionarPersonalGui::getPers() const
+listaPersonalClass *gestionarPersonalGui::getPersonal() const
 {
-    return pers;
+    return this->personal;
 }
 
-void gestionarPersonalGui::setPers(listaPersonalClass *value)
+void gestionarPersonalGui::setPersonal(listaPersonalClass *value)
 {
-    pers = value;
+    this->personal = value;
+
+    this->actualizarControles();
 }
 
 listaLocalesClass *gestionarPersonalGui::getLocales() const
 {
-    return locales;
+    return this->locales;
 }
 
 void gestionarPersonalGui::setLocales(listaLocalesClass *value)
 {
-    locales = value;
-    this->actualizarControles(this->locales->getCab()->getPersonales());
+    this->locales = value;
+
+    this->setPersonal(this->locales->getCab()->getPersonales());
 }
 
-void gestionarPersonalGui::actualizarControles(listaPersonalClass *pers){
-    nodoPersonalClass *aux = new nodoPersonalClass();
-    aux = pers->getCab();
+void gestionarPersonalGui::actualizarControles(listaPersonalClass *personal){
+    personal = personal == NULL ? this->personal : personal;
+
+    // Limpia todo el contenido de la tabla
+    this->ui->tablePers->setRowCount(0);
+
+    // LLena el contenido de la tabla
     int x = 0;
-    this->ui->tablePers->clearContents();
-    //ui->tablePers->rowCount(); //cuantas filas hay
+    nodoPersonalClass *aux = personal->getCab();
+
     while(aux != NULL){
         // Propiedades a mostrar
         auto codigo = aux->getInfo()->getCodigo();
@@ -70,6 +77,7 @@ void gestionarPersonalGui::actualizarControles(listaPersonalClass *pers){
         this->ui->tablePers->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(to_string(edad))));
         this->ui->tablePers->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(dni)));
         this->ui->tablePers->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(estadoTexto)));
+
         aux = aux->getSgte();
     }
 }
