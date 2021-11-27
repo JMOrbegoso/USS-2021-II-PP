@@ -19,9 +19,8 @@ public:
 
     listaLocalesClass *getListLocales() const;
     void setListLocales(listaLocalesClass *value);
-    void actualizarControles();
 
-private slots:
+private slots:    
     void on_regresarPb_clicked();
 
     void on_habilitarInLocalPb_clicked();
@@ -32,9 +31,12 @@ private slots:
 
     void on_registrarLocalPb_clicked();
 
+    void on_buscarLocalTxt_textChanged(const QString &arg);
+
 private:
     Ui::gestionarLocal *ui;
     listaLocalesClass *locales;
+    void actualizarControles(listaLocalesClass* locales = NULL);
 };
 
 #endif // GESTIONARLOCAL_H

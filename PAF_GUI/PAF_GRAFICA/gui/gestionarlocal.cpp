@@ -30,13 +30,19 @@ void gestionarLocal::setListLocales(listaLocalesClass *value)
     this->actualizarControles();
 }
 
-void gestionarLocal::actualizarControles(){
-    for (int x = 0; x < this->locales->getCant(); x++){
+void gestionarLocal::actualizarControles(listaLocalesClass* locales){
+    locales = locales == NULL ? this->locales : locales;
+
+    // Limpia todo el contenido de la tabla
+    this->ui->twMostrarLocales->setRowCount(0);
+
+    // LLena el contenido de la tabla
+    for (int x = 0; x < locales->getCant(); x++){
         // Propiedades a mostrar
-        string codigo = (this->locales->getCab() + x)->getCodigoLocal();
-        string nombre = (this->locales->getCab() + x)->getNombreLocal();
-        string direccion = (this->locales->getCab() + x)->getDireccionLocal();
-        bool estado = (this->locales->getCab() + x)->getEstadoLocal();
+        string codigo = (locales->getCab() + x)->getCodigoLocal();
+        string nombre = (locales->getCab() + x)->getNombreLocal();
+        string direccion = (locales->getCab() + x)->getDireccionLocal();
+        bool estado = (locales->getCab() + x)->getEstadoLocal();
         string estadoTexto = estado ? "Habilitado" : "Inhabilitado";
 
         // Propiedades en ui
@@ -97,4 +103,10 @@ void gestionarLocal::on_registrarLocalPb_clicked()
     local->setLocales(this->locales);
     local->show();
     //Falta actualizar al cerrar uwu
+}
+
+void gestionarLocal::on_buscarLocalTxt_textChanged(const QString &arg)
+{
+    auto localesFiltradosPorDireccion = this->locales->filtrarPorDireccion(arg.toStdString());
+    this->actualizarControles(localesFiltradosPorDireccion);
 }
