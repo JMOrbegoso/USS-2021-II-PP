@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>654</width>
-    <height>360</height>
+    <width>586</width>
+    <height>305</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Vacunatón con Dengue</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -19,8 +19,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>654</width>
-     <height>20</height>
+     <width>586</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLocales">

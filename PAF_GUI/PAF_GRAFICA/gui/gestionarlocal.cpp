@@ -1,5 +1,6 @@
 #include "gestionarlocal.h"
 #include "ui_gestionarlocal.h"
+#include <gui/registrarlocal.h>
 
 gestionarLocal::gestionarLocal( QWidget *parent) :
     QDialog(parent),
@@ -80,4 +81,12 @@ void gestionarLocal::on_editarLocalPb_clicked()
     (this->locales->getCab() + x)->setDireccionLocal(ui->txtDireccion->text().toStdString());
     this->ui->twMostrarLocales->item(x, 1)->setText(QString::fromStdString(ui->txtNombre->text().toStdString()));
     this->ui->twMostrarLocales->item(x, 2)->setText(QString::fromStdString(ui->txtDireccion->text().toStdString()));
+}
+
+void gestionarLocal::on_registrarLocalPb_clicked()
+{
+    registrarLocal *local = new registrarLocal();
+    local->setLocales(this->locales);
+    local->show();
+    //Falta actualizar al cerrar uwu
 }
