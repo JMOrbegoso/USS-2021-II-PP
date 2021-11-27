@@ -33,11 +33,11 @@ void gestionarLocal::setListLocales(listaLocalesClass *value)
 void gestionarLocal::actualizarControles(){
     for (int x = 0; x < this->locales->getCant(); x++){
         // Propiedades a mostrar
-        auto codigo = (this->locales->getCab() + x)->getCodigoLocal();
-        auto nombre = (this->locales->getCab() + x)->getNombreLocal();
-        auto direccion = (this->locales->getCab() + x)->getDireccionLocal();
-        auto estado = (this->locales->getCab() + x)->getEstadoLocal();
-        auto estadoTexto = estado ? "Habilitado" : "Inhabilitado";
+        string codigo = (this->locales->getCab() + x)->getCodigoLocal();
+        string nombre = (this->locales->getCab() + x)->getNombreLocal();
+        string direccion = (this->locales->getCab() + x)->getDireccionLocal();
+        bool estado = (this->locales->getCab() + x)->getEstadoLocal();
+        string estadoTexto = estado ? "Habilitado" : "Inhabilitado";
 
         // Propiedades en ui
         this->ui->twMostrarLocales->insertRow(x);
@@ -56,31 +56,39 @@ void gestionarLocal::on_regresarPb_clicked()
 void gestionarLocal::on_habilitarInLocalPb_clicked()
 {
     int x = this->ui->twMostrarLocales->currentRow();
-    auto item = (this->locales->getCab() + x);
+    localClass* item = (this->locales->getCab() + x);
     item->setEstadoLocal(!item->getEstadoLocal());
 
-    auto estado = item->getEstadoLocal();
-    auto estadoTexto = estado ? "Habilitado" : "Inhabilitado";
+    string estadoTexto = item->getEstadoLocal() ? "Habilitado" : "Inhabilitado";
     this->ui->twMostrarLocales->item(x, 3)->setText(QString::fromStdString(estadoTexto));
 }
 
 void gestionarLocal::on_twMostrarLocales_itemClicked(QTableWidgetItem *item)
 {
-    int fila;
-    fila = item->row();
-    QTableWidgetItem *nombre = ui->twMostrarLocales->item(fila, 1);
-    QTableWidgetItem *direccion = ui->twMostrarLocales->item(fila, 2);
-    ui->txtNombre->setText(nombre->text());
-    ui->txtDireccion->setText(direccion->text());
+    int fila = item->row();
+
+    QTableWidgetItem *nombre = this->ui->twMostrarLocales->item(fila, 1);
+    QTableWidgetItem *direccion = this->ui->twMostrarLocales->item(fila, 2);
+
+    this->ui->txtNombre->setText(nombre->text());
+    this->ui->txtDireccion->setText(direccion->text());
 }
 
 void gestionarLocal::on_editarLocalPb_clicked()
 {
     int x = this->ui->twMostrarLocales->currentRow();
-    (this->locales->getCab() + x)->setNombreLocal(ui->txtNombre->text().toStdString());
-    (this->locales->getCab() + x)->setDireccionLocal(ui->txtDireccion->text().toStdString());
-    this->ui->twMostrarLocales->item(x, 1)->setText(QString::fromStdString(ui->txtNombre->text().toStdString()));
-    this->ui->twMostrarLocales->item(x, 2)->setText(QString::fromStdString(ui->txtDireccion->text().toStdString()));
+
+    // Valores de las cajas de texto
+    string nombreNuevo = this->ui->txtNombre->text().toStdString();
+    string direccionNueva = this->ui->txtDireccion->text().toStdString();;
+
+    // Edición del elemento de la lista
+    (this->locales->getCab() + x)->setNombreLocal(nombreNuevo);
+    (this->locales->getCab() + x)->setDireccionLocal(direccionNueva);
+
+    // Edición del elemento en la tabla
+    this->ui->twMostrarLocales->item(x, 1)->setText(QString::fromStdString(nombreNuevo));
+    this->ui->twMostrarLocales->item(x, 2)->setText(QString::fromStdString(direccionNueva));
 }
 
 void gestionarLocal::on_registrarLocalPb_clicked()
