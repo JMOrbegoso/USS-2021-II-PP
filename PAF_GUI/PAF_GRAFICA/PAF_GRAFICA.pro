@@ -103,3 +103,6 @@ FORMS    += gui/mainwindow.ui \
     gui/registrarpaciente.ui \
     gui/registrarpersonalgui.ui \
     gui/gestionarpersonalgui.ui
+
+RESOURCES += \
+    resource.qrc
