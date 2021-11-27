@@ -36,8 +36,17 @@ void MainWindow::on_actionAcerca_de_triggered()
 
 void MainWindow::on_actionRegistrar_Paciente_triggered()
 {
-    registrarPaciente *regiPaciente = new registrarPaciente();
-    regiPaciente->show();
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        registrarPaciente *regiPaciente = new registrarPaciente();
+        regiPaciente->setLocales(this->getVacunaDengue()->getLocales());
+        regiPaciente->listaLocalComboBox();
+        regiPaciente->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero Debe Registrar Locales");
+        msje.exec();
+        return;
+    }
 }
 
 void MainWindow::on_actionGestionar_Pacientes_triggered()
