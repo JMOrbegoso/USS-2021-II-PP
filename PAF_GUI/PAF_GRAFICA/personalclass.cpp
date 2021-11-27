@@ -30,6 +30,14 @@ void personalClass::setTipoPersonal(bool value)
 {
     tipoPersonal = value;
 }
+
+personalClass::personalClass(string nombre, string apellido, string dni, string telefono, string direccion, int edad, float sueldo, string horasTrabajo, bool tipoPersonal) : personaClass(nombre, apellido, dni, telefono, direccion, edad)
+{
+    this->sueldo = sueldo;
+    this->horasTrabajo = horasTrabajo;
+    this->tipoPersonal = tipoPersonal;
+}
+
 personalClass::personalClass()
 {
 

@@ -8,6 +8,7 @@ private:
     string horasTrabajo;
     bool tipoPersonal;
 public:
+    personalClass(string nombre, string apellido, string dni, string telefono, string direccion, int edad, float sueldo, string horasTrabajo, bool tipoPersonal);
     personalClass();
     ~personalClass();
     float getSueldo() const;
