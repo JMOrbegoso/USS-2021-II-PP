@@ -52,3 +52,32 @@ void gestionarLocal::mostrarListaLocales(listaLocalesClass *locales){
     }
 }
 
+void gestionarLocal::on_regresarPb_clicked()
+{
+    this->close();
+}
+
+void gestionarLocal::on_habilitarInLocalPb_clicked()
+{
+    for(int i = 0; i < this->listLocales->getCant();i++){
+        //if((this->listLocales->getCab()+i)->getNombreLocal() == ui->twMostrarLocales->currentText().toStdString())
+            break;
+    }
+}
+
+void gestionarLocal::on_twMostrarLocales_itemClicked(QTableWidgetItem *item)
+{
+    int fila;
+    fila = item->row();
+    QTableWidgetItem *nombre = ui->twMostrarLocales->item(fila, 1);
+    QTableWidgetItem *direccion = ui->twMostrarLocales->item(fila, 2);
+    ui->txtNombre->setText(nombre->text());
+    ui->txtDireccion->setText(direccion->text());
+}
+
+void gestionarLocal::on_editarLocalPb_clicked()
+{
+    for (int x = 0; x < this->listLocales->getCant(); x++){
+
+    }
+}
