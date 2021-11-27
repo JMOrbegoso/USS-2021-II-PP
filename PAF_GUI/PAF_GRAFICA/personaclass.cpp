@@ -1,5 +1,6 @@
 #include "personaclass.h"
 
+int personaClass::contador = 1;
 
 string personaClass::getNombre() const
 {
@@ -65,9 +66,17 @@ string personaClass::getCodigo() const
     return codigo;
 }
 
-void personaClass::setCodigo(const string &value)
+personaClass::personaClass(string nombre, string apellido, string dni, string telefono, string direccion, int edad)
 {
-    codigo = value;
+    this->codigo = "per-" + to_string(personaClass::contador);
+    personaClass::contador++;
+
+    this->nombre = nombre;
+    this->apellido = apellido;
+    this->dni = dni;
+    this->telefono = telefono;
+    this->direccion = direccion;
+    this->edad = edad;
 }
 
 personaClass::personaClass()

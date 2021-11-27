@@ -7,6 +7,7 @@ using namespace std;
 
 class personaClass{
 private:
+    static int contador;
     string codigo;
     string nombre;
     string apellido;
@@ -15,6 +16,7 @@ private:
     string direccion;
     int edad;
 public:
+    personaClass(string nombre, string apellido, string dni, string telefono, string direccion, int edad);
     personaClass();
     ~personaClass();
     string getNombre() const;
@@ -30,7 +32,6 @@ public:
     int getEdad() const;
     void setEdad(int value);
     string getCodigo() const;
-    void setCodigo(const string &value);
 };
 
 #endif // PERSONACLASS_H
