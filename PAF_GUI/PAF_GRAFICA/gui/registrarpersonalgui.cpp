@@ -122,7 +122,6 @@ void registrarPersonalGui::on_selectLocales_textHighlighted(const QString &arg1)
     //this->habilitarCmdTxt();
     string selected;
     selected = arg1.toStdString();
-    listaLocalesClass *listLoc =  this->listLocales;
 }
 
 listaLocalesClass *registrarPersonalGui::getListLocales() const

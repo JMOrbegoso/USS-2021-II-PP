@@ -13,6 +13,7 @@ public:
     void setCab(nodoPacienteClass *value);
     int getCant() const;
     void setCant(int value);
+    void insertarPaciente(pacienteClass *pers);
 };
 
 #endif // LISTAPACIENTESCLASS_H
