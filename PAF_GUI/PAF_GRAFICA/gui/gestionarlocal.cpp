@@ -54,10 +54,9 @@ void gestionarLocal::on_regresarPb_clicked()
 
 void gestionarLocal::on_habilitarInLocalPb_clicked()
 {
-    for(int i = 0; i < this->listLocales->getCant();i++){
-        //if((this->listLocales->getCab()+i)->getNombreLocal() == ui->twMostrarLocales->currentText().toStdString())
-            break;
-    }
+    auto i = this->ui->twMostrarLocales->currentRow();
+    auto item = (this->locales->getCab() + i);
+    item->setEstadoLocal(!item->getEstadoLocal());
 }
 
 void gestionarLocal::on_twMostrarLocales_itemClicked(QTableWidgetItem *item)
@@ -72,7 +71,7 @@ void gestionarLocal::on_twMostrarLocales_itemClicked(QTableWidgetItem *item)
 
 void gestionarLocal::on_editarLocalPb_clicked()
 {
-    for (int x = 0; x < this->listLocales->getCant(); x++){
+    for (int x = 0; x < this->locales->getCant(); x++){
 
     }
 }
