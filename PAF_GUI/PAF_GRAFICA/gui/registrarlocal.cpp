@@ -24,7 +24,7 @@ void registrarLocal::on_registrarLocalPb_clicked()
 {
     QMessageBox msje;
 
-    localClass *local = new localClass();
+    // Validación
     if (ui->nombreLocalTxt->text().length() == 0){
         msje.setText("Debe Ingresar el Nombre del Local");
         msje.exec();
@@ -35,11 +35,16 @@ void registrarLocal::on_registrarLocalPb_clicked()
         msje.exec();
         return;
     }
-    local->setNombreLocal(ui->nombreLocalTxt->text().toStdString());
-    local->setDireccionLocal(ui->direccionLocalTxt->toPlainText().toStdString());
-    local->setEstadoLocal(ui->habilitarLocalRb->isChecked());
 
-    this->locales->insertarLocal(local);
+    // Datos del formulario
+    string nombre = this->ui->nombreLocalTxt->text().toStdString();
+    string direccion = this->ui->direccionLocalTxt->toPlainText().toStdString();
+    bool estado = this->ui->habilitarLocalRb->isChecked();
+
+    // Creación de la nueva instancia
+    localClass *nuevoLocal = new localClass(nombre, direccion, estado);
+
+    this->locales->insertarLocal(nuevoLocal);
 
     // Muestra mensaje del resultado
     msje.setText("Local Registrado Correctamente");

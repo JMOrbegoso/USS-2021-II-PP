@@ -15,6 +15,7 @@ private:
     string direccionLocal;
     bool estadoLocal;
 public:
+    localClass(string nombre, string direccion, bool estado);
     localClass();
     ~localClass();
     listaPersonalClass *getPersonales() const;
