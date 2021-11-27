@@ -109,9 +109,17 @@ void MainWindow::on_actionRegistrar_Personal_M_dico_triggered()
 
 void MainWindow::on_actionGestionar_Personal_M_dico_triggered()
 {
-    gestionarPersonalGui *gest = new gestionarPersonalGui();
-
-    gest->show();
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        gestionarPersonalGui *gest = new gestionarPersonalGui();
+        gest->setLocales(this->getVacunaDengue()->getLocales());
+        gest->addListLocalComBox();
+        gest->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero registre locales");
+        msje.exec();
+        return;
+    }
 }
 
 

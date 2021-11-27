@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
+    <width>729</width>
     <height>507</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="bntVolPers">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>620</x>
      <y>470</y>
      <width>80</width>
      <height>21</height>
@@ -31,8 +31,8 @@
     <rect>
      <x>30</x>
      <y>30</y>
-     <width>551</width>
-     <height>171</height>
+     <width>671</width>
+     <height>131</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -47,44 +47,37 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QComboBox" name="txtLocPers"/>
+     <widget class="QComboBox" name="selectLocales"/>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_4">
       <property name="text">
-       <string>Encargado:</string>
+       <string>Dirección:</string>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="txtEncPers">
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
      <widget class="QLineEdit" name="txtDirPers">
       <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item row="2" column="0">
      <widget class="QLabel" name="label_5">
       <property name="text">
        <string>Estado:</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="2" column="1">
      <widget class="QLineEdit" name="txtEstPers">
       <property name="readOnly">
        <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
+    <item row="3" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="topMargin">
        <number>15</number>
@@ -98,7 +91,7 @@
       </item>
      </layout>
     </item>
-    <item row="4" column="1">
+    <item row="3" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="topMargin">
        <number>15</number>
@@ -115,27 +108,51 @@
       </item>
      </layout>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Dirección:</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>210</y>
-     <width>551</width>
-     <height>251</height>
+     <y>170</y>
+     <width>671</width>
+     <height>291</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QTableWidget" name="tablePers"/>
+     <widget class="QTableWidget" name="tablePers">
+      <column>
+       <property name="text">
+        <string>Codigo</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nombre</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Apellido</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Edad</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DNI</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Tipo de Personal</string>
+       </property>
+      </column>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">

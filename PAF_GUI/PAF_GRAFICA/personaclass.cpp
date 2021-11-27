@@ -60,13 +60,23 @@ void personaClass::setEdad(int value)
 {
     edad = value;
 }
+string personaClass::getCodigo() const
+{
+    return codigo;
+}
+
+void personaClass::setCodigo(const string &value)
+{
+    codigo = value;
+}
+
 personaClass::personaClass()
 {
-
+    
 }
 
 personaClass::~personaClass()
 {
-
+    
 }
 

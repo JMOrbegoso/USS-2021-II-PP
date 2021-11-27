@@ -7,6 +7,7 @@ using namespace std;
 
 class personaClass{
 private:
+    string codigo;
     string nombre;
     string apellido;
     string dni;
@@ -28,6 +29,8 @@ public:
     void setDireccion(const string &value);
     int getEdad() const;
     void setEdad(int value);
+    string getCodigo() const;
+    void setCodigo(const string &value);
 };
 
 #endif // PERSONACLASS_H

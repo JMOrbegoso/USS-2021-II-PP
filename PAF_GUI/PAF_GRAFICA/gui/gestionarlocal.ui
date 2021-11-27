@@ -73,7 +73,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Editar</string>
+    <string>Actualizar</string>
    </property>
   </widget>
   <widget class="QPushButton" name="registrarLocalPb">
