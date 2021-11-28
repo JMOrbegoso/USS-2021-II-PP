@@ -69,11 +69,13 @@ void registrarPaciente::on_registrarCmd_clicked()
         return;
     }
     if(ui->enfermedadCbox->currentText() == "SI"){
-        if(ui->cualTxt->toPlainText().length() == 0){
-                msje.setText("Debe llenar el Campo de la enfermedad");
-                msje.exec();
-                return;
-          }
+        //if(ui->cualTxt->isReadOnly() == false){
+            if(ui->cualTxt->toPlainText().length() == 0){
+                    msje.setText("Debe llenar el Campo de la enfermedad");
+                    msje.exec();
+                    return;
+             // }
+        }
     }
     if(ui->telefonoTxt->text().length() != 9){
         msje.setText("El Campo Telefono debe tener 9 dígitos");
@@ -106,9 +108,9 @@ void registrarPaciente::on_elegirLocalCbox_textHighlighted(const QString &arg1)
 void registrarPaciente::on_enfermedadCbox_textHighlighted(const QString &arg1)
 {
     if(arg1 == "SI"){
-        ui->cualTxt->setEnabled(true);
+        ui->cualTxt->setReadOnly(false);
     }else{
-        ui->cualTxt->setEnabled(false);
+        ui->cualTxt->setReadOnly(true);
     }
 }
 
