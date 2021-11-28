@@ -114,6 +114,6 @@ void registrarPaciente::listaLocalComboBox()
 
 void registrarPaciente::on_enfermedadCbox_currentIndexChanged(int index)
 {
-    this->ui->cualTxt->setEnabled(index == 0);
+    this->ui->cualTxt->setEnabled(index != 0);
 }
 
