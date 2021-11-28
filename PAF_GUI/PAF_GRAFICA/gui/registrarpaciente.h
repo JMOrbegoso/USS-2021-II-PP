@@ -29,7 +29,7 @@ private slots:
 
     void on_elegirLocalCbox_textHighlighted(const QString &arg1);
 
-    void on_enfermedadCbox_textHighlighted(const QString &arg1);
+    void on_enfermedadCbox_currentIndexChanged(int index);
 
 private:
     Ui::registrarPaciente *ui;

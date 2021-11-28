@@ -105,18 +105,15 @@ void registrarPaciente::on_elegirLocalCbox_textHighlighted(const QString &arg1)
     seleccionar = arg1.toStdString();
 }
 
-void registrarPaciente::on_enfermedadCbox_textHighlighted(const QString &arg1)
-{
-    if(arg1 == "SI"){
-        ui->cualTxt->setReadOnly(false);
-    }else{
-        ui->cualTxt->setReadOnly(true);
-    }
-}
-
 void registrarPaciente::listaLocalComboBox()
 {
     for(int i=0;i < this->locales->getCant();i++){
         ui->elegirLocalCbox->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
     }
 }
+
+void registrarPaciente::on_enfermedadCbox_currentIndexChanged(int index)
+{
+    this->ui->cualTxt->setEnabled(index == 0);
+}
+
