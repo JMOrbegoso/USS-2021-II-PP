@@ -21,7 +21,6 @@ SOURCES += main.cpp\
     gui/gestionarlotegui.cpp \
         gui/mainwindow.cpp \
     almacenclass.cpp \
-    almacengeneralclass.cpp \
     atendidoclass.cpp \
     listalocalesclass.cpp \
     listalotesvacunaclass.cpp \
@@ -53,7 +52,6 @@ SOURCES += main.cpp\
 HEADERS  += gui/mainwindow.h \
     almacenclass.h \
     almaceneslistaclass.h \
-    almacengeneralclass.h \
     datossemillaclass.h \
     gui/atenderpaciente.h \
     atendidoclass.h \

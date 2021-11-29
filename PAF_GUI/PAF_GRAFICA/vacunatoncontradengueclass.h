@@ -1,7 +1,6 @@
 #ifndef VACUNATONCONTRADENGUECLASS_H
 #define VACUNATONCONTRADENGUECLASS_H
 #include <listalocalesclass.h>
-#include <almacengeneralclass.h>
 
 class vacunatonContraDengueClass{
 private:
@@ -9,7 +8,7 @@ private:
     string fechaInicio;
     string fechaFinal;
     listaLocalesClass *locales;
-    almacenGeneralClass *almaGeneral;
+    almacenClass *almacenGeneral;
 public:
     vacunatonContraDengueClass();
     ~vacunatonContraDengueClass();
@@ -21,8 +20,8 @@ public:
     void setFechaFinal(const string &value);
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
-    almacenGeneralClass *getAlmaGeneral() const;
-    void setAlmaGeneral(almacenGeneralClass *value);
+    almacenClass *getAlmacenGeneral() const;
+    void setAlmacenGeneral(almacenClass *value);
 };
 
 #endif // VACUNATONCONTRADENGUECLASS_H

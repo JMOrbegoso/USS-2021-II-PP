@@ -41,20 +41,20 @@ void vacunatonContraDengueClass::setLocales(listaLocalesClass *value)
     locales = value;
 }
 
-almacenGeneralClass *vacunatonContraDengueClass::getAlmaGeneral() const
+almacenClass *vacunatonContraDengueClass::getAlmacenGeneral() const
 {
-    return almaGeneral;
+    return this->almacenGeneral;
 }
 
-void vacunatonContraDengueClass::setAlmaGeneral(almacenGeneralClass *value)
+void vacunatonContraDengueClass::setAlmacenGeneral(almacenClass *value)
 {
-    almaGeneral = value;
+    this->almacenGeneral = value;
 }
 
 vacunatonContraDengueClass::vacunatonContraDengueClass()
 {
     this->locales = new listaLocalesClass();
-    this->almaGeneral = new almacenGeneralClass();
+    this->almacenGeneral = new almacenClass();
 }
 
 vacunatonContraDengueClass::~vacunatonContraDengueClass()
