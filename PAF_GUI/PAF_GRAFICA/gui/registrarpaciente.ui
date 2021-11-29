@@ -7,11 +7,17 @@
     <x>0</x>
     <y>0</y>
     <width>652</width>
-    <height>452</height>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Registro de Paciente a la Cola de Atencion</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
@@ -130,12 +136,12 @@
       </property>
       <item>
        <property name="text">
-        <string>NO</string>
+        <string>SI</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>SI</string>
+        <string>NO</string>
        </property>
       </item>
      </widget>
@@ -157,6 +163,12 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777214</width>
+        <height>23</height>
+       </size>
+      </property>
      </widget>
     </item>
     <item row="7" column="0">
@@ -175,6 +187,12 @@
      <widget class="QPlainTextEdit" name="cualTxt">
       <property name="enabled">
        <bool>true</bool>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
       </property>
       <property name="readOnly">
        <bool>false</bool>
@@ -199,8 +217,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>300</y>
+     <x>550</x>
+     <y>290</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -221,7 +239,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>410</y>
+     <y>380</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -239,7 +257,7 @@
    <property name="geometry">
     <rect>
      <x>560</x>
-     <y>410</y>
+     <y>380</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -276,13 +294,18 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QComboBox" name="elegirLocalCbox"/>
+     <widget class="QComboBox" name="elegirLocalCbox">
+      <property name="currentText">
+       <string/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
   <tabstop>elegirLocalCbox</tabstop>
+  <tabstop>dniTxt</tabstop>
   <tabstop>nombreTxt</tabstop>
   <tabstop>apellidoTxt</tabstop>
   <tabstop>edadSpbox</tabstop>

@@ -11,7 +11,7 @@ gestionarPaciente::gestionarPaciente(QWidget *parent) :
     ui->mostrarPacienteTwidget->setColumnWidth(1, 85);
     ui->mostrarPacienteTwidget->setColumnWidth(2, 200);
     ui->mostrarPacienteTwidget->setColumnWidth(3, 274);
-    ui->mostrarPacienteTwidget->setColumnWidth(4, 30);
+    ui->mostrarPacienteTwidget->setColumnWidth(4, 50);
 }
 
 gestionarPaciente::~gestionarPaciente()

@@ -92,6 +92,7 @@ void registrarPaciente::on_registrarCmd_clicked()
     paci->setEdad(ui->edadSpbox->value());
     paci->setTelefono(ui->telefonoTxt->text().toStdString());
     paci->setDireccion(ui->direccionTxt->toPlainText().toStdString());
+    paci->setCualEnfermedad(ui->cualTxt->toPlainText().toStdString());
 
     (this->locales->getCab()+x)->getPacientes()->insertarPaciente(paci);
     msje.setText("Paciente Registrado");
@@ -114,6 +115,6 @@ void registrarPaciente::listaLocalComboBox()
 
 void registrarPaciente::on_enfermedadCbox_currentIndexChanged(int index)
 {
-    this->ui->cualTxt->setEnabled(index != 0);
+    this->ui->cualTxt->setEnabled(index == 0);
 }
 

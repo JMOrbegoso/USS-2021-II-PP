@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>790</width>
-    <height>481</height>
+    <width>1067</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,33 +16,12 @@
   <property name="modal">
    <bool>false</bool>
   </property>
-  <widget class="QPushButton" name="buscarPacienteCmd">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>90</y>
-     <width>80</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Buscar</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="registrarPacienteCmd">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>440</y>
-     <width>81</width>
+     <y>400</y>
+     <width>111</width>
      <height>31</height>
     </rect>
    </property>
@@ -52,14 +31,14 @@
     </font>
    </property>
    <property name="text">
-    <string>Registrar</string>
+    <string>Registrar Paciente</string>
    </property>
   </widget>
   <widget class="QPushButton" name="regresarCmd">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>440</y>
+     <x>970</x>
+     <y>400</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -79,9 +58,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>380</y>
-     <width>80</width>
+     <x>940</x>
+     <y>240</y>
+     <width>111</width>
      <height>31</height>
     </rect>
    </property>
@@ -91,45 +70,14 @@
     </font>
    </property>
    <property name="text">
-    <string>Editar</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="buscarPacienteTxt">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>90</y>
-     <width>238</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>90</y>
-     <width>95</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Buscar Paciente:</string>
+    <string>Editar Paciente</string>
    </property>
   </widget>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>10</y>
      <width>301</width>
      <height>31</height>
     </rect>
@@ -148,16 +96,20 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QComboBox" name="elegirLocalCbox"/>
+     <widget class="QComboBox" name="elegirLocalCbox">
+      <property name="currentText">
+       <string/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
   <widget class="QTableWidget" name="mostrarPacienteTwidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>130</y>
-     <width>681</width>
+     <x>20</x>
+     <y>120</y>
+     <width>701</width>
      <height>221</height>
     </rect>
    </property>
@@ -190,25 +142,13 @@
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>20</y>
+     <x>750</x>
+     <y>10</y>
      <width>301</width>
      <height>52</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_2">
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Direccion:</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QLineEdit" name="direccionTxt">
       <property name="readOnly">
@@ -235,18 +175,127 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Direccion:</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>311</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_3">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Buscar por DNI:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="buscarPacienteTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>130</y>
+     <width>301</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_4">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Nombre:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="editarNombreTxt"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Apellidos:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="apellidosTxt"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Direccion:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
   <tabstop>elegirLocalCbox</tabstop>
-  <tabstop>direccionTxt</tabstop>
   <tabstop>buscarPacienteTxt</tabstop>
-  <tabstop>buscarPacienteCmd</tabstop>
   <tabstop>mostrarPacienteTwidget</tabstop>
+  <tabstop>editarNombreTxt</tabstop>
+  <tabstop>apellidosTxt</tabstop>
   <tabstop>editarCmd</tabstop>
   <tabstop>registrarPacienteCmd</tabstop>
   <tabstop>regresarCmd</tabstop>
+  <tabstop>nombreLocalTxt</tabstop>
+  <tabstop>direccionTxt</tabstop>
  </tabstops>
  <resources/>
  <connections/>
