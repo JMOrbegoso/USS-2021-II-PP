@@ -49,3 +49,18 @@ listaPersonalClass::~listaPersonalClass()
 
 }
 
+listaPersonalClass* listaPersonalClass::filtrarPorDni(string dni)
+{
+    listaPersonalClass* temp = new listaPersonalClass();
+    nodoPersonalClass *aux = this->getCab();
+
+    while(aux != NULL)
+    {
+        if (aux->getInfo()->getDni().find(dni, 0) != string::npos)
+            temp->insertarPersonal(aux->getInfo());
+
+        aux = aux->getSgte();
+    }
+
+    return temp;
+}

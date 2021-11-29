@@ -15,6 +15,7 @@ public:
     void setCant(int value);
 
     void insertarPersonal(personalClass *pers);
+    listaPersonalClass* filtrarPorDni(string dni);
 };
 
 #endif // LISTAPERSONALCLASS_H
