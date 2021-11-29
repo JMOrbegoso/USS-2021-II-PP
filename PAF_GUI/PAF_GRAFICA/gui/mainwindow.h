@@ -46,6 +46,8 @@ private slots:
 
     void on_actionAtender_Paciente_triggered();
 
+    void on_actionSalir_triggered();
+
 private:
     Ui::MainWindow *ui;
     vacunatonContraDengueClass *vacunaDengue;

@@ -161,3 +161,12 @@ void MainWindow::setVacunaDengue(vacunatonContraDengueClass *value)
 {
     this->vacunaDengue = value;
 }
+
+void MainWindow::on_actionSalir_triggered()
+{
+    QMessageBox::StandardButton resBtn;
+    resBtn = QMessageBox::question(this, "Cerrar programa", "¿Está seguro?", QMessageBox::Cancel | QMessageBox::Yes);
+
+    if (resBtn == QMessageBox::Yes)
+        this->close();
+}
