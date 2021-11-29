@@ -27,7 +27,9 @@ public:
 private slots:
     void on_bntVolPers_clicked();
 
-    void on_selectLocales_highlighted(int index);
+    void on_selectLocales_currentIndexChanged(int index);
+
+    void on_txtBusPers_textChanged(const QString &arg1);
 
 private:
     Ui::gestionarPersonalGui *ui;

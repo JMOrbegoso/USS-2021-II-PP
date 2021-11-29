@@ -49,7 +49,8 @@ void gestionarPersonalGui::setLocales(listaLocalesClass *value)
     this->setPersonal(this->locales->getCab()->getPersonales());
 }
 
-void gestionarPersonalGui::actualizarControles(listaPersonalClass *personal){
+void gestionarPersonalGui::actualizarControles(listaPersonalClass *personal)
+{
     personal = personal == NULL ? this->personal : personal;
 
     // Limpia todo el contenido de la tabla
@@ -59,15 +60,15 @@ void gestionarPersonalGui::actualizarControles(listaPersonalClass *personal){
     int x = 0;
     nodoPersonalClass *aux = personal->getCab();
 
-    while(aux != NULL){
+    while(aux != NULL)
+    {
         // Propiedades a mostrar
         auto codigo = aux->getInfo()->getCodigo();
         auto nombre = aux->getInfo()->getNombre();
         auto apellido = aux->getInfo()->getApellido();
         auto edad = aux->getInfo()->getEdad();
         auto dni = aux->getInfo()->getDni();
-        auto tipoPers = aux->getInfo()->getTipoPersonal();
-        auto estadoTexto = tipoPers ? "Medico" : "Enfermera";
+        auto estadoTexto = aux->getInfo()->getTipoPersonal() ? "Medico" : "Enfermera";
 
         // Propiedades en ui
         this->ui->tablePers->insertRow(x);
@@ -84,22 +85,30 @@ void gestionarPersonalGui::actualizarControles(listaPersonalClass *personal){
 
 void gestionarPersonalGui::addListLocalComBox()
 {
-    for(int i=0;i < this->locales->getCant();i++){
-        ui->selectLocales->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
+    for(int i = 0; i < this->locales->getCant(); i++)
+    {
+        this->ui->selectLocales->addItem(QString::fromStdString((this->locales->getCab() + i)->getNombreLocal()));
     }
-    ui->txtDirPers->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
-    auto estado = (this->locales->getCab())->getEstadoLocal();
-    auto estadoTexto = estado ? "Habilitado" : "Inhabilitado";
-    ui->txtEstPers->setText(QString::fromStdString(estadoTexto));
+
+    this->ui->txtDirPers->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
+    auto estadoTexto = (this->locales->getCab())->getEstadoLocal() ? "Habilitado" : "Inhabilitado";
+    this->ui->txtEstPers->setText(QString::fromStdString(estadoTexto));
 }
 
-void gestionarPersonalGui::on_selectLocales_highlighted(int index)
+void gestionarPersonalGui::on_selectLocales_currentIndexChanged(int index)
 {
     int i = index;
-    ui->txtDirPers->setText(QString::fromStdString((this->locales->getCab()+i)->getDireccionLocal()));
-    auto estado = (this->locales->getCab()+i)->getEstadoLocal();
-    auto estadoTexto = estado ? "Habilitado" : "Inhabilitado";
-    ui->txtEstPers->setText(QString::fromStdString(estadoTexto));
-    this->actualizarControles((locales->getCab()+i)->getPersonales());
+    this->ui->txtDirPers->setText(QString::fromStdString((this->locales->getCab() + i)->getDireccionLocal()));
+    auto estadoTexto = (this->locales->getCab() + i)->getEstadoLocal() ? "Habilitado" : "Inhabilitado";
+    this->ui->txtEstPers->setText(QString::fromStdString(estadoTexto));
+
+    this->setPersonal((this->locales->getCab() + i)->getPersonales());
+
+    this->ui->txtBusPers->clear();
 }
 
+void gestionarPersonalGui::on_txtBusPers_textChanged(const QString &arg)
+{
+    auto personalFiltradoPorDni = this->personal->filtrarPorDni(arg.toStdString());
+    this->actualizarControles(personalFiltradoPorDni);
+}

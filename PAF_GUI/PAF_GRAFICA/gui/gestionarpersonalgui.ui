@@ -99,13 +99,6 @@
       <item>
        <widget class="QLineEdit" name="txtBusPers"/>
       </item>
-      <item>
-       <widget class="QPushButton" name="btnBusPers">
-        <property name="text">
-         <string>Buscar</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
    </layout>
