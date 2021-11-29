@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Vacunatón con Dengue</string>
+   <string>Vacunatón contra el Dengue</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>586</width>
-     <height>25</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLocales">
@@ -41,7 +41,7 @@
    </widget>
    <widget class="QMenu" name="menuLotes">
     <property name="title">
-     <string>Lotes</string>
+     <string>Lotes de Vacunas</string>
     </property>
     <addaction name="actionRegistrar_Lote"/>
     <addaction name="separator"/>
@@ -49,7 +49,7 @@
    </widget>
    <widget class="QMenu" name="menuPersonal">
     <property name="title">
-     <string>Personal</string>
+     <string>Personal Médico</string>
     </property>
     <addaction name="actionRegistrar_Personal_M_dico"/>
     <addaction name="separator"/>
@@ -68,7 +68,7 @@
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Help</string>
+     <string>Ayuda</string>
     </property>
     <addaction name="actionAcerca_de"/>
     <addaction name="actionSalir"/>
@@ -101,7 +101,7 @@
   </action>
   <action name="actionRegistrar_Almacen">
    <property name="text">
-    <string>Registrar Almacen...</string>
+    <string>Registrar Almacén...</string>
    </property>
   </action>
   <action name="actionGestionar_Almacenes">
@@ -111,12 +111,12 @@
   </action>
   <action name="actionRegistrar_Lote">
    <property name="text">
-    <string>Registrar Lote...</string>
+    <string>Registrar Lote de Vacunas...</string>
    </property>
   </action>
   <action name="actionGestionar_Lotes">
    <property name="text">
-    <string>Gestionar Lotes...</string>
+    <string>Gestionar Lotes de Vacunas...</string>
    </property>
   </action>
   <action name="actionRegistrar_Personal_M_dico">
