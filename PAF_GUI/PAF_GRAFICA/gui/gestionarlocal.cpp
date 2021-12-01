@@ -101,8 +101,8 @@ void gestionarLocal::on_registrarLocalPb_clicked()
 {
     registrarLocal *local = new registrarLocal();
     local->setLocales(this->locales);
+    this->close();
     local->show();
-    //Falta actualizar al cerrar uwu
 }
 
 void gestionarLocal::on_buscarLocalTxt_textChanged(const QString &arg)
