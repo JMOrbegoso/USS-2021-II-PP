@@ -32,8 +32,6 @@ private slots:
 
     void on_actionGestionar_locales_triggered();
 
-    void on_actionRegistrar_Almacen_triggered();
-
     void on_actionGestionar_Almacenes_triggered();
 
     void on_actionRegistrar_Personal_M_dico_triggered();

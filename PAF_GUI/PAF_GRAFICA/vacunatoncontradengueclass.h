@@ -1,6 +1,7 @@
 #ifndef VACUNATONCONTRADENGUECLASS_H
 #define VACUNATONCONTRADENGUECLASS_H
 #include <listalocalesclass.h>
+#include <almacenclass.h>
 
 class vacunatonContraDengueClass{
 private:

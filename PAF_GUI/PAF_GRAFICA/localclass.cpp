@@ -5,32 +5,29 @@ int localClass::contador = 1;
 
 listaPersonalClass *localClass::getPersonales() const
 {
-    return personales;
+    return this->personales;
 }
-
 void localClass::setPersonales(listaPersonalClass *value)
 {
-    personales = value;
+    this->personales = value;
 }
 
 listaPacientesClass *localClass::getPacientes() const
 {
-    return pacientes;
+    return this->pacientes;
 }
-
 void localClass::setPacientes(listaPacientesClass *value)
 {
-    pacientes = value;
+    this->pacientes = value;
 }
 
-almacenClass *localClass::getAlmacen() const
+listaLotesVacunaClass *localClass::getLotes() const
 {
-    return almacen;
+    return this->lotes;
 }
-
-void localClass::setAlmacen(almacenClass *value)
+void localClass::setLotes(listaLotesVacunaClass *value)
 {
-    almacen = value;
+    this->lotes = value;
 }
 
 string localClass::getDireccionLocal() const
@@ -79,7 +76,7 @@ localClass::localClass(string nombre, string direccion, bool estado)
 
     this->personales = new listaPersonalClass();
     this->pacientes = new listaPacientesClass();
-    this->almacen = new almacenClass();
+    this->lotes = new listaLotesVacunaClass();
 }
 
 localClass::localClass()

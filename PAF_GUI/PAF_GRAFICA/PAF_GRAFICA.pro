@@ -36,7 +36,6 @@ SOURCES += main.cpp\
     pacienteclass.cpp \
     personaclass.cpp \
     personalclass.cpp \
-    gui/registraralmacen.cpp \
     gui/registrarlotegui.cpp \
     vacunatoncontradengueclass.cpp \
     gui/aboutgui.cpp \
@@ -72,7 +71,6 @@ HEADERS  += gui/mainwindow.h \
     pacienteclass.h \
     personaclass.h \
     personalclass.h \
-    gui/registraralmacen.h \
     gui/registrarlotegui.h \
     vacunatoncontradengueclass.h \
     gui/aboutgui.h \
@@ -95,7 +93,6 @@ FORMS    += gui/mainwindow.ui \
     gui/gestionarlotegui.ui \
     gui/gestionarpaciente.ui \
     gui/login.ui \
-    gui/registraralmacen.ui \
     gui/registrarlocal.ui \
     gui/registrarlotegui.ui \
     gui/registrarpaciente.ui \

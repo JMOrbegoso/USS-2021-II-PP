@@ -8,7 +8,6 @@
 #include <gui/gestionaratendidos.h>
 #include <gui/registrarlocal.h>
 #include <gui/gestionarlocal.h>
-#include <gui/registraralmacen.h>
 #include <gui/gestionaralmacenes.h>
 #include <gui/registrarpersonalgui.h>
 #include <gui/gestionarpersonalgui.h>
@@ -85,13 +84,6 @@ void MainWindow::on_actionGestionar_locales_triggered()
     gesLocal->setListLocales(this->getVacunaDengue()->getLocales());
     gesLocal->show();
 }
-
-void MainWindow::on_actionRegistrar_Almacen_triggered()
-{
-    registrarAlmacen *reg = new registrarAlmacen();
-    reg->show();
-}
-
 
 void MainWindow::on_actionGestionar_Almacenes_triggered()
 {
