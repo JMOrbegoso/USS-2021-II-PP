@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gestionar Pacientes Atendidos</string>
+   <string>Reporte de Atendidos</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">

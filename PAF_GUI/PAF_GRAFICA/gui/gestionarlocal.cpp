@@ -1,3 +1,4 @@
+#include "QMessageBox"
 #include "gestionarlocal.h"
 #include "ui_gestionarlocal.h"
 #include <gui/registrarlocal.h>
@@ -63,8 +64,21 @@ void gestionarLocal::on_habilitarInLocalPb_clicked()
 {
     int x = this->ui->twMostrarLocales->currentRow();
     localClass* item = (this->locales->getCab() + x);
+
+    // Mensaje de confirmación
+    string tituloConfirmacion = !item->getEstadoLocal() ? "Habilitar local" : "Inhabilitar local";
+    string cuerpoConfirmacion = "¿Está seguro?";
+    QMessageBox::StandardButton confirmacion = QMessageBox::question(this,
+                                                                     QString::fromStdString(tituloConfirmacion),
+                                                                     QString::fromStdString(cuerpoConfirmacion),
+                                                                     QMessageBox::Cancel | QMessageBox::Yes);
+    if (confirmacion == QMessageBox::Cancel)
+        return;
+
+    // Realizar cambios en la lista
     item->setEstadoLocal(!item->getEstadoLocal());
 
+    // Realizar cambios visuales en la tabla
     string estadoTexto = item->getEstadoLocal() ? "Habilitado" : "Inhabilitado";
     this->ui->twMostrarLocales->item(x, 3)->setText(QString::fromStdString(estadoTexto));
 }

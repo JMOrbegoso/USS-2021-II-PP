@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>741</width>
-    <height>432</height>
+    <width>691</width>
+    <height>329</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>490</x>
      <y>10</y>
-     <width>192</width>
+     <width>193</width>
      <height>31</height>
     </rect>
    </property>
@@ -81,8 +81,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>320</y>
+     <x>390</x>
+     <y>220</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -99,8 +99,8 @@
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>390</y>
+     <x>600</x>
+     <y>290</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -114,41 +114,13 @@
     <string>Regresar</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="mostrarPacienteTview">
-   <property name="geometry">
-    <rect>
-     <x>345</x>
-     <y>60</y>
-     <width>381</width>
-     <height>241</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="registrarPacienteButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>390</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Registrar Paciente</string>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>50</y>
+     <y>40</y>
      <width>291</width>
-     <height>271</height>
+     <height>211</height>
     </rect>
    </property>
    <property name="title">
@@ -281,24 +253,24 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>200</y>
-      <width>281</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>-------------------------------------------------------------------</string>
-    </property>
-   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>60</y>
+     <width>271</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
    <widget class="QWidget" name="formLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>230</y>
+      <x>0</x>
+      <y>20</y>
       <width>271</width>
       <height>31</height>
      </rect>
@@ -321,16 +293,99 @@
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="formLayoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_4">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="nombreTxt">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="nombreLabel">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Nombre:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_8">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>100</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_8">
+     <item row="0" column="0">
+      <widget class="QLabel" name="apellidoLabel">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Apellidos:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="ApellidosTxt">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>290</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Reporte de Atendidos</string>
+   </property>
   </widget>
  </widget>
  <tabstops>
   <tabstop>localesCBox</tabstop>
-  <tabstop>fechaDateTimeEdit</tabstop>
-  <tabstop>enfermerasCBox</tabstop>
   <tabstop>direccionTxt</tabstop>
-  <tabstop>mostrarPacienteTview</tabstop>
+  <tabstop>enfermerasCBox</tabstop>
+  <tabstop>nombreVacunaCbox</tabstop>
+  <tabstop>fechaDateTimeEdit</tabstop>
+  <tabstop>dniPacienteCbox</tabstop>
+  <tabstop>nombreTxt</tabstop>
+  <tabstop>ApellidosTxt</tabstop>
   <tabstop>atenderButton</tabstop>
-  <tabstop>registrarPacienteButton</tabstop>
+  <tabstop>pushButton</tabstop>
   <tabstop>regresarButton</tabstop>
  </tabstops>
  <resources/>
