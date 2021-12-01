@@ -38,7 +38,6 @@ void registrarPersonalGui::on_cmdCanMed_clicked()
 void registrarPersonalGui::on_cmdRegMed_clicked()
 {
     QMessageBox msje;
-    personalClass *pers = new personalClass();
 
     if(ui->txtNomPers->text().length()==0){
         msje.setText("Llene el campo nombre");
@@ -71,27 +70,26 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
             break;
     }
 
-    pers->setNombre(ui->txtNomPers->text().toStdString());
-    pers->setApellido(ui->txtApePers->text().toStdString());
-    pers->setDni(ui->txtDniPers->text().toStdString());
-    pers->setEdad(ui->spinEdaPers->value());
-    //pers->setEdad(atoi(ui->txtEdadPers->text().toStdString().c_str()));
-    pers->setTelefono(ui->txtTelPers->text().toStdString());
-    pers->setDireccion(ui->txtDirPers->text().toStdString());
-    // pers->setHorasTrabajo(ui->spinHdtPers->value());
-    pers->setSueldo(ui->douSpinSuePers->value());
-    if(ui->radMed->isChecked()==true)
-        pers->setTipoPersonal(true);
-    else
-        pers->setTipoPersonal(false);
+    const auto nombre = this->ui->txtNomPers->text().toStdString();
+    const auto apellido = this->ui->txtApePers->text().toStdString();
+    const auto dni = this->ui->txtDniPers->text().toStdString();
+    const auto edad = this->ui->spinEdaPers->value();
+    const auto telefono = this->ui->txtTelPers->text().toStdString();
+    const auto direccion = this->ui->txtDirPers->text().toStdString();
+    const auto sueldo = this->ui->douSpinSuePers->value();
+    const auto horasTrabajo = "8";
+    const auto tipoPersonal = this->ui->radMed->isChecked();
 
-   // this->lC->insertarCliente( clie );
-    (this->listLocales->getCab()+i)->getPersonales()->insertarPersonal(pers);
+    personalClass *pers = new personalClass(nombre, apellido, dni, telefono, direccion, edad, sueldo, horasTrabajo, tipoPersonal);
+
+    (this->listLocales->getCab() + i)->getPersonales()->insertarPersonal(pers);
+
     msje.setText("Personal registrado correctamente");
     msje.exec();
-    ui->txtNomPers->setReadOnly(false);
+    this->ui->txtNomPers->setReadOnly(false);
     clear();
 }
+
 /*
 listaPersonalClass *registrarPersonalGui::getListPers() const
 {
