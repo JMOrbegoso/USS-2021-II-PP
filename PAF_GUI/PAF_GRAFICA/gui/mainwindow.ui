@@ -60,10 +60,11 @@
      <string>Pacientes</string>
     </property>
     <addaction name="actionRegistrar_Paciente"/>
-    <addaction name="actionGestionar_Pacientes"/>
-    <addaction name="actionAtender_Paciente"/>
     <addaction name="separator"/>
+    <addaction name="actionGestionar_Pacientes"/>
     <addaction name="actionGestionar_Atenci_n"/>
+    <addaction name="separator"/>
+    <addaction name="actionAtender_Paciente"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -136,11 +137,6 @@
   <action name="actionGestionar_Pacientes">
    <property name="text">
     <string>Gestionar Pacientes...</string>
-   </property>
-  </action>
-  <action name="actionGestionar_Atenci_n">
-   <property name="text">
-    <string>Reporte de Atendidos...</string>
    </property>
   </action>
   <action name="actionAcerca_de">
