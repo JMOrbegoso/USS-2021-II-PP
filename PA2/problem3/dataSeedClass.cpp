@@ -2,33 +2,34 @@
 
 using namespace std;
 
-void dataSeedClass::seed(mallClass *&automotive) {
-  storeClass *client_1, *client_2;
-  employeeClass *car_1, *car_2, *car_3, *car_4, *car_5, *car_6;
+void dataSeedClass::seed(mallClass *&mall) {
+  storeClass *store_1, *store_2;
+  employeeClass *employee_1, *employee_2, *employee_3;
+  clientClass *client_1, *client_2, *client_3;
 
-  automotive->setName("Don Lopez");
+  mall->setName("Don Lopez");
+  mall->setAddress("Av. Bolognesi 444");
+  mall->setRuc("12345678910");
 
-  client_1 = new storeClass("Ricardo", "Flores", "10117618", 19, true);
-  client_2 = new storeClass("Susana", "Rojas", "80121607", 20, false);
+  employee_1 = new employeeClass("Maria", "Gomez", "10117618", 1200);
+  employee_2 = new employeeClass("Roberto", "Díaz", "80121607", 1300);
+  employee_3 = new employeeClass("Eva", "Rioja", "80121607", 1100);
 
-  car_1 =
-      new employeeClass("Toyota", "Yaris", 40000, "ab-128", "blanco", "nuevo");
-  car_2 =
-      new employeeClass("Toyota", "Hilux", 40000, "ad-256", "rojo", "nuevo");
-  car_3 = new employeeClass("Kia", "Rio", 40000, "cd-512", "negro", "nuevo");
-  car_4 =
-      new employeeClass("Nissan", "Versa", 40000, "dd-128", "azul", "nuevo");
-  car_5 = new employeeClass("Chevrolet", "N300", 40000, "dc-256", "blanco",
-                            "nuevo");
-  car_6 = new employeeClass("Kia", "Picanto", 40000, "ba-512", "rojo", "nuevo");
+  client_1 = new clientClass("Ricardo", "Flores", "10117618", true);
+  client_2 = new clientClass("Susana", "Rojas", "80121607", false);
+  client_3 = new clientClass("Jose", "Lopez", "80121607", false);
 
-  client_1->getEmployees()->insert(car_1);
-  client_1->getEmployees()->insert(car_2);
-  client_1->getEmployees()->insert(car_3);
-  client_1->getEmployees()->insert(car_4);
-  client_2->getEmployees()->insert(car_5);
-  client_2->getEmployees()->insert(car_6);
+  store_1 = new storeClass("Mario Ramos", "Zapatería");
+  store_2 = new storeClass("Luigi Ramirez", "Venta de Celulares");
 
-  automotive->getStores()->insert(client_1);
-  automotive->getStores()->insert(client_2);
+  store_1->getEmployees()->insert(employee_1);
+  store_2->getEmployees()->insert(employee_2);
+  store_2->getEmployees()->insert(employee_3);
+
+  store_1->getClients()->insert(client_1);
+  store_2->getClients()->insert(client_2);
+  store_2->getClients()->insert(client_3);
+
+  mall->getStores()->insert(store_1);
+  mall->getStores()->insert(store_2);
 }
