@@ -134,8 +134,13 @@ storeClass* storesListClass::pickStore(string message) {
     cout << aux->getCode();
     cout << " - ";
     cout << aux->getOwner();
-    cout << " ";
+    cout << " - ";
     cout << aux->getSpecialization();
+    cout << " - Con ";
+    cout << aux->getEmployees()->getLength();
+    cout << " empleado/s y ";
+    cout << aux->getClients()->getLength();
+    cout << " cliente/s";
     cout << endl;
   }
 
