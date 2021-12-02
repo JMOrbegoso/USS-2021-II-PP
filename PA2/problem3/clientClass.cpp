@@ -24,10 +24,7 @@ string clientClass::getCode() { return this->code; }
 bool clientClass::getGenre() { return this->genre; }
 void clientClass::setGenre(bool value) { this->genre = value; }
 string clientClass::getGenreAsString() {
-  if (this->genre)
-    return "Masculino";
-  else
-    return "Femenino";
+  return this->genre ? "Masculino" : "Femenino";
 }
 
 void clientClass::show(int rowNumber, int itemNumber) {
@@ -41,6 +38,6 @@ void clientClass::show(int rowNumber, int itemNumber) {
   cout << this->getLastName();
   helpersClass::gotoxy(45, rowNumber);
   cout << this->getDni();
-  helpersClass::gotoxy(55, rowNumber);
+  helpersClass::gotoxy(65, rowNumber);
   cout << this->getGenreAsString();
 }
