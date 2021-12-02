@@ -8,41 +8,25 @@ int storeClass::counter = 1;
 
 storeClass::~storeClass() {}
 storeClass::storeClass() {}
-storeClass::storeClass(string firstName, string lastName, string dni,
-                       unsigned short age, bool genre) {
-  this->code = "cl-" + to_string(storeClass::counter);
+storeClass::storeClass(string owner, string specialization) {
+  this->code = "sto-" + to_string(storeClass::counter);
   storeClass::counter++;
 
-  this->firstName = firstName;
-  this->lastName = lastName;
-  this->dni = dni;
-  this->age = age;
-  this->genre = genre;
+  this->owner = owner;
+  this->specialization = specialization;
 
   this->employees = new employeesListClass();
+  this->clients = new clientsListClass();
 }
 
 string storeClass::getCode() { return this->code; }
 
-string storeClass::getFirstName() { return this->firstName; }
-void storeClass::setFirstName(string value) { this->firstName = value; }
+string storeClass::getOwner() { return this->owner; }
+void storeClass::setOwner(string value) { this->owner = value; }
 
-string storeClass::getLastName() { return this->lastName; }
-void storeClass::setLastName(string value) { this->lastName = value; }
-
-string storeClass::getDni() { return this->dni; }
-void storeClass::setDni(string value) { this->dni = value; }
-
-unsigned short storeClass::getAge() { return this->age; }
-void storeClass::setAge(unsigned short value) { this->age = value; }
-
-bool storeClass::getGenre() { return this->genre; }
-void storeClass::setGenre(bool value) { this->genre = value; }
-string storeClass::getGenreAsString() {
-  if (this->genre)
-    return "Masculino";
-  else
-    return "Femenino";
+string storeClass::getSpecialization() { return this->specialization; }
+void storeClass::setSpecialization(string value) {
+  this->specialization = value;
 }
 
 employeesListClass *storeClass::getEmployees() { return this->employees; }
@@ -59,13 +43,13 @@ void storeClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
   helpersClass::gotoxy(15, rowNumber);
-  cout << this->getFirstName();
+  cout << this->getCode();
   helpersClass::gotoxy(30, rowNumber);
-  cout << this->getLastName();
+  cout << this->getOwner();
   helpersClass::gotoxy(45, rowNumber);
-  cout << this->getDni();
+  cout << this->getSpecialization();
   helpersClass::gotoxy(55, rowNumber);
-  cout << this->getAge();
+  cout << this - getEmployees()->getLength();
   helpersClass::gotoxy(65, rowNumber);
-  cout << this->getGenreAsString();
+  cout << this - getClients()->getLength();
 }

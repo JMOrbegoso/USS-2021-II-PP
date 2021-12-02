@@ -25,10 +25,11 @@ class storesListClass {
 
   void show(int rowNumber);
 
-  storeClass* findStoreByNumber(string code);
+  storeClass* findStoreByCode(string code);
   employeeClass* findEmployeeByDni(string dni);
+  clientClass* findClientByDni(string dni);
 
   void insert(storeClass* newClient);
 
-  storeClass* pickClient(string message);
+  storeClass* pickStore(string message);
 };

@@ -9,37 +9,23 @@ class storeClass {
  private:
   static int counter;
   string code;
-  string firstName;
-  string lastName;
-  string dni;
-  unsigned short age;
-  bool genre;
+  string owner;
+  string specialization;
   employeesListClass *employees;
   clientsListClass *clients;
 
  public:
   ~storeClass();
   storeClass();
-  storeClass(string firstName, string lastName, string dni, unsigned short age,
-             bool genre);
+  storeClass(string owner, string specialization);
 
   string getCode();
 
-  string getFirstName();
-  void setFirstName(string value);
+  string getOwner();
+  void setOwner(string value);
 
-  string getLastName();
-  void setLastName(string value);
-
-  string getDni();
-  void setDni(string value);
-
-  unsigned short getAge();
-  void setAge(unsigned short value);
-
-  bool getGenre();
-  void setGenre(bool value);
-  string getGenreAsString();
+  string getSpecialization();
+  void setSpecialization(string value);
 
   employeesListClass *getEmployees();
   void setEmployees(employeesListClass *value);

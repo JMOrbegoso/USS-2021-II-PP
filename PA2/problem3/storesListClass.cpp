@@ -31,8 +31,8 @@ void storesListClass::setHead(storeClass* value) { this->head = value; }
 
 void storesListClass::show(int rowNumber) {
   if (this->length == 0) {
-    cout << "No hay ningún cliente registrado" << endl;
-    cout << "Primero registre al menos un cliente" << endl;
+    cout << "No hay ninguna tienda registrada" << endl;
+    cout << "Primero registre al menos una tienda" << endl;
     return;
   }
 
@@ -41,55 +41,78 @@ void storesListClass::show(int rowNumber) {
   }
 }
 
-storeClass* storesListClass::findStoreByNumber(string dni) {
-  storeClass* auxClient;
+storeClass* storesListClass::findStoreByCode(string code) {
+  storeClass* aux;
 
   if (this->length == 0) {
     return NULL;
   }
 
   for (int x = 0; x < this->length; x++) {
-    auxClient = this->head + x;
+    aux = this->head + x;
 
-    if (auxClient->getDni() == dni) return auxClient;
+    if (aux->getCode() == code) return aux;
   }
 
   return NULL;
 }
 
-employeeClass* storesListClass::findEmployeeByDni(string plate) {
-  storeClass* auxClient;
-  employeeNodeClass* auxCarNode;
+employeeClass* storesListClass::findEmployeeByDni(string dni) {
+  storeClass* auxStore;
+  employeeNodeClass* auxEmployeeNode;
 
   if (this->length == 0) {
     return NULL;
   }
 
   for (int x = 0; x < this->length; x++) {
-    auxClient = this->head + x;
+    auxStore = this->head + x;
 
-    auxCarNode = auxClient->getEmployees()->getHead();
-    while (auxCarNode != NULL) {
-      if (auxCarNode->getEmployee()->getPlate() == plate)
-        return auxCarNode->getEmployee();
+    auxEmployeeNode = auxStore->getEmployees()->getHead();
+    while (auxEmployeeNode != NULL) {
+      if (auxEmployeeNode->getEmployee()->getDni() == dni)
+        return auxEmployeeNode->getEmployee();
 
-      auxCarNode = auxCarNode->getNext();
+      auxEmployeeNode = auxEmployeeNode->getNext();
     }
   }
 
   return NULL;
 }
 
-void storesListClass::insert(storeClass* newClient) {
+clientClass* storesListClass::findClientByDni(string dni) {
+  storeClass* auxStore;
+  clientNodeClass* auxClientNode;
+
+  if (this->length == 0) {
+    return NULL;
+  }
+
+  for (int x = 0; x < this->length; x++) {
+    auxStore = this->head + x;
+
+    auxClientNode = auxStore->getClients()->getHead();
+    while (auxClientNode != NULL) {
+      if (auxClientNode->getClient()->getDni() == dni)
+        return auxClientNode->getClient();
+
+      auxClientNode = auxClientNode->getNext();
+    }
+  }
+
+  return NULL;
+}
+
+void storesListClass::insert(storeClass* newStore) {
   if (this->length == this->capacity) {
     this->grow(2);
   }
 
-  *(this->head + this->length) = *newClient;
+  *(this->head + this->length) = *newStore;
   this->length++;
 }
 
-storeClass* storesListClass::pickClient(string message) {
+storeClass* storesListClass::pickStore(string message) {
   storeClass* aux;
   int selectedOption;
 
@@ -99,20 +122,20 @@ storeClass* storesListClass::pickClient(string message) {
 
   cout << endl
        << message << "." << endl
-       << "Escoja entre los " << this->getLength()
-       << " clientes siguientes:" << endl
+       << "Escoja entre las " << this->getLength()
+       << " tiendas siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
     aux = this->getHead() + x;
 
     cout << "[" << x + 1 << "]";
-    cout << " - Cliente: ";
+    cout << " - Tienda: ";
     cout << aux->getCode();
     cout << " - ";
-    cout << aux->getFirstName();
+    cout << aux->getOwner();
     cout << " ";
-    cout << aux->getLastName();
+    cout << aux->getSpecialization();
     cout << endl;
   }
 
