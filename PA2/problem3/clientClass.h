@@ -1,43 +1,25 @@
 #include <string>
 
+#include "personClass.h"
+
 using namespace std;
 
-class clientClass {
+class clientClass : personClass {
  private:
   static int counter;
   string code;
-  string brand;
-  string model;
-  float price;
-  string plate;
-  string color;
-  string status;
+  bool genre;
 
  public:
   ~clientClass();
   clientClass();
-  clientClass(string brand, string model, float price, string plate,
-              string color, string status);
+  clientClass(string firstName, string lastName, string dni, bool genre);
 
   string getCode();
 
-  string getBrand();
-  void setBrand(string value);
-
-  string getModel();
-  void setModel(string value);
-
-  float getPrice();
-  void setPrice(float value);
-
-  string getPlate();
-  void setPlate(string value);
-
-  string getColor();
-  void setColor(string value);
-
-  string getStatus();
-  void setStatus(string value);
+  bool getGenre();
+  void setGenre(bool value);
+  string getGenreAsString();
 
   void show(int rowNumber, int itemNumber);
 };

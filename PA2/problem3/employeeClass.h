@@ -1,43 +1,24 @@
 #include <string>
 
+#include "personClass.h"
+
 using namespace std;
 
-class employeeClass {
+class employeeClass : personClass {
  private:
   static int counter;
   string code;
-  string brand;
-  string model;
-  float price;
-  string plate;
-  string color;
-  string status;
+  float salary;
 
  public:
   ~employeeClass();
   employeeClass();
-  employeeClass(string brand, string model, float price, string plate,
-                string color, string status);
+  employeeClass(string firstName, string lastName, string dni, float salary);
 
   string getCode();
 
-  string getBrand();
-  void setBrand(string value);
-
-  string getModel();
-  void setModel(string value);
-
-  float getPrice();
-  void setPrice(float value);
-
-  string getPlate();
-  void setPlate(string value);
-
-  string getColor();
-  void setColor(string value);
-
-  string getStatus();
-  void setStatus(string value);
+  float getSalary();
+  void setSalary(float value);
 
   void show(int rowNumber, int itemNumber);
 };
