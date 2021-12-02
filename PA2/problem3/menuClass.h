@@ -10,15 +10,19 @@ class menuClass {
 
   int requestMenuOption();
 
+  void showStoresTableHeader(int rowNumber);
   void showClientsTableHeader(int rowNumber);
-  void showCarsTableHeader(int rowNumber);
+  void showEmployeesTableHeader(int rowNumber);
 
+  void registerNewStore();
+  void registerNewEmployee();
   void registerNewClient();
-  void registerNewCar();
-  void showCars();
+  void showStores();
+  void showEmployees();
   void showClients();
+  void findStoreByCode();
+  void findEmployeeByDni();
   void findClientByDni();
-  void findCarByPlate();
 
  public:
   ~menuClass();
