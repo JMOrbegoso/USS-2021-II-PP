@@ -136,7 +136,7 @@ void menuClass::registerNewCar() {
 
   cout << "Registrar nuevo auto:" << endl << endl;
 
-  auxClient = this->mall->getStores()->pickClient(
+  auxClient = this->mall->getStores()->pickStore(
       "Seleccione el cliente al que desea asignar el auto");
 
   if (auxClient == NULL) {
@@ -227,7 +227,7 @@ void menuClass::findClientByDni() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxClient = this->mall->getStores()->findStoreByNumber(dniToFind);
+  auxClient = this->mall->getStores()->findStoreByCode(dniToFind);
 
   if (auxClient == NULL) {
     cout << "No se encontró un cliente con el DNI ingresada";

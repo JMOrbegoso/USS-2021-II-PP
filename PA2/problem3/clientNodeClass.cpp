@@ -9,7 +9,7 @@ clientNodeClass::clientNodeClass() {
   this->previous = NULL;
 }
 
-clientClass* clientNodeClass::getclient() { return this->client; }
+clientClass* clientNodeClass::getClient() { return this->client; }
 void clientNodeClass::setclient(clientClass* value) { this->client = value; }
 
 clientNodeClass* clientNodeClass::getNext() { return this->next; }

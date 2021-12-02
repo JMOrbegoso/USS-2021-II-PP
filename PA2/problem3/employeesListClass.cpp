@@ -40,27 +40,27 @@ void employeesListClass::setHead(employeeNodeClass* value) {
 }
 
 void employeesListClass::show(int rowNumber) {
-  employeeNodeClass* auxCarNode = new employeeNodeClass();
+  employeeNodeClass* auxEmployeeNode = new employeeNodeClass();
   int i = 1;
 
   if (this->length == 0) {
-    cout << "No hay ningún vehiculo registrado" << endl;
-    cout << "Primero registre al menos un vehiculo" << endl;
+    cout << "No hay ningún empleado registrado" << endl;
+    cout << "Primero registre al menos un empleado" << endl;
     return;
   }
 
-  while (auxCarNode != NULL) {
-    auxCarNode->getEmployee()->show(rowNumber + i, i);
-    auxCarNode = auxCarNode->getNext();
+  while (auxEmployeeNode != NULL) {
+    auxEmployeeNode->getEmployee()->show(rowNumber + i, i);
+    auxEmployeeNode = auxEmployeeNode->getNext();
   }
 }
 
-void employeesListClass::insert(employeeClass* newCar) {
+void employeesListClass::insert(employeeClass* newEmployee) {
   employeeNodeClass* newNode = new employeeNodeClass();
 
   employeeNodeClass* lastNode = this->getHead();
 
-  newNode->setEmployee(newCar);
+  newNode->setEmployee(newEmployee);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {
@@ -89,7 +89,7 @@ employeeClass* employeesListClass::pickEmployee(string message) {
   cout << endl
        << message << "." << endl
        << "Escoja entre los " << this->getLength()
-       << " vehiculos siguientes:" << endl
+       << " empleados siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
@@ -99,11 +99,9 @@ employeeClass* employeesListClass::pickEmployee(string message) {
     cout << " - ";
     cout << aux->getEmployee()->getCode();
     cout << " - ";
-    cout << aux->getEmployee()->getBrand();
+    cout << aux->getEmployee()->getFirstName();
     cout << " ";
-    cout << aux->getEmployee()->getModel();
-    cout << " ";
-    cout << aux->getEmployee()->getPlate();
+    cout << aux->getEmployee()->getLastName();
     cout << endl;
   }
 

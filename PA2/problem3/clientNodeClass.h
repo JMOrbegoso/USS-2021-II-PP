@@ -10,7 +10,7 @@ class clientNodeClass {
   ~clientNodeClass();
   clientNodeClass();
 
-  clientClass* getclient();
+  clientClass* getClient();
   void setclient(clientClass* value);
 
   clientNodeClass* getNext();

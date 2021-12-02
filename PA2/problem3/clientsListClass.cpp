@@ -17,7 +17,7 @@ clientClass* clientsListClass::getElementByIndex(int index) {
 
   for (int i = 1; auxNode != NULL; i++) {
     if (i == index) {
-      return auxNode->getclient();
+      return auxNode->getClient();
     }
     auxNode = auxNode->getNext();
   }
@@ -38,27 +38,27 @@ clientNodeClass* clientsListClass::getHead() { return this->head; }
 void clientsListClass::setHead(clientNodeClass* value) { this->head = value; }
 
 void clientsListClass::show(int rowNumber) {
-  clientNodeClass* auxCarNode = new clientNodeClass();
+  clientNodeClass* auxClientNode = new clientNodeClass();
   int i = 1;
 
   if (this->length == 0) {
-    cout << "No hay ningún vehiculo registrado" << endl;
-    cout << "Primero registre al menos un vehiculo" << endl;
+    cout << "No hay ningún cliente registrado" << endl;
+    cout << "Primero registre al menos un cliente" << endl;
     return;
   }
 
-  while (auxCarNode != NULL) {
-    auxCarNode->getclient()->show(rowNumber + i, i);
-    auxCarNode = auxCarNode->getNext();
+  while (auxClientNode != NULL) {
+    auxClientNode->getClient()->show(rowNumber + i, i);
+    auxClientNode = auxClientNode->getNext();
   }
 }
 
-void clientsListClass::insert(clientClass* newCar) {
+void clientsListClass::insert(clientClass* newClient) {
   clientNodeClass* newNode = new clientNodeClass();
 
   clientNodeClass* lastNode = this->getHead();
 
-  newNode->setclient(newCar);
+  newNode->setclient(newClient);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {
@@ -76,7 +76,7 @@ void clientsListClass::insert(clientClass* newCar) {
   this->setLength(this->getLength() + 1);
 }
 
-clientClass* clientsListClass::pickclient(string message) {
+clientClass* clientsListClass::pickClient(string message) {
   clientNodeClass* aux;
   int selectedOption;
 
@@ -87,7 +87,7 @@ clientClass* clientsListClass::pickclient(string message) {
   cout << endl
        << message << "." << endl
        << "Escoja entre los " << this->getLength()
-       << " vehiculos siguientes:" << endl
+       << " clientes siguientes:" << endl
        << endl;
 
   for (int x = 0; x < this->getLength(); x++) {
@@ -95,13 +95,11 @@ clientClass* clientsListClass::pickclient(string message) {
 
     cout << "[" << x + 1 << "]";
     cout << " - ";
-    cout << aux->getclient()->getCode();
+    cout << aux->getClient()->getCode();
     cout << " - ";
-    cout << aux->getclient()->getBrand();
+    cout << aux->getClient()->getFirstName();
     cout << " ";
-    cout << aux->getclient()->getModel();
-    cout << " ";
-    cout << aux->getclient()->getPlate();
+    cout << aux->getClient()->getLastName();
     cout << endl;
   }
 

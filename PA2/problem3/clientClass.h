@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class clientClass : personClass {
+class clientClass : public personClass {
  private:
   static int counter;
   string code;

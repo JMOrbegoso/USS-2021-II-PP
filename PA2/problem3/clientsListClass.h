@@ -22,5 +22,5 @@ class clientsListClass {
 
   void insert(clientClass* newclient);
 
-  clientClass* pickclient(string message);
+  clientClass* pickClient(string message);
 };
