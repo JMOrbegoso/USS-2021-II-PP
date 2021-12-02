@@ -1,5 +1,6 @@
 #include <string>
 
+#include "clientsListClass.h"
 #include "employeesListClass.h"
 
 using namespace std;
@@ -14,6 +15,7 @@ class storeClass {
   unsigned short age;
   bool genre;
   employeesListClass *employees;
+  clientsListClass *clients;
 
  public:
   ~storeClass();
@@ -41,6 +43,9 @@ class storeClass {
 
   employeesListClass *getEmployees();
   void setEmployees(employeesListClass *value);
+
+  clientsListClass *getClients();
+  void setClients(clientsListClass *value);
 
   void show(int rowNumber, int itemNumber);
 };

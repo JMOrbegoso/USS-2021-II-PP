@@ -48,6 +48,15 @@
     <ClCompile Include="personClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clientNodeClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clientsListClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clientClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menuClass.h">
@@ -78,6 +87,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="personClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clientsListClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clientClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clientNodeClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

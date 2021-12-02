@@ -50,6 +50,9 @@ void storeClass::setEmployees(employeesListClass *value) {
   this->employees = value;
 }
 
+clientsListClass *storeClass::getClients() { return this->clients; }
+void storeClass::setClients(clientsListClass *value) { this->clients = value; }
+
 void storeClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;

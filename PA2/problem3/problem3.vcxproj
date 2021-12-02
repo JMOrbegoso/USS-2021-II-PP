@@ -139,6 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="clientClass.cpp" />
+    <ClCompile Include="clientNodeClass.cpp" />
+    <ClCompile Include="clientsListClass.cpp" />
     <ClCompile Include="mallClass.cpp" />
     <ClCompile Include="employeeClass.cpp" />
     <ClCompile Include="employeeNodeClass.cpp" />
@@ -152,6 +155,9 @@
     <ClCompile Include="menuClass.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clientClass.h" />
+    <ClInclude Include="clientNodeClass.h" />
+    <ClInclude Include="clientsListClass.h" />
     <ClInclude Include="mallClass.h" />
     <ClInclude Include="employeeClass.h" />
     <ClInclude Include="employeeNodeClass.h" />
