@@ -1,6 +1,6 @@
 #include <string>
 
-#include "clientsListClass.h"
+#include "storesListClass.h"
 
 using namespace std;
 

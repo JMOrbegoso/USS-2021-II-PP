@@ -24,22 +24,22 @@
     <ClCompile Include="menuClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="automotiveClass.cpp">
+    <ClCompile Include="mallClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="carClass.cpp">
+    <ClCompile Include="employeeClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="carNodeClass.cpp">
+    <ClCompile Include="employeeNodeClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="carsListClass.cpp">
+    <ClCompile Include="employeesListClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="clientClass.cpp">
+    <ClCompile Include="storeClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="clientsListClass.cpp">
+    <ClCompile Include="storesListClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dataSeedClass.cpp">
@@ -50,22 +50,22 @@
     <ClInclude Include="menuClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="automotiveClass.h">
+    <ClInclude Include="mallClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="carClass.h">
+    <ClInclude Include="employeeClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="carNodeClass.h">
+    <ClInclude Include="employeeNodeClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="carsListClass.h">
+    <ClInclude Include="employeesListClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="clientClass.h">
+    <ClInclude Include="storeClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="clientsListClass.h">
+    <ClInclude Include="storesListClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dataSeedClass.h">

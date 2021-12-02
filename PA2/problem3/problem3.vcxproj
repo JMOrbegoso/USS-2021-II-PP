@@ -139,24 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="automotiveClass.cpp" />
-    <ClCompile Include="carClass.cpp" />
-    <ClCompile Include="carNodeClass.cpp" />
-    <ClCompile Include="carsListClass.cpp" />
-    <ClCompile Include="clientClass.cpp" />
-    <ClCompile Include="clientsListClass.cpp" />
+    <ClCompile Include="mallClass.cpp" />
+    <ClCompile Include="employeeClass.cpp" />
+    <ClCompile Include="employeeNodeClass.cpp" />
+    <ClCompile Include="employeesListClass.cpp" />
+    <ClCompile Include="storeClass.cpp" />
+    <ClCompile Include="storesListClass.cpp" />
     <ClCompile Include="dataSeedClass.cpp" />
     <ClCompile Include="helpersClass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menuClass.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="automotiveClass.h" />
-    <ClInclude Include="carClass.h" />
-    <ClInclude Include="carNodeClass.h" />
-    <ClInclude Include="carsListClass.h" />
-    <ClInclude Include="clientClass.h" />
-    <ClInclude Include="clientsListClass.h" />
+    <ClInclude Include="mallClass.h" />
+    <ClInclude Include="employeeClass.h" />
+    <ClInclude Include="employeeNodeClass.h" />
+    <ClInclude Include="employeesListClass.h" />
+    <ClInclude Include="storeClass.h" />
+    <ClInclude Include="storesListClass.h" />
     <ClInclude Include="dataSeedClass.h" />
     <ClInclude Include="helpersClass.h" />
     <ClInclude Include="menuClass.h" />
