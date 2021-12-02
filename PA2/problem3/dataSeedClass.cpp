@@ -12,12 +12,12 @@ void dataSeedClass::seed(mallClass *&mall) {
   mall->setRuc("12345678910");
   mall->setCapacity(500);
 
-  employee_1 = new employeeClass("Maria", "Gomez", "10117618", 1200);
-  employee_2 = new employeeClass("Roberto", "Díaz", "80121607", 1300);
-  employee_3 = new employeeClass("Eva", "Rioja", "80121607", 1100);
+  employee_1 = new employeeClass("Maria", "Gomez", "90243628", 1200);
+  employee_2 = new employeeClass("Roberto", "Díaz", "19211718", 1300);
+  employee_3 = new employeeClass("Eva", "Rioja", "82601469", 1100);
 
   client_1 = new clientClass("Ricardo", "Flores", "10117618", true);
-  client_2 = new clientClass("Susana", "Rojas", "80121607", false);
+  client_2 = new clientClass("Susana", "Rojas", "90331677", false);
   client_3 = new clientClass("Jose", "Lopez", "89213518", false);
 
   store_1 = new storeClass("Mario Ramos", "Zapatería");
