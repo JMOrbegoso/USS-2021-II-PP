@@ -143,6 +143,7 @@
     <ClCompile Include="employeeClass.cpp" />
     <ClCompile Include="employeeNodeClass.cpp" />
     <ClCompile Include="employeesListClass.cpp" />
+    <ClCompile Include="personClass.cpp" />
     <ClCompile Include="storeClass.cpp" />
     <ClCompile Include="storesListClass.cpp" />
     <ClCompile Include="dataSeedClass.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="employeeClass.h" />
     <ClInclude Include="employeeNodeClass.h" />
     <ClInclude Include="employeesListClass.h" />
+    <ClInclude Include="personClass.h" />
     <ClInclude Include="storeClass.h" />
     <ClInclude Include="storesListClass.h" />
     <ClInclude Include="dataSeedClass.h" />
