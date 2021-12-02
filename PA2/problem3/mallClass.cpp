@@ -2,13 +2,11 @@
 
 using namespace std;
 
-automotiveClass::~automotiveClass() {}
-automotiveClass::automotiveClass() { this->clients = new clientsListClass(); }
+mallClass::~mallClass() {}
+mallClass::mallClass() { this->stores = new storesListClass(); }
 
-string automotiveClass::getName() { return this->name; }
-void automotiveClass::setName(string value) { this->name = value; }
+string mallClass::getName() { return this->name; }
+void mallClass::setName(string value) { this->name = value; }
 
-clientsListClass *automotiveClass::getClients() { return this->clients; }
-void automotiveClass::setClients(clientsListClass *value) {
-  this->clients = value;
-}
+storesListClass *mallClass::getStores() { return this->stores; }
+void mallClass::setStores(storesListClass *value) { this->stores = value; }

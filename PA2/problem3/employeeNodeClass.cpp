@@ -2,18 +2,24 @@
 
 using namespace std;
 
-carNodeClass::~carNodeClass() {}
-carNodeClass::carNodeClass() {
-  this->car = NULL;
+employeeNodeClass::~employeeNodeClass() {}
+employeeNodeClass::employeeNodeClass() {
+  this->employee = NULL;
   this->next = NULL;
   this->previous = NULL;
 }
 
-carClass* carNodeClass::getCar() { return this->car; }
-void carNodeClass::setCar(carClass* value) { this->car = value; }
+employeeClass* employeeNodeClass::getEmployee() { return this->employee; }
+void employeeNodeClass::setEmployee(employeeClass* value) {
+  this->employee = value;
+}
 
-carNodeClass* carNodeClass::getNext() { return this->next; }
-void carNodeClass::setNext(carNodeClass* value) { this->next = value; }
+employeeNodeClass* employeeNodeClass::getNext() { return this->next; }
+void employeeNodeClass::setNext(employeeNodeClass* value) {
+  this->next = value;
+}
 
-carNodeClass* carNodeClass::getPrevious() { return this->previous; }
-void carNodeClass::setPrevious(carNodeClass* value) { this->previous = value; };
+employeeNodeClass* employeeNodeClass::getPrevious() { return this->previous; }
+void employeeNodeClass::setPrevious(employeeNodeClass* value) {
+  this->previous = value;
+};

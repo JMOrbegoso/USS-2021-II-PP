@@ -2,17 +2,17 @@
 
 using namespace std;
 
-class clientsListClass {
+class storesListClass {
  private:
   int capacity;
   int length;
-  clientClass* head;
+  storeClass* head;
 
   void grow(int growIn);
 
  public:
-  ~clientsListClass();
-  clientsListClass();
+  ~storesListClass();
+  storesListClass();
 
   int getCapacity();
   void setCapacity(int value);
@@ -20,15 +20,15 @@ class clientsListClass {
   int getLength();
   void setLength(int value);
 
-  clientClass* getHead();
-  void setHead(clientClass* value);
+  storeClass* getHead();
+  void setHead(storeClass* value);
 
   void show(int rowNumber);
 
-  clientClass* findClientByDni(string dni);
-  carClass* findCarByPlate(string plate);
+  storeClass* findStoreByNumber(string code);
+  employeeClass* findEmployeeByDni(string dni);
 
-  void insert(clientClass* newClient);
+  void insert(storeClass* newClient);
 
-  clientClass* pickClient(string message);
+  storeClass* pickClient(string message);
 };

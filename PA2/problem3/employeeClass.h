@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class carClass {
+class employeeClass {
  private:
   static int counter;
   string code;
@@ -14,10 +14,10 @@ class carClass {
   string status;
 
  public:
-  ~carClass();
-  carClass();
-  carClass(string brand, string model, float price, string plate, string color,
-           string status);
+  ~employeeClass();
+  employeeClass();
+  employeeClass(string brand, string model, float price, string plate,
+                string color, string status);
 
   string getCode();
 

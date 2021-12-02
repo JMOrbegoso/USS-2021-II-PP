@@ -2,25 +2,25 @@
 
 using namespace std;
 
-class carsListClass {
+class employeesListClass {
  private:
-  carNodeClass* head;
+  employeeNodeClass* head;
   int length;
-  carClass* getElementByIndex(int index);
+  employeeClass* getElementByIndex(int index);
 
  public:
-  ~carsListClass();
-  carsListClass();
+  ~employeesListClass();
+  employeesListClass();
 
   int getLength();
   void setLength(int value);
 
-  carNodeClass* getHead();
-  void setHead(carNodeClass* value);
+  employeeNodeClass* getHead();
+  void setHead(employeeNodeClass* value);
 
   void show(int rowNumber);
 
-  void insert(carClass* newCar);
+  void insert(employeeClass* newEmployee);
 
-  carClass* pickCar(string message);
+  employeeClass* pickEmployee(string message);
 };

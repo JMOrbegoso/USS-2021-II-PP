@@ -4,8 +4,8 @@
 
 using namespace std;
 
-carClass* carsListClass::getElementByIndex(int index) {
-  carNodeClass* auxNode = this->getHead();
+employeeClass* employeesListClass::getElementByIndex(int index) {
+  employeeNodeClass* auxNode = this->getHead();
 
   if (0 >= index) {
     return NULL;
@@ -17,7 +17,7 @@ carClass* carsListClass::getElementByIndex(int index) {
 
   for (int i = 1; auxNode != NULL; i++) {
     if (i == index) {
-      return auxNode->getCar();
+      return auxNode->getEmployee();
     }
     auxNode = auxNode->getNext();
   }
@@ -25,20 +25,22 @@ carClass* carsListClass::getElementByIndex(int index) {
   return NULL;
 }
 
-carsListClass::~carsListClass() {}
-carsListClass::carsListClass() {
+employeesListClass::~employeesListClass() {}
+employeesListClass::employeesListClass() {
   this->length = 0;
   this->head = NULL;
 }
 
-int carsListClass::getLength() { return this->length; }
-void carsListClass::setLength(int value) { this->length = value; }
+int employeesListClass::getLength() { return this->length; }
+void employeesListClass::setLength(int value) { this->length = value; }
 
-carNodeClass* carsListClass::getHead() { return this->head; }
-void carsListClass::setHead(carNodeClass* value) { this->head = value; }
+employeeNodeClass* employeesListClass::getHead() { return this->head; }
+void employeesListClass::setHead(employeeNodeClass* value) {
+  this->head = value;
+}
 
-void carsListClass::show(int rowNumber) {
-  carNodeClass* auxCarNode = new carNodeClass();
+void employeesListClass::show(int rowNumber) {
+  employeeNodeClass* auxCarNode = new employeeNodeClass();
   int i = 1;
 
   if (this->length == 0) {
@@ -48,17 +50,17 @@ void carsListClass::show(int rowNumber) {
   }
 
   while (auxCarNode != NULL) {
-    auxCarNode->getCar()->show(rowNumber + i, i);
+    auxCarNode->getEmployee()->show(rowNumber + i, i);
     auxCarNode = auxCarNode->getNext();
   }
 }
 
-void carsListClass::insert(carClass* newCar) {
-  carNodeClass* newNode = new carNodeClass();
+void employeesListClass::insert(employeeClass* newCar) {
+  employeeNodeClass* newNode = new employeeNodeClass();
 
-  carNodeClass* lastNode = this->getHead();
+  employeeNodeClass* lastNode = this->getHead();
 
-  newNode->setCar(newCar);
+  newNode->setEmployee(newCar);
   newNode->setNext(NULL);
 
   if (this->getHead() == NULL) {
@@ -76,8 +78,8 @@ void carsListClass::insert(carClass* newCar) {
   this->setLength(this->getLength() + 1);
 }
 
-carClass* carsListClass::pickCar(string message) {
-  carNodeClass* aux;
+employeeClass* employeesListClass::pickEmployee(string message) {
+  employeeNodeClass* aux;
   int selectedOption;
 
   if (this->length == 0) {
@@ -95,13 +97,13 @@ carClass* carsListClass::pickCar(string message) {
 
     cout << "[" << x + 1 << "]";
     cout << " - ";
-    cout << aux->getCar()->getCode();
+    cout << aux->getEmployee()->getCode();
     cout << " - ";
-    cout << aux->getCar()->getBrand();
+    cout << aux->getEmployee()->getBrand();
     cout << " ";
-    cout << aux->getCar()->getModel();
+    cout << aux->getEmployee()->getModel();
     cout << " ";
-    cout << aux->getCar()->getPlate();
+    cout << aux->getEmployee()->getPlate();
     cout << endl;
   }
 

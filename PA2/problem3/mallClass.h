@@ -4,18 +4,18 @@
 
 using namespace std;
 
-class automotiveClass {
+class mallClass {
  private:
   string name;
-  clientsListClass *clients;
+  storesListClass *stores;
 
  public:
-  ~automotiveClass();
-  automotiveClass();
+  ~mallClass();
+  mallClass();
 
   string getName();
   void setName(string value);
 
-  clientsListClass *getClients();
-  void setClients(clientsListClass *value);
+  storesListClass *getStores();
+  void setStores(storesListClass *value);
 };

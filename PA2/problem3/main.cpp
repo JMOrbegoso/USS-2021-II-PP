@@ -25,10 +25,10 @@ El programa debe:
 using namespace std;
 
 int main() {
-  automotiveClass* automotive = new automotiveClass();
-  dataSeedClass::seed(automotive);
+  mallClass* mall = new mallClass();
+  dataSeedClass::seed(mall);
 
-  menuClass* appMenu = new menuClass(automotive);
+  menuClass* appMenu = new menuClass(mall);
 
   appMenu->showMenu();
 

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class clientClass {
+class storeClass {
  private:
   static int counter;
   string code;
@@ -13,13 +13,13 @@ class clientClass {
   string dni;
   unsigned short age;
   bool genre;
-  carsListClass *cars;
+  employeesListClass *employees;
 
  public:
-  ~clientClass();
-  clientClass();
-  clientClass(string firstName, string lastName, string dni, unsigned short age,
-              bool genre);
+  ~storeClass();
+  storeClass();
+  storeClass(string firstName, string lastName, string dni, unsigned short age,
+             bool genre);
 
   string getCode();
 
@@ -39,8 +39,8 @@ class clientClass {
   void setGenre(bool value);
   string getGenreAsString();
 
-  carsListClass *getCars();
-  void setCars(carsListClass *value);
+  employeesListClass *getEmployees();
+  void setEmployees(employeesListClass *value);
 
   void show(int rowNumber, int itemNumber);
 };

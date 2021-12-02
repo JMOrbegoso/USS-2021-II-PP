@@ -6,14 +6,14 @@
 
 using namespace std;
 
-int carClass::counter = 1;
+int employeeClass::counter = 1;
 
-carClass::~carClass() {}
-carClass::carClass() {}
-carClass::carClass(string brand, string model, float price, string plate,
-                   string color, string status) {
-  this->code = "car-" + to_string(carClass::counter);
-  carClass::counter++;
+employeeClass::~employeeClass() {}
+employeeClass::employeeClass() {}
+employeeClass::employeeClass(string brand, string model, float price,
+                             string plate, string color, string status) {
+  this->code = "car-" + to_string(employeeClass::counter);
+  employeeClass::counter++;
 
   this->brand = brand;
   this->model = model;
@@ -23,27 +23,27 @@ carClass::carClass(string brand, string model, float price, string plate,
   this->status = status;
 }
 
-string carClass::getCode() { return this->code; }
+string employeeClass::getCode() { return this->code; }
 
-string carClass::getBrand() { return this->brand; }
-void carClass::setBrand(string value) { this->brand = value; }
+string employeeClass::getBrand() { return this->brand; }
+void employeeClass::setBrand(string value) { this->brand = value; }
 
-string carClass::getModel() { return this->model; }
-void carClass::setModel(string value) { this->model = value; }
+string employeeClass::getModel() { return this->model; }
+void employeeClass::setModel(string value) { this->model = value; }
 
-float carClass::getPrice() { return this->price; }
-void carClass::setPrice(float value) { this->price = value; }
+float employeeClass::getPrice() { return this->price; }
+void employeeClass::setPrice(float value) { this->price = value; }
 
-string carClass::getPlate() { return this->plate; }
-void carClass::setPlate(string value) { this->plate = value; }
+string employeeClass::getPlate() { return this->plate; }
+void employeeClass::setPlate(string value) { this->plate = value; }
 
-string carClass::getColor() { return this->color; }
-void carClass::setColor(string value) { this->color = value; }
+string employeeClass::getColor() { return this->color; }
+void employeeClass::setColor(string value) { this->color = value; }
 
-string carClass::getStatus() { return this->status; }
-void carClass::setStatus(string value) { this->status = value; }
+string employeeClass::getStatus() { return this->status; }
+void employeeClass::setStatus(string value) { this->status = value; }
 
-void carClass::show(int rowNumber, int itemNumber) {
+void employeeClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);

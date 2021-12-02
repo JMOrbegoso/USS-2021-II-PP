@@ -12,7 +12,7 @@ void menuClass::showAppTitle() {
   cout << endl;
   cout << "\t\t Sistema virtual de la empresa de venta de vehículos";
   cout << " ";
-  cout << this->automotive->getName();
+  cout << this->mall->getName();
   cout << endl;
   cout << "-----------------------------------------------------------";
   cout << endl;
@@ -86,8 +86,8 @@ void menuClass::showCarsTableHeader(int rowNumber) {
 }
 
 void menuClass::registerNewClient() {
-  clientClass* newClient;
-  clientsListClass* auxClientsList;
+  storeClass* newClient;
+  storesListClass* auxClientsList;
   string firstName;
   string lastName;
   string dni;
@@ -110,20 +110,20 @@ void menuClass::registerNewClient() {
   genre = helpersClass::requestGenre(
       "Porfavor ingrese el genero del nuevo cliente");
 
-  newClient = new clientClass(firstName, lastName, dni, age, genre);
+  newClient = new storeClass(firstName, lastName, dni, age, genre);
 
-  auxClientsList = this->automotive->getClients();
+  auxClientsList = this->mall->getStores();
   auxClientsList->insert(newClient);
-  this->automotive->setClients(auxClientsList);
+  this->mall->setStores(auxClientsList);
 
   cout << "Cliente registrado correctamente" << endl;
   cout << endl;
 }
 
 void menuClass::registerNewCar() {
-  carClass* newCar;
-  clientClass* auxClient;
-  carsListClass* auxCarsList;
+  employeeClass* newCar;
+  storeClass* auxClient;
+  employeesListClass* auxCarsList;
   string brand;
   string model;
   float price;
@@ -136,7 +136,7 @@ void menuClass::registerNewCar() {
 
   cout << "Registrar nuevo auto:" << endl << endl;
 
-  auxClient = this->automotive->getClients()->pickClient(
+  auxClient = this->mall->getStores()->pickClient(
       "Seleccione el cliente al que desea asignar el auto");
 
   if (auxClient == NULL) {
@@ -154,11 +154,11 @@ void menuClass::registerNewCar() {
   color = helpersClass::requestText("Ingrese el color del nuevo auto", 2);
   status = helpersClass::requestText("Ingrese el estado del nuevo auto", 2);
 
-  newCar = new carClass(brand, model, price, plate, color, status);
+  newCar = new employeeClass(brand, model, price, plate, color, status);
 
-  auxCarsList = auxClient->getCars();
+  auxCarsList = auxClient->getEmployees();
   auxCarsList->insert(newCar);
-  auxClient->setCars(auxCarsList);
+  auxClient->setEmployees(auxCarsList);
 
   cout << "Auto registrado correctamente" << endl;
   cout << endl;
@@ -171,7 +171,7 @@ void menuClass::showClients() {
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los clientes de la empresa:" << endl << endl;
 
-  if (this->automotive->getClients()->getLength() == 0) {
+  if (this->mall->getStores()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -179,14 +179,14 @@ void menuClass::showClients() {
 
   this->showClientsTableHeader(7);
 
-  this->automotive->getClients()->show(8);
+  this->mall->getStores()->show(8);
 
   cout << endl << endl;
 }
 
 void menuClass::showCars() {
-  clientClass* auxClient;
-  carNodeClass* auxCarNode;
+  storeClass* auxClient;
+  employeeNodeClass* auxCarNode;
 
   helpersClass::clearScreen();
   this->showAppTitle();
@@ -194,7 +194,7 @@ void menuClass::showCars() {
   helpersClass::gotoxy(20, 5);
   cout << "Lista de todos los autos en la empresa:" << endl << endl;
 
-  if (this->automotive->getClients()->getLength() == 0) {
+  if (this->mall->getStores()->getLength() == 0) {
     cout << "No hay ningún cliente registrado" << endl;
     cout << "Primero registre al menos un cliente" << endl;
     return;
@@ -203,12 +203,12 @@ void menuClass::showCars() {
   this->showCarsTableHeader(7);
 
   int i = 1;
-  for (int x = 0; x < this->automotive->getClients()->getLength(); x++) {
-    auxClient = this->automotive->getClients()->getHead() + x;
+  for (int x = 0; x < this->mall->getStores()->getLength(); x++) {
+    auxClient = this->mall->getStores()->getHead() + x;
 
-    auxCarNode = auxClient->getCars()->getHead();
+    auxCarNode = auxClient->getEmployees()->getHead();
     while (auxCarNode != NULL) {
-      auxCarNode->getCar()->show(8 + i, i);
+      auxCarNode->getEmployee()->show(8 + i, i);
       i++;
       auxCarNode = auxCarNode->getNext();
     }
@@ -218,7 +218,7 @@ void menuClass::showCars() {
 }
 
 void menuClass::findClientByDni() {
-  clientClass* auxClient;
+  storeClass* auxClient;
   string dniToFind;
 
   dniToFind =
@@ -227,7 +227,7 @@ void menuClass::findClientByDni() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxClient = this->automotive->getClients()->findClientByDni(dniToFind);
+  auxClient = this->mall->getStores()->findStoreByNumber(dniToFind);
 
   if (auxClient == NULL) {
     cout << "No se encontró un cliente con el DNI ingresada";
@@ -246,7 +246,7 @@ void menuClass::findClientByDni() {
 }
 
 void menuClass::findCarByPlate() {
-  carClass* auxCar;
+  employeeClass* auxCar;
   string plateToFind;
 
   plateToFind =
@@ -255,7 +255,7 @@ void menuClass::findCarByPlate() {
   helpersClass::clearScreen();
   this->showAppTitle();
 
-  auxCar = this->automotive->getClients()->findCarByPlate(plateToFind);
+  auxCar = this->mall->getStores()->findEmployeeByDni(plateToFind);
 
   if (auxCar == NULL) {
     cout << "No se encontró un autor con la placa ingresada";
@@ -274,9 +274,7 @@ void menuClass::findCarByPlate() {
 }
 
 menuClass::~menuClass() {}
-menuClass::menuClass(automotiveClass*& automotive) {
-  this->automotive = automotive;
-}
+menuClass::menuClass(mallClass*& mall) { this->mall = mall; }
 
 void menuClass::showMenu() {
   int selectedOption;

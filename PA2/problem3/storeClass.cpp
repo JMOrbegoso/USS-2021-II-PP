@@ -4,14 +4,14 @@
 
 using namespace std;
 
-int clientClass::counter = 1;
+int storeClass::counter = 1;
 
-clientClass::~clientClass() {}
-clientClass::clientClass() {}
-clientClass::clientClass(string firstName, string lastName, string dni,
-                         unsigned short age, bool genre) {
-  this->code = "cl-" + to_string(clientClass::counter);
-  clientClass::counter++;
+storeClass::~storeClass() {}
+storeClass::storeClass() {}
+storeClass::storeClass(string firstName, string lastName, string dni,
+                       unsigned short age, bool genre) {
+  this->code = "cl-" + to_string(storeClass::counter);
+  storeClass::counter++;
 
   this->firstName = firstName;
   this->lastName = lastName;
@@ -19,36 +19,38 @@ clientClass::clientClass(string firstName, string lastName, string dni,
   this->age = age;
   this->genre = genre;
 
-  this->cars = new carsListClass();
+  this->employees = new employeesListClass();
 }
 
-string clientClass::getCode() { return this->code; }
+string storeClass::getCode() { return this->code; }
 
-string clientClass::getFirstName() { return this->firstName; }
-void clientClass::setFirstName(string value) { this->firstName = value; }
+string storeClass::getFirstName() { return this->firstName; }
+void storeClass::setFirstName(string value) { this->firstName = value; }
 
-string clientClass::getLastName() { return this->lastName; }
-void clientClass::setLastName(string value) { this->lastName = value; }
+string storeClass::getLastName() { return this->lastName; }
+void storeClass::setLastName(string value) { this->lastName = value; }
 
-string clientClass::getDni() { return this->dni; }
-void clientClass::setDni(string value) { this->dni = value; }
+string storeClass::getDni() { return this->dni; }
+void storeClass::setDni(string value) { this->dni = value; }
 
-unsigned short clientClass::getAge() { return this->age; }
-void clientClass::setAge(unsigned short value) { this->age = value; }
+unsigned short storeClass::getAge() { return this->age; }
+void storeClass::setAge(unsigned short value) { this->age = value; }
 
-bool clientClass::getGenre() { return this->genre; }
-void clientClass::setGenre(bool value) { this->genre = value; }
-string clientClass::getGenreAsString() {
+bool storeClass::getGenre() { return this->genre; }
+void storeClass::setGenre(bool value) { this->genre = value; }
+string storeClass::getGenreAsString() {
   if (this->genre)
     return "Masculino";
   else
     return "Femenino";
 }
 
-carsListClass *clientClass::getCars() { return this->cars; }
-void clientClass::setCars(carsListClass *value) { this->cars = value; }
+employeesListClass *storeClass::getEmployees() { return this->employees; }
+void storeClass::setEmployees(employeesListClass *value) {
+  this->employees = value;
+}
 
-void clientClass::show(int rowNumber, int itemNumber) {
+void storeClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(0, rowNumber);
   cout << itemNumber;
   helpersClass::gotoxy(5, rowNumber);
