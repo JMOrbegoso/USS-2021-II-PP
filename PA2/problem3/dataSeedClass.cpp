@@ -10,6 +10,7 @@ void dataSeedClass::seed(mallClass *&mall) {
   mall->setName("Don Lopez");
   mall->setAddress("Av. Bolognesi 444");
   mall->setRuc("12345678910");
+  mall->setCapacity(500);
 
   employee_1 = new employeeClass("Maria", "Gomez", "10117618", 1200);
   employee_2 = new employeeClass("Roberto", "Díaz", "80121607", 1300);
@@ -17,7 +18,7 @@ void dataSeedClass::seed(mallClass *&mall) {
 
   client_1 = new clientClass("Ricardo", "Flores", "10117618", true);
   client_2 = new clientClass("Susana", "Rojas", "80121607", false);
-  client_3 = new clientClass("Jose", "Lopez", "80121607", false);
+  client_3 = new clientClass("Jose", "Lopez", "89213518", false);
 
   store_1 = new storeClass("Mario Ramos", "Zapatería");
   store_2 = new storeClass("Luigi Ramirez", "Venta de Celulares");
