@@ -43,13 +43,11 @@ void storeClass::show(int rowNumber, int itemNumber) {
   helpersClass::gotoxy(5, rowNumber);
   cout << this->getCode();
   helpersClass::gotoxy(15, rowNumber);
-  cout << this->getCode();
-  helpersClass::gotoxy(30, rowNumber);
   cout << this->getOwner();
-  helpersClass::gotoxy(45, rowNumber);
+  helpersClass::gotoxy(35, rowNumber);
   cout << this->getSpecialization();
-  helpersClass::gotoxy(55, rowNumber);
-  cout << this - getEmployees()->getLength();
-  helpersClass::gotoxy(65, rowNumber);
-  cout << this - getClients()->getLength();
+  helpersClass::gotoxy(60, rowNumber);
+  cout << this->getEmployees()->getLength();
+  helpersClass::gotoxy(80, rowNumber);
+  cout << this->getClients()->getLength();
 }
