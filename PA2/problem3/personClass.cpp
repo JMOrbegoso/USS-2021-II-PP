@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#include "helpersClass.h"
-
 using namespace std;
 
 personClass::~personClass() {}
