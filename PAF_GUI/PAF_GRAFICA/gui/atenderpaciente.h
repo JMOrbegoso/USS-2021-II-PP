@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <listalocalesclass.h>
+#include <atendidoclass.h>
+#include <qtablewidget.h>
 
 namespace Ui {
 class atenderPaciente;
@@ -18,20 +20,16 @@ public:
 
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
-
-    listaPersonalClass *getEnfermeras() const;
-    void setEnfermeras(listaPersonalClass *value);
-
-    listaPacientesClass *getPacientes() const;
-    void setPacientes(listaPacientesClass *value);
-
     void listaLocalComboBox();
     void actualizarC(listaPacientesClass *pacientes = NULL);
-    void listaEnfermerasCbox();
+    void listaEnfermerasCbox(nodoPersonalClass *enfermera);
+    listaPacientesClass *getPacientes() const;
+    void setPacientes(listaPacientesClass *value);
+    atendidoClass *getAtendido() const;
+    void setAtendido(atendidoClass *value);
+
 private slots:
     void on_regresarButton_clicked();
-
-    void on_atenderButton_clicked();
 
     void on_registrarButton_clicked();
 
@@ -39,10 +37,13 @@ private slots:
 
     void on_enfermerasCBox_textHighlighted(const QString &arg1);
 
+    void on_atenderButton_clicked();
+
+    void on_mostrarPacientesQwidget_itemClicked(QTableWidgetItem *item);
+
 private:
     Ui::atenderPaciente *ui;
     listaLocalesClass *locales;
-    listaPersonalClass *enfermeras;
     listaPacientesClass *pacientes;
 };
 

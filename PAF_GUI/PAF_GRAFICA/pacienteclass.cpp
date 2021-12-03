@@ -36,6 +36,16 @@ string pacienteClass::getCodigo()
     return this->codigo;
 }
 
+atendidoClass *pacienteClass::getAtendido() const
+{
+    return atendido;
+}
+
+void pacienteClass::setAtendido(atendidoClass *value)
+{
+    atendido = value;
+}
+
 pacienteClass::pacienteClass()
 {
 }

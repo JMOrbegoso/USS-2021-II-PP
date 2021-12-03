@@ -1,16 +1,6 @@
 #include "atendidoclass.h"
 
 
-pacienteClass *atendidoClass::getAtendido() const
-{
-    return atendido;
-}
-
-void atendidoClass::setAtendido(pacienteClass *value)
-{
-    atendido = value;
-}
-
 personalClass *atendidoClass::getEnfermera() const
 {
     return enfermera;

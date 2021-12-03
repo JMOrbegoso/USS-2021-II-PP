@@ -26,12 +26,6 @@ void atenderPaciente::on_regresarButton_clicked()
     this->close();
 }
 
-
-void atenderPaciente::on_atenderButton_clicked()
-{
-
-}
-
 void atenderPaciente::on_registrarButton_clicked()
 {
     registrarPaciente *regiPaciente = new registrarPaciente();
@@ -49,16 +43,6 @@ listaPacientesClass *atenderPaciente::getPacientes() const
 void atenderPaciente::setPacientes(listaPacientesClass *value)
 {
     pacientes = value;
-}
-
-listaPersonalClass *atenderPaciente::getEnfermeras() const
-{
-    return enfermeras;
-}
-
-void atenderPaciente::setEnfermeras(listaPersonalClass *value)
-{
-    enfermeras = value;
 }
 
 listaLocalesClass *atenderPaciente::getLocales() const
@@ -83,6 +67,7 @@ void atenderPaciente::on_localesCBox_highlighted(int index)
     int i = index;
     ui->direccionTxt->setText(QString::fromStdString((this->locales->getCab()+i)->getDireccionLocal()));
     this->actualizarC((locales->getCab()+i)->getPacientes());
+    this->listaEnfermerasCbox((this->locales->getCab()+i)->getPersonales()->getCab());
 }
 
 void atenderPaciente::actualizarC(listaPacientesClass *pacientes)
@@ -113,15 +98,16 @@ void atenderPaciente::actualizarC(listaPacientesClass *pacientes)
     }
 }
 
-void atenderPaciente::listaEnfermerasCbox(){
+void atenderPaciente::listaEnfermerasCbox(nodoPersonalClass *enfermera){
+    ui->enfermerasCBox->clear();
     nodoPersonalClass  *aux = new nodoPersonalClass();
     //int i = 0;
-    for(int x = 0; x < this->getLocales()->getCant(); x++){
-        aux = (this->getLocales()->getCab()+x)->getPersonales()->getCab();
-        while(aux != NULL){
-            //this->ui->enfermerasCBox->addItem(QString::fromStdString);
-            aux = aux->getSgte();
+    aux = enfermera;
+    while(aux != NULL){
+        if(aux->getInfo()->getTipoPersonal() == false){
+            this->ui->enfermerasCBox->addItem(QString::fromStdString(aux->getInfo()->getNombre()));
         }
+        aux = aux->getSgte();
     }
 }
 
@@ -129,4 +115,15 @@ void atenderPaciente::on_enfermerasCBox_textHighlighted(const QString &arg1)
 {
     string select;
     select = arg1.toStdString();
+}
+
+void atenderPaciente::on_atenderButton_clicked()
+{
+    this->setPacientes((this->locales->getCab() + ui->localesCBox->currentIndex())->getPacientes()); //verificar que empiece en 0?
+}
+
+
+void atenderPaciente::on_mostrarPacientesQwidget_itemClicked(QTableWidgetItem *item)
+{
+
 }

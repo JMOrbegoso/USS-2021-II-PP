@@ -75,27 +75,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="atenderButton">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>370</y>
-     <width>80</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Atender</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
@@ -306,6 +285,24 @@
     <string>Registrar</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="atenderButton">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>370</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Atender</string>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>localesCBox</tabstop>
@@ -314,7 +311,6 @@
   <tabstop>nombreVacunaCbox</tabstop>
   <tabstop>fechaDateTimeEdit</tabstop>
   <tabstop>mostrarPacientesQwidget</tabstop>
-  <tabstop>atenderButton</tabstop>
   <tabstop>reportesButton</tabstop>
   <tabstop>regresarButton</tabstop>
  </tabstops>
