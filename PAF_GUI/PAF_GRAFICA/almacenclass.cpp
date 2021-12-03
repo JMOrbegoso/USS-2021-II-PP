@@ -50,6 +50,7 @@ void almacenClass::setLotes(listaLotesVacunaClass *value)
 {
     lotes = value;
 }
+
 almacenClass::almacenClass()
 {
     this->lotes = new listaLotesVacunaClass();

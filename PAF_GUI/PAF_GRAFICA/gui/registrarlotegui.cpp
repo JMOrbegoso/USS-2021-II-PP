@@ -20,5 +20,15 @@ void registrarLoteGui::on_cancelarButton_clicked()
 
 void registrarLoteGui::on_registrarButton_clicked()
 {
-    this->close();
+
+}
+
+almacenClass *registrarLoteGui::getAlmacen() const
+{
+    return almacen;
+}
+
+void registrarLoteGui::setAlmacen(almacenClass *value)
+{
+    almacen = value;
 }
