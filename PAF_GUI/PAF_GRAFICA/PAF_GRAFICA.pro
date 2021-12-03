@@ -16,7 +16,6 @@ SOURCES += main.cpp\
     almaceneslistaclass.cpp \
     datossemillaclass.cpp \
     gui/atenderpaciente.cpp \
-    gui/editaralmacen.cpp \
     gui/gestionaralmacenes.cpp \
     gui/gestionarlotegui.cpp \
         gui/mainwindow.cpp \
@@ -54,7 +53,6 @@ HEADERS  += gui/mainwindow.h \
     datossemillaclass.h \
     gui/atenderpaciente.h \
     atendidoclass.h \
-    gui/editaralmacen.h \
     gui/gestionaralmacenes.h \
     gui/gestionarlotegui.h \
     listalocalesclass.h \
@@ -86,7 +84,6 @@ HEADERS  += gui/mainwindow.h \
 FORMS    += gui/mainwindow.ui \
     gui/aboutgui.ui \
     gui/atenderpaciente.ui \
-    gui/editaralmacen.ui \
     gui/gestionaralmacenes.ui \
     gui/gestionaratendidos.ui \
     gui/gestionarlocal.ui \
