@@ -52,7 +52,7 @@ listaLocalesClass *gestionarPaciente::getLocales() const
 void gestionarPaciente::setLocales(listaLocalesClass *value)
 {
     locales = value;
-   this->actualizarC(this->locales->getCab()->getPacientes());
+   this->setPacientes(this->locales->getCab()->getPacientes());
 }
 
 void gestionarPaciente::listaLocalComboBox()
