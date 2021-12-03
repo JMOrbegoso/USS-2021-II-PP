@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>715</width>
-    <height>384</height>
+    <height>305</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>30</x>
      <y>20</y>
      <width>651</width>
-     <height>331</height>
+     <height>261</height>
     </rect>
    </property>
    <property name="title">
@@ -31,7 +31,7 @@
       <x>120</x>
       <y>60</y>
       <width>421</width>
-      <height>81</height>
+      <height>94</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -50,7 +50,7 @@
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>23</height>
+         <height>30</height>
         </size>
        </property>
       </widget>
