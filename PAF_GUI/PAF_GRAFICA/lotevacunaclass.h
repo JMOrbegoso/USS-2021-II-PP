@@ -5,9 +5,9 @@
 using namespace std;
 
 class loteVacunaClass{
-    string nombre;
+    string nombre; //pera toy comiendo mi sopa
     int cantidad;
-    string caducidad;
+    string caducidad; //si
     bool estado;
 public:
     loteVacunaClass();

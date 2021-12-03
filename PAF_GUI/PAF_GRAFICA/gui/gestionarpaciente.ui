@@ -59,7 +59,7 @@
    <property name="geometry">
     <rect>
      <x>940</x>
-     <y>240</y>
+     <y>260</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -109,8 +109,8 @@
     <rect>
      <x>20</x>
      <y>120</y>
-     <width>701</width>
-     <height>221</height>
+     <width>721</width>
+     <height>261</height>
     </rect>
    </property>
    <column>
@@ -136,6 +136,16 @@
    <column>
     <property name="text">
      <string>EDAD</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>DIRECCION</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ENFERMEDAD</string>
     </property>
    </column>
   </widget>
@@ -226,11 +236,11 @@
      <x>750</x>
      <y>130</y>
      <width>301</width>
-     <height>91</height>
+     <height>137</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_4">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QLabel" name="label_5">
       <property name="font">
        <font>
@@ -242,10 +252,14 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="editarNombreTxt"/>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="editarNombreTxt">
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
      <widget class="QLabel" name="label_6">
       <property name="font">
        <font>
@@ -257,10 +271,14 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="apellidosTxt"/>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="editarApellidosTxt">
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
-    <item row="2" column="0">
+    <item row="4" column="0">
      <widget class="QLabel" name="label_7">
       <property name="font">
        <font>
@@ -272,30 +290,60 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QPlainTextEdit" name="plainTextEdit">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>24</height>
-       </size>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>DNI:</string>
       </property>
      </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="editarDniTxt">
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="editarDireccionTxt"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Edad:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="editarEdadTxt"/>
     </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
   <tabstop>elegirLocalCbox</tabstop>
+  <tabstop>nombreLocalTxt</tabstop>
+  <tabstop>direccionTxt</tabstop>
   <tabstop>buscarPacienteTxt</tabstop>
   <tabstop>mostrarPacienteTwidget</tabstop>
+  <tabstop>editarDniTxt</tabstop>
   <tabstop>editarNombreTxt</tabstop>
-  <tabstop>apellidosTxt</tabstop>
+  <tabstop>editarApellidosTxt</tabstop>
+  <tabstop>editarEdadTxt</tabstop>
+  <tabstop>editarDireccionTxt</tabstop>
   <tabstop>editarCmd</tabstop>
   <tabstop>registrarPacienteCmd</tabstop>
   <tabstop>regresarCmd</tabstop>
-  <tabstop>nombreLocalTxt</tabstop>
-  <tabstop>direccionTxt</tabstop>
  </tabstops>
  <resources/>
  <connections/>

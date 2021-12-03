@@ -20,6 +20,12 @@ void registrarPaciente::on_regresarCmd_clicked()
     this->close();
 }
 
+void registrarPaciente::on_elegirLocalCbox_textHighlighted(const QString &arg1)
+{
+    string seleccionar;
+    seleccionar = arg1.toStdString();
+}
+
 listaLocalesClass *registrarPaciente::getLocales() const
 {
     return locales;
@@ -28,6 +34,13 @@ listaLocalesClass *registrarPaciente::getLocales() const
 void registrarPaciente::setLocales(listaLocalesClass *value)
 {
     locales = value;
+}
+
+void registrarPaciente::listaLocalComboBox()
+{
+    for(int i=0;i < this->locales->getCant();i++){
+        ui->elegirLocalCbox->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
+    }
 }
 
 void registrarPaciente::clear()
@@ -98,19 +111,6 @@ void registrarPaciente::on_registrarCmd_clicked()
     msje.setText("Paciente Registrado");
     msje.exec();
     clear();
-}
-
-void registrarPaciente::on_elegirLocalCbox_textHighlighted(const QString &arg1)
-{
-    string seleccionar;
-    seleccionar = arg1.toStdString();
-}
-
-void registrarPaciente::listaLocalComboBox()
-{
-    for(int i=0;i < this->locales->getCant();i++){
-        ui->elegirLocalCbox->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
-    }
 }
 
 void registrarPaciente::on_enfermedadCbox_currentIndexChanged(int index)

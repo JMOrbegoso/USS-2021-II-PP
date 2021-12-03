@@ -221,6 +221,41 @@
      <height>241</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>CODIGO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>DNI</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>NOMBRE</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>APELLIDOS</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>EDAD</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>DIRECCION</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ENFERMEDAD</string>
+    </property>
+   </column>
   </widget>
   <widget class="QWidget" name="formLayoutWidget_3">
    <property name="geometry">
@@ -253,7 +288,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="reportesButton_2">
+  <widget class="QPushButton" name="registrarButton">
    <property name="geometry">
     <rect>
      <x>10</x>

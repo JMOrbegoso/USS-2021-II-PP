@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <listalocalesclass.h>
+#include <qtablewidget.h>
 
 namespace Ui {
 class gestionarPaciente;
@@ -30,6 +31,10 @@ private slots:
     void on_elegirLocalCbox_highlighted(int index);
 
     void on_buscarPacienteTxt_textChanged(const QString &arg1);
+
+    void on_mostrarPacienteTwidget_itemClicked(QTableWidgetItem *item);
+
+    void on_editarCmd_clicked();
 
 private:
     Ui::gestionarPaciente *ui;

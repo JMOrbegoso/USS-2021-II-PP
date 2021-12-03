@@ -140,8 +140,17 @@ void MainWindow::on_actionGestionar_Lotes_triggered()
 
 void MainWindow::on_actionAtender_Paciente_triggered()
 {
-    atenderPaciente *atePaciente = new atenderPaciente();
-    atePaciente->show();
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        atenderPaciente *atePaciente = new atenderPaciente();
+        atePaciente->setLocales(this->getVacunaDengue()->getLocales());
+        atePaciente->listaLocalComboBox();
+        atePaciente->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero Debe Registrar Locales");
+        msje.exec();
+        return;
+    }
 }
 
 vacunatonContraDengueClass *MainWindow::getVacunaDengue() const

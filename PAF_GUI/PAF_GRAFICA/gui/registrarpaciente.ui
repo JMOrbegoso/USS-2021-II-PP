@@ -304,7 +304,6 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>elegirLocalCbox</tabstop>
   <tabstop>dniTxt</tabstop>
   <tabstop>nombreTxt</tabstop>
   <tabstop>apellidoTxt</tabstop>
@@ -313,9 +312,10 @@
   <tabstop>direccionTxt</tabstop>
   <tabstop>enfermedadCbox</tabstop>
   <tabstop>cualTxt</tabstop>
+  <tabstop>elegirLocalCbox</tabstop>
   <tabstop>registrarCmd</tabstop>
-  <tabstop>editarCmd</tabstop>
   <tabstop>regresarCmd</tabstop>
+  <tabstop>editarCmd</tabstop>
  </tabstops>
  <resources/>
  <connections/>

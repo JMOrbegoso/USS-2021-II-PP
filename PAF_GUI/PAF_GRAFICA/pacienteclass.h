@@ -11,6 +11,7 @@ private:
     string cualEnfermedad;
 public:
     pacienteClass();
+    pacienteClass(string dni,string nombre,string apellido,int edad,string telefono,string direccion,string enfermedad, string cual);
     ~pacienteClass();
     string getEnfermedad() const;
     void setEnfermedad(const string &value);

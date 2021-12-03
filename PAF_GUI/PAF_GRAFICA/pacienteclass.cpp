@@ -38,8 +38,14 @@ string pacienteClass::getCodigo()
 
 pacienteClass::pacienteClass()
 {
+}
+
+pacienteClass::pacienteClass(string dni, string nombre, string apellido, int edad,string telefono, string direccion, string enfermed, string cual) : personaClass(nombre, apellido, dni, telefono, direccion, edad)
+{
     this->codigo = "PACI-" + to_string(pacienteClass::contador);
     pacienteClass::contador++;
+    this->enfermedad = enfermed;
+    this->cualEnfermedad = cual;
 }
 
 pacienteClass::~pacienteClass()
