@@ -30,9 +30,9 @@ void nodoPacienteClass::setAnt(nodoPacienteClass *value)
 {
     ant = value;
 }
-nodoPacienteClass::nodoPacienteClass()
-{
-
+nodoPacienteClass::nodoPacienteClass(){
+    this->sgte = NULL;
+    this->ant = NULL;
 }
 
 nodoPacienteClass::~nodoPacienteClass()

@@ -49,3 +49,19 @@ void listaPacientesClass::insertarPaciente(pacienteClass *paci)
     this->cant++;
 }
 
+listaPacientesClass *listaPacientesClass::buscarDni(string dni)
+{
+    listaPacientesClass* temp = new listaPacientesClass();
+    nodoPacienteClass *aux = this->getCab();
+
+    while(aux != NULL)
+    {
+        if (aux->getInfo()->getDni().find(dni, 0) != string::npos)
+            temp->insertarPaciente(aux->getInfo());
+
+        aux = aux->getSgte();
+    }
+
+    return temp;
+}
+

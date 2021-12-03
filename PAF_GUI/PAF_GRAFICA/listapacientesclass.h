@@ -14,6 +14,7 @@ public:
     int getCant() const;
     void setCant(int value);
     void insertarPaciente(pacienteClass *pers);
+    listaPacientesClass *buscarDni(string dni);
 };
 
 #endif // LISTAPACIENTESCLASS_H

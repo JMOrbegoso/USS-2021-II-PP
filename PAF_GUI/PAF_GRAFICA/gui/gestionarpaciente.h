@@ -20,15 +20,16 @@ public:
     void setLocales(listaLocalesClass *value);
     listaPacientesClass *getPacientes() const;
     void setPacientes(listaPacientesClass *value);
+    void actualizarC(listaPacientesClass *pacientes = NULL);
     void listaLocalComboBox();
-
-    void actualizarC(listaPacientesClass *pacientes);
 private slots:
     void on_regresarCmd_clicked();
 
     void on_registrarPacienteCmd_clicked();
 
     void on_elegirLocalCbox_highlighted(int index);
+
+    void on_buscarPacienteTxt_textChanged(const QString &arg1);
 
 private:
     Ui::gestionarPaciente *ui;

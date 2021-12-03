@@ -35,12 +35,13 @@ void gestionarPaciente::on_registrarPacienteCmd_clicked()
 
 listaPacientesClass *gestionarPaciente::getPacientes() const
 {
-    return pacientes;
+    return this->pacientes;
 }
 
 void gestionarPaciente::setPacientes(listaPacientesClass *value)
 {
-    pacientes = value;
+    this->pacientes = value;
+    this->actualizarC();
 }
 
 listaLocalesClass *gestionarPaciente::getLocales() const
@@ -67,12 +68,14 @@ void gestionarPaciente::on_elegirLocalCbox_highlighted(int index)
     ui->direccionTxt->setText(QString::fromStdString((this->locales->getCab()+i)->getDireccionLocal()));
     ui->nombreLocalTxt->setText(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
     this->actualizarC((locales->getCab()+i)->getPacientes());
+    this->ui->buscarPacienteTxt->clear();
 }
 
 void gestionarPaciente::actualizarC(listaPacientesClass *pacientes)
 {
-    nodoPacienteClass *aux = new nodoPacienteClass();
-    aux = pacientes->getCab();
+    pacientes = pacientes == NULL ? this->pacientes : pacientes;
+    this->ui->mostrarPacienteTwidget->setRowCount(0);
+    nodoPacienteClass *aux = pacientes->getCab();
     int x = 0;
     ui->mostrarPacienteTwidget->clearContents();
     while(aux != NULL){
@@ -90,4 +93,10 @@ void gestionarPaciente::actualizarC(listaPacientesClass *pacientes)
         ui->mostrarPacienteTwidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(to_string(edad))));
         aux = aux->getSgte();
     }
+}
+
+void gestionarPaciente::on_buscarPacienteTxt_textChanged(const QString &arg)
+{
+    auto busquedaPaciente = this->pacientes->buscarDni(arg.toStdString());
+    this->actualizarC(busquedaPaciente);
 }
