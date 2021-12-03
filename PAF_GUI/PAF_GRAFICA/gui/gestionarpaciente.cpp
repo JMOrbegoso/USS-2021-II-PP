@@ -117,11 +117,11 @@ void gestionarPaciente::on_mostrarPacienteTwidget_itemClicked(QTableWidgetItem *
     QTableWidgetItem *nombre = this->ui->mostrarPacienteTwidget->item(row, 2);
     QTableWidgetItem *apellido = this->ui->mostrarPacienteTwidget->item(row, 3);
     //QTableWidgetItem *edad = this->ui->mostrarPacienteTwidget->item(row, 4);
-    //QTableWidgetItem *direccion = this->ui->mostrarPacienteTwidget->item(row, 5);
+    QTableWidgetItem *direccion = this->ui->mostrarPacienteTwidget->item(row, 5);
     this->ui->editarDniTxt->setText(dni->text());
     this->ui->editarNombreTxt->setText(nombre->text());
     this->ui->editarApellidosTxt->setText(apellido->text());
-    //this->ui->editarDireccionTxt->setText(direccion->text());
+    this->ui->editarDireccionTxt->setText(direccion->text());
     //this->ui->editarEdadTxt->setText(edad.);
 }
 
@@ -131,15 +131,15 @@ void gestionarPaciente::on_editarCmd_clicked()
     string dni = this->ui->editarDniTxt->text().toStdString();
     string nombre = this->ui->editarNombreTxt->text().toStdString();
     string apellido = this->ui->editarApellidosTxt->text().toStdString();
-    //string direccion = this->ui->editarDireccionTxt->text().toStdString();
+    string direccion = this->ui->editarDireccionTxt->text().toStdString();
 
     (this->pacientes->getCab() + x)->getInfo()->setDni(dni);
     (this->pacientes->getCab() + x)->getInfo()->setNombre(nombre);
     (this->pacientes->getCab() + x)->getInfo()->setApellido(apellido);
-    //(this->pacientes->getCab() + x)->getInfo()->setDireccion(direccion);
+    (this->pacientes->getCab() + x)->getInfo()->setDireccion(direccion);
 
     this->ui->mostrarPacienteTwidget->item(x, 1)->setText(QString::fromStdString(dni));
     this->ui->mostrarPacienteTwidget->item(x, 2)->setText(QString::fromStdString(nombre));
     this->ui->mostrarPacienteTwidget->item(x, 3)->setText(QString::fromStdString(apellido));
-    //this->ui->mostrarPacienteTwidget->item(x, 5)->setText(QString::fromStdString(direccion));
+    this->ui->mostrarPacienteTwidget->item(x, 5)->setText(QString::fromStdString(direccion));
 }
