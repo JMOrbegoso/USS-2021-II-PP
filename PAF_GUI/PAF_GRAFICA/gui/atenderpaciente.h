@@ -28,6 +28,9 @@ public:
     atendidoClass *getAtendido() const;
     void setAtendido(atendidoClass *value);
 
+    listaPersonalClass *getEnfermeras() const;
+    void setEnfermeras(listaPersonalClass *value);
+
 private slots:
     void on_regresarButton_clicked();
 
@@ -39,12 +42,11 @@ private slots:
 
     void on_atenderButton_clicked();
 
-    void on_mostrarPacientesQwidget_itemClicked(QTableWidgetItem *item);
-
 private:
     Ui::atenderPaciente *ui;
     listaLocalesClass *locales;
     listaPacientesClass *pacientes;
+    listaPersonalClass *enfermeras;
 };
 
 #endif // ATENDERPACIENTE_H

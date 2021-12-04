@@ -7,6 +7,7 @@ class atendidoClass{
 private:
     personalClass *enfermera;
     loteVacunaLocalClass *vacuna;
+    string fecha;
 public:
     atendidoClass();
     ~atendidoClass();
@@ -14,6 +15,8 @@ public:
     void setEnfermera(personalClass *value);
     loteVacunaLocalClass *getVacuna() const;
     void setVacuna(loteVacunaLocalClass *value);
+    string getFecha() const;
+    void setFecha(const string &value);
 };
 
 #endif // ATENDIDOCLASS_H

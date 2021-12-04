@@ -20,6 +20,16 @@ void atendidoClass::setVacuna(loteVacunaLocalClass *value)
 {
     vacuna = value;
 }
+string atendidoClass::getFecha() const
+{
+    return fecha;
+}
+
+void atendidoClass::setFecha(const string &value)
+{
+    fecha = value;
+}
+
 atendidoClass::atendidoClass()
 {
 

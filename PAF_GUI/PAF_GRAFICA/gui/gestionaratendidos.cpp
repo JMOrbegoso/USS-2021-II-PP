@@ -7,6 +7,10 @@ gestionarAtendidos::gestionarAtendidos(QWidget *parent) :
     ui(new Ui::gestionarAtendidos)
 {
     ui->setupUi(this);
+    ui->listaAtendidosTwidget->setColumnWidth(0,50);
+    ui->listaAtendidosTwidget->setColumnWidth(1,100);
+    ui->listaAtendidosTwidget->setColumnWidth(2,100);
+    ui->listaAtendidosTwidget->setColumnWidth(3,100);
 }
 
 gestionarAtendidos::~gestionarAtendidos()
@@ -24,4 +28,55 @@ void gestionarAtendidos::on_registrarOtroPacienteCmd_clicked()
     registrarPaciente *regiPaciente = new registrarPaciente();
     regiPaciente->showNormal();
     this->close();
+}
+
+void gestionarAtendidos::listaLocalesBox(){
+    int i = 0;
+    for(int i=0;i < this->locales->getCant();i++){
+        ui->elegirLocalCbox->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
+    }
+    this->actualizarC((locales->getCab()+i)->getPacientes());
+}
+
+void gestionarAtendidos::on_elegirLocalCbox_textHighlighted(const QString &arg1)
+{
+    string select;
+    select = arg1.toStdString();
+}
+
+listaPacientesClass *gestionarAtendidos::getPacientes() const
+{
+    return pacientes;
+}
+
+void gestionarAtendidos::setPacientes(listaPacientesClass *value)
+{
+    pacientes = value;
+}
+
+void gestionarAtendidos::actualizarC(listaPacientesClass *pacientes){
+    pacientes = pacientes == NULL ? this->pacientes : pacientes;
+    this->ui->listaAtendidosTwidget->setRowCount(0);
+    nodoPacienteClass *aux = pacientes->getCab();
+    int x = 0;
+    ui->listaAtendidosTwidget->clearContents();
+    while(aux != NULL){
+        auto codigo = aux->getInfo()->getCodigo();
+        auto dni = aux->getInfo()->getDni();
+
+        ui->listaAtendidosTwidget->insertRow(x);
+        ui->listaAtendidosTwidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
+        ui->listaAtendidosTwidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(dni)));
+        aux = aux->getSgte();
+    }
+}
+
+listaLocalesClass *gestionarAtendidos::getLocales() const
+{
+    return locales;
+}
+
+void gestionarAtendidos::setLocales(listaLocalesClass *value)
+{
+    locales = value;
 }

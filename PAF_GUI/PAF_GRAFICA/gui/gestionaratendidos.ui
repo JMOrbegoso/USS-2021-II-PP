@@ -6,69 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>770</width>
+    <width>682</width>
     <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Reporte de Atendidos</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>60</y>
-     <width>151</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Buscar Paciente Atendido:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="buscarAtendidoTxt">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>60</y>
-     <width>238</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="buscarAtendidoCmd">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>60</y>
-     <width>80</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Buscar</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="registrarOtroPacienteCmd">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>390</y>
      <width>81</width>
      <height>31</height>
@@ -86,7 +34,7 @@
   <widget class="QPushButton" name="regresarCmd">
    <property name="geometry">
     <rect>
-     <x>670</x>
+     <x>590</x>
      <y>390</y>
      <width>80</width>
      <height>31</height>
@@ -106,10 +54,30 @@
     <rect>
      <x>30</x>
      <y>110</y>
-     <width>671</width>
-     <height>221</height>
+     <width>631</width>
+     <height>231</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>CODIGO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>DNI</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ENFERMERA</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>VACUNA</string>
+    </property>
+   </column>
   </widget>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
@@ -138,18 +106,36 @@
     </item>
    </layout>
   </widget>
-  <widget class="QScrollBar" name="verticalScrollBar">
+  <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>120</y>
-     <width>16</width>
-     <height>201</height>
+     <x>30</x>
+     <y>60</y>
+     <width>401</width>
+     <height>31</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Buscar Paciente Atendido:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="buscarAtendidoTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

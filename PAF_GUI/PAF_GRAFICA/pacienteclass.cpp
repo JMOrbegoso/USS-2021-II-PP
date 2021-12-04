@@ -11,15 +11,6 @@ void pacienteClass::setEnfermedad(const string &value)
 {
     enfermedad = value;
 }
-string pacienteClass::getFecha() const
-{
-    return fecha;
-}
-
-void pacienteClass::setFecha(const string &value)
-{
-    fecha = value;
-}
 
 string pacienteClass::getCualEnfermedad() const
 {

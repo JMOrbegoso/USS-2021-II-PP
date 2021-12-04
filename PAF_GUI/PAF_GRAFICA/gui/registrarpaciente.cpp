@@ -99,6 +99,7 @@ void registrarPaciente::on_registrarCmd_clicked()
         if((this->locales->getCab()+x)->getNombreLocal() == ui->elegirLocalCbox->currentText().toStdString())
             break;
     }
+    paci->setAtendido(NULL);
     paci->setNombre(ui->nombreTxt->text().toStdString());
     paci->setApellido(ui->apellidoTxt->text().toStdString());
     paci->setDni(ui->dniTxt->text().toStdString());

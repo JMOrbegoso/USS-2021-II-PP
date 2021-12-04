@@ -306,13 +306,15 @@
  </widget>
  <tabstops>
   <tabstop>localesCBox</tabstop>
-  <tabstop>direccionTxt</tabstop>
   <tabstop>enfermerasCBox</tabstop>
-  <tabstop>nombreVacunaCbox</tabstop>
   <tabstop>fechaDateTimeEdit</tabstop>
+  <tabstop>nombreVacunaCbox</tabstop>
   <tabstop>mostrarPacientesQwidget</tabstop>
+  <tabstop>atenderButton</tabstop>
   <tabstop>reportesButton</tabstop>
+  <tabstop>registrarButton</tabstop>
   <tabstop>regresarButton</tabstop>
+  <tabstop>direccionTxt</tabstop>
  </tabstops>
  <resources/>
  <connections/>

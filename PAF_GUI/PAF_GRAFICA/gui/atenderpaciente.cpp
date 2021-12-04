@@ -119,11 +119,37 @@ void atenderPaciente::on_enfermerasCBox_textHighlighted(const QString &arg1)
 
 void atenderPaciente::on_atenderButton_clicked()
 {
+    nodoPacienteClass *aux = new nodoPacienteClass();
+    atendidoClass *aux1 = new atendidoClass();
+    nodoPersonalClass *aux2 = new nodoPersonalClass();
+    //paciente
     this->setPacientes((this->locales->getCab() + ui->localesCBox->currentIndex())->getPacientes()); //verificar que empiece en 0?
+    int x = ui->mostrarPacientesQwidget->currentRow();
+    aux = this->getPacientes()->getCab();
+    for(int i = 0; i < x; i++){
+       aux = aux->getSgte();
+    }
+    aux->getInfo()->setAtendido(aux1);
+    //enfermera
+    string enfermera = ui->enfermerasCBox->currentText().toStdString();
+    this->enfermeras = (this->locales->getCab() + ui->localesCBox->currentIndex())->getPersonales();
+    aux2 = this->enfermeras->getCab();
+    while(aux2 != NULL){
+        if(aux2->getInfo()->getNombre() == enfermera){
+            aux1->setEnfermera(aux2->getInfo());
+        }
+        aux2 = aux2->getSgte();
+    }
+    //vacuna
 }
 
-
-void atenderPaciente::on_mostrarPacientesQwidget_itemClicked(QTableWidgetItem *item)
+listaPersonalClass *atenderPaciente::getEnfermeras() const
 {
-
+    return enfermeras;
 }
+
+void atenderPaciente::setEnfermeras(listaPersonalClass *value)
+{
+    enfermeras = value;
+}
+

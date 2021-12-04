@@ -68,6 +68,8 @@ void MainWindow::on_actionGestionar_Pacientes_triggered()
 void MainWindow::on_actionGestionar_Atenci_n_triggered()
 {
     gestionarAtendidos *gesAtendido = new gestionarAtendidos();
+    gesAtendido->setLocales(this->getVacunaDengue()->getLocales());
+    gesAtendido->listaLocalesBox();
     gesAtendido->show();
 }
 

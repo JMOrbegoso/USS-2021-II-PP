@@ -3475,13 +3475,30 @@
 											"height": 13,
 											"text": "-string enfermedadCronica",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF9glm4SQmAIRk=",
+											"_parent": {
+												"$ref": "AAAAAAF8xRB/Oo6XUoM="
+											},
+											"model": {
+												"$ref": "AAAAAAF9glm4CQlubt8="
+											},
+											"font": "Arial;13;0",
+											"left": 1069,
+											"top": 669,
+											"width": 157.16796875,
+											"height": 13,
+											"text": "-atendidoClass *atendido",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1064,
 									"top": 649,
 									"width": 167.16796875,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -3494,7 +3511,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1064,
-									"top": 672,
+									"top": 687,
 									"width": 167.16796875,
 									"height": 10
 								},
@@ -5410,101 +5427,6 @@
 							},
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAF8xRe4If9yFJU="
-							}
-						},
-						{
-							"_type": "UMLGeneralizationView",
-							"_id": "AAAAAAF8xTkIrwCnlwE=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"model": {
-								"$ref": "AAAAAAF8xTkIqwClBqs="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAF8xTkIrwCowqk=",
-									"_parent": {
-										"$ref": "AAAAAAF8xTkIrwCnlwE="
-									},
-									"model": {
-										"$ref": "AAAAAAF8xTkIqwClBqs="
-									},
-									"font": "Arial;13;0",
-									"left": 1038,
-									"top": 891,
-									"width": 48.07080078125,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAF8xTkIrwCnlwE="
-									},
-									"edgePosition": 1,
-									"text": "+hereda"
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAF8xTkIrwCpyyM=",
-									"_parent": {
-										"$ref": "AAAAAAF8xTkIrwCnlwE="
-									},
-									"model": {
-										"$ref": "AAAAAAF8xTkIqwClBqs="
-									},
-									"visible": null,
-									"font": "Arial;13;0",
-									"left": 1052,
-									"top": 903,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 30,
-									"hostEdge": {
-										"$ref": "AAAAAAF8xTkIrwCnlwE="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAF8xTkIrwCq44k=",
-									"_parent": {
-										"$ref": "AAAAAAF8xTkIrwCnlwE="
-									},
-									"model": {
-										"$ref": "AAAAAAF8xTkIqwClBqs="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"left": 1081,
-									"top": 868,
-									"height": 13,
-									"alpha": -1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAF8xTkIrwCnlwE="
-									},
-									"edgePosition": 1
-								}
-							],
-							"font": "Arial;13;0",
-							"head": {
-								"$ref": "AAAAAAF8xQn86kTwN0s="
-							},
-							"tail": {
-								"$ref": "AAAAAAF8xRYb+eU/8Qo="
-							},
-							"lineStyle": 1,
-							"points": "1150:951;994:822",
-							"showVisibility": true,
-							"nameLabel": {
-								"$ref": "AAAAAAF8xTkIrwCowqk="
-							},
-							"stereotypeLabel": {
-								"$ref": "AAAAAAF8xTkIrwCpyyM="
-							},
-							"propertyLabel": {
-								"$ref": "AAAAAAF8xTkIrwCq44k="
 							}
 						},
 						{
@@ -9935,6 +9857,15 @@
 							"name": "string enfermedadCronica",
 							"visibility": "private",
 							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF9glm4CQlubt8=",
+							"_parent": {
+								"$ref": "AAAAAAF8xRB/Oo6P9xU="
+							},
+							"name": "atendidoClass *atendido",
+							"visibility": "private"
 						}
 					]
 				},
