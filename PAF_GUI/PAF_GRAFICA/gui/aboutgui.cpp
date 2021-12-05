@@ -6,6 +6,11 @@ aboutGui::aboutGui(QWidget *parent) :
     ui(new Ui::aboutGui)
 {
     ui->setupUi(this);
+
+    this->ui->angelObedLabel->setOpenExternalLinks(true);
+    this->ui->angelTorresLabel->setOpenExternalLinks(true);
+    this->ui->daraLabel->setOpenExternalLinks(true);
+    this->ui->jmLabel->setOpenExternalLinks(true);
 }
 
 aboutGui::~aboutGui()
