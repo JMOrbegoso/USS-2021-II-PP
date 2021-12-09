@@ -1,6 +1,7 @@
 #include "atenderpaciente.h"
 #include "ui_atenderpaciente.h"
 #include <gui/registrarpaciente.h>
+#include <QMessageBox>
 
 atenderPaciente::atenderPaciente(QWidget *parent) :
     QDialog(parent),
@@ -110,35 +111,67 @@ void atenderPaciente::actualizarControles(listaPacientesClass *pacientes)
 
 void atenderPaciente::on_atenderButton_clicked()
 {
-    nodoPacienteClass *aux = new nodoPacienteClass();
-    atencionClass *aux1 = new atencionClass();
-    nodoPersonalClass *aux2 = new nodoPersonalClass();
-    //paciente
+    QMessageBox msje;
+
+    nodoPacienteClass *auxPaciente;
+    atencionClass *auxAtencion;
+    nodoPersonalClass *auxEnfermera;
+    loteVacunaClass *auxLoteVacuna;
+
+    // Datos a almacenar
+    /// Fecha
+    string fecha = "???";
+
+    /// Enfermera
+    auxEnfermera = this->enfermeras->getCab();
+    for(int i = 0; i < this->enfermeras->getCant(); i++){
+        if (i == this->ui->enfermerasCBox->currentIndex())
+            break;
+
+        auxEnfermera = auxEnfermera->getSgte();
+    }
+
+    /// Lote de vacuna
+    auxLoteVacuna = this->lotes->getCab() + this->ui->nombreVacunaCbox->currentIndex();
+
+    // Valida
+    if (fecha == "") {
+        msje.setText("Debe ingresar una fecha valida");
+        msje.exec();
+        return;
+    }
+    if (auxEnfermera == NULL) {
+        msje.setText("Debe ingresar una enfermera valida");
+        msje.exec();
+        return;
+    }
+    if (auxLoteVacuna == NULL) {
+        msje.setText("Debe ingresar un lote de vacuna valido");
+        msje.exec();
+        return;
+    }
+
+    // Crea la atencion
+    auxAtencion = new atencionClass(fecha, auxEnfermera->getInfo(), auxLoteVacuna);
+
+    //Paciente
     this->setPacientes((this->locales->getCab() + ui->localesCBox->currentIndex())->getPacientes()); //verificar que empiece en 0?
     int x = ui->mostrarPacientesQwidget->currentRow();
-    aux = this->getPacientes()->getCab();
+    auxPaciente = this->getPacientes()->getCab();
     for(int i = 0; i < x; i++){
-       aux = aux->getSgte();
+       auxPaciente = auxPaciente->getSgte();
     }
-    aux->getInfo()->setAtencion(aux1);
-    //enfermera
-    string enfermera = ui->enfermerasCBox->currentText().toStdString();
-    this->enfermeras = (this->locales->getCab() + ui->localesCBox->currentIndex())->getPersonales();
-    aux2 = this->enfermeras->getCab();
-    while(aux2 != NULL){
-        if(aux2->getInfo()->getNombre() == enfermera){
-            aux1->setEnfermera(aux2->getInfo());
-        }
-        aux2 = aux2->getSgte();
-    }
-    //vacuna
 
+    // Atencion se guarda en el paciente
+    auxPaciente->getInfo()->setAtencion(auxAtencion);
+
+    // Actualiza tabla
     this->actualizarControles();
 }
 
 listaPersonalClass *atenderPaciente::getEnfermeras() const
 {
-    return enfermeras;
+    return this->enfermeras;
 }
 
 void atenderPaciente::setEnfermeras(listaPersonalClass *value)
@@ -180,18 +213,23 @@ void atenderPaciente::setLotes(listaLotesVacunaClass *value){
 
 void atenderPaciente::on_localesCBox_currentIndexChanged(int index)
 {
+    localClass* localActual = this->locales->getCab() + index;
+
     // Actualiza los datos del local actual
-    auto nombreLocal = (this->locales->getCab() + index)->getNombreLocal();
-    auto direccionLocal = (this->locales->getCab() + index)->getDireccionLocal();
+    auto nombreLocal = localActual->getNombreLocal();
+    auto direccionLocal = localActual->getDireccionLocal();
 
     this->ui->nombreLocalTxt->setText(QString::fromStdString(nombreLocal));
     this->ui->direccionTxt->setText(QString::fromStdString(direccionLocal));
 
     // Actualiza table view
-    this->actualizarControles((this->locales->getCab() + index)->getPacientes());
+    this->actualizarControles(localActual->getPacientes());
 
     // Actualiza ComboBox de enfermeras
-    this->listaEnfermerasCbox((this->locales->getCab()+index)->getPersonales()->getCab());
+    this->setEnfermeras(localActual->getPersonales()->getEnfermeras());
+
+    // Actualiza ComboBox de Lotes
+    this->setLotes(localActual->getLotes());
 
     // Limpia el cuadro de busqueda
     this->ui->buscarPacienteTxt->clear();
