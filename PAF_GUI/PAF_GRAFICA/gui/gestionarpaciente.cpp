@@ -67,15 +67,6 @@ void gestionarPaciente::listaLocalComboBox()
     this->ui->nombreLocalTxt->setText(QString::fromStdString(this->locales->getCab()->getNombreLocal()));
 }
 
-void gestionarPaciente::on_elegirLocalCbox_highlighted(int index)
-{
-    int i = index;
-    ui->direccionTxt->setText(QString::fromStdString((this->locales->getCab()+i)->getDireccionLocal()));
-    ui->nombreLocalTxt->setText(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
-    this->actualizarC((locales->getCab()+i)->getPacientes());
-    this->ui->buscarPacienteTxt->clear();
-}
-
 void gestionarPaciente::actualizarC(listaPacientesClass *pacientes)
 {
     pacientes = pacientes == NULL ? this->pacientes : pacientes;
@@ -143,3 +134,20 @@ void gestionarPaciente::on_editarCmd_clicked()
     this->ui->mostrarPacienteTwidget->item(x, 3)->setText(QString::fromStdString(apellido));
     this->ui->mostrarPacienteTwidget->item(x, 5)->setText(QString::fromStdString(direccion));
 }
+
+void gestionarPaciente::on_elegirLocalCbox_currentIndexChanged(int index)
+{
+    // Actualiza los datos del local actual
+    auto nombreLocal = (this->locales->getCab() + index)->getDireccionLocal();
+    auto direccionLocal = (this->locales->getCab() + index)->getNombreLocal();
+
+    this->ui->nombreLocalTxt->setText(QString::fromStdString(nombreLocal));
+    this->ui->direccionTxt->setText(QString::fromStdString(direccionLocal));
+
+    // Actualiza table view
+    this->actualizarControles((this->locales->getCab() + index)->getPacientes());
+
+    // Limpia el cuadro de busqueda
+    this->ui->buscarPacienteTxt->clear();
+}
+

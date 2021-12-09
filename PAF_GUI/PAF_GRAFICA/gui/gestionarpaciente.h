@@ -28,13 +28,13 @@ private slots:
 
     void on_registrarPacienteCmd_clicked();
 
-    void on_elegirLocalCbox_highlighted(int index);
-
     void on_buscarPacienteTxt_textChanged(const QString &arg1);
 
     void on_mostrarPacienteTwidget_itemClicked(QTableWidgetItem *item);
 
     void on_editarCmd_clicked();
+
+    void on_elegirLocalCbox_currentIndexChanged(int index);
 
 private:
     Ui::gestionarPaciente *ui;
