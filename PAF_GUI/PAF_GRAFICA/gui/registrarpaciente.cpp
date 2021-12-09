@@ -20,12 +20,6 @@ void registrarPaciente::on_regresarCmd_clicked()
     this->close();
 }
 
-void registrarPaciente::on_elegirLocalCbox_textHighlighted(const QString &arg1)
-{
-    string seleccionar;
-    seleccionar = arg1.toStdString();
-}
-
 listaLocalesClass *registrarPaciente::getLocales() const
 {
     return locales;

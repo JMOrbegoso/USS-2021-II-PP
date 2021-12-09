@@ -27,8 +27,6 @@ private slots:
 
     void on_registrarCmd_clicked();
 
-    void on_elegirLocalCbox_textHighlighted(const QString &arg1);
-
     void on_enfermedadCbox_currentIndexChanged(int index);
 
 private:
