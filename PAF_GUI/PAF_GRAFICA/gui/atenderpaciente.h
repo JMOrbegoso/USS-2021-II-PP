@@ -38,8 +38,6 @@ private slots:
 
     void on_localesCBox_highlighted(int index);
 
-    void on_enfermerasCBox_textHighlighted(const QString &arg1);
-
     void on_atenderButton_clicked();
 
 private:

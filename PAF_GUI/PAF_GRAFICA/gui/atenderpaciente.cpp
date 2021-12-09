@@ -111,12 +111,6 @@ void atenderPaciente::listaEnfermerasCbox(nodoPersonalClass *enfermera){
     }
 }
 
-void atenderPaciente::on_enfermerasCBox_textHighlighted(const QString &arg1)
-{
-    string select;
-    select = arg1.toStdString();
-}
-
 void atenderPaciente::on_atenderButton_clicked()
 {
     nodoPacienteClass *aux = new nodoPacienteClass();
