@@ -59,6 +59,7 @@ void atenderPaciente::listaLocalComboBox(){
     for(int x = 0; x<this->getLocales()->getCant();x++){
         this->ui->localesCBox->addItem(QString::fromStdString((this->locales->getCab()+x)->getNombreLocal()));
     }
+
     ui->direccionTxt->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
 }
 
@@ -107,19 +108,6 @@ void atenderPaciente::actualizarControles(listaPacientesClass *pacientes)
     }
 }
 
-void atenderPaciente::listaEnfermerasCbox(nodoPersonalClass *enfermera){
-    ui->enfermerasCBox->clear();
-    nodoPersonalClass  *aux = new nodoPersonalClass();
-    //int i = 0;
-    aux = enfermera;
-    while(aux != NULL){
-        if(aux->getInfo()->getTipoPersonal() == false){
-            this->ui->enfermerasCBox->addItem(QString::fromStdString(aux->getInfo()->getNombre()));
-        }
-        aux = aux->getSgte();
-    }
-}
-
 void atenderPaciente::on_atenderButton_clicked()
 {
     nodoPacienteClass *aux = new nodoPacienteClass();
@@ -155,7 +143,22 @@ listaPersonalClass *atenderPaciente::getEnfermeras() const
 
 void atenderPaciente::setEnfermeras(listaPersonalClass *value)
 {
-    enfermeras = value;
+    this->enfermeras = value;
+
+    // Limpia el ComboBox de enfermeras
+    this->ui->enfermerasCBox->clear();
+
+    auto aux = this->enfermeras->getCab();
+
+    while(aux != NULL){
+        auto nombre = aux->getInfo()->getNombre();
+        auto apellido = aux->getInfo()->getApellido();
+        auto nombreCompleto = nombre + " " + apellido;
+
+        this->ui->enfermerasCBox->addItem(QString::fromStdString(nombreCompleto));
+
+        aux = aux->getSgte();
+    }
 }
 
 
