@@ -30,6 +30,9 @@ public:
     listaPersonalClass *getEnfermeras() const;
     void setEnfermeras(listaPersonalClass *value);
 
+    listaLotesVacunaClass *getLotes() const;
+    void setLotes(listaLotesVacunaClass *value);
+
 private slots:
     void on_regresarButton_clicked();
 
@@ -44,6 +47,7 @@ private:
     listaLocalesClass *locales;
     listaPacientesClass *pacientes;
     listaPersonalClass *enfermeras;
+    listaLotesVacunaClass *lotes;
 };
 
 #endif // ATENDERPACIENTE_H

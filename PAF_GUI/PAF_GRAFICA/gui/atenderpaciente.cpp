@@ -161,6 +161,22 @@ void atenderPaciente::setEnfermeras(listaPersonalClass *value)
     }
 }
 
+listaLotesVacunaClass *atenderPaciente::getLotes() const{
+    return this->lotes;
+}
+
+void atenderPaciente::setLotes(listaLotesVacunaClass *value){
+    this->lotes = value;
+
+    // Limpia el ComboBox de enfermeras
+    this->ui->nombreVacunaCbox->clear();
+
+    for(int i = 0; i < this->lotes->getCant(); i++){
+        auto lote = (this->lotes->getCab() + i);
+        auto nombre = lote->getNombre();
+        this->ui->nombreVacunaCbox->addItem(QString::fromStdString(nombre));
+    }
+}
 
 void atenderPaciente::on_localesCBox_currentIndexChanged(int index)
 {
