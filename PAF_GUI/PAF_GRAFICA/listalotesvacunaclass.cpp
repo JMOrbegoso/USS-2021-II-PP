@@ -41,3 +41,22 @@ listaLotesVacunaClass::~listaLotesVacunaClass()
 
 }
 
+void listaLotesVacunaClass::crecerListaLotes(){
+    loteVacunaClass *aux = new loteVacunaClass[this->cant + Max];
+        for (int i = 0; i < this->cant; i++){
+            *(aux + i) = *(this->cab + i);
+        }
+        /*if (lE.cab != NULL){
+            delete lE.cab;
+        }*/
+        this->cab = aux;
+        this->max += Max;
+}
+
+void listaLotesVacunaClass::insertarLote(loteVacunaClass *lote){
+    if (this->cant == this->max){
+            this->crecerListaLotes();
+        }
+        *(this->cab + this->cant) = *lote;
+        this->cant++;
+}
