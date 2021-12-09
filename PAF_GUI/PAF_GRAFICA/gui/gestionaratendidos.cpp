@@ -83,7 +83,7 @@ void gestionarAtendidos::actualizarControles(listaPacientesClass *pacientes) {
         auto enfermeraApellido = aux->getInfo()->getAtencion()->getEnfermera()->getApellido();
         auto enfermeraNombre = aux->getInfo()->getAtencion()->getEnfermera()->getNombre();
         auto enfermera = enfermeraApellido + " " + enfermeraNombre;
-        auto vacuna = aux->getInfo()->getAtencion()->getVacuna()->getLote()->getNombre();
+        auto vacuna = aux->getInfo()->getAtencion()->getVacuna()->getNombre();
 
         // Inserta nueva fila
         this->ui->listaAtendidosTwidget->insertRow(x);

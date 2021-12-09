@@ -11,12 +11,12 @@ void atencionClass::setEnfermera(personalClass *value)
     enfermera = value;
 }
 
-loteVacunaLocalClass *atencionClass::getVacuna() const
+loteVacunaClass *atencionClass::getVacuna() const
 {
     return vacuna;
 }
 
-void atencionClass::setVacuna(loteVacunaLocalClass *value)
+void atencionClass::setVacuna(loteVacunaClass *value)
 {
     vacuna = value;
 }
@@ -30,7 +30,7 @@ void atencionClass::setFecha(const string &value)
     fecha = value;
 }
 
-atencionClass::atencionClass(string fecha, personalClass *enfermera, loteVacunaLocalClass *vacuna)
+atencionClass::atencionClass(string fecha, personalClass *enfermera, loteVacunaClass *vacuna)
 {
     this->fecha = fecha;
     this->enfermera = enfermera;

@@ -6,16 +6,16 @@
 class atencionClass{
 private:
     personalClass *enfermera;
-    loteVacunaLocalClass *vacuna;
+    loteVacunaClass *vacuna;
     string fecha;
 public:
-    atencionClass(string fecha, personalClass *enfermera, loteVacunaLocalClass *vacuna);
+    atencionClass(string fecha, personalClass *enfermera, loteVacunaClass *vacuna);
     atencionClass();
     ~atencionClass();
     personalClass *getEnfermera() const;
     void setEnfermera(personalClass *value);
-    loteVacunaLocalClass *getVacuna() const;
-    void setVacuna(loteVacunaLocalClass *value);
+    loteVacunaClass *getVacuna() const;
+    void setVacuna(loteVacunaClass *value);
     string getFecha() const;
     void setFecha(const string &value);
 };
