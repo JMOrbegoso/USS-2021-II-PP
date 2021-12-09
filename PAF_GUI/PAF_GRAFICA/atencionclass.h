@@ -9,6 +9,7 @@ private:
     loteVacunaLocalClass *vacuna;
     string fecha;
 public:
+    atencionClass(string fecha, personalClass *enfermera, loteVacunaLocalClass *vacuna);
     atencionClass();
     ~atencionClass();
     personalClass *getEnfermera() const;

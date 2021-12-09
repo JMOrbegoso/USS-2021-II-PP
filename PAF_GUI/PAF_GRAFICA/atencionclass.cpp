@@ -30,6 +30,13 @@ void atencionClass::setFecha(const string &value)
     fecha = value;
 }
 
+atencionClass::atencionClass(string fecha, personalClass *enfermera, loteVacunaLocalClass *vacuna)
+{
+    this->fecha = fecha;
+    this->enfermera = enfermera;
+    this->vacuna = vacuna;
+}
+
 atencionClass::atencionClass()
 {
 
