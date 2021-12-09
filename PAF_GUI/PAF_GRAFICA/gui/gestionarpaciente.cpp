@@ -90,7 +90,7 @@ void gestionarPaciente::actualizarC(listaPacientesClass *pacientes)
         auto apellido = aux->getInfo()->getApellido();
         auto edad = aux->getInfo()->getEdad();
         auto direccion = aux->getInfo()->getDireccion();
-        auto cualEnfermedad = aux->getInfo()->getCualEnfermedad();
+        auto cualEnfermedad = aux->getInfo()->getEnfermedad();
 
         ui->mostrarPacienteTwidget->insertRow(x);
         ui->mostrarPacienteTwidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));

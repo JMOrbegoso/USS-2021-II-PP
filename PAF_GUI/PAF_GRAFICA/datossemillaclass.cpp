@@ -13,10 +13,10 @@ void datosSemillaClass::sembrar(vacunatonContraDengueClass *&vacunaton) {
     enfermera2 = new personalClass("Diana", "Lopez", "28445678", "959093929", "Av. Robles 345", 29, 2500, "12 horas", false);
     enfermera3 = new personalClass("Roxana", "Rojas", "84535678", "959190409", "Av. España 745", 32, 2500, "12 horas", false);
 
-    paciente1 = new pacienteClass("77236677", "Dara", "Querevalu Leonardo", 19,"970685321", "Av.Balta 983","SI","Alergia");
-    paciente2 = new pacienteClass("73772066","Angel","Torres Salazar",19, "986565666","Av.Chiclayo 9", "NO", "");
-    paciente3 = new pacienteClass("16695685","Juanito","Sosa Paz",35, "963568231","Los Incas 66", "SI", "Hipertension");
-    paciente4 = new pacienteClass("14569853","Huerfanito","Costa Azul",60, "966539651","Av.Balta 1563", "NO", "");
+    paciente1 = new pacienteClass("77236677", "Dara", "Querevalu Leonardo", 19,"970685321", "Av.Balta 983", "Alergia");
+    paciente2 = new pacienteClass("73772066","Angel","Torres Salazar",19, "986565666","Av.Chiclayo 9");
+    paciente3 = new pacienteClass("16695685","Juanito","Sosa Paz",35, "963568231","Los Incas 66", "Hipertension");
+    paciente4 = new pacienteClass("14569853","Huerfanito","Costa Azul",60, "966539651","Av.Balta 1563");
 
     local1 = new localClass("local 1", "Av. Bolognesi 444", true);
     local2 = new localClass("local 2", "Av. Heroes 222", false);

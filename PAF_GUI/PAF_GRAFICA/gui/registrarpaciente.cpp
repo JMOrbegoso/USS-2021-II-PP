@@ -58,7 +58,7 @@ void registrarPaciente::clear()
 void registrarPaciente::on_registrarCmd_clicked()
 {
     QMessageBox msje;
-    pacienteClass *paci = new pacienteClass();
+    pacienteClass *paci;
     int x = 0;
 
     if(ui->nombreTxt->text().length() == 0){
@@ -82,12 +82,10 @@ void registrarPaciente::on_registrarCmd_clicked()
         return;
     }
     if(ui->enfermedadCbox->currentText() == "SI"){
-        //if(ui->cualTxt->isReadOnly() == false){
-            if(ui->cualTxt->toPlainText().length() == 0){
-                    msje.setText("Debe llenar el Campo de la enfermedad");
-                    msje.exec();
-                    return;
-             // }
+        if(ui->cualTxt->toPlainText().length() == 0){
+                msje.setText("Debe llenar el Campo de la enfermedad");
+                msje.exec();
+                return;
         }
     }
     if(ui->telefonoTxt->text().length() != 9){
@@ -96,19 +94,28 @@ void registrarPaciente::on_registrarCmd_clicked()
         return;
     }
     for( x = 0; x < this->locales->getCant();x++){
-        if((this->locales->getCab()+x)->getNombreLocal() == ui->elegirLocalCbox->currentText().toStdString())
+        if((this->locales->getCab()+x)->getNombreLocal() == this->ui->elegirLocalCbox->currentText().toStdString())
             break;
     }
-    paci->setAtencion(NULL);
-    paci->setNombre(ui->nombreTxt->text().toStdString());
-    paci->setApellido(ui->apellidoTxt->text().toStdString());
-    paci->setDni(ui->dniTxt->text().toStdString());
-    paci->setEdad(ui->edadSpbox->value());
-    paci->setTelefono(ui->telefonoTxt->text().toStdString());
-    paci->setDireccion(ui->direccionTxt->toPlainText().toStdString());
-    paci->setCualEnfermedad(ui->cualTxt->toPlainText().toStdString());
 
-    (this->locales->getCab()+x)->getPacientes()->insertarPaciente(paci);
+    // Propiedades del nuevo paciente
+    auto dni = this->ui->dniTxt->text().toStdString();
+    auto nombre = this->ui->nombreTxt->text().toStdString();
+    auto apellido = this->ui->apellidoTxt->text().toStdString();
+    auto edad = this->ui->edadSpbox->value();
+    auto telefono = this->ui->telefonoTxt->text().toStdString();
+    auto direccion = this->ui->direccionTxt->toPlainText().toStdString();
+    auto enfermedad = this->ui->cualTxt->toPlainText().toStdString();
+
+    // Crear el nuevo paciente
+    if(ui->enfermedadCbox->currentText() == "SI")
+        paci = new pacienteClass(dni, nombre, apellido, edad, telefono, direccion, enfermedad);
+    else
+        paci = new pacienteClass(dni, nombre, apellido, edad, telefono, direccion);
+
+    // Insertar el nuevo paciente
+    (this->locales->getCab() + x)->getPacientes()->insertarPaciente(paci);
+
     msje.setText("Paciente Registrado");
     msje.exec();
     clear();

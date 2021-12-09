@@ -8,16 +8,14 @@ private:
     static int contador;
     string codigo;
     string enfermedad;
-    string cualEnfermedad;
     atencionClass *atencion;
 public:
     pacienteClass();
-    pacienteClass(string dni,string nombre,string apellido,int edad,string telefono,string direccion,string enfermedad, string cual);
+    pacienteClass(string dni, string nombre, string apellido, int edad, string telefono, string direccion, string enfermedad);
+    pacienteClass(string dni, string nombre, string apellido, int edad, string telefono, string direccion);
     ~pacienteClass();
     string getEnfermedad() const;
     void setEnfermedad(const string &value);
-    string getCualEnfermedad() const;
-    void setCualEnfermedad(const string &value);
     string getCodigo();
     atencionClass *getAtencion() const;
     void setAtencion(atencionClass *value);

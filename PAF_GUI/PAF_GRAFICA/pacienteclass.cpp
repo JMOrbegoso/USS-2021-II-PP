@@ -12,16 +12,6 @@ void pacienteClass::setEnfermedad(const string &value)
     enfermedad = value;
 }
 
-string pacienteClass::getCualEnfermedad() const
-{
-    return cualEnfermedad;
-}
-
-void pacienteClass::setCualEnfermedad(const string &value)
-{
-    cualEnfermedad = value;
-}
-
 string pacienteClass::getCodigo()
 {
     return this->codigo;
@@ -41,12 +31,22 @@ pacienteClass::pacienteClass()
 {
 }
 
-pacienteClass::pacienteClass(string dni, string nombre, string apellido, int edad,string telefono, string direccion, string enfermed, string cual) : personaClass(nombre, apellido, dni, telefono, direccion, edad)
+pacienteClass::pacienteClass(string dni, string nombre, string apellido, int edad,string telefono, string direccion, string enfermed) : personaClass(nombre, apellido, dni, telefono, direccion, edad)
 {
     this->codigo = "PACI-" + to_string(pacienteClass::contador);
     pacienteClass::contador++;
+
     this->enfermedad = enfermed;
-    this->cualEnfermedad = cual;
+    this->atencion = NULL;
+}
+
+pacienteClass::pacienteClass(string dni, string nombre, string apellido, int edad,string telefono, string direccion) : personaClass(nombre, apellido, dni, telefono, direccion, edad)
+{
+    this->codigo = "PACI-" + to_string(pacienteClass::contador);
+    pacienteClass::contador++;
+
+    this->enfermedad = "";
+    this->atencion = NULL;
 }
 
 pacienteClass::~pacienteClass()
