@@ -1,16 +1,16 @@
-#ifndef ATENDIDOCLASS_H
-#define ATENDIDOCLASS_H
+#ifndef ATENCIONCLASS_H
+#define ATENCIONCLASS_H
 #include <personalclass.h>
 #include <lotevacunalocalclass.h>
 
-class atendidoClass{
+class atencionClass{
 private:
     personalClass *enfermera;
     loteVacunaLocalClass *vacuna;
     string fecha;
 public:
-    atendidoClass();
-    ~atendidoClass();
+    atencionClass();
+    ~atencionClass();
     personalClass *getEnfermera() const;
     void setEnfermera(personalClass *value);
     loteVacunaLocalClass *getVacuna() const;
@@ -19,4 +19,4 @@ public:
     void setFecha(const string &value);
 };
 
-#endif // ATENDIDOCLASS_H
+#endif // ATENCIONCLASS_H

@@ -27,14 +27,14 @@ string pacienteClass::getCodigo()
     return this->codigo;
 }
 
-atendidoClass *pacienteClass::getAtendido() const
+atencionClass *pacienteClass::getAtencion() const
 {
-    return atendido;
+    return atencion;
 }
 
-void pacienteClass::setAtendido(atendidoClass *value)
+void pacienteClass::setAtencion(atencionClass *value)
 {
-    atendido = value;
+    atencion = value;
 }
 
 pacienteClass::pacienteClass()

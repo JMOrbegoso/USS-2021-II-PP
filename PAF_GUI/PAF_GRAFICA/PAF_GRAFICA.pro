@@ -14,13 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     almaceneslistaclass.cpp \
+    atencionclass.cpp \
     datossemillaclass.cpp \
     gui/atenderpaciente.cpp \
     gui/gestionaralmacenes.cpp \
     gui/gestionarlotegui.cpp \
         gui/mainwindow.cpp \
     almacenclass.cpp \
-    atendidoclass.cpp \
     listalocalesclass.cpp \
     listalotesvacunaclass.cpp \
     listalotesvacunageneralclass.cpp \
@@ -50,9 +50,9 @@ SOURCES += main.cpp\
 HEADERS  += gui/mainwindow.h \
     almacenclass.h \
     almaceneslistaclass.h \
+    atencionclass.h \
     datossemillaclass.h \
     gui/atenderpaciente.h \
-    atendidoclass.h \
     gui/gestionaralmacenes.h \
     gui/gestionarlotegui.h \
     listalocalesclass.h \

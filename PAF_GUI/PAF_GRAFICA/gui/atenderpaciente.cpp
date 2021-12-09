@@ -120,7 +120,7 @@ void atenderPaciente::on_enfermerasCBox_textHighlighted(const QString &arg1)
 void atenderPaciente::on_atenderButton_clicked()
 {
     nodoPacienteClass *aux = new nodoPacienteClass();
-    atendidoClass *aux1 = new atendidoClass();
+    atencionClass *aux1 = new atencionClass();
     nodoPersonalClass *aux2 = new nodoPersonalClass();
     //paciente
     this->setPacientes((this->locales->getCab() + ui->localesCBox->currentIndex())->getPacientes()); //verificar que empiece en 0?
@@ -129,7 +129,7 @@ void atenderPaciente::on_atenderButton_clicked()
     for(int i = 0; i < x; i++){
        aux = aux->getSgte();
     }
-    aux->getInfo()->setAtendido(aux1);
+    aux->getInfo()->setAtencion(aux1);
     //enfermera
     string enfermera = ui->enfermerasCBox->currentText().toStdString();
     this->enfermeras = (this->locales->getCab() + ui->localesCBox->currentIndex())->getPersonales();

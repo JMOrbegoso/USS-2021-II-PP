@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <listalocalesclass.h>
-#include <atendidoclass.h>
+#include <atencionclass.h>
 #include <qtablewidget.h>
 
 namespace Ui {
@@ -25,8 +25,8 @@ public:
     void listaEnfermerasCbox(nodoPersonalClass *enfermera);
     listaPacientesClass *getPacientes() const;
     void setPacientes(listaPacientesClass *value);
-    atendidoClass *getAtendido() const;
-    void setAtendido(atendidoClass *value);
+    atencionClass *getAtendido() const;
+    void setAtendido(atencionClass *value);
 
     listaPersonalClass *getEnfermeras() const;
     void setEnfermeras(listaPersonalClass *value);
