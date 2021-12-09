@@ -19,12 +19,12 @@ void listaLotesVacunaClass::setMax(int value)
 {
     max = value;
 }
-loteVacunaLocalClass *listaLotesVacunaClass::getCab() const
+loteVacunaClass *listaLotesVacunaClass::getCab() const
 {
     return cab;
 }
 
-void listaLotesVacunaClass::setCab(loteVacunaLocalClass *value)
+void listaLotesVacunaClass::setCab(loteVacunaClass *value)
 {
     cab = value;
 }

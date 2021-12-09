@@ -1,7 +1,7 @@
 #ifndef ATENCIONCLASS_H
 #define ATENCIONCLASS_H
 #include <personalclass.h>
-#include <lotevacunalocalclass.h>
+#include <lotevacunaclass.h>
 
 class atencionClass{
 private:
