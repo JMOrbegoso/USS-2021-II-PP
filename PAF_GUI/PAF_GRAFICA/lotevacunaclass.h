@@ -5,13 +5,17 @@
 using namespace std;
 
 class loteVacunaClass{
-    string nombre; //pera toy comiendo mi sopa
+    static int contador;
+    string codigo;
+    string nombre;
     int cantidad;
-    string caducidad; //si
+    string caducidad;
     bool estado;
 public:
+    loteVacunaClass(string nombre, int cantidad, string caducidad, bool estado);
     loteVacunaClass();
     ~loteVacunaClass();
+    string getCodigo() const;
     string getNombre() const;
     void setNombre(const string &value);
     int getCantidad() const;

@@ -1,5 +1,11 @@
 #include "lotevacunaclass.h"
 
+int loteVacunaClass::contador = 1;
+
+string loteVacunaClass::getCodigo() const
+{
+    return codigo;
+}
 
 string loteVacunaClass::getNombre() const
 {
@@ -40,6 +46,18 @@ void loteVacunaClass::setEstado(bool value)
 {
     estado = value;
 }
+
+loteVacunaClass::loteVacunaClass(string nombre, int cantidad, string caducidad, bool estado)
+{
+    this->codigo = "lote-" + to_string(loteVacunaClass::contador);
+    loteVacunaClass::contador++;
+
+    this->nombre = nombre;
+    this->cantidad = cantidad;
+    this->caducidad = caducidad;
+    this->estado = estado;
+}
+
 loteVacunaClass::loteVacunaClass()
 {
 
