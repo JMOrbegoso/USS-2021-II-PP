@@ -44,7 +44,7 @@ listaPacientesClass *gestionarPaciente::getPacientes() const
 void gestionarPaciente::setPacientes(listaPacientesClass *value)
 {
     this->pacientes = value;
-    this->actualizarC();
+    this->actualizarControles();
 }
 
 listaLocalesClass *gestionarPaciente::getLocales() const
@@ -67,14 +67,25 @@ void gestionarPaciente::listaLocalComboBox()
     this->ui->nombreLocalTxt->setText(QString::fromStdString(this->locales->getCab()->getNombreLocal()));
 }
 
-void gestionarPaciente::actualizarC(listaPacientesClass *pacientes)
+void gestionarPaciente::actualizarControles(listaPacientesClass *pacientes)
 {
     pacientes = pacientes == NULL ? this->pacientes : pacientes;
+
+    // Limpia todo el contenido de la tabla
     this->ui->mostrarPacienteTwidget->setRowCount(0);
+    //this->ui->mostrarPacienteTwidget->clearContents();
+
+    // LLena el contenido de la tabla
     nodoPacienteClass *aux = pacientes->getCab();
     int x = 0;
-    ui->mostrarPacienteTwidget->clearContents();
     while(aux != NULL){
+        // Filtrado de pacientes (No muestra a los ya atendidos)
+        if (aux->getInfo()->getAtencion() != NULL) {
+            aux = aux->getSgte();
+            continue;
+        }
+
+        // Propiedades a mostrar
         auto codigo = aux->getInfo()->getCodigo();
         auto dni = aux->getInfo()->getDni();
         auto nombre = aux->getInfo()->getNombre();
@@ -83,22 +94,28 @@ void gestionarPaciente::actualizarC(listaPacientesClass *pacientes)
         auto direccion = aux->getInfo()->getDireccion();
         auto cualEnfermedad = aux->getInfo()->getEnfermedad();
 
-        ui->mostrarPacienteTwidget->insertRow(x);
-        ui->mostrarPacienteTwidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
-        ui->mostrarPacienteTwidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(dni)));
-        ui->mostrarPacienteTwidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(nombre)));
-        ui->mostrarPacienteTwidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(apellido)));
-        ui->mostrarPacienteTwidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(to_string(edad))));
-        ui->mostrarPacienteTwidget->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(direccion)));
-        ui->mostrarPacienteTwidget->setItem(x, 6, new QTableWidgetItem(QString::fromStdString(cualEnfermedad)));
+        // Inserta nueva fila
+        this->ui->mostrarPacienteTwidget->insertRow(x);
+
+        // Propiedades en ui
+        this->ui->mostrarPacienteTwidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
+        this->ui->mostrarPacienteTwidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(dni)));
+        this->ui->mostrarPacienteTwidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(nombre)));
+        this->ui->mostrarPacienteTwidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(apellido)));
+        this->ui->mostrarPacienteTwidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(to_string(edad))));
+        this->ui->mostrarPacienteTwidget->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(direccion)));
+        this->ui->mostrarPacienteTwidget->setItem(x, 6, new QTableWidgetItem(QString::fromStdString(cualEnfermedad)));
+
+        // Pasa al siguiente nodo
         aux = aux->getSgte();
+        x++;
     }
 }
 
 void gestionarPaciente::on_buscarPacienteTxt_textChanged(const QString &arg)
 {
     auto busquedaPaciente = this->pacientes->buscarDni(arg.toStdString());
-    this->actualizarC(busquedaPaciente);
+    this->actualizarControles(busquedaPaciente);
 }
 
 void gestionarPaciente::on_mostrarPacienteTwidget_itemClicked(QTableWidgetItem *item)

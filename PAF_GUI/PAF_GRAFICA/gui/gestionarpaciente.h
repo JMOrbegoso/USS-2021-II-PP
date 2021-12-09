@@ -21,7 +21,7 @@ public:
     void setLocales(listaLocalesClass *value);
     listaPacientesClass *getPacientes() const;
     void setPacientes(listaPacientesClass *value);
-    void actualizarC(listaPacientesClass *pacientes = NULL);
+    void actualizarControles(listaPacientesClass *pacientes = NULL);
     void listaLocalComboBox();
 private slots:
     void on_regresarCmd_clicked();
