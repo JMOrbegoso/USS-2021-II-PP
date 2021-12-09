@@ -62,14 +62,25 @@ void atenderPaciente::listaLocalComboBox(){
     ui->direccionTxt->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
 }
 
-void atenderPaciente::actualizarC(listaPacientesClass *pacientes)
+void atenderPaciente::actualizarControles(listaPacientesClass *pacientes)
 {
     pacientes = pacientes == NULL ? this->pacientes : pacientes;
+
+    // Limpia todo el contenido de la tabla
     this->ui->mostrarPacientesQwidget->setRowCount(0);
+    //this->ui->mostrarPacienteTwidget->clearContents();
+
+    // LLena el contenido de la tabla
     nodoPacienteClass *aux = pacientes->getCab();
     int x = 0;
-    ui->mostrarPacientesQwidget->clearContents();
     while(aux != NULL){
+        // Filtrado de pacientes (No muestra a los ya atendidos)
+        if (aux->getInfo()->getAtencion() != NULL) {
+            aux = aux->getSgte();
+            continue;
+        }
+
+        // Propiedades a mostrar
         auto codigo = aux->getInfo()->getCodigo();
         auto dni = aux->getInfo()->getDni();
         auto nombre = aux->getInfo()->getNombre();
@@ -78,15 +89,21 @@ void atenderPaciente::actualizarC(listaPacientesClass *pacientes)
         auto direccion = aux->getInfo()->getDireccion();
         auto cualEnfermedad = aux->getInfo()->getEnfermedad();
 
-        ui->mostrarPacientesQwidget->insertRow(x);
-        ui->mostrarPacientesQwidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
-        ui->mostrarPacientesQwidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(dni)));
-        ui->mostrarPacientesQwidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(nombre)));
-        ui->mostrarPacientesQwidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(apellido)));
-        ui->mostrarPacientesQwidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(to_string(edad))));
-        ui->mostrarPacientesQwidget->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(direccion)));
-        ui->mostrarPacientesQwidget->setItem(x, 6, new QTableWidgetItem(QString::fromStdString(cualEnfermedad)));
+        // Inserta nueva fila
+        this->ui->mostrarPacientesQwidget->insertRow(x);
+
+        // Propiedades en ui
+        this->ui->mostrarPacientesQwidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
+        this->ui->mostrarPacientesQwidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(dni)));
+        this->ui->mostrarPacientesQwidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(nombre)));
+        this->ui->mostrarPacientesQwidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(apellido)));
+        this->ui->mostrarPacientesQwidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(to_string(edad))));
+        this->ui->mostrarPacientesQwidget->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(direccion)));
+        this->ui->mostrarPacientesQwidget->setItem(x, 6, new QTableWidgetItem(QString::fromStdString(cualEnfermedad)));
+
+        // Pasa al siguiente nodo
         aux = aux->getSgte();
+        x++;
     }
 }
 
@@ -127,6 +144,8 @@ void atenderPaciente::on_atenderButton_clicked()
         aux2 = aux2->getSgte();
     }
     //vacuna
+
+    this->actualizarControles();
 }
 
 listaPersonalClass *atenderPaciente::getEnfermeras() const
@@ -150,7 +169,7 @@ void atenderPaciente::on_localesCBox_currentIndexChanged(int index)
     this->ui->direccionTxt->setText(QString::fromStdString(direccionLocal));
 
     // Actualiza table view
-    this->actualizarC((this->locales->getCab() + index)->getPacientes());
+    this->actualizarControles((this->locales->getCab() + index)->getPacientes());
 
     // Actualiza ComboBox de enfermeras
     this->listaEnfermerasCbox((this->locales->getCab()+index)->getPersonales()->getCab());

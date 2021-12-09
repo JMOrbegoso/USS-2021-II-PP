@@ -21,7 +21,7 @@ public:
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
     void listaLocalComboBox();
-    void actualizarC(listaPacientesClass *pacientes = NULL);
+    void actualizarControles(listaPacientesClass *pacientes = NULL);
     void listaEnfermerasCbox(nodoPersonalClass *enfermera);
     listaPacientesClass *getPacientes() const;
     void setPacientes(listaPacientesClass *value);
