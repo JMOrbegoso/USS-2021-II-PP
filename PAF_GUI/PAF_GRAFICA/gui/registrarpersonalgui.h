@@ -29,8 +29,6 @@ private slots:
 
     void on_cmdRegMed_clicked();
 
-    void on_selectLocales_textHighlighted(const QString &arg1);
-
 private:
     Ui::registrarPersonalGui *ui;
     listaLocalesClass *listLocales;
