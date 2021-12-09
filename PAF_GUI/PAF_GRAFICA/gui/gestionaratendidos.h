@@ -20,7 +20,7 @@ public:
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
 
-    void actualizarC(listaPacientesClass *pacientes =  NULL);
+    void actualizarControles(listaPacientesClass *pacientes =  NULL);
     listaPacientesClass *getPaciente() const;
     void setPaciente(listaPacientesClass *value);
 
