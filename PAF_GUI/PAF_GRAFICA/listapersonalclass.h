@@ -16,6 +16,9 @@ public:
 
     void insertarPersonal(personalClass *pers);
     listaPersonalClass* filtrarPorDni(string dni);
+
+    listaPersonalClass* getEnfermeras();
+    listaPersonalClass* getMedicos();
 };
 
 #endif // LISTAPERSONALCLASS_H

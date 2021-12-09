@@ -64,3 +64,34 @@ listaPersonalClass* listaPersonalClass::filtrarPorDni(string dni)
 
     return temp;
 }
+
+
+listaPersonalClass* listaPersonalClass::getEnfermeras(){
+    listaPersonalClass* temp = new listaPersonalClass();
+    nodoPersonalClass *aux = this->getCab();
+
+    while(aux != NULL)
+    {
+        if (!aux->getInfo()->getTipoPersonal())
+            temp->insertarPersonal(aux->getInfo());
+
+        aux = aux->getSgte();
+    }
+
+    return temp;
+}
+
+listaPersonalClass* listaPersonalClass::getMedicos(){
+    listaPersonalClass* temp = new listaPersonalClass();
+    nodoPersonalClass *aux = this->getCab();
+
+    while(aux != NULL)
+    {
+        if (aux->getInfo()->getTipoPersonal())
+            temp->insertarPersonal(aux->getInfo());
+
+        aux = aux->getSgte();
+    }
+
+    return temp;
+}
