@@ -8,7 +8,7 @@ void datosSemillaClass::sembrar(vacunatonContraDengueClass *&vacunaton) {
     pacienteClass *paciente1, *paciente2, *paciente3,*paciente4;
 
     lote1 = new loteVacunaClass("CYD-TDV", 1000, "2022-01-12", true);
-    lote2 = new loteVacunaClass("CYD-TDV", 500, "2022-01-24", true);
+    lote2 = new loteVacunaClass("CYD-TDV-v2", 500, "2022-01-24", true);
 
     medico1 = new personalClass("Antonio", "Gomez", "12345678", "959090909", "Av. Pinos 445", 45, 4500, "8 horas", true);
     medico2 = new personalClass("Julia", "Ramirez", "92949678", "989010403", "Av. Robles 745", 39, 4800, "10 horas", true);
