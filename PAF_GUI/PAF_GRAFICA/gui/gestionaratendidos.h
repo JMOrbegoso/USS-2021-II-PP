@@ -32,7 +32,7 @@ private slots:
 
     void on_registrarOtroPacienteCmd_clicked();
 
-    void on_elegirLocalCbox_textHighlighted(const QString &arg1);
+    void on_elegirLocalCbox_currentIndexChanged(int index);
 
 private:
     Ui::gestionarAtendidos *ui;

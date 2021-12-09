@@ -38,12 +38,6 @@ void gestionarAtendidos::listaLocalesBox(){
     this->actualizarC((locales->getCab()+i)->getPacientes());
 }
 
-void gestionarAtendidos::on_elegirLocalCbox_textHighlighted(const QString &arg1)
-{
-    string select;
-    select = arg1.toStdString();
-}
-
 listaPacientesClass *gestionarAtendidos::getPacientes() const
 {
     return pacientes;
@@ -79,4 +73,20 @@ listaLocalesClass *gestionarAtendidos::getLocales() const
 void gestionarAtendidos::setLocales(listaLocalesClass *value)
 {
     locales = value;
+}
+
+void gestionarAtendidos::on_elegirLocalCbox_currentIndexChanged(int index)
+{
+    // Actualiza los datos del local actual
+    auto nombreLocal = (this->locales->getCab() + index)->getDireccionLocal();
+    auto direccionLocal = (this->locales->getCab() + index)->getNombreLocal();
+
+    this->ui->nombreLocalTxt->setText(QString::fromStdString(nombreLocal));
+    this->ui->direccionLocalTxt->setText(QString::fromStdString(direccionLocal));
+
+    // Actualiza table view
+    this->actualizarControles((this->locales->getCab() + index)->getPacientes());
+
+    // Limpia el cuadro de busqueda
+    this->ui->buscarAtendidoTxt->clear();
 }
