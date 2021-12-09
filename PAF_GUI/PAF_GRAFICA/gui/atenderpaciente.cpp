@@ -62,14 +62,6 @@ void atenderPaciente::listaLocalComboBox(){
     ui->direccionTxt->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
 }
 
-void atenderPaciente::on_localesCBox_highlighted(int index)
-{
-    int i = index;
-    ui->direccionTxt->setText(QString::fromStdString((this->locales->getCab()+i)->getDireccionLocal()));
-    this->actualizarC((locales->getCab()+i)->getPacientes());
-    this->listaEnfermerasCbox((this->locales->getCab()+i)->getPersonales()->getCab());
-}
-
 void atenderPaciente::actualizarC(listaPacientesClass *pacientes)
 {
     pacientes = pacientes == NULL ? this->pacientes : pacientes;
@@ -145,5 +137,25 @@ listaPersonalClass *atenderPaciente::getEnfermeras() const
 void atenderPaciente::setEnfermeras(listaPersonalClass *value)
 {
     enfermeras = value;
+}
+
+
+void atenderPaciente::on_localesCBox_currentIndexChanged(int index)
+{
+    // Actualiza los datos del local actual
+    auto nombreLocal = (this->locales->getCab() + index)->getNombreLocal();
+    auto direccionLocal = (this->locales->getCab() + index)->getDireccionLocal();
+
+    this->ui->nombreLocalTxt->setText(QString::fromStdString(nombreLocal));
+    this->ui->direccionTxt->setText(QString::fromStdString(direccionLocal));
+
+    // Actualiza table view
+    this->actualizarC((this->locales->getCab() + index)->getPacientes());
+
+    // Actualiza ComboBox de enfermeras
+    this->listaEnfermerasCbox((this->locales->getCab()+index)->getPersonales()->getCab());
+
+    // Limpia el cuadro de busqueda
+    this->ui->buscarPacienteTxt->clear();
 }
 

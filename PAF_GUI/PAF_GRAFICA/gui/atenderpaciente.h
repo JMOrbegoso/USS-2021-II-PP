@@ -36,9 +36,9 @@ private slots:
 
     void on_registrarButton_clicked();
 
-    void on_localesCBox_highlighted(int index);
-
     void on_atenderButton_clicked();
+
+    void on_localesCBox_currentIndexChanged(int index);
 
 private:
     Ui::atenderPaciente *ui;

@@ -18,7 +18,7 @@
     <rect>
      <x>700</x>
      <y>10</y>
-     <width>193</width>
+     <width>195</width>
      <height>31</height>
     </rect>
    </property>
@@ -236,37 +236,6 @@
     </property>
    </column>
   </widget>
-  <widget class="QWidget" name="formLayoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>60</y>
-     <width>271</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout_3">
-    <item row="0" column="0">
-     <widget class="QLabel" name="direccionLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Direccion:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="direccionTxt">
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="registrarButton">
    <property name="geometry">
     <rect>
@@ -303,6 +272,87 @@
     <string>Atender</string>
    </property>
   </widget>
+  <widget class="QWidget" name="formLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>60</y>
+     <width>311</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_4">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Buscar por DNI:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="buscarPacienteTxt">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>301</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_3">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="direccionTxt">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Nombre:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="nombreLocalTxt">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Direccion:</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>localesCBox</tabstop>
@@ -314,7 +364,6 @@
   <tabstop>reportesButton</tabstop>
   <tabstop>registrarButton</tabstop>
   <tabstop>regresarButton</tabstop>
-  <tabstop>direccionTxt</tabstop>
  </tabstops>
  <resources/>
  <connections/>
