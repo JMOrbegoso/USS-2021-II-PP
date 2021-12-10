@@ -55,7 +55,7 @@ void listaCompras::mostrarV(){
         basicas::gotoxy(1, 7+x); cout << aux->getInfo()->getCodigo();
         basicas::encabezadoLicoresVendidos(x);
         while(aux2 != NULL){
-            basicas::gotoxy(10,7+x  ); cout << aux2->getInfo()->getNombre();
+            basicas::gotoxy(10,7+x); cout << aux2->getInfo()->getNombre();
             basicas::gotoxy(20,7+x); cout << aux2->getInfo()->getTipo();
             basicas::gotoxy(30,7+x); cout << aux2->getInfo()->getPrecio();
             aux2 = aux2->getSgte();

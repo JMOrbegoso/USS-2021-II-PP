@@ -90,11 +90,11 @@ void empresaBackus::pasarCompra(cliente *clie, licor *lic){
     produ->setPrecio(lic->getPrecio());
     this->compras->insertarCompra(com);
     com->getLicores()->insertarLicor(produ);
-    //this->compras->getCab()->getInfo()->getLicores()->insertarLicor(produ);
 }
 
 void empresaBackus::venderLicor(){
     system("cls");
+    char rpta;
     if (this->marcas->getContador() > 0){
         if(this->marcas->getCab()->getInfo()->getLicores()->getContador() > 0){
             if(this->clientes->getContador() > 0){
@@ -102,20 +102,24 @@ void empresaBackus::venderLicor(){
                 cliente *clie = new cliente();
                 aux = this->clientes->elegirCliente(this->clientes->getCab());
                 clie = aux->getInfo();
-                while(aux != NULL){
-                    nodoMarcas *aux2 = new nodoMarcas();
-                    marca *marc = new marca();
-                    aux2 = this->marcas->elegirMarca(this->marcas->getCab());
-                    marc = aux2->getInfo();
-                    while(marc != NULL){
-                        nodoLicores *aux3 = new nodoLicores();
-                        licor *lic = new licor();
-                        aux3 = this->marcas->getCab()->getInfo()->getLicores()->elegirLicor(marc->getLicores()->getCab());
-                        lic = aux3->getInfo();
-                        this->pasarCompra(clie,lic);
-                        return;
+                do{
+                    if(aux != NULL){
+                        nodoMarcas *aux2 = new nodoMarcas();
+                        marca *marc = new marca();
+                        aux2 = this->marcas->elegirMarca(this->marcas->getCab());
+                        marc = aux2->getInfo();
+                        if(marc != NULL){
+                            nodoLicores *aux3 = new nodoLicores();
+                            licor *lic = new licor();
+                            aux3 = this->marcas->getCab()->getInfo()->getLicores()->elegirLicor(marc->getLicores()->getCab());
+                            lic = aux3->getInfo();
+                            this->pasarCompra(clie,lic);
+                        }
                     }
-                }
+                    basicas::gotoxy(35, 5); cout << "Quiere Comprar otro Licor (S/N): ";
+                    fflush(stdin);
+                    cin.get(rpta);
+                }while(!(rpta == 'N'));
             }else{
                 basicas::gotoxy(38, 5); cout << "NO HAY REGISTRO DE CLIENTES - OPCION 03 ";
                 basicas::gotoxy(38, 6);system("pause");
