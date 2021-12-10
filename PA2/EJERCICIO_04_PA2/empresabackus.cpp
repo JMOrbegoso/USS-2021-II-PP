@@ -89,7 +89,8 @@ void empresaBackus::pasarCompra(cliente *clie, licor *lic){
     produ->setTipo(lic->getTipo());
     produ->setPrecio(lic->getPrecio());
     this->compras->insertarCompra(com);
-    this->compras->getCab()->getInfo()->getLicores()->insertarLicor(produ);
+    com->getLicores()->insertarLicor(produ);
+    //this->compras->getCab()->getInfo()->getLicores()->insertarLicor(produ);
 }
 
 void empresaBackus::venderLicor(){
