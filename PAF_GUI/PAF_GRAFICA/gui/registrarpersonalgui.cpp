@@ -90,17 +90,7 @@ void registrarPersonalGui::on_cmdRegMed_clicked()
     clear();
 }
 
-/*
-listaPersonalClass *registrarPersonalGui::getListPers() const
-{
-    return listPers;
-}
 
-void registrarPersonalGui::setListPers(listaPersonalClass *value)
-{
-    listPers = value;
-}*/
-/*
 void registrarPersonalGui::habilitarCmdTxt()
 {
     ui->txtNomPers->setEnabled(true);
@@ -113,8 +103,23 @@ void registrarPersonalGui::habilitarCmdTxt()
     ui->douSpinSuePers->setEnabled(true);
     ui->radEnf->setEnabled(true);
     ui->radMed->setEnabled(true);
+    ui->cmdRegMed->setEnabled(true);
 }
-*/
+
+void registrarPersonalGui::inhabilitarCmdTxt()
+{
+    ui->txtNomPers->setEnabled(false);
+    ui->txtApePers->setEnabled(false);
+    ui->txtDniPers->setEnabled(false);
+    ui->txtDirPers->setEnabled(false);
+    ui->txtTelPers->setEnabled(false);
+    ui->spinEdaPers->setEnabled(false);
+    ui->spinHdtPers->setEnabled(false);
+    ui->douSpinSuePers->setEnabled(false);
+    ui->radEnf->setEnabled(false);
+    ui->radMed->setEnabled(false);
+    ui->cmdRegMed->setEnabled(false);
+}
 
 listaLocalesClass *registrarPersonalGui::getListLocales() const
 {
@@ -130,5 +135,19 @@ void registrarPersonalGui::addListLocalComBox()
 {
     for(int i=0;i < this->listLocales->getCant();i++){
         ui->selectLocales->addItem(QString::fromStdString((this->listLocales->getCab()+i)->getNombreLocal()));
+    }
+}
+
+void registrarPersonalGui::on_selectLocales_currentIndexChanged(int index)
+{
+    actualizarCmd(index);
+}
+
+void registrarPersonalGui::actualizarCmd(int index)
+{
+    if((this->listLocales->getCab()+index)->getEstadoLocal() == false){
+        inhabilitarCmdTxt();
+    }else{
+        habilitarCmdTxt();
     }
 }

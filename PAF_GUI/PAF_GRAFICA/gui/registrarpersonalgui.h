@@ -20,7 +20,9 @@ public:
     listaPersonalClass *getListPers() const;
     void setListPers(listaPersonalClass *value);
 
-    //void habilitarCmdTxt();
+    void habilitarCmdTxt();
+    void inhabilitarCmdTxt();
+    void actualizarCmd(int index);
     listaLocalesClass *getListLocales() const;
     void setListLocales(listaLocalesClass *value);
     void addListLocalComBox();
@@ -28,6 +30,8 @@ private slots:
     void on_cmdCanMed_clicked();
 
     void on_cmdRegMed_clicked();
+
+    void on_selectLocales_currentIndexChanged(int index);
 
 private:
     Ui::registrarPersonalGui *ui;
