@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1016</width>
-    <height>565</height>
+    <width>990</width>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,8 +43,8 @@
   <widget class="QPushButton" name="editarLocalPb">
    <property name="geometry">
     <rect>
-     <x>689</x>
-     <y>460</y>
+     <x>650</x>
+     <y>440</y>
      <width>91</width>
      <height>41</height>
     </rect>
@@ -146,7 +146,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>450</y>
+     <y>430</y>
      <width>541</width>
      <height>61</height>
     </rect>
@@ -156,7 +156,7 @@
      <widget class="QLabel" name="label_2">
       <property name="font">
        <font>
-        <pointsize>11</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="text">
@@ -171,7 +171,7 @@
      <widget class="QLabel" name="label_3">
       <property name="font">
        <font>
-        <pointsize>11</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="text">

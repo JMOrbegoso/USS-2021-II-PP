@@ -39,12 +39,14 @@ void listaPacientesClass::insertarPaciente(pacienteClass *paci)
     temp->setSgte(NULL);
     if( this->cab == NULL){
         this->setCab(temp);
+        this->getCab()->setAnt(NULL);
     }else{
         aux =  this->getCab();
         while(aux->getSgte() != NULL){
             aux = aux->getSgte();
         }
         aux->setSgte(temp);
+        temp->setAnt(aux);
     }
     this->cant++;
 }

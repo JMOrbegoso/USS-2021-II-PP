@@ -32,7 +32,8 @@ void nodoPersonalClass::setAnt(nodoPersonalClass *value)
 }
 nodoPersonalClass::nodoPersonalClass()
 {
-
+    sgte = NULL;
+    ant = NULL;
 }
 
 nodoPersonalClass::~nodoPersonalClass()

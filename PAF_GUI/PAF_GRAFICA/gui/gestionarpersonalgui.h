@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <listalocalesclass.h>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class gestionarPersonalGui;
@@ -30,6 +31,10 @@ private slots:
     void on_selectLocales_currentIndexChanged(int index);
 
     void on_txtBusPers_textChanged(const QString &arg1);
+
+    void on_tablePers_itemClicked(QTableWidgetItem *item);
+
+    void on_btnEditPers_clicked();
 
 private:
     Ui::gestionarPersonalGui *ui;

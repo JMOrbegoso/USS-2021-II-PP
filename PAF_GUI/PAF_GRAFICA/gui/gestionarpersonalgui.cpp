@@ -11,7 +11,7 @@ gestionarPersonalGui::gestionarPersonalGui(QWidget *parent) :
     this->ui->tablePers->setColumnWidth(1, 150);
     this->ui->tablePers->setColumnWidth(2, 150);
     this->ui->tablePers->setColumnWidth(3, 60);
-    this->ui->tablePers->setColumnWidth(4, 100);
+    this->ui->tablePers->setColumnWidth(4, 95);
     this->ui->tablePers->setColumnWidth(5, 120);
 }
 
@@ -80,6 +80,7 @@ void gestionarPersonalGui::actualizarControles(listaPersonalClass *personal)
         this->ui->tablePers->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(estadoTexto)));
 
         aux = aux->getSgte();
+        x++;
     }
 }
 
@@ -111,4 +112,39 @@ void gestionarPersonalGui::on_txtBusPers_textChanged(const QString &arg)
 {
     auto personalFiltradoPorDni = this->personal->filtrarPorDni(arg.toStdString());
     this->actualizarControles(personalFiltradoPorDni);
+}
+
+void gestionarPersonalGui::on_tablePers_itemClicked(QTableWidgetItem *item)
+{
+    int fila = item->row();
+
+    QTableWidgetItem *nombre = this->ui->tablePers->item(fila, 1);
+    QTableWidgetItem *apellido = this->ui->tablePers->item(fila, 2);
+
+    this->ui->txtNomPers->setText(nombre->text());
+    this->ui->txtApePers->setText(apellido->text());
+}
+
+void gestionarPersonalGui::on_btnEditPers_clicked()
+{
+    int x =this->ui->tablePers->currentRow();
+
+    //Datos nuevos
+    string nomPers = this->ui->txtNomPers->text().toStdString();
+    string apePers = this->ui->txtApePers->text().toStdString();
+
+    //Insertar datos
+    nodoPersonalClass *aux = this->personal->getCab();
+    personalClass *aux2 = new personalClass();
+    for(int i = 0; i < x; i++)
+        aux = aux->getSgte();
+    aux2 = aux->getInfo();
+    //aux->getInfo()->setNombre(nomPers);
+    //aux->getInfo()->setApellido(apePers);
+    aux2->setNombre(nomPers);
+    aux2->setApellido(apePers);
+
+    //Actualizar nombre y apellido en la tabla
+    this->ui->tablePers->item(x,1)->setText(QString::fromStdString(nomPers));
+    this->ui->tablePers->item(x,2)->setText(QString::fromStdString(apePers));
 }
