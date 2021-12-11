@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Gestionar Locales</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/local.png</normaloff>:/img/local.png</iconset>
+  </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
@@ -192,6 +196,8 @@
   <tabstop>habilitarInLocalPb</tabstop>
   <tabstop>regresarPb</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

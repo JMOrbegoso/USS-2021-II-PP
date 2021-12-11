@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestionar Lotes </string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/vacuna.png</normaloff>:/img/vacuna.png</iconset>
   </property>
   <widget class="QPushButton" name="inhabilitarButton">
    <property name="geometry">
@@ -172,6 +176,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Atender Paciente</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/paciente.png</normaloff>:/img/paciente.png</iconset>
+  </property>
   <widget class="QWidget" name="formLayoutWidget_2">
    <property name="geometry">
     <rect>
@@ -368,6 +372,8 @@
   <tabstop>direccionTxt</tabstop>
   <tabstop>buscarPacienteTxt</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

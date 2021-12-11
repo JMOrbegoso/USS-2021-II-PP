@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Registrar Personal (Médico/Enfermera)</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/medico.png</normaloff>:/img/medico.png</iconset>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
@@ -277,6 +281,8 @@
   <tabstop>cmdRegMed</tabstop>
   <tabstop>cmdCanMed</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

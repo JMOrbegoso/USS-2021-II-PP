@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Gestionar Pacientes Registrados</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/paciente.png</normaloff>:/img/paciente.png</iconset>
+  </property>
   <property name="modal">
    <bool>false</bool>
   </property>
@@ -345,6 +349,8 @@
   <tabstop>registrarPacienteCmd</tabstop>
   <tabstop>regresarCmd</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

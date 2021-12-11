@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    almaceneslistaclass.cpp \
     atencionclass.cpp \
     datossemillaclass.cpp \
     gui/atenderpaciente.cpp \
@@ -48,7 +47,6 @@ SOURCES += main.cpp\
 
 HEADERS  += gui/mainwindow.h \
     almacenclass.h \
-    almaceneslistaclass.h \
     atencionclass.h \
     datossemillaclass.h \
     gui/atenderpaciente.h \
@@ -94,5 +92,9 @@ FORMS    += gui/mainwindow.ui \
     gui/registrarpersonalgui.ui \
     gui/gestionarpersonalgui.ui
 
+
+
 RESOURCES += \
     resource.qrc
+
+DISTFILES +=

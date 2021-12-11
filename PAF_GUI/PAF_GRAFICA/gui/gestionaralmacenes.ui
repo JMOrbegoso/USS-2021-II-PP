@@ -13,29 +13,15 @@
   <property name="windowTitle">
    <string>Gestionar Almacenes</string>
   </property>
-  <widget class="QPushButton" name="buscarAlmacenButton">
-   <property name="geometry">
-    <rect>
-     <x>730</x>
-     <y>10</y>
-     <width>80</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Buscar</string>
-   </property>
-  </widget>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/almacen.png</normaloff>:/img/almacen.png</iconset>
+  </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>10</y>
+     <x>40</x>
+     <y>20</y>
      <width>661</width>
      <height>31</height>
     </rect>
@@ -61,8 +47,8 @@
   <widget class="QListWidget" name="almacenesList">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>60</y>
+     <x>40</x>
+     <y>70</y>
      <width>781</width>
      <height>291</height>
     </rect>
@@ -71,8 +57,8 @@
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>719</x>
-     <y>370</y>
+     <x>740</x>
+     <y>380</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -87,6 +73,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

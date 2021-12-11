@@ -1,5 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>img/bg.jpg</file>
+        <file>img/Imagen1.png</file>
+        <file>img/icono.png</file>
+        <file>img/almacen.png</file>
+        <file>img/local.png</file>
+        <file>img/vacuna.png</file>
+        <file>img/medico.png</file>
+        <file>img/paciente.png</file>
+        <file>img/help.png</file>
+        <file>img/login.png</file>
     </qresource>
 </RCC>

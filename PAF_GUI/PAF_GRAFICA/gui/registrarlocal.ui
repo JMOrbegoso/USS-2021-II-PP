@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Registrar Local de Vacunación</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/img/local.png</normaloff>:/img/local.png</iconset>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
@@ -131,6 +135,8 @@
   <tabstop>registrarLocalPb</tabstop>
   <tabstop>cancelarLocalPb</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
