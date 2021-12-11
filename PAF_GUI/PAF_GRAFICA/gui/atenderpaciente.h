@@ -42,6 +42,8 @@ private slots:
 
     void on_localesCBox_currentIndexChanged(int index);
 
+    void on_reportesButton_clicked();
+
 private:
     Ui::atenderPaciente *ui;
     listaLocalesClass *locales;

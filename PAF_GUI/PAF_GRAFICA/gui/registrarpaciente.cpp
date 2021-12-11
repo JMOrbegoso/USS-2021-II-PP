@@ -109,7 +109,6 @@ void registrarPaciente::on_registrarCmd_clicked()
 
     // Insertar el nuevo paciente
     (this->locales->getCab() + x)->getPacientes()->insertarPaciente(paci);
-
     msje.setText("Paciente Registrado");
     msje.exec();
     clear();

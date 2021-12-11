@@ -13,28 +13,10 @@
   <property name="windowTitle">
    <string>Reporte de Atendidos</string>
   </property>
-  <widget class="QPushButton" name="registrarOtroPacienteCmd">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>390</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Registrar</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="regresarCmd">
    <property name="geometry">
     <rect>
-     <x>590</x>
+     <x>1010</x>
      <y>390</y>
      <width>80</width>
      <height>31</height>
@@ -170,7 +152,7 @@
   <widget class="QWidget" name="formLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>790</x>
      <y>10</y>
      <width>301</width>
      <height>52</height>

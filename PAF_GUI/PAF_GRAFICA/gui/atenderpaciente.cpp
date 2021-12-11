@@ -2,6 +2,7 @@
 #include "ui_atenderpaciente.h"
 #include <gui/registrarpaciente.h>
 #include <QMessageBox>
+#include <gui/gestionaratendidos.h>
 
 atenderPaciente::atenderPaciente(QWidget *parent) :
     QDialog(parent),
@@ -119,8 +120,6 @@ void atenderPaciente::on_atenderButton_clicked()
     loteVacunaClass *auxLoteVacuna;
 
     // Datos a almacenar
-    /// Fecha
-    string fecha = "???";
 
     /// Enfermera
     auxEnfermera = this->enfermeras->getCab();
@@ -135,7 +134,7 @@ void atenderPaciente::on_atenderButton_clicked()
     auxLoteVacuna = this->lotes->getCab() + this->ui->nombreVacunaCbox->currentIndex();
 
     // Valida
-    if (fecha == "") {
+    if (ui->fechaDateTimeEdit->text().length() == 0) {
         msje.setText("Debe ingresar una fecha valida");
         msje.exec();
         return;
@@ -150,6 +149,8 @@ void atenderPaciente::on_atenderButton_clicked()
         msje.exec();
         return;
     }
+
+    auto fecha = this->ui->fechaDateTimeEdit->text().toStdString();
 
     // Crea la atencion
     auxAtencion = new atencionClass(fecha, auxEnfermera->getInfo(), auxLoteVacuna);
@@ -235,3 +236,12 @@ void atenderPaciente::on_localesCBox_currentIndexChanged(int index)
     this->ui->buscarPacienteTxt->clear();
 }
 
+
+void atenderPaciente::on_reportesButton_clicked()
+{
+    gestionarAtendidos *gestA = new gestionarAtendidos();
+    gestA->setLocales(this->getLocales());
+    gestA->listaLocalesBox();
+    gestA->show();
+    this->close();
+}
