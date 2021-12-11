@@ -141,13 +141,15 @@ void registrarPersonalGui::addListLocalComBox()
 void registrarPersonalGui::on_selectLocales_currentIndexChanged(int index)
 {
     actualizarCmd(index);
+    auto estadoTexto = (this->listLocales->getCab()+index)->getEstadoLocal() ? "Habilitado" : "Inhabilitado";
+    this->ui->txtEstLoc->setText(QString::fromStdString(estadoTexto));
+
 }
 
 void registrarPersonalGui::actualizarCmd(int index)
 {
-    if((this->listLocales->getCab()+index)->getEstadoLocal() == false){
+    if((this->listLocales->getCab()+index)->getEstadoLocal() == false)
         inhabilitarCmdTxt();
-    }else{
+    else
         habilitarCmdTxt();
-    }
 }

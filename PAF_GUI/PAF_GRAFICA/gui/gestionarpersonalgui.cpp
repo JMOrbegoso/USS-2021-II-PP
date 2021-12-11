@@ -96,6 +96,28 @@ void gestionarPersonalGui::addListLocalComBox()
     this->ui->txtEstPers->setText(QString::fromStdString(estadoTexto));
 }
 
+void gestionarPersonalGui::habilitarCmd()
+{
+    ui->txtNomPers->setEnabled(true);
+    ui->txtApePers->setEnabled(true);
+    ui->btnEditPers->setEnabled(true);
+}
+
+void gestionarPersonalGui::inhabilitarCmd()
+{
+    ui->txtNomPers->setEnabled(false);
+    ui->txtApePers->setEnabled(false);
+    ui->btnEditPers->setEnabled(false);
+}
+
+void gestionarPersonalGui::actualizarCmd(int index)
+{
+    if((this->locales->getCab()+index)->getEstadoLocal() == false)
+        inhabilitarCmd();
+    else
+        habilitarCmd();
+}
+
 void gestionarPersonalGui::on_selectLocales_currentIndexChanged(int index)
 {
     int i = index;
@@ -106,6 +128,7 @@ void gestionarPersonalGui::on_selectLocales_currentIndexChanged(int index)
     this->setPersonal((this->locales->getCab() + i)->getPersonales());
 
     this->ui->txtBusPers->clear();
+    actualizarCmd(index);
 }
 
 void gestionarPersonalGui::on_txtBusPers_textChanged(const QString &arg)
@@ -148,3 +171,31 @@ void gestionarPersonalGui::on_btnEditPers_clicked()
     this->ui->tablePers->item(x,1)->setText(QString::fromStdString(nomPers));
     this->ui->tablePers->item(x,2)->setText(QString::fromStdString(apePers));
 }
+/*
+void gestionarPersonalGui::on_btnBorPers_clicked()
+{
+    //int indexEliminar = this->ui->tablePers->currentRow();
+    nodoPersonalClass *auxBorrar;
+    //nodoPersonalClass *anterior = NULL;
+    auxBorrar = this->getPersonal()->getCab();
+
+    if (numLibElim == 1){
+        biblio.cab = biblio.cab->sgte;
+        biblio.cab->ant = NULL;
+        delete auxBorrar;
+    } else {
+        int i = 1;
+        while(i < numLibElim){
+            anterior = auxBorrar;
+            auxBorrar = auxBorrar->sgte;
+            i++;
+        }
+        anterior->sgte = auxBorrar->sgte;
+        delete auxBorrar;
+        if(anterior->sgte != NULL){
+            anterior->sgte->ant = anterior->ant->sgte;
+        }
+    }
+    biblio.cant--;
+}
+*/

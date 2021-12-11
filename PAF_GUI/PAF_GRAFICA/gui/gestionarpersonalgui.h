@@ -24,6 +24,9 @@ public:
 
     void actualizarControles(listaPersonalClass *personal = NULL);
     void addListLocalComBox();
+    void habilitarCmd();
+    void inhabilitarCmd();
+    void actualizarCmd(int index);
 
 private slots:
     void on_bntVolPers_clicked();
@@ -35,6 +38,8 @@ private slots:
     void on_tablePers_itemClicked(QTableWidgetItem *item);
 
     void on_btnEditPers_clicked();
+
+    //void on_btnBorPers_clicked();
 
 private:
     Ui::gestionarPersonalGui *ui;

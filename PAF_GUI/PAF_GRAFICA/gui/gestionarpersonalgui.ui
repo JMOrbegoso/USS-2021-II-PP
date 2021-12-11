@@ -7,25 +7,12 @@
     <x>0</x>
     <y>0</y>
     <width>729</width>
-    <height>517</height>
+    <height>502</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Gestionar Personal</string>
   </property>
-  <widget class="QPushButton" name="bntVolPers">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>470</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Volver</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
@@ -176,16 +163,22 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QPushButton" name="btnBorPers">
-        <property name="text">
-         <string>Borrar</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="bntVolPers">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>460</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Volver</string>
+   </property>
   </widget>
  </widget>
  <resources/>
