@@ -1,20 +1,11 @@
-#include "gui/mainwindow.h"
 #include <QApplication>
-#include <localclass.h>
-#include <datossemillaclass.h>
+#include <gui/login.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
-
-    // Init datos
-    datosSemillaClass::sembrar(vacunaton);
-
-    MainWindow *w = new MainWindow();
-    w->setVacunaDengue(vacunaton);
-    w->showMaximized();
-
+    login *log = new login();
+    log->show();
     return a.exec();
 }

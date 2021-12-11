@@ -92,11 +92,19 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionRegistrar_local">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/local.png</normaloff>:/img/local.png</iconset>
+   </property>
    <property name="text">
     <string>Registrar Local...</string>
    </property>
   </action>
   <action name="actionGestionar_locales">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/local.png</normaloff>:/img/local.png</iconset>
+   </property>
    <property name="text">
     <string>Gestionar Locales...</string>
    </property>
@@ -107,41 +115,73 @@
    </property>
   </action>
   <action name="actionGestionar_Almacenes">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/almacen.png</normaloff>:/img/almacen.png</iconset>
+   </property>
    <property name="text">
     <string>Gestionar Almacén General...</string>
    </property>
   </action>
   <action name="actionRegistrar_Lote">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/vacuna.png</normaloff>:/img/vacuna.png</iconset>
+   </property>
    <property name="text">
     <string>Registrar Lote de Vacunas...</string>
    </property>
   </action>
   <action name="actionGestionar_Lotes">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/vacuna.png</normaloff>:/img/vacuna.png</iconset>
+   </property>
    <property name="text">
     <string>Gestionar Lotes de Vacunas...</string>
    </property>
   </action>
   <action name="actionRegistrar_Personal_M_dico">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/medico.png</normaloff>:/img/medico.png</iconset>
+   </property>
    <property name="text">
     <string>Registrar Personal Médico...</string>
    </property>
   </action>
   <action name="actionGestionar_Personal_M_dico">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/medico.png</normaloff>:/img/medico.png</iconset>
+   </property>
    <property name="text">
     <string>Gestionar Personal Médico...</string>
    </property>
   </action>
   <action name="actionRegistrar_Paciente">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/paciente.png</normaloff>:/img/paciente.png</iconset>
+   </property>
    <property name="text">
     <string>Registrar Paciente...</string>
    </property>
   </action>
   <action name="actionGestionar_Pacientes">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/paciente.png</normaloff>:/img/paciente.png</iconset>
+   </property>
    <property name="text">
     <string>Gestionar Pacientes...</string>
    </property>
   </action>
   <action name="actionAcerca_de">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/help.png</normaloff>:/img/help.png</iconset>
+   </property>
    <property name="text">
     <string>Acerca de...</string>
    </property>
@@ -152,11 +192,19 @@
    </property>
   </action>
   <action name="actionAtender_Paciente">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/paciente.png</normaloff>:/img/paciente.png</iconset>
+   </property>
    <property name="text">
     <string>Atender Paciente</string>
    </property>
   </action>
   <action name="actionGestionar_Atenci_n">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/img/paciente.png</normaloff>:/img/paciente.png</iconset>
+   </property>
    <property name="text">
     <string>Reporte de Atendidos</string>
    </property>
