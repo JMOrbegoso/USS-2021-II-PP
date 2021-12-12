@@ -18,3 +18,9 @@ void gestionarAlmacenes::on_regresarButton_clicked()
     this->close();
 }
 
+/*void gestionarAlmacenes::on_editarAlmacenButton_clicked()
+{
+    editarAlmacen *edit = new editarAlmacen();
+    edit->show();
+}*/
+

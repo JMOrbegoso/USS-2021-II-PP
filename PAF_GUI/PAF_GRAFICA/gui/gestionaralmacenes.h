@@ -15,12 +15,14 @@ public:
     explicit gestionarAlmacenes(QWidget *parent = nullptr);
     ~gestionarAlmacenes();
 
-
 private slots:
     void on_regresarButton_clicked();
 
+    //void on_editarAlmacenButton_clicked();
+
 private:
     Ui::gestionarAlmacenes *ui;
+
 };
 
 #endif // GESTIONARALMACENES_H
