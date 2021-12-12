@@ -1,4 +1,6 @@
-#include "lotegeneralclass.h"
+#include "loteGeneralclass.h"
+
+int loteGeneralClass::contador = 1;
 
 string loteGeneralClass::getCodigo() const
 {
@@ -40,7 +42,25 @@ void loteGeneralClass::setEstado(bool value)
     estado = value;
 }
 
-loteGeneralClass::loteGeneralClass()
+string loteGeneralClass::getFechaCaducidad() const
 {
+    return fechaCaducidad;
+}
 
+void loteGeneralClass::setFechaCaducidad(const string &value)
+{
+    fechaCaducidad = value;
+}
+loteGeneralClass::loteGeneralClass(){
+    this->estado = true;
+}
+
+loteGeneralClass::loteGeneralClass(string nombre, int cantidad, string fechaCaducidad, bool estado)
+{
+    this->codigo = "lote-" + to_string(loteGeneralClass::contador);
+    loteGeneralClass::contador++;
+    this->nombre = nombre;
+    this->cantidad = cantidad;
+    this->estado = estado;
+    this->fechaCaducidad = fechaCaducidad;
 }

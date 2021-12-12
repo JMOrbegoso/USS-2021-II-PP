@@ -66,8 +66,8 @@
   <widget class="QPushButton" name="habilitarButton">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>230</y>
+     <x>810</x>
+     <y>270</y>
      <width>161</width>
      <height>25</height>
     </rect>
@@ -148,28 +148,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="formLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>261</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Elije un Local:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QComboBox" name="comboBox"/>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -188,7 +166,7 @@
     <string>Asignar Lote</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>780</x>
@@ -210,7 +188,42 @@
     </item>
    </layout>
   </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>188</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>65</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Elije un Local:</string>
+   </property>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>comboBox</tabstop>
+  <tabstop>lotesListWidget</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>regresarButton</tabstop>
+  <tabstop>buscarLineEdit</tabstop>
+  <tabstop>editNombreLine</tabstop>
+  <tabstop>editNombreLine_2</tabstop>
+  <tabstop>editarButton</tabstop>
+  <tabstop>habilitarButton</tabstop>
+  <tabstop>registrarButton</tabstop>
+ </tabstops>
  <resources>
   <include location="../resource.qrc"/>
  </resources>
