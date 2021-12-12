@@ -2,9 +2,6 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="enabled">
-   <bool>true</bool>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -95,12 +92,6 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionRegistrar_local">
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="icon">
     <iconset resource="../resource.qrc">
      <normaloff>:/img/local.png</normaloff>:/img/local.png</iconset>
@@ -116,6 +107,11 @@
    </property>
    <property name="text">
     <string>Gestionar Locales...</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Almacen">
+   <property name="text">
+    <string>Registrar Almacén...</string>
    </property>
   </action>
   <action name="actionGestionar_Almacenes">
