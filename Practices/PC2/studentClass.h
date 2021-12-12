@@ -10,15 +10,23 @@ class studentClass
 private:
     static int counter;
     string code;
+    string email;
+    string password;
     string firstName;
     string lastName;
     string dni;
 public:
     ~studentClass();
     studentClass();
-    studentClass(string firstName, string lastName, string dni);
+    studentClass(string email, string password, string firstName, string lastName, string dni);
 
     string getCode();
+
+    string getEmail();
+    void setEmail(string value);
+
+    string getPassword();
+    void setPassword(string value);
 
     string getFirstName();
     void setFirstName(string value);
