@@ -2,7 +2,6 @@
 #define GESTIONARLOTEGUI_H
 
 #include <QDialog>
-#include <listalotesvacunageneralclass.h>
 #include <listalocalesclass.h>
 #include <qtablewidget.h>
 
@@ -18,8 +17,8 @@ public:
     explicit gestionarLoteGui(QWidget *parent = nullptr);
     ~gestionarLoteGui();
 
-    listaLotesVacunaGeneralClass *getLotesGeneral() const;
-    void setLotesGeneral(listaLotesVacunaGeneralClass *value);
+    listaLotesVacunaClass *getLotes() const;
+    void setLotes(listaLotesVacunaClass *value);
 
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
@@ -37,9 +36,9 @@ private slots:
 
 private:
     Ui::gestionarLoteGui *ui;
-    listaLotesVacunaGeneralClass *lotesGeneral;
+    listaLotesVacunaClass *lotes;
     listaLocalesClass *locales;
-    void actualizarC(listaLotesVacunaGeneralClass *lotes = NULL);
+    void actualizarControles(listaLotesVacunaClass *lotes = NULL);
 };
 
 #endif // GESTIONARLOTEGUI_H

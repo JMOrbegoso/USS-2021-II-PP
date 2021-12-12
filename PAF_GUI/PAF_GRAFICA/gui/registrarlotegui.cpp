@@ -7,7 +7,7 @@ registrarLoteGui::registrarLoteGui(QWidget *parent) :
     ui(new Ui::registrarLoteGui)
 {
     ui->setupUi(this);
-    this->lotes = new listaLotesVacunaGeneralClass();
+    this->lotes = new listaLotesVacunaClass();
 }
 
 registrarLoteGui::~registrarLoteGui()
@@ -36,7 +36,7 @@ void registrarLoteGui::on_registrarButton_clicked()
     auto estado = this->ui->habilitarLoteRb->isChecked();
 
     // Creación de la nueva instancia
-    loteGeneralClass *nuevoLote = new loteGeneralClass(nombre, cantidad, fechaCaducidad, estado);
+    loteVacunaClass *nuevoLote = new loteVacunaClass(nombre, cantidad, fechaCaducidad, estado);
 
     this->lotes->insertarLote(nuevoLote);
 
@@ -54,12 +54,12 @@ void registrarLoteGui::limpiarControles()
     ui->nombreLoteTxt->setFocus();
 }
 
-listaLotesVacunaGeneralClass *registrarLoteGui::getLotes() const
+listaLotesVacunaClass *registrarLoteGui::getLotes() const
 {
     return lotes;
 }
 
-void registrarLoteGui::setLotes(listaLotesVacunaGeneralClass *value)
+void registrarLoteGui::setLotes(listaLotesVacunaClass *value)
 {
     lotes = value;
 }

@@ -22,12 +22,10 @@ SOURCES += main.cpp\
     almacenclass.cpp \
     listalocalesclass.cpp \
     listalotesvacunaclass.cpp \
-    listalotesvacunageneralclass.cpp \
     listapacientesclass.cpp \
     listapersonalclass.cpp \
     listapersonasclass.cpp \
     localclass.cpp \
-    loteGeneralclass.cpp \
     lotevacunaclass.cpp \
     nodopacienteclass.cpp \
     nodopersonalclass.cpp \
@@ -55,12 +53,10 @@ HEADERS  += gui/mainwindow.h \
     gui/gestionarlotegui.h \
     listalocalesclass.h \
     listalotesvacunaclass.h \
-    listalotesvacunageneralclass.h \
     listapacientesclass.h \
     listapersonalclass.h \
     listapersonasclass.h \
     localclass.h \
-    lotegeneralclass.h \
     lotevacunaclass.h \
     nodopacienteclass.h \
     nodopersonalclass.h \

@@ -2,7 +2,7 @@
 #define REGISTRARLOTEGUI_H
 
 #include <QDialog>
-#include <listalotesvacunageneralclass.h>
+#include <listalotesvacunaclass.h>
 
 namespace Ui {
 class registrarLoteGui;
@@ -16,8 +16,8 @@ public:
     explicit registrarLoteGui(QWidget *parent = nullptr);
     ~registrarLoteGui();
 
-    listaLotesVacunaGeneralClass *getLotes() const;
-    void setLotes(listaLotesVacunaGeneralClass *value);
+    listaLotesVacunaClass *getLotes() const;
+    void setLotes(listaLotesVacunaClass *value);
     void limpiarControles();
 private slots:
     void on_cancelarButton_clicked();
@@ -26,7 +26,7 @@ private slots:
 
 private:
     Ui::registrarLoteGui *ui;
-    listaLotesVacunaGeneralClass *lotes;
+    listaLotesVacunaClass *lotes;
 
 };
 

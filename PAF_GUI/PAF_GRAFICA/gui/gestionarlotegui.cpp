@@ -8,7 +8,7 @@ gestionarLoteGui::gestionarLoteGui(QWidget *parent) :
     ui(new Ui::gestionarLoteGui)
 {
     ui->setupUi(this);
-    this->lotesGeneral = new listaLotesVacunaGeneralClass();
+    this->lotes = new listaLotesVacunaClass();
     ui->lotesTableWidget->setColumnWidth(0, 60);
     ui->lotesTableWidget->setColumnWidth(1, 90);
     ui->lotesTableWidget->setColumnWidth(2, 80);
@@ -24,7 +24,7 @@ gestionarLoteGui::~gestionarLoteGui()
 void gestionarLoteGui::on_habilitarInhabilitarButton_clicked()
 {
     int x = this->ui->lotesTableWidget->currentRow();
-    loteGeneralClass *item = (this->lotesGeneral->getLote() + x);
+    loteVacunaClass *item = (this->lotes->getCab() + x);
 
     // Mensaje de confirmación
     string titleConfirmation = !item->getEstado() ? "Habilitar Lote" : "Inhabilitar Lote";
@@ -53,18 +53,18 @@ listaLocalesClass *gestionarLoteGui::getLocales() const
 void gestionarLoteGui::setLocales(listaLocalesClass *value)
 {
     this->locales = value;
-    this->setLotesGeneral(this->lotesGeneral);
+    this->setLotes(this->lotes);
 }
 
-listaLotesVacunaGeneralClass *gestionarLoteGui::getLotesGeneral() const
+listaLotesVacunaClass *gestionarLoteGui::getLotes() const
 {
-    return lotesGeneral;
+    return this->lotes;
 }
 
-void gestionarLoteGui::setLotesGeneral(listaLotesVacunaGeneralClass *value)
+void gestionarLoteGui::setLotes(listaLotesVacunaClass *value)
 {
-    this->lotesGeneral = value;
-    this->actualizarC();
+    this->lotes = value;
+    this->actualizarControles();
 }
 
 void gestionarLoteGui::listaLocalesCbox(){
@@ -78,7 +78,7 @@ void gestionarLoteGui::on_elegirLocalCbox_currentIndexChanged(int index)
 {
     auto direccionLocal = (this->locales->getCab() + index)->getDireccionLocal();
     this->ui->direccionTxt->setText(QString::fromStdString(direccionLocal));
-    this->actualizarC(this->lotesGeneral);
+    this->actualizarControles(this->lotes);
 }
 
 void gestionarLoteGui::on_lotesTableWidget_itemClicked(QTableWidgetItem *item)
@@ -100,7 +100,7 @@ void gestionarLoteGui::on_editarButton_clicked()
     string cantidadNueva = this->ui->cantidadLineEdit->text().toStdString();
 
     //Edicion del elemnto de la lista
-    (this->lotesGeneral->getLote() + x)->setNombre(nuevoNombre);
+    (this->lotes->getCab() + x)->setNombre(nuevoNombre);
     //(this->lotesGeneral->getLote() + x)->setCantidad(cantidadNueva);
 
     //Edicion del elemnto en la tabla
@@ -108,9 +108,9 @@ void gestionarLoteGui::on_editarButton_clicked()
     this->ui->lotesTableWidget->item(x, 2)->setText(QString::fromStdString(cantidadNueva));
 }
 
-void gestionarLoteGui::actualizarC(listaLotesVacunaGeneralClass *lotes)
+void gestionarLoteGui::actualizarControles(listaLotesVacunaClass *lotes)
 {
-    lotes = lotes == NULL ? this->lotesGeneral : lotes;
+    lotes = lotes == NULL ? this->lotes : lotes;
 
     this->ui->lotesTableWidget->setRowCount(0);
 
