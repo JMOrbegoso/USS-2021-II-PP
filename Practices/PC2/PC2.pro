@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     academyClass.cpp \
+    dataSeederClass.cpp \
     groupClass.cpp \
     groupsListClass.cpp \
     main.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     academyClass.h \
+    dataSeederClass.h \
     groupClass.h \
     groupsListClass.h \
     gui/mainwindow.h \
