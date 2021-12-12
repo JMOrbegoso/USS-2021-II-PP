@@ -14,12 +14,14 @@ SOURCES += \
     groupsListClass.cpp \
     main.cpp \
     gui/mainwindow.cpp \
+    studentsListClass.cpp \
 
 HEADERS += \
     academyClass.h \
     groupClass.h \
     groupsListClass.h \
     gui/mainwindow.h \
+    studentsListClass.h \
 
 FORMS += \
     gui/mainwindow.ui
