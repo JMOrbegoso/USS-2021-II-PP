@@ -2,13 +2,7 @@
 #define GESTIONARALMACENES_H
 
 #include <QDialog>
-<<<<<<< Updated upstream
 #include <qtablewidget.h>
-=======
-#include <QTableWidgetItem>
-#include <qtablewidget.h>
-#include <listalotesvacunageneralclass.h>
->>>>>>> Stashed changes
 
 namespace Ui {
 class gestionarAlmacenes;
@@ -25,9 +19,11 @@ public:
 private slots:
     void on_regresarButton_clicked();
 
+    //void on_editarAlmacenButton_clicked();
+
 private:
     Ui::gestionarAlmacenes *ui;
-    listaLotesVacunaGeneralClass *vacunasGeneral;
+
 };
 
 #endif // GESTIONARALMACENES_H

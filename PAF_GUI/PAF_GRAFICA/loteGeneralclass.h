@@ -5,15 +5,13 @@
 using namespace  std;
 
 class loteGeneralClass{
-    static int contador;
+    static int contado;
     string codigo;
     string nombre;
     int cantidad;
     bool estado;
-    string fechaCaducidad;
 public:
     loteGeneralClass();
-    loteGeneralClass(string nombre, int cantidad, string fechaCaducidad, bool estado);
     string getCodigo() const;
     void setCodigo(const string &value);
     string getNombre() const;
@@ -22,8 +20,6 @@ public:
     void setCantidad(int value);
     bool getEstado() const;
     void setEstado(bool value);
-    string getFechaCaducidad() const;
-    void setFechaCaducidad(const string &value);
 };
 
 #endif // LOTELOCALCLASS_H

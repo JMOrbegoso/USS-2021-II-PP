@@ -1,6 +1,6 @@
 #ifndef ALMACENCLASS_H
 #define ALMACENCLASS_H
-#include <listalotesvacunageneralclass.h>
+#include <listalotesvacunaclass.h>
 
 class almacenClass{
 private:
@@ -8,7 +8,7 @@ private:
     string encargado;
     string direccion;
     bool estado;
-    listaLotesVacunaGeneralClass *lotesGeneral;;
+    listaLotesVacunaClass *lotes;
 public:
     almacenClass();
     ~almacenClass();
@@ -20,8 +20,8 @@ public:
     void setDireccion(const string &value);
     bool getEstado() const;
     void setEstado(bool value);
-    listaLotesVacunaGeneralClass *getLotesGeneral() const;
-    void setLotesGeneral(listaLotesVacunaGeneralClass *value);
+    listaLotesVacunaClass *getLotes() const;
+    void setLotes(listaLotesVacunaClass *value);
 };
 
 #endif // ALMACENCLASS_H

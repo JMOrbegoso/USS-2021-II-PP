@@ -27,8 +27,8 @@ void datosSemillaClass::sembrar(vacunatonContraDengueClass *&vacunaton) {
     local1 = new localClass("local 1", "Av. Bolognesi 444", true);
     local2 = new localClass("local 2", "Av. Heroes 222", false);
 
-    //vacunaton->getAlmacenGeneral()->getLotes()->insertarLote(lote1);
-    //vacunaton->getAlmacenGeneral()->getLotes()->insertarLote(lote2);
+    vacunaton->getAlmacenGeneral()->getLotes()->insertarLote(lote1);
+    vacunaton->getAlmacenGeneral()->getLotes()->insertarLote(lote2);
 
     local1->getLotes()->insertarLote(lote1);
     local2->getLotes()->insertarLote(lote2);
