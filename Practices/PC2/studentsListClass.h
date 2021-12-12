@@ -28,6 +28,8 @@ public:
     void setHead(studentClass* value);
 
     void insert(studentClass* newStudent);
+
+    studentsListClass *findByDni(string dniToFind);
 };
 
 #endif // STUDENTSLISTCLASS_H

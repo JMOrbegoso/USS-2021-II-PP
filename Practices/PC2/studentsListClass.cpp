@@ -49,3 +49,16 @@ void studentsListClass::insert(studentClass* newStudent){
     *(this->head + this->length) = *newStudent;
     this->length++;
 }
+
+studentsListClass *studentsListClass::findByDni(string dniToFind){
+    studentsListClass* temp = new studentsListClass();
+
+    for (int x = 0; x < this->getLength(); x++){
+        studentClass *student = this->getHead() + x;
+
+        if (student->getDni().find(dniToFind, 0) != string::npos)
+            temp->insert(student);
+    }
+
+    return temp;
+}
