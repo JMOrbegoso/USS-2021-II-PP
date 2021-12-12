@@ -31,6 +31,7 @@ SOURCES += \
     nodoticketclass.cpp \
     nodotrabajadorclass.cpp \
     personaclass.cpp \
+    registrarzonagui.cpp \
     ticketclass.cpp \
     trabajadorclass.cpp \
     zonaclass.cpp
@@ -50,12 +51,14 @@ HEADERS += \
     nodoticketclass.h \
     nodotrabajadorclass.h \
     personaclass.h \
+    registrarzonagui.h \
     ticketclass.h \
     trabajadorclass.h \
     zonaclass.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    registrarzonagui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
