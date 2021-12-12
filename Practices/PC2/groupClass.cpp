@@ -17,6 +17,7 @@ groupClass::groupClass(string startDate, string endDate, string duration){
     this->duration = duration;
 
     this->students = new studentsListClass();
+    this->subjects = new subjectsListClass();
 }
 
 string groupClass::getCode(){
@@ -49,4 +50,11 @@ studentsListClass *groupClass::getStudents(){
 }
 void groupClass::setStudents(studentsListClass *value){
     this->students = value;
+}
+
+subjectsListClass *groupClass::getSubjects(){
+    return this->subjects;
+}
+void groupClass::setSubjects(subjectsListClass *value){
+    this->subjects = value;
 }

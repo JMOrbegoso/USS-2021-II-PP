@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include "studentsListClass.h"
+#include "subjectsListClass.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ private:
     string endDate;
     string duration;
     studentsListClass *students;
+    subjectsListClass *subjects;
 public:
     ~groupClass();
     groupClass();
@@ -34,6 +36,9 @@ public:
 
     studentsListClass *getStudents();
     void setStudents(studentsListClass *value);
+
+    subjectsListClass *getSubjects();
+    void setSubjects(subjectsListClass *value);
 };
 
 #endif // GROUPCLASS_H
