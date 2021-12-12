@@ -2,6 +2,7 @@
 #define GESTIONARALMACENES_H
 
 #include <QDialog>
+#include <qtablewidget.h>
 
 namespace Ui {
 class gestionarAlmacenes;

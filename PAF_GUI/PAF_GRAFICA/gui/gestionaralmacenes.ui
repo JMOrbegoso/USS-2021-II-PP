@@ -44,16 +44,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QListWidget" name="almacenesList">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>70</y>
-     <width>781</width>
-     <height>291</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
@@ -70,6 +60,16 @@
    </property>
    <property name="text">
     <string>Regresar</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="mostrarLotesQwidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>771</width>
+     <height>281</height>
+    </rect>
    </property>
   </widget>
  </widget>

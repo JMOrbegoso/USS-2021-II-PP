@@ -74,6 +74,9 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
    </widget>
    <widget class="QPushButton" name="cmdGetInto">
     <property name="geometry">

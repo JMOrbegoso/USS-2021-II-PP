@@ -6,6 +6,7 @@ gestionarAlmacenes::gestionarAlmacenes(QWidget *parent) :
     ui(new Ui::gestionarAlmacenes)
 {
     ui->setupUi(this);
+    //ui->mostrarLotesQwidget->setColumnWidth();
 }
 
 gestionarAlmacenes::~gestionarAlmacenes()

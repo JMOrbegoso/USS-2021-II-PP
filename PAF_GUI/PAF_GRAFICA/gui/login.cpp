@@ -17,7 +17,7 @@ login::~login()
 
 void login::on_cmdGetInto_clicked()
 {
-    if ( ui->txtUser->text() == "MarioGomez" &&  ui->txtPass->text() == "654321" ){
+    if ( ui->txtUser->text() == "MarioGomez" &&  ui->txtPass->text() == "654321" || ui->txtUser->text() == "Ariana" && ui->txtPass->text() == "123456"){
         this->close();
         vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
         datosSemillaClass::sembrar(vacunaton);
