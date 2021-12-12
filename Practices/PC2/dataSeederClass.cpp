@@ -23,6 +23,12 @@ void dataSeederClass::seed(academyClass *&academy){
     academy->setRuc("1101110111010");
     academy->setAddress("Av. Bolognesi #110");
 
+    academy->getStudents()->insert(student1);
+    academy->getStudents()->insert(student2);
+    academy->getStudents()->insert(student3);
+    academy->getStudents()->insert(student4);
+    academy->getStudents()->insert(student5);
+
     group1->getSubjects()->insert(subject1);
     group1->getSubjects()->insert(subject2);
     group2->getSubjects()->insert(subject3);

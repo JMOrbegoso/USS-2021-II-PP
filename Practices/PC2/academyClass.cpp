@@ -7,6 +7,7 @@ academyClass::~academyClass(){
 }
 academyClass::academyClass(){
     this->groups = new groupsListClass();
+    this->students = new studentsListClass();
 }
 
 string academyClass::getName(){
@@ -35,4 +36,11 @@ groupsListClass *academyClass::getGroups(){
 }
 void academyClass::setGroups(groupsListClass *value){
     this->groups = value;
+}
+
+studentsListClass *academyClass::getStudents(){
+    return this->students;
+}
+void academyClass::setStudents(studentsListClass *value){
+    this->students = value;
 }

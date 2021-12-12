@@ -13,6 +13,7 @@ private:
     string address;
     string ruc;
     groupsListClass *groups;
+    studentsListClass *students;
 
 public:
     ~academyClass();
@@ -29,6 +30,9 @@ public:
 
     groupsListClass *getGroups();
     void setGroups(groupsListClass *value);
+
+    studentsListClass *getStudents();
+    void setStudents(studentsListClass *value);
 };
 
 #endif // ACADEMYCLASS_H
