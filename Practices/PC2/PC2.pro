@@ -10,11 +10,13 @@ CONFIG += c++11
 
 SOURCES += \
     academyClass.cpp \
+    groupsListClass.cpp \
     main.cpp \
     gui/mainwindow.cpp \
 
 HEADERS += \
     academyClass.h \
+    groupsListClass.h \
     gui/mainwindow.h \
 
 FORMS += \
