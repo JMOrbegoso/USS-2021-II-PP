@@ -38,7 +38,7 @@
   <widget class="QTableWidget" name="lotesTableWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>100</y>
      <width>641</width>
      <height>261</height>
@@ -121,7 +121,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Actualizar Lote</string>
+    <string>Editar Lote</string>
    </property>
   </widget>
   <widget class="QWidget" name="formLayoutWidget">
@@ -169,11 +169,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-<<<<<<< Updated upstream
      <widget class="QLineEdit" name="cantidadLineEdit"/>
-=======
-     <widget class="QLineEdit" name="editCantidadLine"/>
->>>>>>> Stashed changes
     </item>
    </layout>
   </widget>
@@ -220,7 +216,7 @@
   <widget class="QComboBox" name="elegirLocalCbox">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>110</x>
      <y>10</y>
      <width>381</width>
      <height>31</height>
@@ -232,14 +228,9 @@
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>91</width>
+     <width>81</width>
      <height>31</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
    </property>
    <property name="text">
     <string>Elije un Local:</string>
@@ -276,21 +267,13 @@
   </widget>
  </widget>
  <tabstops>
-<<<<<<< Updated upstream
   <tabstop>elegirLocalCbox</tabstop>
-=======
-  <tabstop>comboBox</tabstop>
->>>>>>> Stashed changes
   <tabstop>lotesTableWidget</tabstop>
   <tabstop>pushButton</tabstop>
   <tabstop>regresarButton</tabstop>
   <tabstop>buscarLineEdit</tabstop>
   <tabstop>editNombreLine</tabstop>
-<<<<<<< Updated upstream
   <tabstop>cantidadLineEdit</tabstop>
-=======
-  <tabstop>editCantidadLine</tabstop>
->>>>>>> Stashed changes
   <tabstop>editarButton</tabstop>
   <tabstop>habilitarInhabilitarButton</tabstop>
   <tabstop>registrarButton</tabstop>

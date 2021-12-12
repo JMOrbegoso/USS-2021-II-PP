@@ -133,30 +133,3 @@ void gestionarLoteGui::actualizarC(listaLotesVacunaGeneralClass *lotes)
         this->ui->lotesTableWidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString((estadoTexto))));
     }
 }
-
-void gestionarLoteGui::on_lotesTableWidget_itemClicked(QTableWidgetItem *item)
-{
-    int fila = item->row();
-    QTableWidgetItem *nombreLot = this->ui->lotesTableWidget->item(fila, 1);
-    QTableWidgetItem *cantidadLot = this->ui->lotesTableWidget->item(fila, 2);
-
-    this->ui->editNombreLine->setText(nombreLot->text());
-    this->ui->editCantidadLine->setText(cantidadLot->text());
-}
-
-void gestionarLoteGui::on_editarButton_clicked()
-{
-    int x = this->ui->lotesTableWidget->currentRow();
-
-    //Valores de las cajas de texto
-    string nuevoNombre = this->ui->editNombreLine->text().toStdString();
-    string cantidadNueva = this->ui->editCantidadLine->text().toStdString();
-
-    //Edicion del elemnto de la lista
-    (this->lotesGeneral->getLote() + x)->setNombre(nuevoNombre);
-    //(this->lotesGeneral->getLote() + x)->setCantidad(cantidadNueva);
-
-    //Edicion del elemnto en la tabla
-    this->ui->lotesTableWidget->item(x, 1)->setText(QString::fromStdString(nuevoNombre));
-    this->ui->lotesTableWidget->item(x, 2)->setText(QString::fromStdString(cantidadNueva));
-}
