@@ -1,4 +1,4 @@
-#include "gui/mainwindow.h"
+#include "gui/loginDialog.h"
 #include "dataSeederClass.h"
 
 #include <QApplication>
@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
     // Show UI
     QApplication a(argc, argv);
 
-    MainWindow *w = new MainWindow(academy->getStudents());
-    w->show();
+    loginDialog *dialog = new loginDialog(academy->getStudents());
+    dialog->show();
+
     return a.exec();
 }

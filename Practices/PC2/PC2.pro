@@ -13,6 +13,7 @@ SOURCES += \
     dataSeederClass.cpp \
     groupClass.cpp \
     groupsListClass.cpp \
+    gui/loginDialog.cpp \
     main.cpp \
     gui/mainwindow.cpp \
     studentClass.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     dataSeederClass.h \
     groupClass.h \
     groupsListClass.h \
+    gui/loginDialog.h \
     gui/mainwindow.h \
     studentClass.h \
     studentsListClass.h \
@@ -32,6 +34,7 @@ HEADERS += \
     subjectsListClass.h
 
 FORMS += \
+    gui/loginDialog.ui \
     gui/mainwindow.ui
 
 # Default rules for deployment.
