@@ -25,7 +25,7 @@ public:
     void setLocales(listaLocalesClass *value);
 
     void listaLocalesCbox();
-    void actualizarC(listaLotesVacunaGeneralClass *lotes);
+
 private slots:
     void on_habilitarInhabilitarButton_clicked();
 
@@ -39,6 +39,7 @@ private:
     Ui::gestionarLoteGui *ui;
     listaLotesVacunaGeneralClass *lotesGeneral;
     listaLocalesClass *locales;
+    void actualizarC(listaLotesVacunaGeneralClass *lotes = NULL);
 };
 
 #endif // GESTIONARLOTEGUI_H
