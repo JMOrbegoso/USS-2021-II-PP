@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1076</width>
+    <width>978</width>
     <height>410</height>
    </rect>
   </property>
@@ -20,8 +20,8 @@
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>350</y>
+     <x>880</x>
+     <y>370</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -35,21 +35,46 @@
     <string>Regresar</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="lotesListWidget">
+  <widget class="QTableWidget" name="lotesTableWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>100</y>
-     <width>741</width>
-     <height>231</height>
+     <width>641</width>
+     <height>261</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>CODIGO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>NOMBRE</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>CANTIDAD</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>FECHA</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ESTADO</string>
+    </property>
+   </column>
   </widget>
   <widget class="QPushButton" name="registrarButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>350</y>
+     <x>10</x>
+     <y>370</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -66,8 +91,8 @@
   <widget class="QPushButton" name="habilitarInhabilitarButton">
    <property name="geometry">
     <rect>
-     <x>840</x>
-     <y>270</y>
+     <x>740</x>
+     <y>260</y>
      <width>221</width>
      <height>31</height>
     </rect>
@@ -84,8 +109,8 @@
   <widget class="QPushButton" name="editarButton">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>210</y>
+     <x>820</x>
+     <y>200</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -104,7 +129,7 @@
     <rect>
      <x>20</x>
      <y>60</y>
-     <width>741</width>
+     <width>401</width>
      <height>31</height>
     </rect>
    </property>
@@ -129,7 +154,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>680</x>
      <y>150</y>
      <width>281</width>
      <height>31</height>
@@ -144,14 +169,14 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="editNombreLine_2"/>
+     <widget class="QLineEdit" name="cantidadLineEdit"/>
     </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>630</x>
+     <x>500</x>
      <y>10</y>
      <width>131</width>
      <height>31</height>
@@ -169,7 +194,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>680</x>
      <y>110</y>
      <width>281</width>
      <height>31</height>
@@ -214,21 +239,14 @@
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>710</x>
      <y>10</y>
      <width>251</width>
      <height>31</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Direccion del Local:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
+    <item row="0" column="2">
      <widget class="QLineEdit" name="direccionTxt">
       <property name="enabled">
        <bool>true</bool>
@@ -238,17 +256,24 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Direccion del Local:</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
   <tabstop>elegirLocalCbox</tabstop>
-  <tabstop>lotesListWidget</tabstop>
+  <tabstop>lotesTableWidget</tabstop>
   <tabstop>pushButton</tabstop>
   <tabstop>regresarButton</tabstop>
   <tabstop>buscarLineEdit</tabstop>
   <tabstop>editNombreLine</tabstop>
-  <tabstop>editNombreLine_2</tabstop>
+  <tabstop>cantidadLineEdit</tabstop>
   <tabstop>editarButton</tabstop>
   <tabstop>habilitarInhabilitarButton</tabstop>
   <tabstop>registrarButton</tabstop>
