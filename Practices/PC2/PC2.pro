@@ -14,6 +14,7 @@ SOURCES += \
     groupsListClass.cpp \
     main.cpp \
     gui/mainwindow.cpp \
+    studentClass.cpp \
     studentsListClass.cpp \
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     groupClass.h \
     groupsListClass.h \
     gui/mainwindow.h \
+    studentClass.h \
     studentsListClass.h \
 
 FORMS += \
