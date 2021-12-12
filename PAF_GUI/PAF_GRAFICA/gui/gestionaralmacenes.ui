@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
-    <height>427</height>
+    <width>856</width>
+    <height>455</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,38 +17,11 @@
    <iconset resource="../resource.qrc">
     <normaloff>:/img/almacen.png</normaloff>:/img/almacen.png</iconset>
   </property>
-  <widget class="QWidget" name="formLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>20</y>
-     <width>661</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="buscarAlmacenLineEdit"/>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="buscarAlmacenLabel">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Buscar Lote de Vacuna:</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>380</y>
+     <x>730</x>
+     <y>410</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -60,6 +33,46 @@
    </property>
    <property name="text">
     <string>Regresar</string>
+   </property>
+  </widget>
+<<<<<<< Updated upstream
+  <widget class="QPushButton" name="regresarButton">
+=======
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>341</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> ENCARGADO:   QUEREVALÚ LEONARDO DARA ELIZABETH</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+>>>>>>> Stashed changes
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>30</y>
+     <width>231</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DIRECCIÓN:   PARQUE UNIÓN CALLE 13</string>
+   </property>
+  </widget>
+  <widget class="QColumnView" name="lotesLisTw">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>751</width>
+     <height>271</height>
+    </rect>
    </property>
   </widget>
   <widget class="QTableWidget" name="mostrarLotesQwidget">

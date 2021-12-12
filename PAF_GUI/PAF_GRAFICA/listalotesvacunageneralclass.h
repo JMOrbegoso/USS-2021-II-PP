@@ -1,6 +1,6 @@
 #ifndef LISTALOTESVACUNAGENERALCLASS_H
 #define LISTALOTESVACUNAGENERALCLASS_H
-#include <lotegeneralclass.h>
+#include <loteGeneralclass.h>
 
 class listaLotesVacunaGeneralClass{
 private:
@@ -16,6 +16,8 @@ public:
     void setCant(int value);
     int getMax() const;
     void setMax(int value);
+    void crecerListaLotes();
+    void insertarLote(loteGeneralClass *nuevoLote);
 };
 
 #endif // LISTALOTESVACUNAGENERALCLASS_H
