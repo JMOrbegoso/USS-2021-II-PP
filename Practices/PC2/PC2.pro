@@ -16,6 +16,7 @@ SOURCES += \
     gui/mainwindow.cpp \
     studentClass.cpp \
     studentsListClass.cpp \
+    subjectClass.cpp \
     subjectsListClass.cpp
 
 HEADERS += \
@@ -25,6 +26,7 @@ HEADERS += \
     gui/mainwindow.h \
     studentClass.h \
     studentsListClass.h \
+    subjectClass.h \
     subjectsListClass.h
 
 FORMS += \
