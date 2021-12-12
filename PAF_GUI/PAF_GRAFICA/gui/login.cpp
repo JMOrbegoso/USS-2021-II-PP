@@ -17,11 +17,19 @@ login::~login()
 
 void login::on_cmdGetInto_clicked()
 {
-    vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
-    datosSemillaClass::sembrar(vacunaton);
-    MainWindow *w = new MainWindow();
-    w->setVacunaDengue(vacunaton);
-    w->showMaximized();
+    if ( ui->txtUser->text() == "MarioGomez" &&  ui->txtPass->text() == "654321" ){
+        this->close();
+        vacunatonContraDengueClass *vacunaton = new vacunatonContraDengueClass();
+        datosSemillaClass::sembrar(vacunaton);
+        MainWindow *w = new MainWindow();
+        w->setVacunaDengue(vacunaton);
+        w->showMaximized();
+    }
+    else{
+        QMessageBox *msje = new QMessageBox;
+        msje->setText("Usuario o contraseña incorrecta");
+        msje->exec();
+    }
 }
 
 void login::on_cmdClose_clicked()

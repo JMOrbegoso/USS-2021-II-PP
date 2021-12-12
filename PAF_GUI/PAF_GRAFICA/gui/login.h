@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <windows.h>
+#include <qmessagebox.h>
 
 namespace Ui {
 class login;

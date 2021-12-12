@@ -1,12 +1,12 @@
 #include "listalotesvacunageneralclass.h"
 
 
-loteVacunaClass *listaLotesVacunaGeneralClass::getLote() const
+loteGeneralClass *listaLotesVacunaGeneralClass::getLote() const
 {
     return lote;
 }
 
-void listaLotesVacunaGeneralClass::setLote(loteVacunaClass *value)
+void listaLotesVacunaGeneralClass::setLote(loteGeneralClass *value)
 {
     lote = value;
 }

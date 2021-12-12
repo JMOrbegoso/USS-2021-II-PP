@@ -4,14 +4,14 @@
 
 class listaLotesVacunaGeneralClass{
 private:
-    lotegeneralclass *lote;
+    loteGeneralClass *lote;
     int cant;
     int max;
 public:
     listaLotesVacunaGeneralClass();
     ~listaLotesVacunaGeneralClass();
-    lotegeneralclass *getLote() const;
-    void setLote(lotegeneralclass *value);
+    loteGeneralClass *getLote() const;
+    void setLote(loteGeneralClass *value);
     int getCant() const;
     void setCant(int value);
     int getMax() const;

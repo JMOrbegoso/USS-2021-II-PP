@@ -29,7 +29,6 @@ SOURCES += main.cpp\
     localclass.cpp \
     loteGeneralclass.cpp \
     lotevacunaclass.cpp \
-    nodolotelocalclass.cpp \
     nodopacienteclass.cpp \
     nodopersonalclass.cpp \
     pacienteclass.cpp \

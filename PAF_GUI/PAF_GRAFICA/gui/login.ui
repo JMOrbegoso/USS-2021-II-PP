@@ -101,19 +101,6 @@
      <string>Cerrar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="registrarCmd">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>140</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Registrarse</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <resources>
