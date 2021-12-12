@@ -1,7 +1,6 @@
 #ifndef LISTALOTESVACUNACLASS_H
 #define LISTALOTESVACUNACLASS_H
 #include <lotevacunaclass.h>
-
 #define Max 3
 
 class listaLotesVacunaClass{

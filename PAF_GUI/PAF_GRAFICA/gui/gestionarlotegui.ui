@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>815</width>
+    <width>981</width>
     <height>515</height>
    </rect>
   </property>
@@ -17,29 +17,11 @@
    <iconset resource="../resource.qrc">
     <normaloff>:/img/vacuna.png</normaloff>:/img/vacuna.png</iconset>
   </property>
-  <widget class="QPushButton" name="inhabilitarButton">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>430</y>
-     <width>131</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Inhabilitar Lote</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>430</y>
+     <x>890</x>
+     <y>480</y>
      <width>80</width>
      <height>25</height>
     </rect>
@@ -56,19 +38,19 @@
   <widget class="QListWidget" name="lotesListWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>70</y>
+     <x>20</x>
+     <y>130</y>
      <width>741</width>
-     <height>321</height>
+     <height>231</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="registrarButton">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>430</y>
-     <width>121</width>
+     <x>10</x>
+     <y>480</y>
+     <width>91</width>
      <height>25</height>
     </rect>
    </property>
@@ -84,9 +66,9 @@
   <widget class="QPushButton" name="habilitarButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>430</y>
-     <width>121</width>
+     <x>10</x>
+     <y>380</y>
+     <width>161</width>
      <height>25</height>
     </rect>
    </property>
@@ -96,46 +78,15 @@
     </font>
    </property>
    <property name="text">
-    <string>Habilitar Lote</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="buscarButton">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>20</y>
-     <width>80</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Buscar</string>
-   </property>
-  </widget>
-  <widget class="QScrollBar" name="verticalScrollBar">
-   <property name="geometry">
-    <rect>
-     <x>740</x>
-     <y>80</y>
-     <width>16</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
+    <string>Habilitar/Inhabilitar Lote</string>
    </property>
   </widget>
   <widget class="QPushButton" name="editarButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>430</y>
-     <width>80</width>
+     <x>10</x>
+     <y>450</y>
+     <width>91</width>
      <height>25</height>
     </rect>
    </property>
@@ -145,15 +96,15 @@
     </font>
    </property>
    <property name="text">
-    <string>Editar</string>
+    <string>Editar Lote</string>
    </property>
   </widget>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>20</y>
-     <width>421</width>
+     <x>20</x>
+     <y>80</y>
+     <width>311</width>
      <height>31</height>
     </rect>
    </property>

@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     listapersonalclass.cpp \
     listapersonasclass.cpp \
     localclass.cpp \
+    loteGeneralclass.cpp \
     lotevacunaclass.cpp \
+    nodolotelocalclass.cpp \
     nodopacienteclass.cpp \
     nodopersonalclass.cpp \
     pacienteclass.cpp \
@@ -59,6 +61,7 @@ HEADERS  += gui/mainwindow.h \
     listapersonalclass.h \
     listapersonasclass.h \
     localclass.h \
+    lotegeneralclass.h \
     lotevacunaclass.h \
     nodopacienteclass.h \
     nodopersonalclass.h \
