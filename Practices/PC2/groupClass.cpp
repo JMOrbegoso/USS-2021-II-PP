@@ -1,5 +1,6 @@
 #include "groupClass.h"
 
+int groupClass::counter = 1;
 
 groupClass::~groupClass(){
 
