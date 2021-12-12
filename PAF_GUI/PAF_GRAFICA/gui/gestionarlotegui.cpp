@@ -112,7 +112,7 @@ void gestionarLoteGui::actualizarC(listaLotesVacunaGeneralClass *lotes)
 {
     lotes = lotes == NULL ? this->lotesGeneral : lotes;
 
-    this->ui->lotesTableWidget->clearContents();
+    this->ui->lotesTableWidget->setRowCount(0);
 
     //loteGeneralClass *aux = lotes->getLote();
 
