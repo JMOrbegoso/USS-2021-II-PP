@@ -135,8 +135,16 @@ void MainWindow::on_actionRegistrar_Lote_triggered()
 
 void MainWindow::on_actionGestionar_Lotes_triggered()
 {
-    gestionarLoteGui *gest = new gestionarLoteGui();
-    gest->show();
+    if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
+        gestionarLoteGui *gest = new gestionarLoteGui();
+        gest->setLocales(this->getVacunaDengue()->getLocales());
+        gest->show();
+    }else{
+        QMessageBox msje;
+        msje.setText("Primero Debe Registrar Locales");
+        msje.exec();
+        return;
+    }
 }
 
 
