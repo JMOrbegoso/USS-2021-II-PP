@@ -8,7 +8,7 @@ gestionarLoteGui::gestionarLoteGui(QWidget *parent) :
     ui(new Ui::gestionarLoteGui)
 {
     ui->setupUi(this);
-    this->lotesGeneral = new listaLotesVacunaGeneralClass();
+
     ui->lotesTableWidget->setColumnWidth(0, 60);
     ui->lotesTableWidget->setColumnWidth(1, 90);
     ui->lotesTableWidget->setColumnWidth(2, 80);
@@ -47,13 +47,12 @@ void gestionarLoteGui::on_habilitarInhabilitarButton_clicked()
 
 listaLocalesClass *gestionarLoteGui::getLocales() const
 {
-    return this->locales;
+    return locales;
 }
 
 void gestionarLoteGui::setLocales(listaLocalesClass *value)
 {
-    this->locales = value;
-    this->setLotesGeneral(this->lotesGeneral);
+    locales = value;
 }
 
 listaLotesVacunaGeneralClass *gestionarLoteGui::getLotesGeneral() const
@@ -64,7 +63,7 @@ listaLotesVacunaGeneralClass *gestionarLoteGui::getLotesGeneral() const
 void gestionarLoteGui::setLotesGeneral(listaLotesVacunaGeneralClass *value)
 {
     this->lotesGeneral = value;
-    this->actualizarC(this->lotesGeneral);
+    this->actualizarC();
 }
 
 void gestionarLoteGui::listaLocalesCbox(){
@@ -72,13 +71,6 @@ void gestionarLoteGui::listaLocalesCbox(){
         ui->elegirLocalCbox->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
     }
     this->ui->direccionTxt->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
-}
-
-void gestionarLoteGui::on_elegirLocalCbox_currentIndexChanged(int index)
-{
-    auto direccionLocal = (this->locales->getCab() + index)->getDireccionLocal();
-    this->ui->direccionTxt->setText(QString::fromStdString(direccionLocal));
-    this->actualizarC(this->lotesGeneral);
 }
 
 void gestionarLoteGui::on_lotesTableWidget_itemClicked(QTableWidgetItem *item)
@@ -109,14 +101,13 @@ void gestionarLoteGui::actualizarC(listaLotesVacunaGeneralClass *lotes)
 
     this->ui->lotesTableWidget->setRowCount(0);
 
-    loteGeneralClass *aux = lotes->getLote();
-
     for (int x = 0; x < lotes->getCant(); x++){
-        auto codigo = aux->getCodigo();
-        auto nombre = aux->getNombre();
-        auto cantidad = aux->getCantidad();
-        auto fecha = aux->getFechaCaducidad();
-        auto estado = aux->getEstado();
+        auto codigo = ( lotes->getLote()+ x)->getCodigo();
+        auto nombre = ( lotes->getLote()+ x)->getNombre();
+        auto cantidad = ( lotes->getLote()+ x)->getCantidad();
+        auto fecha = ( lotes->getLote()+ x)->getFechaCaducidad();
+        auto estado = ( lotes->getLote()+ x)->getEstado();
+       string estadoTexto = estado ? "Habilitado" : "Inhabilitado";
 
         this->ui->lotesTableWidget->insertRow(x);
 
@@ -124,6 +115,6 @@ void gestionarLoteGui::actualizarC(listaLotesVacunaGeneralClass *lotes)
         this->ui->lotesTableWidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(nombre)));
         this->ui->lotesTableWidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(fecha)));
         this->ui->lotesTableWidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(to_string(cantidad))));
-        this->ui->lotesTableWidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(to_string(estado))));
+        this->ui->lotesTableWidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString(estadoTexto)));
     }
 }

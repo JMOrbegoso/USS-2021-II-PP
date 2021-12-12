@@ -23,13 +23,10 @@ public:
 
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
-
     void listaLocalesCbox();
-    void actualizarC(listaLotesVacunaGeneralClass *lotes);
+
 private slots:
     void on_habilitarInhabilitarButton_clicked();
-
-    void on_elegirLocalCbox_currentIndexChanged(int index);
 
     void on_lotesTableWidget_itemClicked(QTableWidgetItem *item);
 
@@ -39,6 +36,7 @@ private:
     Ui::gestionarLoteGui *ui;
     listaLotesVacunaGeneralClass *lotesGeneral;
     listaLocalesClass *locales;
+    void actualizarC(listaLotesVacunaGeneralClass *lotes = NULL);
 };
 
 #endif // GESTIONARLOTEGUI_H

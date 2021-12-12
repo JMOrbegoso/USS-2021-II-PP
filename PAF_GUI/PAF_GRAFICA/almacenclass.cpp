@@ -41,19 +41,19 @@ void almacenClass::setEstado(bool value)
     estado = value;
 }
 
-listaLotesVacunaClass *almacenClass::getLotes() const
+listaLotesVacunaGeneralClass *almacenClass::getLotes() const
 {
     return lotes;
 }
 
-void almacenClass::setLotes(listaLotesVacunaClass *value)
+void almacenClass::setLotes(listaLotesVacunaGeneralClass *value)
 {
     lotes = value;
 }
 
 almacenClass::almacenClass()
 {
-    this->lotes = new listaLotesVacunaClass();
+    this->lotes = new listaLotesVacunaGeneralClass();
 }
 
 almacenClass::~almacenClass()
