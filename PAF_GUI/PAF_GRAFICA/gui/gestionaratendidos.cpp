@@ -7,7 +7,7 @@ gestionarAtendidos::gestionarAtendidos(QWidget *parent) :
     ui(new Ui::gestionarAtendidos)
 {
     this->ui->setupUi(this);
-    this->ui->listaAtendidosTwidget->setColumnWidth(0,50);
+    this->ui->listaAtendidosTwidget->setColumnWidth(0,80  );
     this->ui->listaAtendidosTwidget->setColumnWidth(1,100);
     this->ui->listaAtendidosTwidget->setColumnWidth(2,100);
     this->ui->listaAtendidosTwidget->setColumnWidth(3,100);

@@ -124,13 +124,13 @@ void gestionarPaciente::on_mostrarPacienteTwidget_itemClicked(QTableWidgetItem *
     QTableWidgetItem *dni = this->ui->mostrarPacienteTwidget->item(row, 1);
     QTableWidgetItem *nombre = this->ui->mostrarPacienteTwidget->item(row, 2);
     QTableWidgetItem *apellido = this->ui->mostrarPacienteTwidget->item(row, 3);
-    //QTableWidgetItem *edad = this->ui->mostrarPacienteTwidget->item(row, 4);
+    QTableWidgetItem *edad = this->ui->mostrarPacienteTwidget->item(row, 4);
     QTableWidgetItem *direccion = this->ui->mostrarPacienteTwidget->item(row, 5);
     this->ui->editarDniTxt->setText(dni->text());
     this->ui->editarNombreTxt->setText(nombre->text());
     this->ui->editarApellidosTxt->setText(apellido->text());
     this->ui->editarDireccionTxt->setText(direccion->text());
-    //this->ui->editarEdadTxt->setText(edad.);
+    this->ui->editarEdadTxt->setText(edad->text());
 }
 
 void gestionarPaciente::on_editarCmd_clicked()
@@ -139,6 +139,7 @@ void gestionarPaciente::on_editarCmd_clicked()
     string dni = this->ui->editarDniTxt->text().toStdString();
     string nombre = this->ui->editarNombreTxt->text().toStdString();
     string apellido = this->ui->editarApellidosTxt->text().toStdString();
+    string edad = this->ui->editarEdadTxt->text().toStdString();
     string direccion = this->ui->editarDireccionTxt->text().toStdString();
 
     (this->pacientes->getCab() + x)->getInfo()->setDni(dni);
@@ -149,6 +150,7 @@ void gestionarPaciente::on_editarCmd_clicked()
     this->ui->mostrarPacienteTwidget->item(x, 1)->setText(QString::fromStdString(dni));
     this->ui->mostrarPacienteTwidget->item(x, 2)->setText(QString::fromStdString(nombre));
     this->ui->mostrarPacienteTwidget->item(x, 3)->setText(QString::fromStdString(apellido));
+    this->ui->mostrarPacienteTwidget->item(x, 4)->setText(QString::fromStdString(edad));
     this->ui->mostrarPacienteTwidget->item(x, 5)->setText(QString::fromStdString(direccion));
 }
 
