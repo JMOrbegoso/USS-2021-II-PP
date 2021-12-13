@@ -14,6 +14,7 @@ SOURCES += \
     groupClass.cpp \
     groupsListClass.cpp \
     gui/loginDialog.cpp \
+    gui/registerDialog.cpp \
     main.cpp \
     gui/mainwindow.cpp \
     studentClass.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     groupsListClass.h \
     gui/loginDialog.h \
     gui/mainwindow.h \
+    gui/registerDialog.h \
     studentClass.h \
     studentsListClass.h \
     subjectClass.h \
@@ -35,7 +37,8 @@ HEADERS += \
 
 FORMS += \
     gui/loginDialog.ui \
-    gui/mainwindow.ui
+    gui/mainwindow.ui \
+    gui/registerDialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
