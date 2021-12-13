@@ -49,6 +49,8 @@ void loteVacunaClass::setEstado(bool value)
 
 loteVacunaClass::loteVacunaClass(string nombre, int cantidad, string caducidad)
 {
+    this->codigo = "lote-" + to_string(loteVacunaClass::contador);
+    loteVacunaClass::contador++;
     this->nombre = nombre;
     this->cantidad = cantidad;
     this->caducidad = caducidad;

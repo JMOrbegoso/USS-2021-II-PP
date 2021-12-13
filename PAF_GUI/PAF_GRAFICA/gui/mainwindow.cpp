@@ -92,8 +92,8 @@ void MainWindow::on_actionGestionar_Almacenes_triggered()
     //if(this->getVacunaDengue()->getAlmacenGeneral()->getLotes()->getCab() != NULL){
         gestionarAlmacenes *gest = new gestionarAlmacenes();
         gest->setLocales(this->getVacunaDengue()->getLocales());
-        gest->listaLotesCombo();
         gest->setLotes(this->getVacunaDengue()->getAlmacenGeneral()->getLotes());
+        gest->listaLotesCombo();
         gest->show();
     //}else{
         /*QMessageBox *msje = new QMessageBox();

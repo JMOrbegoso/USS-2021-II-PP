@@ -26,6 +26,8 @@ public:
 
     void mostrarLotes(listaLotesVacunaClass *lotes);
     void listaLotesCombo();
+    void mostrarLotesLocal(int index);
+    loteVacunaClass *extraer(int x);
 private slots:
     void on_regresarButton_clicked();
 
@@ -33,11 +35,12 @@ private slots:
 
     void on_localesCbox_currentIndexChanged(int index);
 
+    void on_agregarButton_clicked();
+
 private:
     Ui::gestionarAlmacenes *ui;
     listaLotesVacunaClass *lotes;
     listaLocalesClass *locales;
-
 };
 
 #endif // GESTIONARALMACENES_H
