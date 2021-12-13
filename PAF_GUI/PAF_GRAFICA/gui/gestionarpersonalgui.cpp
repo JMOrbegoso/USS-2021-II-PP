@@ -45,7 +45,6 @@ listaLocalesClass *gestionarPersonalGui::getLocales() const
 void gestionarPersonalGui::setLocales(listaLocalesClass *value)
 {
     this->locales = value;
-
     this->setPersonal(this->locales->getCab()->getPersonales());
 }
 

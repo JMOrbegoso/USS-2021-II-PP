@@ -78,12 +78,12 @@ void gestionarAlmacenes::mostrarLotes(listaLotesVacunaClass *lotes){
 }
 
 void gestionarAlmacenes::listaLotesCombo(){
-    for(int x = 0; this->getLocales()->getCant();x++){
-        ui->localesCbox->addItem(QString::fromStdString((this->getLocales()->getCab()+x)->getNombreLocal()));
+    for(int x = 0; x < this->locales->getCant();x++){
+        ui->localesCbox->addItem(QString::fromStdString((this->locales->getCab()+x)->getNombreLocal()));
     }
 }
 
 void gestionarAlmacenes::on_localesCbox_currentIndexChanged(int index){
-    ui->localesCbox->addItem(QString::fromStdString((this->getLocales()->getCab()+index)->getNombreLocal()));
+    //ui->localesCbox->addItem(QString::fromStdString((this->locales->getCab()+index)->getNombreLocal()));
     this->mostrarLotes(this->lotes);
 }
