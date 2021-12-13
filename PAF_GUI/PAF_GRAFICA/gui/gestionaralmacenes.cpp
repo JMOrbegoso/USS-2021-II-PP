@@ -9,17 +9,17 @@ gestionarAlmacenes::gestionarAlmacenes(QWidget *parent) :
     ui->setupUi(this);
     this->
     //ui->mostrarLotesQwidget->setColumnWidth();
-    ui->mostrarLotesTwidget->setColumnWidth(0,80);
-    ui->mostrarLotesTwidget->setColumnWidth(1,100);
-    ui->mostrarLotesTwidget->setColumnWidth(2,80);
-    ui->mostrarLotesTwidget->setColumnWidth(3,90);
-    ui->mostrarLotesTwidget->setColumnWidth(4,90);
+    ui->mostrarLotesTwidget->setColumnWidth(0,60);
+    ui->mostrarLotesTwidget->setColumnWidth(1,90);
+    ui->mostrarLotesTwidget->setColumnWidth(2,75);
+    ui->mostrarLotesTwidget->setColumnWidth(3,70);
+    ui->mostrarLotesTwidget->setColumnWidth(4,65);
 
-    ui->localesTwidget->setColumnWidth(0,80);
-    ui->localesTwidget->setColumnWidth(1,100);
-    ui->localesTwidget->setColumnWidth(2,80);
-    ui->localesTwidget->setColumnWidth(3,90);
-    ui->localesTwidget->setColumnWidth(4,90);
+    ui->localesTwidget->setColumnWidth(0,60);
+    ui->localesTwidget->setColumnWidth(1,90);
+    ui->localesTwidget->setColumnWidth(2,75);
+    ui->localesTwidget->setColumnWidth(3,70);
+    ui->localesTwidget->setColumnWidth(4,65);
 }
 
 gestionarAlmacenes::~gestionarAlmacenes()
@@ -153,7 +153,7 @@ void gestionarAlmacenes::on_agregarButton_clicked(){
     msje->setText("Agregado...");
     msje->exec();
 }
-/*
+
 void gestionarAlmacenes::on_quitarButton_clicked()
 {
     //Nombre del boton quitarButton
@@ -163,15 +163,15 @@ void gestionarAlmacenes::on_quitarButton_clicked()
     int numLote;
     numLocal = this->ui->localesCbox->currentIndex();
     numLote = ui->localesTwidget->currentRow();
-    if(((this->locales->getCab()+numLocal)->getLotes()->getCab()+numLocal)->getEstado()){
+    if(((this->locales->getCab()+numLocal)->getLotes()->getCab()+numLote)->getEstado()){
         msje->setText("Este lote ya esta utilizado");
         msje->exec();
         return;
     }
-    lote = extraer(numLocal , (this->locales->getCab()+numLocal)->getLotes());
+    lote = extraer(numLote , (this->locales->getCab()+numLocal)->getLotes());
     this->lotes->insertarLote(lote);
     this->mostrarLotes(this->lotes);
     this->mostrarLotesLocal(numLocal);
     msje->setText("Devuelto");
     msje->exec();
-}*/
+}

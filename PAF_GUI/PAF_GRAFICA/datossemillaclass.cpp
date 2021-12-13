@@ -2,13 +2,15 @@
 
 void datosSemillaClass::sembrar(vacunatonContraDengueClass *&vacunaton) {
     localClass *local1, *local2;
-    loteVacunaClass *lote1, *lote2;
+    loteVacunaClass *lote1, *lote2, *lote3, *lote4;
     personalClass *medico1, *medico2;
     personalClass *enfermera1, *enfermera2, *enfermera3;
     pacienteClass *paciente1, *paciente2, *paciente3,*paciente4;
 
-    lote1 = new loteVacunaClass("CYD-TDV", 1000, "2022-01-12");
-    lote2 = new loteVacunaClass("CYD-TDV-v2", 500, "2022-01-24");
+    lote1 = new loteVacunaClass("CYD-TDV", 1000, "12/01/2022");
+    lote2 = new loteVacunaClass("CYD-TDV-v2", 500, "24/01/2022");
+    lote3 = new loteVacunaClass("CYD-TDV-v3", 750, "21/02/2022");
+    lote4 = new loteVacunaClass("CYD-TDV-v4", 450, "18/02/2022");
 
     medico1 = new personalClass("Antonio", "Gomez", "12345678", "959090909", "Av. Pinos 445", 45, 4500, "8 horas", true);
     medico2 = new personalClass("Julia", "Ramirez", "92949678", "989010403", "Av. Robles 745", 39, 4800, "10 horas", true);
@@ -30,8 +32,8 @@ void datosSemillaClass::sembrar(vacunatonContraDengueClass *&vacunaton) {
     vacunaton->getAlmacenGeneral()->getLotes()->insertarLote(lote1);
     vacunaton->getAlmacenGeneral()->getLotes()->insertarLote(lote2);
 
-    local1->getLotes()->insertarLote(lote1);
-    local2->getLotes()->insertarLote(lote2);
+    local1->getLotes()->insertarLote(lote3);
+    local2->getLotes()->insertarLote(lote4);
 
     local1->getPersonales()->insertarPersonal(medico1);
     local2->getPersonales()->insertarPersonal(medico2);
