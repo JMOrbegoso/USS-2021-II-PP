@@ -159,9 +159,13 @@ void atenderPaciente::on_atenderButton_clicked()
     this->setPacientes((this->locales->getCab() + ui->localesCBox->currentIndex())->getPacientes()); //verificar que empiece en 0?
     int x = ui->mostrarPacientesQwidget->currentRow();
     auxPaciente = this->getPacientes()->getCab();
-    for(int i = 0; i < x; i++){
+    for(int i = 0; i < x; i++)
        auxPaciente = auxPaciente->getSgte();
-    }
+
+    //Disminucion de la cantidad de vacunas
+    //
+    (this->lotes->getCab()+ui->nombreVacunaCbox->currentIndex())->setCantidad((this->lotes->getCab()+ui->nombreVacunaCbox->currentIndex())->getCantidad()-1);
+    (this->lotes->getCab()+ui->nombreVacunaCbox->currentIndex())->setEstado(true);
 
     // Atencion se guarda en el paciente
     auxPaciente->getInfo()->setAtencion(auxAtencion);

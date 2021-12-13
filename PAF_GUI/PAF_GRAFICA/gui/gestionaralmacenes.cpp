@@ -41,7 +41,7 @@ void gestionarAlmacenes::setLocales(listaLocalesClass *value)
 {
     locales = value;
     //this->setLotes(this->getLotes());
-    //this->mostrarLotesLocal(1);
+    this->mostrarLotesLocal(0);
 }
 
 listaLotesVacunaClass *gestionarAlmacenes::getLotes() const
@@ -96,7 +96,7 @@ void gestionarAlmacenes::mostrarLotesLocal( int index){
     listaLotesVacunaClass *list = (locales->getCab()+index)->getLotes();
     this->ui->localesTwidget->setRowCount(0);
     //locales->getCab()->getLotes()->getCab();
-    for (int x = 0; x < lotes->getCant(); x++){
+    for (int x = 0; x < list->getCant(); x++){
         auto codigo = (list->getCab()+x)->getCodigo();
         auto nombre = (list->getCab()+x)->getNombre();
         auto cantidad = (list->getCab()+x)->getCantidad();
@@ -125,6 +125,17 @@ loteVacunaClass *gestionarAlmacenes::extraer(int x){
     this->lotes->setCant(this->lotes->getCant()-1);
     return lote;
 }
+loteVacunaClass *gestionarAlmacenes::extraer(int x, listaLotesVacunaClass *lLot){
+    loteVacunaClass *lote = new loteVacunaClass();
+    lote = lLot->getCab() + x;
+    for(int i = x; i< lLot->getCant()-1;i++){
+        (lLot->getCab()+i)->setNombre((lLot->getCab()+i+1)->getNombre());
+        (lLot->getCab()+i)->setCantidad((lLot->getCab()+i+1)->getCantidad());
+        (lLot->getCab()+i)->setCaducidad((lLot->getCab()+i+1)->getCaducidad());
+    }
+    lLot->setCant(lLot->getCant()-1);
+    return lote;
+}
 
 void gestionarAlmacenes::on_localesCbox_currentIndexChanged(int index){
     //(QString::fromStdString((this->locales->getCab()+index)->getNombreLocal()));
@@ -142,3 +153,25 @@ void gestionarAlmacenes::on_agregarButton_clicked(){
     msje->setText("Agregado...");
     msje->exec();
 }
+/*
+void gestionarAlmacenes::on_quitarButton_clicked()
+{
+    //Nombre del boton quitarButton
+    QMessageBox *msje =  new QMessageBox;
+    loteVacunaClass *lote;
+    int numLocal;
+    int numLote;
+    numLocal = this->ui->localesCbox->currentIndex();
+    numLote = ui->localesTwidget->currentRow();
+    if(((this->locales->getCab()+numLocal)->getLotes()->getCab()+numLocal)->getEstado()){
+        msje->setText("Este lote ya esta utilizado");
+        msje->exec();
+        return;
+    }
+    lote = extraer(numLocal , (this->locales->getCab()+numLocal)->getLotes());
+    this->lotes->insertarLote(lote);
+    this->mostrarLotes(this->lotes);
+    this->mostrarLotesLocal(numLocal);
+    msje->setText("Devuelto");
+    msje->exec();
+}*/

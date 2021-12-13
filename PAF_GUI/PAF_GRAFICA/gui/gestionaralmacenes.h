@@ -28,6 +28,7 @@ public:
     void listaLotesCombo();
     void mostrarLotesLocal(int index);
     loteVacunaClass *extraer(int x);
+    loteVacunaClass *extraer(int x, listaLotesVacunaClass *lLot);
 private slots:
     void on_regresarButton_clicked();
 
@@ -36,6 +37,8 @@ private slots:
     void on_localesCbox_currentIndexChanged(int index);
 
     void on_agregarButton_clicked();
+
+    //void on_quitarButton_clicked();
 
 private:
     Ui::gestionarAlmacenes *ui;

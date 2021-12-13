@@ -126,19 +126,6 @@
     </property>
    </column>
   </widget>
-  <widget class="QPushButton" name="quitarButton">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>170</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;&lt; Quitar</string>
-   </property>
-  </widget>
  </widget>
  <resources>
   <include location="../resource.qrc"/>
