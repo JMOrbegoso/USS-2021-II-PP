@@ -1,6 +1,7 @@
 #include "loginDialog.h"
 #include "ui_loginDialog.h"
 #include "gui/mainwindow.h"
+#include "gui/registerDialog.h"
 #include <QMessageBox>
 
 int loginDialog::attemps = 3;
@@ -58,5 +59,14 @@ void loginDialog::on_enterPushButton_pressed()
         w->show();
         this->close();
     }
+}
+
+
+void loginDialog::on_registerPushButton_pressed()
+{
+    registerDialog *dialog = new registerDialog(this->students);
+    dialog->show();
+
+    this->close();
 }
 

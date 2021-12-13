@@ -87,6 +87,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QPushButton" name="registerPushButton">
+      <property name="text">
+       <string>Registrarse</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="exitPushButton">
       <property name="text">
        <string>Salir</string>

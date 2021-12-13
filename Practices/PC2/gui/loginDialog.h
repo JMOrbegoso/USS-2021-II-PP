@@ -21,6 +21,8 @@ private slots:
 
     void on_enterPushButton_pressed();
 
+    void on_registerPushButton_pressed();
+
 private:
     static int attemps;
     Ui::loginDialog *ui;
