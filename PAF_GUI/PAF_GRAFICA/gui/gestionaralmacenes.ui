@@ -115,6 +115,16 @@
      <height>251</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>CODIGO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>LOTE</string>
+    </property>
+   </column>
   </widget>
   <widget class="QPushButton" name="quitarButton">
    <property name="geometry">

@@ -106,7 +106,7 @@ void gestionarPaciente::actualizarControles(listaPacientesClass *pacientes)
         this->ui->mostrarPacienteTwidget->setItem(x, 5, new QTableWidgetItem(QString::fromStdString(direccion)));
         this->ui->mostrarPacienteTwidget->setItem(x, 6, new QTableWidgetItem(QString::fromStdString(cualEnfermedad)));
 
-        // Pasa al siguiente nodo
+        // Pasa al siguiente nodo :)
         aux = aux->getSgte();
         x++;
     }
