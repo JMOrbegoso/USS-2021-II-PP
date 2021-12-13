@@ -68,8 +68,13 @@ void gestionarLoteGui::setLotes(listaLotesVacunaClass *value)
 }
 
 /*void gestionarLoteGui::listaLocalesCbox(){
+<<<<<<< Updated upstream
     for(int i = 0; i < this->locales->getCant(); i++){
         ui->elegirLocalCbox->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
+=======
+    for(int i=0;i < this->locales->getCant();i++){
+        ui->->addItem(QString::fromStdString((this->locales->getCab()+i)->getNombreLocal()));
+>>>>>>> Stashed changes
     }
     this->ui->direccionTxt->setText(QString::fromStdString(this->locales->getCab()->getDireccionLocal()));
 }*/

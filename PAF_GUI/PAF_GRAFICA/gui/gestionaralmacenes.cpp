@@ -41,7 +41,7 @@ void gestionarAlmacenes::setLocales(listaLocalesClass *value)
 {
     locales = value;
     //this->setLotes(this->getLotes());
-    //this->mostrarLotesLocal(this->getLocales());
+    //this->mostrarLotesLocal(1);
 }
 
 listaLotesVacunaClass *gestionarAlmacenes::getLotes() const
