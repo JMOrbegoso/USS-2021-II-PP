@@ -38,7 +38,7 @@ private slots:
 
     void on_agregarButton_clicked();
 
-    //void on_quitarButton_clicked();
+    void on_quitarButton_clicked();
 
 private:
     Ui::gestionarAlmacenes *ui;

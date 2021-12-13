@@ -37,8 +37,8 @@ void registrarLoteGui::on_registrarButton_clicked()
     //auto estado = this->ui->habilitarLoteRb->setEnabled(false);
 
     // Creación de la nueva instancia
-    //loteVacunaClass *nuevoLote = new loteVacunaClass(nombre, cantidad, fechaCaducidad);
-    this->lotes->insertarLote(vacu);
+    loteVacunaClass *nuevoLote = new loteVacunaClass(vacu->getNombre(), vacu->getCantidad(),vacu->getCaducidad());
+    this->lotes->insertarLote(nuevoLote);
 
     // Muestra mensaje del resultado
     msje->setText("Lote Registrado Correctamente");
