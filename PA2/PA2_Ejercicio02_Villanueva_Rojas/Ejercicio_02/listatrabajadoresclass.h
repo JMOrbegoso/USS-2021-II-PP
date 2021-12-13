@@ -14,6 +14,8 @@ public:
     void setCab(nodoTrabajadorClass *value);
     int getCant() const;
     void setCant(int value);
+
+    void insertar(trabajadorClass *trab);
 };
 
 #endif // LISTATRABAJADORESCLASS_H

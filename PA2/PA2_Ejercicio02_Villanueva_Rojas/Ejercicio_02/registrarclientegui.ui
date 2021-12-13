@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>registrarZonaGui</class>
- <widget class="QDialog" name="registrarZonaGui">
+ <class>registrarClienteGui</class>
+ <widget class="QDialog" name="registrarClienteGui">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>545</width>
-    <height>410</height>
+    <width>467</width>
+    <height>374</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>60</y>
+     <x>60</x>
+     <y>50</y>
      <width>331</width>
      <height>141</height>
     </rect>

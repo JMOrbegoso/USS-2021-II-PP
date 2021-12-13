@@ -14,6 +14,8 @@ public:
     void setCab(nodoClienteClass *value);
     int getCant() const;
     void setCant(int value);
+
+    void insertar(clienteClass *cli);
 };
 
 #endif // LISTACLIENTECLASS_H

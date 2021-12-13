@@ -14,6 +14,8 @@ public:
     void setCab(nodoButacasClass *value);
     int getCant() const;
     void setCant(int value);
+
+    void insertar(butacaClass *butaca);
 };
 
 #endif // LISTABUTACASCLASS_H

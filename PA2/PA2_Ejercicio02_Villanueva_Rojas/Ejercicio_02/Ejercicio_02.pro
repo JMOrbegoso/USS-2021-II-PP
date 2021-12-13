@@ -31,6 +31,7 @@ SOURCES += \
     nodoticketclass.cpp \
     nodotrabajadorclass.cpp \
     personaclass.cpp \
+    registrarclientegui.cpp \
     registrarzonagui.cpp \
     ticketclass.cpp \
     trabajadorclass.cpp \
@@ -51,6 +52,7 @@ HEADERS += \
     nodoticketclass.h \
     nodotrabajadorclass.h \
     personaclass.h \
+    registrarclientegui.h \
     registrarzonagui.h \
     ticketclass.h \
     trabajadorclass.h \
@@ -58,6 +60,7 @@ HEADERS += \
 
 FORMS += \
     mainwindow.ui \
+    registrarclientegui.ui \
     registrarzonagui.ui
 
 # Default rules for deployment.
