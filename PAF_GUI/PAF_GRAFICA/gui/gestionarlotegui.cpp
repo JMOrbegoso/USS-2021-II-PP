@@ -52,7 +52,7 @@ listaLocalesClass *gestionarLoteGui::getLocales() const
 void gestionarLoteGui::setLocales(listaLocalesClass *value)
 {
     this->locales = value;
-    this->setLotes(this->lotes);
+    //this->setLotes(this->lotes);
 }
 
 listaLotesVacunaClass *gestionarLoteGui::getLotes() const
@@ -63,7 +63,7 @@ listaLotesVacunaClass *gestionarLoteGui::getLotes() const
 void gestionarLoteGui::setLotes(listaLotesVacunaClass *value)
 {
     this->lotes = value;
-    this->actualizarControles();
+    this->actualizarControles(this->getLotes());
 }
 
 void gestionarLoteGui::listaLocalesCbox(){
@@ -109,6 +109,7 @@ void gestionarLoteGui::on_editarButton_clicked()
 
 void gestionarLoteGui::actualizarControles(listaLotesVacunaClass *lotes)
 {
+    //condicional de la asignacion != o == a NULL
     lotes = lotes == NULL ? this->lotes : lotes;
 
     this->ui->lotesTableWidget->setRowCount(0);

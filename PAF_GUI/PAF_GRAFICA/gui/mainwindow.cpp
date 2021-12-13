@@ -89,8 +89,17 @@ void MainWindow::on_actionGestionar_locales_triggered()
 
 void MainWindow::on_actionGestionar_Almacenes_triggered()
 {
-    gestionarAlmacenes *gest = new gestionarAlmacenes();
-    gest->show();
+    //if(this->getVacunaDengue()->getAlmacenGeneral()->getLotes()->getCab() != NULL){
+        gestionarAlmacenes *gest = new gestionarAlmacenes();
+        gest->listaLotesCombo();
+        gest->setLotes(this->getVacunaDengue()->getAlmacenGeneral()->getLotes());
+        gest->show();
+    //}else{
+        /*QMessageBox *msje = new QMessageBox();
+        msje->setText("Registre los Lotes primero");
+        msje->exec();
+        return;*/
+    //}
 }
 
 
@@ -137,8 +146,7 @@ void MainWindow::on_actionGestionar_Lotes_triggered()
 {
     if(this->getVacunaDengue()->getLocales()->getCab() != NULL){
         gestionarLoteGui *gest = new gestionarLoteGui();
-        gest->setLocales(this->getVacunaDengue()->getLocales());
-        gest->listaLocalesCbox();
+        gest->setLotes(this->getVacunaDengue()->getAlmacenGeneral()->getLotes());
         gest->show();
     }else{
         QMessageBox msje;

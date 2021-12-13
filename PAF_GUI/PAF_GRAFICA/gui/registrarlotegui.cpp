@@ -23,6 +23,7 @@ void registrarLoteGui::on_cancelarButton_clicked()
 void registrarLoteGui::on_registrarButton_clicked()
 {
     QMessageBox *msje = new QMessageBox();
+    loteVacunaClass *vacu = new loteVacunaClass();
     // Validación
     if (ui->nombreLoteTxt->text().length() == 0){
         msje->setText("Debe Ingresar el Nombre del Lote");
@@ -30,15 +31,14 @@ void registrarLoteGui::on_registrarButton_clicked()
         return;
     }
     // Datos del formulario
-    auto nombre = this->ui->nombreLoteTxt->text().toStdString();
-    auto cantidad = this->ui->cantidadVacunaSb->value();
-    auto fechaCaducidad = this->ui->fechaCaducidadDe->text().toStdString();
+    vacu->setNombre(this->ui->nombreLoteTxt->text().toStdString());
+    vacu->setCantidad(this->ui->cantidadVacunaSb->value());
+    vacu->setCaducidad(this->ui->fechaCaducidadDe->text().toStdString());
     //auto estado = this->ui->habilitarLoteRb->setEnabled(false);
 
     // Creación de la nueva instancia
-    loteVacunaClass *nuevoLote = new loteVacunaClass(nombre, cantidad, fechaCaducidad);
-
-    this->lotes->insertarLote(nuevoLote);
+    //loteVacunaClass *nuevoLote = new loteVacunaClass(nombre, cantidad, fechaCaducidad);
+    this->lotes->insertarLote(vacu);
 
     // Muestra mensaje del resultado
     msje->setText("Lote Registrado Correctamente");

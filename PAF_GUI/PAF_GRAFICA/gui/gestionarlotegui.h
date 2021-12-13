@@ -38,7 +38,7 @@ private:
     Ui::gestionarLoteGui *ui;
     listaLotesVacunaClass *lotes;
     listaLocalesClass *locales;
-    void actualizarControles(listaLotesVacunaClass *lotes = NULL);
+    void actualizarControles(listaLotesVacunaClass *lotes);
 };
 
 #endif // GESTIONARLOTEGUI_H

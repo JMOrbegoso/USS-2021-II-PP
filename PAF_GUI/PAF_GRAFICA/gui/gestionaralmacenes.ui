@@ -44,6 +44,31 @@
      <height>251</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>CODIGO</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>NOMBRE</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>CANTIDAD</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>FECHA</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>ESTADO</string>
+    </property>
+   </column>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">

@@ -63,10 +63,8 @@ void listaLocalesClass::insertarLocal(localClass *local){
 
 listaLocalesClass* listaLocalesClass::filtrarPorDireccion(string direccionPorBuscar){
     listaLocalesClass* temp = new listaLocalesClass();
-
     for (int x = 0; x < this->getCant(); x++){
         localClass * local = this->getCab() + x;
-
         if (local->getDireccionLocal().find(direccionPorBuscar, 0) != string::npos)
             temp->insertarLocal(local);
     }
