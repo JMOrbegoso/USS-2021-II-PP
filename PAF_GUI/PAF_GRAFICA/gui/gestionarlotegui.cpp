@@ -108,7 +108,7 @@ void gestionarLoteGui::on_editarButton_clicked()
     //Edicion del elemnto de la lista
     (this->lotes->getCab() + x)->setNombre(nuevoNombre);
     //(this->lotes->getCab() + x)->setCantidad(cantidadNueva);
-    (this->lotes->getCab() + x)->setCaducidad(cantidadNueva);
+    (this->lotes->getCab() + x)->setCaducidad(fechaNueva);
 
     //Edicion del elemnto en la tabla
     this->ui->lotesTableWidget->item(x, 1)->setText(QString::fromStdString(nuevoNombre));

@@ -67,6 +67,8 @@ string localClass::getCodigoLocal()
 
 localClass::localClass(string nombre, string direccion, bool estado)
 {
+    this->codigo = "local-" + to_string(localClass::contador);
+    localClass::contador++;
     this->nombreLocal = nombre;
     this->direccionLocal = direccion;
     this->estadoLocal = estado;
@@ -78,8 +80,7 @@ localClass::localClass(string nombre, string direccion, bool estado)
 
 localClass::localClass()
 {
-    this->codigo = "local-" + to_string(localClass::contador);
-    localClass::contador++;
+
 }
 
 localClass::~localClass()
