@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>714</width>
-    <height>317</height>
+    <height>224</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
      <x>30</x>
      <y>20</y>
      <width>651</width>
-     <height>271</height>
+     <height>181</height>
     </rect>
    </property>
    <property name="title">
@@ -35,7 +35,7 @@
       <x>90</x>
       <y>30</y>
       <width>471</width>
-      <height>138</height>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_2">
@@ -83,13 +83,6 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Estado del Lote:</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="1">
       <widget class="QDateEdit" name="fechaCaducidadDe">
        <property name="dateTime">
@@ -111,43 +104,13 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QRadioButton" name="habilitarLoteRb">
-         <property name="tabletTracking">
-          <bool>false</bool>
-         </property>
-         <property name="acceptDrops">
-          <bool>false</bool>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Habilitar</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="inhabilitarLoteRb">
-         <property name="text">
-          <string>Inhabilitar</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
     </layout>
    </widget>
    <widget class="QPushButton" name="registrarButton">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>210</y>
+      <x>350</x>
+      <y>130</y>
       <width>80</width>
       <height>31</height>
      </rect>
@@ -160,7 +123,7 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>210</y>
+      <y>130</y>
       <width>80</width>
       <height>31</height>
      </rect>

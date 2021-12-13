@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>688</width>
-    <height>374</height>
+    <width>496</width>
+    <height>307</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>688</width>
+     <width>496</width>
      <height>20</height>
     </rect>
    </property>
@@ -75,9 +75,9 @@
     <addaction name="actionAcerca_de"/>
     <addaction name="actionSalir"/>
    </widget>
+   <addaction name="menuLotes"/>
    <addaction name="menuAlmacen"/>
    <addaction name="menuLocales"/>
-   <addaction name="menuLotes"/>
    <addaction name="menuPersonal"/>
    <addaction name="menuPacientes"/>
    <addaction name="menuHelp"/>

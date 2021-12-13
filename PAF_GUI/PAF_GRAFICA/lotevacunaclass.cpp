@@ -47,7 +47,7 @@ void loteVacunaClass::setEstado(bool value)
     estado = value;
 }
 
-loteVacunaClass::loteVacunaClass(string nombre, int cantidad, string caducidad, bool estado)
+loteVacunaClass::loteVacunaClass(string nombre, int cantidad, string caducidad)
 {
     this->codigo = "lote-" + to_string(loteVacunaClass::contador);
     loteVacunaClass::contador++;
@@ -55,12 +55,11 @@ loteVacunaClass::loteVacunaClass(string nombre, int cantidad, string caducidad, 
     this->nombre = nombre;
     this->cantidad = cantidad;
     this->caducidad = caducidad;
-    this->estado = estado;
+    //this->estado = estado;
 }
 
-loteVacunaClass::loteVacunaClass()
-{
-
+loteVacunaClass::loteVacunaClass(){
+    this->estado = false;
 }
 
 loteVacunaClass::~loteVacunaClass()

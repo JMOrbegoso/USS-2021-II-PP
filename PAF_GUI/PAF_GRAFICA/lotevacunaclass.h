@@ -12,7 +12,7 @@ class loteVacunaClass{
     string caducidad;
     bool estado;
 public:
-    loteVacunaClass(string nombre, int cantidad, string caducidad, bool estado);
+    loteVacunaClass(string nombre, int cantidad, string caducidad);
     loteVacunaClass();
     ~loteVacunaClass();
     string getCodigo() const;

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
-    <height>427</height>
+    <width>820</width>
+    <height>360</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>380</y>
+     <x>710</x>
+     <y>310</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -35,13 +35,13 @@
     <string>Regresar</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="mostrarLotesQwidget">
+  <widget class="QTableWidget" name="mostrarLotesTwidget">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>110</y>
+     <y>50</y>
      <width>311</width>
-     <height>281</height>
+     <height>251</height>
     </rect>
    </property>
   </widget>
@@ -55,10 +55,43 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="agregarButton">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>130</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Agregar &gt;&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="localesCbox">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>20</y>
+     <width>311</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="localesTwidget">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>50</y>
+     <width>311</width>
+     <height>251</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="quitarButton">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -68,40 +101,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Agregar &gt;&gt;</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>70</y>
-     <width>311</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>110</y>
-     <width>311</width>
-     <height>251</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>220</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
+    <string>&lt;&lt; Quitar</string>
    </property>
   </widget>
  </widget>

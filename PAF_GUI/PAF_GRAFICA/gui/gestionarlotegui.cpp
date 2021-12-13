@@ -119,14 +119,14 @@ void gestionarLoteGui::actualizarControles(listaLotesVacunaClass *lotes)
         auto codigo = (lotes->getCab()+ x)->getCodigo();
         auto nombre = (lotes->getCab() + x)->getNombre();
         auto cantidad = (lotes->getCab() + x)->getCantidad();
-        auto estado = (lotes->getCab() + x)->getEstado();
-        string estadoTexto = estado ? "Habilitado" : "Inhabilitado";
+        //auto estado = (lotes->getCab() + x)->getEstado();
+        //string estadoTexto = estado ? "Habilitado" : "Inhabilitado";
 
         this->ui->lotesTableWidget->insertRow(x);
 
         this->ui->lotesTableWidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
         this->ui->lotesTableWidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(nombre)));
         this->ui->lotesTableWidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(to_string(cantidad))));
-        this->ui->lotesTableWidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString((estadoTexto))));
+        //this->ui->lotesTableWidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString((estadoTexto))));
     }
 }

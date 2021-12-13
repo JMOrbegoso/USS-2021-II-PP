@@ -126,9 +126,9 @@ void MainWindow::on_actionGestionar_Personal_M_dico_triggered()
 }
 
 
-void MainWindow::on_actionRegistrar_Lote_triggered()
-{
+void MainWindow::on_actionRegistrar_Lote_triggered(){
     registrarLoteGui *reg = new registrarLoteGui();
+    reg->setLotes(this->getVacunaDengue()->getAlmacenGeneral()->getLotes());
     reg->show();
 }
 

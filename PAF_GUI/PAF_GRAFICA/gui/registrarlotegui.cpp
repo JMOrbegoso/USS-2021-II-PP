@@ -33,10 +33,10 @@ void registrarLoteGui::on_registrarButton_clicked()
     auto nombre = this->ui->nombreLoteTxt->text().toStdString();
     auto cantidad = this->ui->cantidadVacunaSb->value();
     auto fechaCaducidad = this->ui->fechaCaducidadDe->text().toStdString();
-    auto estado = this->ui->habilitarLoteRb->isChecked();
+    //auto estado = this->ui->habilitarLoteRb->setEnabled(false);
 
     // Creación de la nueva instancia
-    loteVacunaClass *nuevoLote = new loteVacunaClass(nombre, cantidad, fechaCaducidad, estado);
+    loteVacunaClass *nuevoLote = new loteVacunaClass(nombre, cantidad, fechaCaducidad);
 
     this->lotes->insertarLote(nuevoLote);
 
