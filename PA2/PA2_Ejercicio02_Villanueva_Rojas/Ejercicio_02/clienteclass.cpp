@@ -12,14 +12,19 @@ void clienteClass::setCant(int value)
     cant = value;
 }
 
+string clienteClass::getCodigo() const
+{
+    return codigo;
+}
+
 clienteClass::clienteClass()
 {
 
 }
 
-clienteClass::clienteClass(string nombre, string apelli, string dniPer, int edaPer, bool genero, int cant) : personaClass(nombre, apelli, dniPer, edaPer, genero)
+clienteClass::clienteClass(string nombre, string apelli, string dniPer, int edaPer, bool genero) : personaClass(nombre, apelli, dniPer, edaPer, genero)
 {
     this->codigo = "CLI-" + to_string(clienteClass::contador);
     clienteClass::contador++;
-    this->cant = cant;
+    this->cant = 0;
 }

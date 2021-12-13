@@ -16,6 +16,7 @@ public:
     void setCliente(clienteClass *value);
     bool getEstado() const;
     void setEstado(bool value);
+    string getCodigo() const;
 };
 
 #endif // BUTACACLASS_H

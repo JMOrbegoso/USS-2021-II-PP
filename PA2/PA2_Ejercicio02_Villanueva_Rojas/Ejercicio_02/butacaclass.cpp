@@ -22,10 +22,15 @@ void butacaClass::setEstado(bool value)
     estado = value;
 }
 
+string butacaClass::getCodigo() const
+{
+    return codigo;
+}
+
 butacaClass::butacaClass()
 {
     this->codigo = "CLI-" + to_string(butacaClass::contador);
     butacaClass::contador++;
-    this->estado = NULL;
+    this->cliente = NULL;
     this->estado = FALSE;
 }

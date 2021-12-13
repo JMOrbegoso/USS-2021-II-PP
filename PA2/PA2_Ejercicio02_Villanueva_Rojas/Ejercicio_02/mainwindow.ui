@@ -6,16 +6,80 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>751</width>
     <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Circo</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>751</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCliente">
+    <property name="title">
+     <string>Cliente</string>
+    </property>
+    <addaction name="actionRegistrar_Cliente"/>
+   </widget>
+   <widget class="QMenu" name="menuZona_y_Butacas">
+    <property name="title">
+     <string>Zona y Butacas</string>
+    </property>
+    <addaction name="actionRegistrar_Zona_y_Butacas"/>
+    <addaction name="separator"/>
+    <addaction name="actionListar_Butacas_de_una_Zona"/>
+   </widget>
+   <widget class="QMenu" name="menuTrabajadores">
+    <property name="title">
+     <string>Trabajadores</string>
+    </property>
+    <addaction name="actionRegistrar_Trabajadores"/>
+   </widget>
+   <widget class="QMenu" name="menuTickets">
+    <property name="title">
+     <string>Tickets</string>
+    </property>
+    <addaction name="actionRealizar_Venta_Ticket"/>
+   </widget>
+   <addaction name="menuCliente"/>
+   <addaction name="menuZona_y_Butacas"/>
+   <addaction name="menuTrabajadores"/>
+   <addaction name="menuTickets"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionRegistrar_Cliente">
+   <property name="text">
+    <string>Registrar Cliente...</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Zona_y_Butacas">
+   <property name="text">
+    <string>Registrar Zona y Butacas...</string>
+   </property>
+  </action>
+  <action name="actionRegistrar_Trabajadores">
+   <property name="text">
+    <string>Registrar Trabajadores...</string>
+   </property>
+  </action>
+  <action name="actionListar_Butacas_de_una_Zona">
+   <property name="text">
+    <string>Listar Butacas de una Zona...</string>
+   </property>
+  </action>
+  <action name="actionRealizar_Venta_Ticket">
+   <property name="text">
+    <string>Realizar Venta Ticket...</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

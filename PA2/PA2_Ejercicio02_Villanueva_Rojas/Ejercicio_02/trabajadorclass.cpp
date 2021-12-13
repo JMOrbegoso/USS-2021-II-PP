@@ -12,6 +12,11 @@ void trabajadorClass::setAccion(const string &value)
     accion = value;
 }
 
+string trabajadorClass::getCodigo() const
+{
+    return codigo;
+}
+
 trabajadorClass::trabajadorClass()
 {
 

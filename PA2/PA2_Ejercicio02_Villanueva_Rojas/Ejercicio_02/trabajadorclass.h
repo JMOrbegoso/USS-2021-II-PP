@@ -13,6 +13,7 @@ public:
     trabajadorClass(string nombre, string apelli, string dniPer, int edaPer, bool genero, string accion);
     string getAccion() const;
     void setAccion(const string &value);
+    string getCodigo() const;
 };
 
 #endif // TRABAJADORCLASS_H

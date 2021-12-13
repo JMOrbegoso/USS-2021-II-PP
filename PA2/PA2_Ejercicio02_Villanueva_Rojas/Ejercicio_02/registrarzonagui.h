@@ -15,6 +15,13 @@ public:
     explicit registrarZonaGui(QWidget *parent = nullptr);
     ~registrarZonaGui();
 
+private slots:
+
+
+    void on_btnCancel_clicked();
+
+    void on_btnRegis_clicked();
+
 private:
     Ui::registrarZonaGui *ui;
 };

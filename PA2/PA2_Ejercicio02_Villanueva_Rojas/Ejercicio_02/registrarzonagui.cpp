@@ -12,3 +12,14 @@ registrarZonaGui::~registrarZonaGui()
 {
     delete ui;
 }
+
+
+void registrarZonaGui::on_btnCancel_clicked()
+{
+    this->close();
+}
+
+void registrarZonaGui::on_btnRegis_clicked()
+{
+    //Registrar zona
+}

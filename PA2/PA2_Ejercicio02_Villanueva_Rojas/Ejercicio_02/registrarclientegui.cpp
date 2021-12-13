@@ -12,3 +12,13 @@ registrarClienteGui::~registrarClienteGui()
 {
     delete ui;
 }
+
+void registrarClienteGui::on_btnCancel_clicked()
+{
+    this->close();
+}
+
+void registrarClienteGui::on_btnRegis_clicked()
+{
+    //Registrar cliente
+}

@@ -21,6 +21,7 @@ SOURCES += \
     clienteclass.cpp \
     listabutacasclass.cpp \
     listaclienteclass.cpp \
+    listarbutacaszonagui.cpp \
     listaticketsclass.cpp \
     listatrabajadoresclass.cpp \
     listazonasclass.cpp \
@@ -32,6 +33,8 @@ SOURCES += \
     nodotrabajadorclass.cpp \
     personaclass.cpp \
     registrarclientegui.cpp \
+    registrartrabajadoresgui.cpp \
+    registrarventaticketgui.cpp \
     registrarzonagui.cpp \
     ticketclass.cpp \
     trabajadorclass.cpp \
@@ -43,6 +46,7 @@ HEADERS += \
     clienteclass.h \
     listabutacasclass.h \
     listaclienteclass.h \
+    listarbutacaszonagui.h \
     listaticketsclass.h \
     listatrabajadoresclass.h \
     listazonasclass.h \
@@ -53,17 +57,27 @@ HEADERS += \
     nodotrabajadorclass.h \
     personaclass.h \
     registrarclientegui.h \
+    registrartrabajadoresgui.h \
+    registrarventaticketgui.h \
     registrarzonagui.h \
     ticketclass.h \
     trabajadorclass.h \
     zonaclass.h
 
 FORMS += \
+    listarbutacaszonagui.ui \
     mainwindow.ui \
     registrarclientegui.ui \
+    registrartrabajadoresgui.ui \
+    registrarventaticketgui.ui \
     registrarzonagui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES += \
+    Resources.qrc
