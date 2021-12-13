@@ -59,3 +59,14 @@ void listaLotesVacunaClass::insertarLote(loteVacunaClass *lote){
         *(this->cab + this->cant) = *lote;
         this->cant++;
 }
+
+listaLotesVacunaClass* listaLotesVacunaClass::filtrarPorNombre(string nombreBuscar){
+    listaLotesVacunaClass* temp = new listaLotesVacunaClass();
+    for (int x = 0; x < this->getCant(); x++){
+        loteVacunaClass * lote = this->getCab() + x;
+        if (lote->getNombre().find(nombreBuscar, 0) != string::npos)
+            temp->insertarLote(lote);
+    }
+    return temp;
+}
+

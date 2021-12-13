@@ -19,6 +19,7 @@ public:
     loteVacunaClass *getCab() const;
     void setCab(loteVacunaClass *value);
     void insertarLote(loteVacunaClass *lote);
+    listaLotesVacunaClass* filtrarPorNombre(string nombreBuscar);
 };
 
 #endif // LISTALOTESVACUNACLASS_H

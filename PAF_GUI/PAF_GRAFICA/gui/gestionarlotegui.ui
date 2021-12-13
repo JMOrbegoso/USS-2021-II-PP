@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>978</width>
-    <height>410</height>
+    <height>419</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
   <widget class="QPushButton" name="regresarButton">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>370</y>
-     <width>91</width>
-     <height>31</height>
+     <x>860</x>
+     <y>350</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -38,8 +38,8 @@
   <widget class="QTableWidget" name="lotesTableWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>100</y>
+     <x>20</x>
+     <y>80</y>
      <width>641</width>
      <height>261</height>
     </rect>
@@ -73,10 +73,10 @@
   <widget class="QPushButton" name="registrarButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>370</y>
-     <width>121</width>
-     <height>31</height>
+     <x>20</x>
+     <y>360</y>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -88,31 +88,13 @@
     <string>Registrar Lote</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="habilitarInhabilitarButton">
-   <property name="geometry">
-    <rect>
-     <x>740</x>
-     <y>260</y>
-     <width>221</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Habilitar/Inhabilitar Lote</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="editarButton">
    <property name="geometry">
     <rect>
      <x>820</x>
-     <y>200</y>
+     <y>270</y>
      <width>141</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -128,8 +110,8 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>60</y>
-     <width>401</width>
+     <y>20</y>
+     <width>521</width>
      <height>31</height>
     </rect>
    </property>
@@ -155,28 +137,6 @@
    <property name="geometry">
     <rect>
      <x>680</x>
-     <y>150</y>
-     <width>281</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Cantidad:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="cantidadLineEdit"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
      <y>110</y>
      <width>281</width>
      <height>31</height>
@@ -195,15 +155,57 @@
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="formLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>210</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Fecha Caducidad:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="fechaCaducaEditTxt"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>160</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Cantidad:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="cantidadEditTxt"/>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>lotesTableWidget</tabstop>
   <tabstop>regresarButton</tabstop>
   <tabstop>buscarLineEdit</tabstop>
   <tabstop>editNombreLine</tabstop>
-  <tabstop>cantidadLineEdit</tabstop>
   <tabstop>editarButton</tabstop>
-  <tabstop>habilitarInhabilitarButton</tabstop>
   <tabstop>registrarButton</tabstop>
  </tabstops>
  <resources>

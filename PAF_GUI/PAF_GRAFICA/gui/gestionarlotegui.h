@@ -23,16 +23,22 @@ public:
     listaLocalesClass *getLocales() const;
     void setLocales(listaLocalesClass *value);
 
-    void listaLocalesCbox();
+    //void listaLocalesCbox();
 
 private slots:
-    void on_habilitarInhabilitarButton_clicked();
+    //void on_habilitarInhabilitarButton_clicked();
 
-    void on_elegirLocalCbox_currentIndexChanged(int index);
+    //void on_elegirLocalCbox_currentIndexChanged(int index);
 
     void on_lotesTableWidget_itemClicked(QTableWidgetItem *item);
 
     void on_editarButton_clicked();
+
+    void on_buscarLineEdit_textChanged(const QString &arg1);
+
+    void on_registrarButton_clicked();
+
+    void on_regresarButton_clicked();
 
 private:
     Ui::gestionarLoteGui *ui;
