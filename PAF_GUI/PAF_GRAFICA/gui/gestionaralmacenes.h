@@ -1,4 +1,4 @@
-#ifndef GESTIONARALMACENES_H
++#ifndef GESTIONARALMACENES_H
 #define GESTIONARALMACENES_H
 
 #include <QDialog>
