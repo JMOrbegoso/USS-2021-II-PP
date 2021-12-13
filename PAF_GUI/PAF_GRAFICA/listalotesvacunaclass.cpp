@@ -36,8 +36,7 @@ listaLotesVacunaClass::listaLotesVacunaClass()
     max = 0;
 }
 
-listaLotesVacunaClass::~listaLotesVacunaClass()
-{
+listaLotesVacunaClass::~listaLotesVacunaClass(){
 
 }
 

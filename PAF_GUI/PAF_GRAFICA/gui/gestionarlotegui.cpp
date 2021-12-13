@@ -13,7 +13,6 @@ gestionarLoteGui::gestionarLoteGui(QWidget *parent) :
     ui->lotesTableWidget->setColumnWidth(1, 90);
     ui->lotesTableWidget->setColumnWidth(2, 80);
     ui->lotesTableWidget->setColumnWidth(3, 80);
-    ui->lotesTableWidget->setColumnWidth(4, 80);
 }
 
 gestionarLoteGui::~gestionarLoteGui()
@@ -117,19 +116,17 @@ void gestionarLoteGui::actualizarControles(listaLotesVacunaClass *lotes)
     //loteGeneralClass *aux = lotes->getLote();
 
     for (int x = 0; x < lotes->getCant(); x++){
-        auto codigo = (lotes->getLote() + x)->getCodigo();
-        auto nombre = (lotes->getLote() + x)->getNombre();
-        auto cantidad = (lotes->getLote() + x)->getCantidad();
-        auto fecha = (lotes->getLote() + x)->getFechaCaducidad();
-        auto estado = (lotes->getLote() + x)->getEstado();
+        auto codigo = (lotes->getCab()+ x)->getCodigo();
+        auto nombre = (lotes->getCab() + x)->getNombre();
+        auto cantidad = (lotes->getCab() + x)->getCantidad();
+        auto estado = (lotes->getCab() + x)->getEstado();
         string estadoTexto = estado ? "Habilitado" : "Inhabilitado";
 
         this->ui->lotesTableWidget->insertRow(x);
 
         this->ui->lotesTableWidget->setItem(x, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
         this->ui->lotesTableWidget->setItem(x, 1, new QTableWidgetItem(QString::fromStdString(nombre)));
-        this->ui->lotesTableWidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(fecha)));
-        this->ui->lotesTableWidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString(to_string(cantidad))));
-        this->ui->lotesTableWidget->setItem(x, 4, new QTableWidgetItem(QString::fromStdString((estadoTexto))));
+        this->ui->lotesTableWidget->setItem(x, 2, new QTableWidgetItem(QString::fromStdString(to_string(cantidad))));
+        this->ui->lotesTableWidget->setItem(x, 3, new QTableWidgetItem(QString::fromStdString((estadoTexto))));
     }
 }
