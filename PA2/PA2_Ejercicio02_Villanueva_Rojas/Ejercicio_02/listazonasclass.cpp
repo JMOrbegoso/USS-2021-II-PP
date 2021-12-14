@@ -49,7 +49,7 @@ void listaZonasClass::crecer(){
     this->max += Max;
 }
 
-void listaZonasClass::insertarLocal(zonaClass *zona){
+void listaZonasClass::insertar(zonaClass *zona){
     if (this->cant == this->max){
         this->crecer();
     }

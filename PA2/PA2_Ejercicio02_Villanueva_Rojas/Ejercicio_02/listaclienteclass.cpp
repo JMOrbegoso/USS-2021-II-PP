@@ -42,5 +42,6 @@ void listaClienteClass::insertar(clienteClass *cli)
 
 listaClienteClass::listaClienteClass()
 {
-    
+    this->cab = NULL;
+    this->cant = 0;
 }

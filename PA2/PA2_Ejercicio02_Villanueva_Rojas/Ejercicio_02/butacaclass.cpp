@@ -29,7 +29,7 @@ string butacaClass::getCodigo() const
 
 butacaClass::butacaClass()
 {
-    this->codigo = "CLI-" + to_string(butacaClass::contador);
+    this->codigo = "BUT-" + to_string(butacaClass::contador);
     butacaClass::contador++;
     this->cliente = NULL;
     this->estado = FALSE;

@@ -18,14 +18,14 @@ listarButacasZonaGui::~listarButacasZonaGui()
     delete ui;
 }
 
-listaZonasClass *listarButacasZonaGui::getLZona() const
+listaZonasClass *listarButacasZonaGui::getLZonas() const
 {
-    return lZona;
+    return lZonas;
 }
 
-void listarButacasZonaGui::setLZona(listaZonasClass *value)
+void listarButacasZonaGui::setLZonas(listaZonasClass *value)
 {
-    lZona = value;
+    lZonas = value;
 }
 
 listaButacasClass *listarButacasZonaGui::getLButacas() const
@@ -36,4 +36,9 @@ listaButacasClass *listarButacasZonaGui::getLButacas() const
 void listarButacasZonaGui::setLButacas(listaButacasClass *value)
 {
     lButacas = value;
+}
+
+void listarButacasZonaGui::on_btnClose_clicked()
+{
+    this->close();
 }

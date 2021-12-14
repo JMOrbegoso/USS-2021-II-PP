@@ -22,5 +22,6 @@ void nodoClienteClass::setSgte(nodoClienteClass *value)
 
 nodoClienteClass::nodoClienteClass()
 {
-    
+    info = NULL;
+    sgte = NULL;
 }

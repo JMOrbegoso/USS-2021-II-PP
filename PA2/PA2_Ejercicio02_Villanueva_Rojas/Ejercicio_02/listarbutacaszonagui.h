@@ -17,15 +17,18 @@ public:
     explicit listarButacasZonaGui(QWidget *parent = nullptr);
     ~listarButacasZonaGui();
 
-    listaZonasClass *getLZona() const;
-    void setLZona(listaZonasClass *value);
+    listaZonasClass *getLZonas() const;
+    void setLZonas(listaZonasClass *value);
 
     listaButacasClass *getLButacas() const;
     void setLButacas(listaButacasClass *value);
 
+private slots:
+    void on_btnClose_clicked();
+
 private:
     Ui::listarButacasZonaGui *ui;
-    listaZonasClass *lZona;
+    listaZonasClass *lZonas;
     listaButacasClass *lButacas;
 };
 

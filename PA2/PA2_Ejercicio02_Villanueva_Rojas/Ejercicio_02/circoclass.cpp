@@ -56,5 +56,5 @@ circoClass::circoClass()
     this->lZonas = new listaZonasClass();
     this->lTickets = new listaTicketsClass();
     this->lClientes = new listaClienteClass();
-    this->nombre = "Nothing of you";
+    this->nombre = "Big Apple";
 }

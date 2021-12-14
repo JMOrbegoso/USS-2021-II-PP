@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>393</height>
+    <width>530</width>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>30</x>
      <y>70</y>
      <width>471</width>
      <height>251</height>
@@ -46,7 +46,7 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>30</x>
      <y>20</y>
      <width>471</width>
      <height>31</height>
@@ -96,6 +96,19 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="btnClose">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>340</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cerrar</string>
+   </property>
   </widget>
  </widget>
  <resources/>

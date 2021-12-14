@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Registrar Zona y Butacas</string>
   </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
@@ -43,9 +43,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="txtFecha"/>
-    </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
@@ -61,10 +58,48 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QSpinBox" name="spinBoxButacas"/>
+     <widget class="QSpinBox" name="spinBoxButacas">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QDoubleSpinBox" name="SpinBoxPrecio"/>
+     <widget class="QDoubleSpinBox" name="SpinBoxPrecio">
+      <property name="minimum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2021</year>
+        <month>1</month>
+        <day>1</day>
+       </datetime>
+      </property>
+      <property name="minimumDateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>1930</year>
+        <month>9</month>
+        <day>14</day>
+       </datetime>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

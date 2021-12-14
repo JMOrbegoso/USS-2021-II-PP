@@ -2,6 +2,9 @@
 #define REGISTRARZONAGUI_H
 
 #include <QDialog>
+#include "QMessageBox"
+#include "listazonasclass.h"
+#include "listabutacasclass.h"
 
 namespace Ui {
 class registrarZonaGui;
@@ -15,6 +18,14 @@ public:
     explicit registrarZonaGui(QWidget *parent = nullptr);
     ~registrarZonaGui();
 
+    listaZonasClass *getLZonas() const;
+    void setLZonas(listaZonasClass *value);
+
+    listaButacasClass *getLButacas() const;
+    void setLButacas(listaButacasClass *value);
+
+    void clear();
+
 private slots:
 
 
@@ -24,6 +35,8 @@ private slots:
 
 private:
     Ui::registrarZonaGui *ui;
+    listaZonasClass *lZonas;
+    listaButacasClass *lButacas;
 };
 
 #endif // REGISTRARZONAGUI_H

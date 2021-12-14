@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "QMessageBox"
 #include "circoclass.h"
 #include "registrarclientegui.h"
 #include "registrartrabajadoresgui.h"
@@ -30,8 +31,6 @@ private slots:
     void on_actionRegistrar_Zona_y_Butacas_triggered();
 
     void on_actionRegistrar_Trabajadores_triggered();
-
-    void on_actionGenerar_Ticket_triggered();
 
     void on_actionListar_Butacas_de_una_Zona_triggered();
 

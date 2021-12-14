@@ -20,7 +20,7 @@ public:
     void setMax(int value);
 
     void crecer();
-    void insertarLocal(zonaClass *zona);
+    void insertar(zonaClass *zona);
 };
 
 #endif // LISTAZONASCLASS_H

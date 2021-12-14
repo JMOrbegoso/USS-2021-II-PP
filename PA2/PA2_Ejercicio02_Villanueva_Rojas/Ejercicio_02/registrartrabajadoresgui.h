@@ -2,6 +2,8 @@
 #define REGISTRARTRABAJADORESGUI_H
 
 #include <QDialog>
+#include "QMessageBox"
+#include "listatrabajadoresclass.h"
 
 namespace Ui {
 class registrarTrabajadoresGui;
@@ -15,6 +17,11 @@ public:
     explicit registrarTrabajadoresGui(QWidget *parent = nullptr);
     ~registrarTrabajadoresGui();
 
+    listaTrabajadoresClass *getLTrabaj() const;
+    void setLTrabaj(listaTrabajadoresClass *value);
+
+    void clear();
+
 private slots:
     void on_btnCancel_clicked();
 
@@ -22,6 +29,7 @@ private slots:
 
 private:
     Ui::registrarTrabajadoresGui *ui;
+    listaTrabajadoresClass *lTrabaj;
 };
 
 #endif // REGISTRARTRABAJADORESGUI_H

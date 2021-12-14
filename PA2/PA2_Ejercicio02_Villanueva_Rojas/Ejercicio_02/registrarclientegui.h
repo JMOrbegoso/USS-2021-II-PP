@@ -2,6 +2,8 @@
 #define REGISTRARCLIENTEGUI_H
 
 #include <QDialog>
+#include "QMessageBox"
+#include "listaclienteclass.h"
 
 namespace Ui {
 class registrarClienteGui;
@@ -15,6 +17,11 @@ public:
     explicit registrarClienteGui(QWidget *parent = nullptr);
     ~registrarClienteGui();
 
+    listaClienteClass *getLClientes() const;
+    void setLClientes(listaClienteClass *value);
+
+    void clear();
+
 private slots:
     void on_btnCancel_clicked();
 
@@ -22,6 +29,7 @@ private slots:
 
 private:
     Ui::registrarClienteGui *ui;
+    listaClienteClass *lClientes;
 };
 
 #endif // REGISTRARCLIENTEGUI_H

@@ -42,5 +42,6 @@ void listaButacasClass::insertar(butacaClass *butaca)
 
 listaButacasClass::listaButacasClass()
 {
-    
+    this->cab = NULL;
+    this->cant = 0;
 }
