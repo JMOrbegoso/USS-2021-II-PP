@@ -2,6 +2,7 @@
 #define REGISTRARVENTATICKETGUI_H
 
 #include <QDialog>
+#include "QColor"
 #include "QMessageBox"
 #include "listaticketsclass.h"
 #include "listatrabajadoresclass.h"
@@ -40,12 +41,18 @@ public:
     void llenarComBoxClie();
     void llenarComBoxTrab();
 
-    void actualizartabla();
+    void actualizarTabla();
+    void updateData(int i);
+    void updateCli(clienteClass *cli);
 
 private slots:
     void on_btnCancel_clicked();
 
     void on_btnRegis_clicked();
+
+    void on_comBoxZona_currentIndexChanged(int index);
+
+    void on_comBoxCli_currentIndexChanged(const QString &arg1);
 
 private:
     Ui::registrarVentaTicketGui *ui;

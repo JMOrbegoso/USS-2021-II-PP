@@ -80,7 +80,7 @@ void listarButacasZonaGui::actualizarTabla()
 void listarButacasZonaGui::updateDate(int i)
 {
     this->ui->fechaF->setText(QString::fromStdString((this->lZonas->getCab()+i)->getFechaF()));
-    this->ui->precio->setText(QString::fromStdString("s/." +to_string((this->lZonas->getCab()+i)->getPrecio())));
+    this->ui->precio->setText(QString::fromStdString("S/." +to_string((this->lZonas->getCab()+i)->getPrecio())));
 }
 
 void listarButacasZonaGui::on_btnClose_clicked()

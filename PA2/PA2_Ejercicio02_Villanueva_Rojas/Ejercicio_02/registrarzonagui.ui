@@ -28,6 +28,12 @@
     </property>
     <item row="0" column="0">
      <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Nombre:</string>
       </property>
@@ -38,6 +44,12 @@
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Fecha:</string>
       </property>
@@ -45,6 +57,12 @@
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Precio:</string>
       </property>
@@ -52,6 +70,12 @@
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Numero de Butacas:</string>
       </property>
@@ -139,6 +163,14 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>txtNom</tabstop>
+  <tabstop>dateEdit</tabstop>
+  <tabstop>SpinBoxPrecio</tabstop>
+  <tabstop>spinBoxButacas</tabstop>
+  <tabstop>btnRegis</tabstop>
+  <tabstop>btnCancel</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

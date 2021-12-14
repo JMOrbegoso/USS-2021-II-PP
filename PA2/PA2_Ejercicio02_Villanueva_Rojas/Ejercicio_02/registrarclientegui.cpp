@@ -66,7 +66,7 @@ void registrarClienteGui::clear()
     ui->txtNom->clear();
     ui->txtApe->clear();
     ui->txtDni->clear();
-    ui->spinBoxEdad->setValue(5);
+    //ui->spinBoxEdad->setValue(5);
     //ui->rdbFem->setChecked(false);
     //ui->rdbMas->setChecked(true);
 }

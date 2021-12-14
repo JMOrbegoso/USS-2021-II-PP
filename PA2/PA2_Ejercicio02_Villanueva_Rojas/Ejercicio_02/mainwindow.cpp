@@ -78,6 +78,9 @@ void MainWindow::on_actionRealizar_Venta_Ticket_triggered()
     rV->setLButacas(this->circo->getLZonas()->getCab()->getLButacas());
     rV->setLTrabaj(this->circo->getLTrabajadores());
     rV->setLTickets(this->circo->getLTickets());
+    rV->llenarComBoxZona();
+    rV->llenarComBoxClie();
+    rV->llenarComBoxTrab();
     rV->show();
 }
 
