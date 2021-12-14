@@ -21,6 +21,7 @@ void registrarVentaTicketGui::on_btnCancel_clicked()
 void registrarVentaTicketGui::on_btnRegis_clicked()
 {
     //Registrar Venta Ticket
+
 }
 
 listaButacasClass *registrarVentaTicketGui::getLButacas() const

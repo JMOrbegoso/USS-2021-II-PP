@@ -95,5 +95,6 @@ void MainWindow::on_actionListar_Butacas_de_una_Zona_triggered()
     else
         lB->setLButacas(this->circo->getLZonas()->getCab()->getLButacas());
     lB->setLZonas(this->circo->getLZonas());
+    lB->llenarComBox();
     lB->show();
 }

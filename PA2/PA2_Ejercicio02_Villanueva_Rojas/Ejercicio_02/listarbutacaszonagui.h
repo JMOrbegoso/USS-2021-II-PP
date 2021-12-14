@@ -23,6 +23,8 @@ public:
     listaButacasClass *getLButacas() const;
     void setLButacas(listaButacasClass *value);
 
+    void llenarComBox();
+
 private slots:
     void on_btnClose_clicked();
 

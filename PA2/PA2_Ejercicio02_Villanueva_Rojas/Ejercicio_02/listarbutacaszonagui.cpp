@@ -38,6 +38,14 @@ void listarButacasZonaGui::setLButacas(listaButacasClass *value)
     lButacas = value;
 }
 
+void listarButacasZonaGui::llenarComBox()
+{
+    int i = this->lZonas->getCant();
+    for(int x = 0;x<i;x++){
+        ui->comBoxZona->addItem(QString::fromStdString((this->lZonas->getCab()+x)->getNombre()));
+    }
+}
+
 void listarButacasZonaGui::on_btnClose_clicked()
 {
     this->close();
