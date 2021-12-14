@@ -2,7 +2,7 @@
 #define TRABAJADORCLASS_H
 #include "personaclass.h"
 
-class trabajadorClass  : public personaClass
+class trabajadorClass : public personaClass
 {
 private:
     static int contador;

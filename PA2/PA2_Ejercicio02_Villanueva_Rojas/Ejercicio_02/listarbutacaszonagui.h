@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "listazonasclass.h"
 #include "listabutacasclass.h"
+#include <QTableWidgetItem>
 
 namespace Ui {
 class listarButacasZonaGui;
@@ -24,9 +25,13 @@ public:
     void setLButacas(listaButacasClass *value);
 
     void llenarComBox();
+    void actualizarTabla();
+    void updateDate(int i);
 
 private slots:
     void on_btnClose_clicked();
+
+    void on_comBoxZona_currentIndexChanged(int index);
 
 private:
     Ui::listarButacasZonaGui *ui;

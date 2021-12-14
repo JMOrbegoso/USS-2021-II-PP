@@ -36,6 +36,12 @@ public:
     listaButacasClass *getLButacas() const;
     void setLButacas(listaButacasClass *value);
 
+    void llenarComBoxZona();
+    void llenarComBoxClie();
+    void llenarComBoxTrab();
+
+    void actualizartabla();
+
 private slots:
     void on_btnCancel_clicked();
 

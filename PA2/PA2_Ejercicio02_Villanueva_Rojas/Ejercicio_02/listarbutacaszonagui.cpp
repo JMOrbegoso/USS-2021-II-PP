@@ -7,10 +7,10 @@ listarButacasZonaGui::listarButacasZonaGui(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //this->ui->twMostrarLocales->setColumnWidth(0, 90);
-    //this->ui->twMostrarLocales->setColumnWidth(1, 180);
-    //this->ui->twMostrarLocales->setColumnWidth(2, 290);
-    //this->ui->twMostrarLocales->setColumnWidth(3, 160);
+    this->ui->tableButaca->setColumnWidth(0, 90);
+    this->ui->tableButaca->setColumnWidth(1, 90);
+    this->ui->tableButaca->setColumnWidth(2, 180);
+    this->ui->tableButaca->setColumnWidth(3, 90);
 }
 
 listarButacasZonaGui::~listarButacasZonaGui()
@@ -41,12 +41,56 @@ void listarButacasZonaGui::setLButacas(listaButacasClass *value)
 void listarButacasZonaGui::llenarComBox()
 {
     int i = this->lZonas->getCant();
-    for(int x = 0;x<i;x++){
+    for(int x = 0;x<i;x++)
         ui->comBoxZona->addItem(QString::fromStdString((this->lZonas->getCab()+x)->getNombre()));
+    updateDate(0);
+    actualizarTabla();
+}
+
+void listarButacasZonaGui::actualizarTabla()
+{
+    ui->tableButaca->setRowCount(0);
+    nodoButacasClass *aux = this->lButacas->getCab();
+    int i = 0;
+    while(aux != NULL){
+        string codigo = aux->getInfo()->getCodigo();
+        string estado = aux->getInfo()->getEstado() ? "Ocupado" : "Libre";
+        string nomApe;
+        string edad;
+        if(aux->getInfo()->getCliente() != NULL){
+            string nombre = aux->getInfo()->getCliente()->getNombre();
+            string apelli = aux->getInfo()->getCliente()->getApelli();
+            edad = to_string(aux->getInfo()->getCliente()->getEdaPer());
+            nomApe = nombre + " " + apelli;
+        }else{
+            nomApe = "-";
+            edad = to_string(0);
+        }
+
+        this->ui->tableButaca->insertRow(i);
+        this->ui->tableButaca->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(codigo)));
+        this->ui->tableButaca->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(estado)));
+        this->ui->tableButaca->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(nomApe)));
+        this->ui->tableButaca->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(edad)));
+        aux = aux->getSgte();
+        i++;
     }
+}
+
+void listarButacasZonaGui::updateDate(int i)
+{
+    this->ui->fechaF->setText(QString::fromStdString((this->lZonas->getCab()+i)->getFechaF()));
+    this->ui->precio->setText(QString::fromStdString("s/." +to_string((this->lZonas->getCab()+i)->getPrecio())));
 }
 
 void listarButacasZonaGui::on_btnClose_clicked()
 {
     this->close();
+}
+
+void listarButacasZonaGui::on_comBoxZona_currentIndexChanged(int index)
+{
+    updateDate(index);
+    this->setLButacas((this->lZonas->getCab()+index)->getLButacas());
+    actualizarTabla();
 }

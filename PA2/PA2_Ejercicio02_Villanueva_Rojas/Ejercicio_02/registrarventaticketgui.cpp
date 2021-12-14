@@ -34,6 +34,26 @@ void registrarVentaTicketGui::setLButacas(listaButacasClass *value)
     lButacas = value;
 }
 
+void registrarVentaTicketGui::llenarComBoxZona()
+{
+
+}
+
+void registrarVentaTicketGui::llenarComBoxClie()
+{
+
+}
+
+void registrarVentaTicketGui::llenarComBoxTrab()
+{
+
+}
+
+void registrarVentaTicketGui::actualizartabla()
+{
+
+}
+
 listaZonasClass *registrarVentaTicketGui::getLZonas() const
 {
     return lZonas;

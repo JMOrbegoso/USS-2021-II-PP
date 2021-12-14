@@ -3,7 +3,7 @@
 
 #include "personaclass.h"
 
-class clienteClass : personaClass
+class clienteClass : public personaClass
 {
 private:
     static int contador;

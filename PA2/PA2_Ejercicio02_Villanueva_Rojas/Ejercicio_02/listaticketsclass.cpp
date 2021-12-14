@@ -43,5 +43,5 @@ void listaTicketsClass::insertar(ticketClass *ticket)
 listaTicketsClass::listaTicketsClass()
 {
     this->cab = NULL;
-    this->cant = NULL;
+    this->cant = 0;
 }
